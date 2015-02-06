@@ -8,8 +8,11 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="21" />
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <supports-screens
@@ -26,6 +29,10 @@
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Light.NoTitleBar" >
+        <meta-data
+            android:name="com.thinkland.juheapi.openid"
+            android:value="JH3d10c81c2da5d095c11b5537360a47ac" />
+
         <activity
             android:name="com.juhe.pockettools.ui.MainActivity"
             android:launchMode="singleTask"

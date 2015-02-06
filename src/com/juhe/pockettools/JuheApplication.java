@@ -13,6 +13,7 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.thinkland.sdk.android.SDKInitializer;
 
 /**
  * 应用入口
@@ -37,6 +38,8 @@ public class JuheApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		SDKInitializer.initialize(getApplicationContext());
+		
 		self = this;
 		mContext = getApplicationContext();
 		UIAdapter.setSize(480, 800);
