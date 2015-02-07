@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/color_gradient_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+    <ListView android:scrollbarThumbVertical="@drawable/custom_scroll_style" android:layout_gravity="top|left|center" android:id="@id/constelltion_list" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip" android:listSelector="@color/listview_selected_color" android:cacheColorHint="#00000000" android:divider="@color/listview_divider_color" android:dividerHeight="1.0px" android:headerDividersEnabled="true" android:footerDividersEnabled="true" android:isScrollContainer="false" />
+</FrameLayout>

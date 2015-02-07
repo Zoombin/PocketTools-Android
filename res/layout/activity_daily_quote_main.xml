@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/daily_quote" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="55.0dip">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <Button android:layout_gravity="left|center" android:id="@id/back" android:background="@drawable/btn_back_b" android:layout_width="50.0dip" android:layout_height="50.0dip" />
+            <TextView android:textSize="25.0sp" android:textStyle="bold" android:textColor="@color/black" android:layout_gravity="center" android:id="@id/quote_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Daily Quotes" />
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip" android:layout_marginBottom="55.0dip">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:id="@id/pic" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <ProgressBar android:layout_gravity="center" android:id="@id/quote_waitbar" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+            </FrameLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="4.0">
+                    <TextView android:textSize="40.0dip" android:textColor="@color/black" android:gravity="center_horizontal" android:id="@id/day" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_marginTop="10.0dip" android:text="" />
+                    <TextView android:textColor="@color/gray" android:gravity="center_horizontal" android:id="@id/month" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="20.0dip" android:layout_weight="1.0">
+                    <TextView android:textSize="18.0sp" android:textColor="@color/black" android:id="@id/content" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:text="" android:singleLine="false" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="20.0dip" />
+                    <TextView android:textSize="12.0sp" android:textColor="@color/gray" android:gravity="right" android:id="@id/from" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:text="" android:singleLine="false" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <Button android:textSize="18.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="bottom|center" android:id="@id/share" android:background="@drawable/btn_quote_share_color" android:layout_width="130.0dip" android:layout_height="45.0dip" android:layout_marginBottom="10.0dip" android:text="分享" />
+</FrameLayout>

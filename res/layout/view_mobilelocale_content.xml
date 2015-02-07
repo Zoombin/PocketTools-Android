@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="320.0dip" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip">
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="left|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/locale_company" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/locale_company" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="中国电信" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip">
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="left|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/locale_cardtype" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/locale_cardtype" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="中国电信" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip">
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="left|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/locale_location" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/locale_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="中国电信" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip">
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="left|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/locale_area_num" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/locale_area_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="中国电信" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip">
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="left|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/locale_post_num" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/locale_post_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="中国电信" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

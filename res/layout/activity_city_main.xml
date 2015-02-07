@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:layout_gravity="top" android:id="@id/actionBar" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <TextView android:textSize="24.0sp" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/txtTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="选择城市" />
+            <FrameLayout android:layout_gravity="top|left|center" android:id="@id/btn_cancel" android:layout_width="90.0dip" android:layout_height="48.0dip">
+                <Button android:layout_gravity="left|center" android:id="@id/btn_back" android:background="@drawable/btn_nav_back" android:clickable="false" android:layout_width="44.0dip" android:layout_height="44.0dip" />
+            </FrameLayout>
+        </FrameLayout>
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ListView android:layout_gravity="center" android:id="@id/country_lvcountry" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@color/listview_selected_color" android:cacheColorHint="#00000000" android:divider="@null" />
+            <TextView android:textSize="30.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/dialog" android:background="@drawable/city_dailog_background" android:visibility="invisible" android:layout_width="80.0dip" android:layout_height="80.0dip" />
+            <com.fotoable.helpr.city.SideBar android:layout_gravity="right|center" android:id="@id/sidrbar" android:layout_width="30.0dip" android:layout_height="fill_parent" android:layout_marginRight="4.0dip" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/actionBar" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <FrameLayout android:layout_gravity="top|left|center" android:id="@id/btn_cancel" android:layout_width="90.0dip" android:layout_height="48.0dip">
+                <Button android:layout_gravity="left|center" android:id="@id/btn_back" android:background="@drawable/btn_nav_back" android:clickable="false" android:layout_width="44.0dip" android:layout_height="44.0dip" />
+            </FrameLayout>
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="140.0dip">
+            <com.fotoable.helpr.commonview.AutoResizeTextView android:textSize="50.0sp" android:textColor="@color/white" android:ellipsize="start" android:gravity="right|center" android:id="@id/input" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" android:layout_weight="1.0" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:gravity="bottom|right|center" android:id="@id/mem" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="3.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/calulator_function_frist" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="5.0dip" android:layout_weight="5.0">
+            <Button android:textSize="24.0sp" android:textColor="@color/white" android:id="@id/log" android:background="@drawable/btn_calculator_function_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="log" android:layout_weight="1.0" />
+            <Button android:textSize="24.0sp" android:textColor="@color/white" android:id="@id/ln" android:background="@drawable/btn_calculator_function_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="ln" android:layout_weight="1.0" />
+            <FrameLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:textSize="24.0sp" android:textColor="@color/transparent" android:id="@id/sqrt" android:background="@drawable/btn_calculator_function_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="√" />
+                <ImageView android:layout_gravity="center" android:background="@drawable/gr_cal_xlogn" android:clickable="false" android:layout_width="60.0dip" android:layout_height="32.0dip" android:scaleType="centerCrop" />
+            </FrameLayout>
+            <FrameLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:textSize="24.0sp" android:textColor="@color/transparent" android:id="@id/square" android:background="@drawable/btn_calculator_function_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="^" />
+                <ImageView android:layout_gravity="center" android:background="@drawable/gr_cal_xton" android:clickable="false" android:layout_width="60.0dip" android:layout_height="32.0dip" android:scaleType="centerCrop" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/calulator_function_second" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="5.0">
+            <Button android:textSize="24.0sp" android:textColor="@color/white" android:id="@id/factorial" android:background="@drawable/btn_calculator_function_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="n!" android:layout_weight="1.0" />
+            <Button android:textSize="24.0sp" android:textColor="@color/white" android:id="@id/sin" android:background="@drawable/btn_calculator_function_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="sin" android:layout_weight="1.0" />
+            <Button android:textSize="24.0sp" android:textColor="@color/white" android:id="@id/cos" android:background="@drawable/btn_calculator_function_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="cos" android:layout_weight="1.0" />
+            <Button android:textSize="24.0sp" android:textColor="@color/white" android:id="@id/tan" android:background="@drawable/btn_calculator_function_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="tan" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/calulator_keyboard_frist" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="5.0">
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/c" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="C" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/left" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="(" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/right" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text=")" android:layout_weight="1.0" />
+            <FrameLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:textSize="30.0sp" android:textColor="@color/transparent" android:id="@id/bksp" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="Del" />
+                <ImageView android:layout_gravity="center" android:background="@drawable/gr_cal_del" android:clickable="false" android:layout_width="60.0dip" android:layout_height="40.0dip" android:scaleType="centerCrop" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/calulator_keyboard_second" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="5.0">
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/seven" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/seven" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/eight" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/eight" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/nine" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/nine" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/mul" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="×" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/calulator_keyboard_third" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="5.0">
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/four" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/four" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/five" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/five" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/six" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/six" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/divide" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/divide" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/calulator_keyboard_fourth" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="5.0">
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/one" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/one" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/two" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/two" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/three" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/three" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/sub" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/sub" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/calulator_keyboard_five" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="5.0">
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/zero" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/zero" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/dot" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/point" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/equal" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/equal" android:layout_weight="1.0" />
+            <Button android:textSize="30.0sp" android:textColor="@color/white" android:id="@id/add" android:background="@drawable/btn_calculator_number_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/add" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

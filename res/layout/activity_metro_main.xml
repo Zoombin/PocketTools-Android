@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <FrameLayout android:focusable="false" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip">
+        <com.fotoable.library.imagezoom.ImageViewTouch android:id="@id/img_metro" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/ly_citys" android:background="#bfffffff" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dip">
+        <LinearLayout android:layout_gravity="top|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="北京" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="上海" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="广州" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="深圳" android:layout_weight="4.0" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="香港" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="南京" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="成都" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="重庆" android:layout_weight="4.0" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="天津" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="沈阳" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="杭州" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="武汉" android:layout_weight="4.0" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="苏州" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="大连" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="长春" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="西安" android:layout_weight="4.0" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="昆明" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="佛山" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="郑州" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="哈尔滨" android:layout_weight="4.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="top" android:id="@id/actionBar" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <TextView android:textSize="24.0sp" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/txtTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        <FrameLayout android:layout_gravity="top|left|center" android:id="@id/btn_cancel" android:layout_width="90.0dip" android:layout_height="48.0dip">
+            <Button android:layout_gravity="left|center" android:id="@id/btn_back" android:background="@drawable/btn_nav_back" android:layout_width="44.0dip" android:layout_height="44.0dip" />
+        </FrameLayout>
+        <FrameLayout android:layout_gravity="top|right|center" android:id="@id/btn_save" android:layout_width="80.0dip" android:layout_height="48.0dip">
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="right|center" android:id="@id/txtCitys" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="13.0dip" android:text="城市" />
+        </FrameLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="bottom|center" android:id="@id/btn_search" android:visibility="visible" android:layout_width="80.0dip" android:layout_height="44.0dip" android:layout_marginBottom="10.0dip">
+        <TextView android:textSize="18.0sp" android:textColor="@color/red" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="计价查询" />
+    </FrameLayout>
+</FrameLayout>

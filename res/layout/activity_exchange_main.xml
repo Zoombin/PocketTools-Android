@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:windowSoftInputMode="adjustPan"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:isScrollContainer="false">
+        <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+        <ListView android:scrollbarThumbVertical="@drawable/custom_scroll_style" android:id="@id/exchange_main_listveiw" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@color/listview_selected_color" android:cacheColorHint="#00000000" android:divider="@color/listview_divider_color" android:dividerHeight="1.0px" android:headerDividersEnabled="false" android:footerDividersEnabled="true" />
+    </LinearLayout>
+    <RelativeLayout android:layout_gravity="bottom" android:id="@id/ly_input" android:background="@drawable/gr_textbg" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:windowSoftInputMode="adjustPan">
+        <Button android:id="@id/btn_input_ok" android:background="@drawable/btn_textbutton" android:layout_width="60.0dip" android:layout_height="40.0dip" android:layout_marginRight="10.0dip" android:text="确定" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <com.fotoable.helpr.commonview.ClearableEditText android:textSize="18.0sp" android:id="@id/txt_input" android:background="@drawable/input_inner_bg" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="5.0dip" android:singleLine="true" android:digits="0123456789." android:layout_toLeftOf="@id/btn_input_ok" android:layout_centerVertical="true" android:inputType="number" />
+    </RelativeLayout>
+</FrameLayout>

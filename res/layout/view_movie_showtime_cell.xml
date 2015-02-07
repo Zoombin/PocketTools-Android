@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/content" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <LinearLayout android:layout_gravity="top|left|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="36.0dip" android:layout_marginLeft="15.0dip">
+            <RelativeLayout android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <TextView android:textSize="22.0sp" android:id="@id/txt_begintime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="11:40" android:singleLine="true" android:layout_alignParentLeft="true" android:layout_centerVertical="true" style="@style/text_18_white" />
+                <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/txt_cinema_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="英文数字3D" android:singleLine="true" android:layout_centerInParent="true" style="@style/text_18_white" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="26.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="33.0dip" android:layout_marginRight="15.0dip">
+            <RelativeLayout android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="14.0sp" android:gravity="left|center" android:id="@id/txt_overtime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="散场 01：20" android:singleLine="true" style="@style/text_12_little_gray" />
+                <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/txt_room" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="7号厅" android:singleLine="true" android:layout_centerInParent="true" style="@style/text_18_white" />
+            </RelativeLayout>
+        </LinearLayout>
+        <TextView android:textSize="22.0dip" android:gravity="right|center" android:layout_gravity="right|center" android:id="@id/txt_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:text="45" style="@style/text_18_white" />
+    </FrameLayout>
+</FrameLayout>

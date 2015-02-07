@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="10.0dip">
+            <com.fotoable.helpr.commonview.ClearableEditText android:textSize="16.0sp" android:textColor="@color/white" android:textColorHint="@color/default_texthint_color" android:layout_gravity="left" android:id="@id/txt_movie_search" android:background="@color/txt_input_white_bgcolor" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:hint="输入影院或地点进行搜索" android:inputType="text" android:imeOptions="actionSearch" />
+        </FrameLayout>
+        <TextView android:textSize="14.0sp" android:textColor="@color/white" android:gravity="left|center" android:id="@id/wordLabel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="附近影院" />
+        <FrameLayout android:background="@color/listview_divider_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <ListView android:scrollbarThumbVertical="@drawable/custom_scroll_style" android:id="@id/cinema_listveiw" android:clipChildren="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/color_list_select" android:cacheColorHint="#00000000" android:divider="@color/listview_divider_color" android:dividerHeight="1.0px" android:headerDividersEnabled="false" android:footerDividersEnabled="true" android:isScrollContainer="false" />
+    </LinearLayout>
+</FrameLayout>

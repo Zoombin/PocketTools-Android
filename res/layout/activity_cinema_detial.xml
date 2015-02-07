@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+        <ListView android:scrollbarThumbVertical="@drawable/custom_scroll_style" android:id="@id/cinema_movie_listveiw" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@color/transparent" android:cacheColorHint="#00000000" android:divider="@color/listview_divider_color" />
+    </LinearLayout>
+</FrameLayout>

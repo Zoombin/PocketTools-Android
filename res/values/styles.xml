@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="drop_down_list_header_progress_bar_style">
+        <item name="android:maxHeight">@dimen/drop_down_list_header_progress_bar_height</item>
+        <item name="android:minHeight">@dimen/drop_down_list_header_progress_bar_height</item>
+    </style>
+    <style name="drop_down_list_footer_progress_bar_style">
+        <item name="android:maxHeight">@dimen/drop_down_list_footer_progress_bar_height</item>
+        <item name="android:minHeight">@dimen/drop_down_list_footer_progress_bar_height</item>
+    </style>
+    <style name="drop_down_list_header_font_style">
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textColor">@color/drop_down_list_header_font_color</item>
+    </style>
+    <style name="drop_down_list_header_second_font_style">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textColor">@color/drop_down_list_header_second_font_color</item>
+    </style>
+    <style name="drop_down_list_footer_font_style">
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textColor">@color/drop_down_list_footer_font_color</item>
+    </style>
+    <style name="Theme.PageIndicatorDefaults" parent="@*android:style/Theme">
+        <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator</item>
+        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
+    </style>
+    <style name="Widget" />
+    <style name="Widget.TabPageIndicator" parent="@style/Widget">
+        <item name="android:textAppearance">@style/TextAppearance.TabPageIndicator</item>
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/vpi__tab_indicator</item>
+        <item name="android:paddingLeft">22.0dip</item>
+        <item name="android:paddingTop">12.0dip</item>
+        <item name="android:paddingRight">22.0dip</item>
+        <item name="android:paddingBottom">12.0dip</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="TextAppearance.TabPageIndicator" parent="@style/Widget">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/vpi__dark_theme</item>
+    </style>
+    <style name="Widget.IconPageIndicator" parent="@style/Widget">
+        <item name="android:layout_marginLeft">6.0dip</item>
+        <item name="android:layout_marginRight">6.0dip</item>
+    </style>
+    <style name="AppBaseTheme" parent="@*android:style/Theme.Light" />
+    <style name="AppTheme" parent="@style/AppBaseTheme" />
+    <style name="Switch">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">#00ffffff</item>
+        <item name="thumb">@drawable/switch_btn_slipper</item>
+        <item name="track">@drawable/switch_btn</item>
+        <item name="textOn">@string/switch_on</item>
+        <item name="textOff">@string/switch_off</item>
+        <item name="thumbTextPadding">16.0dip</item>
+        <item name="switchTextAppearance">@*android:style/TextAppearance.Small</item>
+        <item name="switchMinWidth">80.0dip</item>
+        <item name="switchPadding">10.0dip</item>
+    </style>
+    <style name="datepicker_dialog_style" parent="@*android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_out_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_in_bottom</item>
+    </style>
+    <style name="FullscreenTheme" parent="@*android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="metaButtonBarStyle">@style/ButtonBar</item>
+        <item name="metaButtonBarButtonStyle">@style/ButtonBarButton</item>
+    </style>
+    <style name="ButtonBar">
+        <item name="android:background">@*android:drawable/bottom_bar</item>
+        <item name="android:paddingLeft">2.0dip</item>
+        <item name="android:paddingTop">5.0dip</item>
+        <item name="android:paddingRight">2.0dip</item>
+        <item name="android:paddingBottom">0.0dip</item>
+    </style>
+    <style name="ButtonBarButton" />
+    <style name="AnimBottom" parent="@*android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_up_in1</item>
+        <item name="android:windowExitAnimation">@anim/push_up_outbottom1</item>
+    </style>
+    <style name="text_18_white">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="text_20_white">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="text_22_white">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="text_25_white">
+        <item name="android:textSize">25.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="text_25_white_bold">
+        <item name="android:textSize">25.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="text_16_white">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="text_14_white">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="text_14_little_gray">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/little_gray</item>
+    </style>
+    <style name="text_12_little_gray">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/little_gray</item>
+    </style>
+    <style name="Dialog" parent="@*android:style/Theme.Dialog">
+        <item name="android:windowBackground">@*android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:background">#00000000</item>
+    </style>
+    <style name="item_content">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="text_12_white">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="HelprMainStyle" parent="@*android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowAnimationStyle">@style/HelprMainAnimateStyle</item>
+    </style>
+    <style name="HelprMainAnimateStyle">
+        <item name="android:activityCloseEnterAnimation">@anim/hold</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+    </style>
+    <style name="NotificationText" parent="@*android:style/TextAppearance.StatusBar.EventContent" />
+    <style name="NotificationTitle" parent="@*android:style/TextAppearance.StatusBar.EventContent.Title" />
+    <style name="jokeitemtext" parent="@*android:style/Widget.Holo.Light.TextView">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">5.0dip</item>
+        <item name="android:minLines">3</item>
+    </style>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/color_gradient_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="60.0dip">
+        <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="left|center" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/memory_info" />
+        <com.fotoable.helpr.memorymanager.MemoryBarView android:id="@id/memory_info" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="left|center" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/cpu_info" />
+        <com.fotoable.helpr.memorymanager.MemoryBarView android:id="@id/cpu_info" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="left|center" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/space_info" />
+        <com.fotoable.helpr.memorymanager.MemoryBarView android:id="@id/space_info" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+            <TextView android:textSize="12.0sp" android:textColor="@color/transparent_50" android:layout_gravity="left|center" android:id="@id/space_has_used" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cpu_info" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/transparent_50" android:layout_gravity="right|center" android:id="@id/space_rest" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cpu_info" />
+        </FrameLayout>
+        <TextView android:textSize="12.0sp" android:textColor="@color/transparent_50" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/memory_tip" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_margin="10.0dip" android:layout_weight="1.0">
+            <Button android:textSize="24.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="bottom" android:id="@id/memory_one_key_clear" android:background="@drawable/bg_memory_one_key_btn" android:layout_width="fill_parent" android:layout_height="70.0dip" android:text="@string/memory_one_key_clear" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

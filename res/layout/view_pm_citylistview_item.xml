@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/ly_item_view" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <FrameLayout android:layout_gravity="left|center" android:layout_width="200.0dip" android:layout_height="fill_parent">
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:gravity="left" android:layout_gravity="bottom|left|center" android:id="@id/city_label" android:layout_width="wrap_content" android:layout_height="25.0dip" android:layout_marginBottom="20.0dip" android:text="北京" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:gravity="left" android:layout_gravity="bottom|left|center" android:id="@id/level_label" android:layout_width="90.0dip" android:layout_height="20.0dip" android:text="空气良好" />
+        </FrameLayout>
+        <TextView android:textSize="30.0sp" android:textColor="@color/white" android:gravity="right" android:layout_gravity="right|center" android:id="@id/aqi_label" android:layout_width="80.0dip" android:layout_height="wrap_content" android:text="40" />
+    </FrameLayout>
+</LinearLayout>

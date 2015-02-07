@@ -6,44 +6,76 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="21" />
+        android:targetSdkVersion="19" />
 
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
 
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
-        android:normalScreens="false"
-        android:resizeable="true"
-        android:smallScreens="true" />
+        android:normalScreens="true"
+        android:smallScreens="false"
+        android:xlargeScreens="true" />
 
     <application
-        android:name="com.juhe.pockettools.JuheApplication"
+        android:name="com.juhe.pockettools.HelprApplication"
         android:allowBackup="true"
-        android:hardwareAccelerated="false"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:theme="@android:style/Theme.Light.NoTitleBar" >
         <meta-data
             android:name="com.thinkland.juheapi.openid"
             android:value="JH3d10c81c2da5d095c11b5537360a47ac" />
 
         <activity
-            android:name="com.juhe.pockettools.ui.MainActivity"
-            android:launchMode="singleTask"
+            android:name=".home.SplashAcitivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" >
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".home.HelprActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>

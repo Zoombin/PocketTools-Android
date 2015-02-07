@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="320.0dip" android:layout_height="204.5dip">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="60.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/img_constelltion" android:background="@drawable/gr_aquarius" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" />
+            <FrameLayout android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip">
+                <TextView android:textSize="20.0sp" android:textColor="@color/white" android:id="@id/txt_constelltion" android:layout_width="80.0dip" android:layout_height="wrap_content" android:text="金牛座" />
+                <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="bottom" android:id="@id/txt_date_range" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="80.0dip" android:text="4.20-5.20" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="22.0dip" android:layout_marginLeft="10.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/constelltion_composite_index" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/item_composite_index" android:layout_width="50.0dip" android:layout_height="wrap_content" android:text="" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/constelltion_match_index" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/item_match_index" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/constelltion_luky_number" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/item_luky_num" android:layout_width="50.0dip" android:layout_height="wrap_content" android:text="" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/constelltion_luky_color" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/item_luky_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="15.0dip">
+            <FrameLayout android:layout_gravity="center_vertical" android:layout_width="67.5dip" android:layout_height="67.5dip">
+                <com.fotoable.helpr.constelltion.ConstelltionItemView android:layout_gravity="center_vertical" android:id="@id/img_health" android:layout_width="67.5dip" android:layout_height="67.5dip" />
+                <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dip" android:text="@string/constelltion_health" />
+            </FrameLayout>
+            <FrameLayout android:layout_gravity="center_vertical" android:layout_width="67.5dip" android:layout_height="67.5dip" android:layout_marginLeft="10.0dip">
+                <com.fotoable.helpr.constelltion.ConstelltionItemView android:layout_gravity="center_vertical" android:id="@id/img_love" android:layout_width="67.5dip" android:layout_height="67.5dip" />
+                <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dip" android:text="@string/constelltion_love" />
+            </FrameLayout>
+            <FrameLayout android:layout_gravity="center_vertical" android:layout_width="67.5dip" android:layout_height="67.5dip" android:layout_marginLeft="10.0dip">
+                <com.fotoable.helpr.constelltion.ConstelltionItemView android:layout_gravity="center_vertical" android:id="@id/img_money" android:layout_width="67.5dip" android:layout_height="67.5dip" />
+                <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dip" android:text="@string/constelltion_money" />
+            </FrameLayout>
+            <FrameLayout android:layout_gravity="center_vertical" android:layout_width="67.5dip" android:layout_height="67.5dip" android:layout_marginLeft="10.0dip">
+                <com.fotoable.helpr.constelltion.ConstelltionItemView android:layout_gravity="center_vertical" android:id="@id/img_work" android:layout_width="67.5dip" android:layout_height="67.5dip" />
+                <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dip" android:text="@string/constelltion_work" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/color_gradient_bg" android:scaleType="centerCrop" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <Button android:layout_gravity="left|center" android:id="@id/notepad_cancel" android:background="@drawable/btn_back_w" android:layout_width="45.0dip" android:layout_height="45.0dip" />
+        <TextView android:textSize="24.0sp" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/bar_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/notepad_selectbg" />
+    </FrameLayout>
+    <ListView android:scrollbarThumbVertical="@drawable/custom_scroll_style" android:id="@id/notepad_selectbg_list" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip" android:listSelector="@drawable/color_list_select" android:cacheColorHint="#00000000" android:divider="#00f0f0f0" android:dividerHeight="0.0px" android:headerDividersEnabled="true" android:footerDividersEnabled="true" android:isScrollContainer="false" />
+</FrameLayout>

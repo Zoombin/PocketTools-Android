@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="drop_down_list_header_padding_top">12.0dip</dimen>
+    <dimen name="drop_down_list_header_padding_bottom">15.0dip</dimen>
+    <dimen name="drop_down_list_header_release_min_distance">20.0dip</dimen>
+    <dimen name="drop_down_list_header_progress_bar_height">36.0dip</dimen>
+    <dimen name="drop_down_list_footer_progress_bar_height">36.0dip</dimen>
+    <dimen name="drop_down_list_footer_button_margin_left">8.0dip</dimen>
+    <dimen name="drop_down_list_footer_button_height">48.0dip</dimen>
+    <dimen name="default_circle_indicator_radius">3.0dip</dimen>
+    <dimen name="default_circle_indicator_stroke_width">1.0dip</dimen>
+    <dimen name="default_line_indicator_line_width">12.0dip</dimen>
+    <dimen name="default_line_indicator_gap_width">4.0dip</dimen>
+    <dimen name="default_line_indicator_stroke_width">1.0dip</dimen>
+    <dimen name="default_title_indicator_clip_padding">4.0dip</dimen>
+    <dimen name="default_title_indicator_footer_line_height">2.0dip</dimen>
+    <dimen name="default_title_indicator_footer_indicator_height">4.0dip</dimen>
+    <dimen name="default_title_indicator_footer_indicator_underline_padding">20.0dip</dimen>
+    <dimen name="default_title_indicator_footer_padding">7.0dip</dimen>
+    <dimen name="default_title_indicator_text_size">15.0dip</dimen>
+    <dimen name="default_title_indicator_title_padding">5.0dip</dimen>
+    <dimen name="default_title_indicator_top_padding">7.0dip</dimen>
+    <dimen name="activity_horizontal_margin">16.0dip</dimen>
+    <dimen name="activity_vertical_margin">16.0dip</dimen>
+    <dimen name="layout_width">250.0px</dimen>
+    <dimen name="btn_con_length">65.0px</dimen>
+    <dimen name="btn_con_marginLeft">55.0px</dimen>
+    <dimen name="btn_length">50.0px</dimen>
+    <dimen name="listview_item_title_size">18.0sp</dimen>
+    <dimen name="listview_item_detail_size">12.0sp</dimen>
+</resources>

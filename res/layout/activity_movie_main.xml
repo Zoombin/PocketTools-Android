@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/content" android:background="@drawable/color_gradient_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <Button android:layout_gravity="left|center" android:id="@id/bar_cancel" android:background="@drawable/btn_back_w" android:layout_width="44.0dip" android:layout_height="44.0dip" />
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="120.0dip" android:layout_height="wrap_content">
+            <Button android:textSize="12.0sp" android:textColor="@color/txt_train_btn_search" android:id="@id/btn_search_cinema" android:background="@drawable/bg_train_btn_search" android:layout_width="60.0dip" android:layout_height="30.0dip" android:text="@string/cinema" />
+            <Button android:textSize="12.0sp" android:textColor="@color/txt_train_btn_search" android:id="@id/btn_search_moive" android:background="@drawable/bg_train_btn_search" android:layout_width="60.0dip" android:layout_height="30.0dip" android:text="@string/online_movie" />
+        </LinearLayout>
+        <FrameLayout android:layout_gravity="right|center" android:id="@id/progress_contaienr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip">
+            <ProgressBar android:layout_gravity="center" android:layout_width="25.0dip" android:layout_height="25.0dip" style="?android:attr/progressBarStyleLarge" />
+        </FrameLayout>
+        <FrameLayout android:layout_gravity="bottom" android:background="@color/topbar_divider_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="51.0dip">
+        <com.fotoable.helpr.movie.MovieOnlineView android:id="@id/movie_online" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.fotoable.helpr.movie.CinemaView android:id="@id/movie_cinema" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+</FrameLayout>

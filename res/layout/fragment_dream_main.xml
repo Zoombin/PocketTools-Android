@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="60.0dip">
+            <EditText android:textSize="18.0sp" android:textColor="@color/white" android:textColorHint="@color/default_texthint_color" android:gravity="left|center" android:id="@id/txtiput" android:background="@color/txt_input_white_bgcolor" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:hint="你梦到了什么" android:ems="10" android:singleLine="true" android:imeOptions="actionDone">
+                <requestFocus />
+            </EditText>
+        </FrameLayout>
+        <ListView android:scrollbarThumbVertical="@drawable/custom_scroll_style" android:id="@id/dream_main_listveiw" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@color/listview_selected_color" android:cacheColorHint="#00000000" android:divider="@null" />
+    </LinearLayout>
+</FrameLayout>

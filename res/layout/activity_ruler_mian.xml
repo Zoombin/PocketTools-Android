@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <FrameLayout android:id="@id/ly_rulers" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:layout_gravity="bottom|center" android:layout_width="wrap_content" android:layout_height="120.0dip" android:layout_marginBottom="20.0dip">
+        <Button android:id="@id/btn_swith" android:background="@drawable/btn_ruler_switch" android:layout_width="100.0dip" android:layout_height="33.0dip" />
+        <Button android:layout_gravity="bottom|center" android:id="@id/btn_close" android:background="@drawable/btn_ruler_close" android:layout_width="60.0dip" android:layout_height="60.0dip" />
+    </FrameLayout>
+</FrameLayout>

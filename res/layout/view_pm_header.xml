@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="310.0dip">
+        <LinearLayout android:layout_gravity="top|center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="70.0dip">
+            <TextView android:textSize="88.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/txt_pm_value" android:layout_width="wrap_content" android:layout_height="90.0dip" android:layout_marginBottom="15.0dip" android:text="0" android:singleLine="true" />
+            <FrameLayout android:layout_gravity="top|center" android:id="@id/pm_state_container" android:background="@drawable/bg_pm25_main_txt" android:layout_width="100.0dip" android:layout_height="30.0dip">
+                <com.fotoable.helpr.commonview.FZKTTextView android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/txt_pm_state" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </FrameLayout>
+        </LinearLayout>
+        <FrameLayout android:layout_gravity="bottom|center" android:layout_width="280.0dip" android:layout_height="30.0dip">
+            <FrameLayout android:id="@id/ly_1" android:layout_width="70.0dip" android:layout_height="30.0dip">
+                <TextView android:textSize="12.0sp" android:textColor="@color/white" android:gravity="right|center" android:layout_gravity="left|center" android:layout_width="36.0dip" android:layout_height="wrap_content" android:text="PM2.5" />
+                <TextView android:textColor="@color/white" android:gravity="center" android:layout_gravity="left|center" android:id="@id/lbl_pm25" android:background="@drawable/bg_pm25_pervalue" android:layout_width="30.0dip" android:layout_height="18.0dip" android:layout_marginLeft="38.0dip" android:text="" />
+            </FrameLayout>
+            <FrameLayout android:layout_gravity="top|left|center" android:id="@id/ly_2" android:layout_width="70.0dip" android:layout_height="30.0dip" android:layout_marginLeft="70.0dip">
+                <TextView android:textSize="12.0sp" android:textColor="@color/white" android:gravity="right" android:layout_gravity="left|center" android:layout_width="36.0dip" android:layout_height="wrap_content" android:text="PM10" />
+                <TextView android:textColor="@color/white" android:gravity="center" android:layout_gravity="left|center" android:id="@id/lbl_pm10" android:background="@drawable/bg_pm25_pervalue" android:layout_width="30.0dip" android:layout_height="18.0dip" android:layout_marginLeft="38.0dip" android:text="" />
+            </FrameLayout>
+            <FrameLayout android:layout_gravity="top|left|center" android:id="@id/ly_3" android:layout_width="70.0dip" android:layout_height="30.0dip" android:layout_marginLeft="140.0dip">
+                <TextView android:textSize="12.0sp" android:textColor="@color/white" android:gravity="right" android:layout_gravity="left|center" android:layout_width="28.0dip" android:layout_height="wrap_content" android:text="SO" />
+                <TextView android:textSize="8.0sp" android:textColor="@color/white" android:gravity="left" android:layout_gravity="bottom|left|center" android:layout_width="8.0dip" android:layout_height="wrap_content" android:layout_marginLeft="28.0dip" android:layout_marginBottom="7.0dip" android:text="2" />
+                <TextView android:textColor="@color/white" android:gravity="center" android:layout_gravity="left|center" android:id="@id/lbl_SO" android:background="@drawable/bg_pm25_pervalue" android:layout_width="30.0dip" android:layout_height="18.0dip" android:layout_marginLeft="36.0dip" android:text="" />
+            </FrameLayout>
+            <FrameLayout android:layout_gravity="top|left|center" android:id="@id/ly_4" android:layout_width="70.0dip" android:layout_height="30.0dip" android:layout_marginLeft="210.0dip">
+                <TextView android:textSize="12.0sp" android:textColor="@color/white" android:gravity="right" android:layout_gravity="left|center" android:layout_width="28.0dip" android:layout_height="wrap_content" android:text="NO" />
+                <TextView android:textSize="8.0sp" android:textColor="@color/white" android:gravity="left" android:layout_gravity="bottom|left|center" android:layout_width="8.0dip" android:layout_height="wrap_content" android:layout_marginLeft="28.0dip" android:layout_marginBottom="7.0dip" android:text="2" />
+                <TextView android:textColor="@color/white" android:gravity="center" android:layout_gravity="left|center" android:id="@id/lbl_NO" android:background="@drawable/bg_pm25_pervalue" android:layout_width="30.0dip" android:layout_height="18.0dip" android:layout_marginLeft="36.0dip" android:text="" />
+            </FrameLayout>
+        </FrameLayout>
+    </FrameLayout>
+    <View android:background="@color/listview_divider_color" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_marginTop="5.0dip" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="12.0sp" android:textColor="@color/white" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="过去七天空气质量" />
+        <com.fotoable.helpr.commonview.CircleProgressBar android:layout_gravity="center" android:id="@id/circle_progress_bar" android:layout_width="80.0dip" android:layout_height="80.0dip" />
+        <com.github.mikephil.charting.charts.BarChart android:id="@id/chartbarpm" android:layout_width="fill_parent" android:layout_height="120.0dip" android:layout_marginTop="5.0dip" />
+    </FrameLayout>
+    <View android:background="@color/listview_divider_color" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_marginTop="10.0dip" />
+    <TextView android:textSize="12.0sp" android:textColor="@color/white" android:gravity="left" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_marginTop="10.0dip" android:text="监测点数据" />
+</LinearLayout>

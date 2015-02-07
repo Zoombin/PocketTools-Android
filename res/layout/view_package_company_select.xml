@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:layout_gravity="center_horizontal" android:layout_width="300.0dip" android:layout_height="50.0dip">
+            <Button android:textColor="@color/white" android:id="@id/btn_ems" android:background="@drawable/gr_package_select_res" android:layout_width="55.0dip" android:layout_height="40.0dip" android:layout_marginTop="10.0dip" android:text="@string/package_company_ems" />
+            <Button android:textColor="@color/white" android:id="@id/btn_sf" android:background="@drawable/gr_package_select_res" android:layout_width="55.0dip" android:layout_height="40.0dip" android:layout_marginLeft="82.0dip" android:layout_marginTop="10.0dip" android:text="@string/package_company_sf" />
+            <Button android:textColor="@color/white" android:id="@id/btn_st" android:background="@drawable/gr_package_select_res" android:layout_width="55.0dip" android:layout_height="40.0dip" android:layout_marginLeft="163.0dip" android:layout_marginTop="10.0dip" android:text="@string/package_company_st" />
+            <Button android:textColor="@color/white" android:id="@id/btn_yt" android:background="@drawable/gr_package_select_res" android:layout_width="55.0dip" android:layout_height="40.0dip" android:layout_marginLeft="245.0dip" android:layout_marginTop="10.0dip" android:text="@string/package_company_yt" />
+        </FrameLayout>
+        <FrameLayout android:layout_gravity="center_horizontal" android:layout_width="300.0dip" android:layout_height="50.0dip">
+            <Button android:textColor="@color/white" android:id="@id/btn_yd" android:background="@drawable/gr_package_select_res" android:layout_width="55.0dip" android:layout_height="40.0dip" android:layout_marginBottom="10.0dip" android:text="@string/package_company_yd" />
+            <Button android:textColor="@color/white" android:id="@id/btn_tt" android:background="@drawable/gr_package_select_res" android:layout_width="55.0dip" android:layout_height="40.0dip" android:layout_marginLeft="82.0dip" android:layout_marginBottom="10.0dip" android:text="@string/package_company_tt" />
+            <Button android:textColor="@color/white" android:id="@id/btn_zt" android:background="@drawable/gr_package_select_res" android:layout_width="55.0dip" android:layout_height="40.0dip" android:layout_marginLeft="163.0dip" android:layout_marginBottom="10.0dip" android:text="@string/package_company_zt" />
+            <Button android:textColor="@color/white" android:id="@id/btn_ht" android:background="@drawable/gr_package_select_res" android:layout_width="55.0dip" android:layout_height="40.0dip" android:layout_marginLeft="245.0dip" android:layout_marginBottom="10.0dip" android:text="@string/package_company_ht" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

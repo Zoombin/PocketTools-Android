@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <GridView android:scrollbarThumbVertical="@drawable/rcolor_webview_scrollba" android:id="@id/gridview" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip" android:listSelector="@*android:color/transparent" android:horizontalSpacing="2.0dip" android:verticalSpacing="2.0dip" android:numColumns="3" />
+    <FrameLayout android:id="@id/ly_mask" android:background="#7f000000" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip" />
+    <FrameLayout android:id="@id/ly_paper_types" android:background="#efffffff" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dip">
+        <LinearLayout android:layout_gravity="top|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <Button android:textColor="@color/black" android:tag="0" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="全部" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:tag="18" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="风景" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:tag="4" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="美女" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:tag="1" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="明星" android:layout_weight="4.0" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <Button android:textColor="@color/black" android:tag="10" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="创意" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:tag="26" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="名车" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:tag="2" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="影视" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:tag="19" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="游戏" android:layout_weight="4.0" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <Button android:textColor="@color/black" android:layout_gravity="left|center" android:tag="24" android:background="@drawable/btn_transparent_bg" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="动漫" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:visibility="invisible" android:clickable="false" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="动漫" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:visibility="invisible" android:clickable="false" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="动漫" android:layout_weight="4.0" />
+                <Button android:textColor="@color/black" android:background="@drawable/btn_transparent_bg" android:visibility="invisible" android:clickable="false" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_margin="5.0dip" android:text="动漫" android:layout_weight="4.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="top" android:id="@id/actionBar" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <TextView android:textSize="24.0sp" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/txtTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="手机壁纸" />
+        <FrameLayout android:layout_gravity="top|left|center" android:id="@id/btn_cancel" android:layout_width="90.0dip" android:layout_height="48.0dip">
+            <Button android:layout_gravity="left|center" android:id="@id/btn_back" android:background="@drawable/btn_nav_back" android:clickable="false" android:layout_width="44.0dip" android:layout_height="44.0dip" />
+        </FrameLayout>
+        <FrameLayout android:layout_gravity="top|right|center" android:id="@id/btn_save" android:layout_width="80.0dip" android:layout_height="48.0dip">
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="right|center" android:id="@id/txtCitys" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="13.0dip" android:text="分类" />
+        </FrameLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="center" android:id="@id/ly_process" android:background="@drawable/bg_process_dailog" android:visibility="visible" android:layout_width="160.0dip" android:layout_height="80.0dip">
+        <ProgressBar android:layout_gravity="left|center" android:id="@id/loading" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginLeft="15.0dip" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="left|center" android:clickable="false" android:layout_width="wrap_content" android:layout_height="20.0dip" android:layout_marginLeft="90.0dip" android:text="加载中" />
+    </FrameLayout>
+</FrameLayout>

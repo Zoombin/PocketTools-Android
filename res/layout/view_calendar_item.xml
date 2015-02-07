@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/tvcontainer" android:layout_width="55.0dip" android:layout_height="55.0dip">
+        <FrameLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="19.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/tvtext" android:layout_width="wrap_content" android:layout_height="22.0dip" android:text="31" />
+            <TextView android:textSize="10.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/tvtext1" android:layout_width="wrap_content" android:layout_height="18.0dip" android:layout_marginTop="19.0dip" android:text="春节雨" />
+        </FrameLayout>
+        <ImageView android:layout_gravity="bottom|center" android:id="@id/tvimage" android:background="@drawable/bg_calendar_item_sign" android:layout_width="7.0dip" android:layout_height="7.0dip" android:layout_marginBottom="2.0dip" />
+        <ImageView android:layout_gravity="bottom" android:id="@id/gr_line" android:background="@color/listview_divider_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    </FrameLayout>
+    <TextView android:textSize="12.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/weekflag" android:visibility="gone" android:layout_width="55.0dip" android:layout_height="30.0dip" android:text="31" />
+</RelativeLayout>

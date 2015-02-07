@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.fotoable.helpr.commonview.gallery.GalleryViewPager android:id="@id/pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:layout_gravity="top" android:id="@id/actionBar" android:background="@color/transparent_black_50" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <TextView android:textSize="24.0sp" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/txtTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <FrameLayout android:layout_gravity="top|left|center" android:id="@id/btn_cancel" android:layout_width="90.0dip" android:layout_height="48.0dip">
+            <Button android:layout_gravity="left|center" android:id="@id/btn_back" android:background="@drawable/btn_nav_back" android:clickable="false" android:layout_width="44.0dip" android:layout_height="44.0dip" />
+        </FrameLayout>
+    </FrameLayout>
+    <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/ly_edit" android:background="@color/transparent_black_50" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <FrameLayout android:layout_gravity="center" android:id="@id/btn_download" android:layout_width="50.0dip" android:layout_height="fill_parent">
+                <Button android:layout_gravity="top|center" android:background="@drawable/btn_secret_save" android:clickable="false" android:layout_width="34.0dip" android:layout_height="34.0dip" />
+                <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="bottom|center" android:clickable="false" android:layout_width="wrap_content" android:layout_height="20.0dip" android:text="下载" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <FrameLayout android:layout_gravity="center" android:id="@id/btn_wallpaper" android:layout_width="80.0dip" android:layout_height="fill_parent">
+                <Button android:layout_gravity="top|center" android:background="@drawable/btn_secret_library" android:clickable="false" android:layout_width="32.0dip" android:layout_height="32.0dip" />
+                <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="bottom|center" android:clickable="false" android:layout_width="wrap_content" android:layout_height="20.0dip" android:text="设为壁纸" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout android:layout_gravity="center" android:id="@id/ly_process" android:background="@drawable/bg_process_dailog" android:visibility="gone" android:layout_width="160.0dip" android:layout_height="80.0dip">
+        <ProgressBar android:layout_gravity="left|center" android:id="@id/loading" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginLeft="15.0dip" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="left|center" android:clickable="false" android:layout_width="wrap_content" android:layout_height="20.0dip" android:layout_marginLeft="90.0dip" android:text="处理中" />
+    </FrameLayout>
+</FrameLayout>

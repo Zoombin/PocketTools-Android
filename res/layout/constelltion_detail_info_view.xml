@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="40.0dip">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/img_constelltion_detail" android:background="@drawable/gr_aquarius" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="5.0dip" />
+        <FrameLayout android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip">
+            <TextView android:textSize="20.0sp" android:textColor="@color/white" android:id="@id/txt_constelltion_detail" android:layout_width="80.0dip" android:layout_height="wrap_content" android:text="金牛座" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="bottom" android:id="@id/txt_date_range_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="80.0dip" android:text="4.20-5.20" />
+        </FrameLayout>
+    </LinearLayout>
+    <TextView android:id="@id/title_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:text="第52周运势" />
+    <TextView android:layout_width="fill_parent" android:layout_height="10.0dip" />
+    <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/title_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+    <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="top|left|center" android:layout_gravity="top|center" android:id="@id/txt_detail_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="" android:lineSpacingMultiplier="1.3" android:overScrollMode="never" />
+    <TextView android:layout_width="fill_parent" android:layout_height="20.0dip" />
+    <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/title_2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+    <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="top|left|center" android:layout_gravity="top|center" android:id="@id/txt_detail_2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="" android:lineSpacingMultiplier="1.3" android:overScrollMode="never" />
+    <TextView android:layout_width="fill_parent" android:layout_height="20.0dip" />
+    <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/title_3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+    <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="top|left|center" android:layout_gravity="top|center" android:id="@id/txt_detail_3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="" android:lineSpacingMultiplier="1.3" android:overScrollMode="never" />
+    <TextView android:layout_width="fill_parent" android:layout_height="20.0dip" />
+    <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/title_4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+    <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="top|left|center" android:layout_gravity="top|center" android:id="@id/txt_detail_4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="" android:lineSpacingMultiplier="1.3" android:overScrollMode="never" />
+    <TextView android:layout_width="fill_parent" android:layout_height="20.0dip" />
+    <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/title_5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+    <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="top|left|center" android:layout_gravity="top|center" android:id="@id/txt_detail_5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="" android:lineSpacingMultiplier="1.3" android:overScrollMode="never" />
+    <TextView android:layout_width="fill_parent" android:layout_height="20.0dip" />
+    <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/title_6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+    <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="top|left|center" android:layout_gravity="top|center" android:id="@id/txt_detail_6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="" android:lineSpacingMultiplier="1.3" android:overScrollMode="never" />
+</LinearLayout>
