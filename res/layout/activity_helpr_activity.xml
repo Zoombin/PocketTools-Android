@@ -221,7 +221,7 @@
                     </LinearLayout>
                 </FrameLayout>
 
-                <com.fotoable.helpr.tabrootbutton.mainTabScrollView
+                <com.juhe.pockettools.tabrootbutton.mainTabScrollView
                     android:id="@id/main_tabview"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
