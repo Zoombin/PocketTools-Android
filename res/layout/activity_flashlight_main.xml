@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:background="@drawable/color_gradient_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
-    <FrameLayout android:id="@id/flashlight_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <ToggleButton android:layout_gravity="bottom|center" android:id="@id/button_open_flashlight" android:background="@drawable/btn_flashlite_res" android:layout_width="185.0dip" android:layout_height="185.0dip" android:layout_marginBottom="130.0dip" android:textOn="" android:textOff="" />
-    <ImageButton android:layout_gravity="bottom|center" android:id="@id/button_close_flashlayout" android:background="@drawable/btn_flashlite_close" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginBottom="40.0dip" />
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/color_gradient_bg" >
+
+    <ImageView
+        android:id="@id/img_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop" />
+
+    <FrameLayout
+        android:id="@id/flashlight_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <ToggleButton
+        android:id="@id/button_open_flashlight"
+        android:layout_width="185.0dip"
+        android:layout_height="185.0dip"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="130.0dip"
+        android:background="@drawable/btn_flashlite_res"
+        android:textOff=""
+        android:textOn="" />
+
+    <ImageButton
+        android:id="@id/button_close_flashlayout"
+        android:layout_width="60.0dip"
+        android:layout_height="60.0dip"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="40.0dip"
+        android:background="@drawable/btn_flashlite_close" />
+
 </FrameLayout>

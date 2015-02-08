@@ -64,11 +64,6 @@
             android:name=".home.SplashAcitivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".home.HelprActivity"
@@ -76,6 +71,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle"
             android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".flashlight.FlashLightActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

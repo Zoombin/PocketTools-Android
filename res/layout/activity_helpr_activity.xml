@@ -7,7 +7,8 @@
         android:id="@id/img_bg"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_main" />
 
     <LinearLayout
         android:layout_width="fill_parent"
