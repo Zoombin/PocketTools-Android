@@ -146,7 +146,7 @@ public class CameraMirrorActivity extends FullscreenActivity {
 			if (camera != null) {
 				camera.setPreviewCallback(null);
 				camera.stopPreview();
-				preview.startPreview(null);
+//				preview.startPreview(null);
 				camera.release();
 				camera = null;
 			}
@@ -157,6 +157,7 @@ public class CameraMirrorActivity extends FullscreenActivity {
 		}
 	}
 
+	@Override
 	protected void onResume() {
 		super.onResume();
 
@@ -175,6 +176,7 @@ public class CameraMirrorActivity extends FullscreenActivity {
 			Camera.getCameraInfo(camIdx, cameraInfo);
 			if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
 				mCameraId = camIdx;
+				cameraid = mCameraId;
 				break;
 			}
 		}
@@ -190,4 +192,5 @@ public class CameraMirrorActivity extends FullscreenActivity {
 			onoff = true;
 		}
 	}
+
 }
