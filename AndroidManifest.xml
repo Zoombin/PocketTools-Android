@@ -84,6 +84,11 @@
             android:name=".calculator.CalculatorMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name=".ruler.RulerMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@*android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
