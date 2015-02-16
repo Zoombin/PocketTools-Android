@@ -89,6 +89,10 @@
             android:name=".ruler.RulerMainActivity"
             android:screenOrientation="portrait"
             android:theme="@*android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name=".tuling.ChatActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
