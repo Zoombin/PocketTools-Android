@@ -1,11 +1,12 @@
 package com.juhe.pockettools.utils;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.os.Environment;
-import android.view.KeyCharacterMap;
-import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 
 /**
@@ -688,6 +689,7 @@ public class HelprCommUtil {
 
 	/**
 	 * sd卡是否存在
+	 * 
 	 * @return
 	 */
 	public static boolean hasSDCard() {
@@ -700,30 +702,45 @@ public class HelprCommUtil {
 
 	/**
 	 * 是否有软键盘
+	 * 
 	 * @param context
 	 * @return
 	 */
 	public static boolean hasNavigationBar(Context context) {
-		boolean bool1 = false;
-		try {
-			boolean haspermanentmenukey = ViewConfiguration.get(context)
-					.hasPermanentMenuKey();
-			boolean hasKeyBack = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_BACK);
-			if (!haspermanentmenukey) {
-				bool1 = false;
-				if (!hasKeyBack) {
-					bool1 = true;
+		Boolean hasHardwareMenuKey = null;
+		if (hasHardwareMenuKey == null) {
+			ViewConfiguration vc = ViewConfiguration.get(context);
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+				// boolean vc.hasPermanentMenuKey();
+				try {
+					Method m = vc.getClass().getMethod("hasPermanentMenuKey",
+							new Class<?>[] {});
+					try {
+						hasHardwareMenuKey = (Boolean) m.invoke(vc,
+								new Object[] {});
+					} catch (IllegalArgumentException e) {
+						hasHardwareMenuKey = false;
+					} catch (IllegalAccessException e) {
+						hasHardwareMenuKey = false;
+					} catch (InvocationTargetException e) {
+						hasHardwareMenuKey = false;
+					}
+				} catch (NoSuchMethodException e) {
+					hasHardwareMenuKey = false;
 				}
 			}
-			if (Build.BRAND.equalsIgnoreCase("Meizu")) {
-				return true;
+			if (hasHardwareMenuKey == null) {
+//				if (DeviceInfo.EINK_SCREEN)
+//					hasHardwareMenuKey = false;
+//				else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+//					hasHardwareMenuKey = true;
+//				else
+					hasHardwareMenuKey = false;
 			}
-		} catch (Exception e) {
-			return bool1;
 		}
-		return bool1;
+		return hasHardwareMenuKey;
 	}
-	
+
 	//
 	// public static int i()
 	// {

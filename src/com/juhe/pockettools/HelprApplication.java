@@ -69,7 +69,10 @@ public class HelprApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		context = getApplicationContext();
+		// 百度地图
 		SDKInitializer.initialize(getApplicationContext());
+		// 聚合api
+		com.thinkland.sdk.android.SDKInitializer.initialize(getApplicationContext());
 		initImageLoader();
 //		try {
 //			context = getApplicationContext();

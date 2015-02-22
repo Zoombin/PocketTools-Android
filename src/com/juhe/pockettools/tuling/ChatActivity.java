@@ -5,9 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,13 +13,17 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.juhe.pockettools.R;
+import com.thinkland.sdk.android.DataCallBack;
+import com.thinkland.sdk.android.JuheData;
+import com.thinkland.sdk.android.Parameters;
 
-public class ChatActivity extends Activity implements HttpGetDataListener,
-		OnClickListener {
+@SuppressLint("SimpleDateFormat")
+public class ChatActivity extends Activity implements OnClickListener {
 
-	private HttpData httpData;
 	private List<ListData> lists;
 	private ListView lv;
 	private EditText sendtext;
@@ -61,24 +63,14 @@ public class ChatActivity extends Activity implements HttpGetDataListener,
 		return welcome_tip;
 	}
 
-	@Override
-	public void getDataUrl(String data) {
-		// System.out.println(data);
-		parseText(data);
-	}
-
 	public void parseText(String str) {
 		try {
-			JSONObject jb = new JSONObject(str);
-			// System.out.println(jb.getString("code"));
-			// System.out.println(jb.getString("text"));
 			ListData listData;
-			listData = new ListData(jb.getString("text"), ListData.RECEIVER,
+			listData = new ListData(str, ListData.RECEIVER,
 					getTime());
 			lists.add(listData);
 			adapter.notifyDataSetChanged();
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -99,9 +91,22 @@ public class ChatActivity extends Activity implements HttpGetDataListener,
 			}
 		}
 		adapter.notifyDataSetChanged();
-		httpData = (HttpData) new HttpData(
-				"http://www.tuling123.com/openapi/api?key=6af9822f5491fadfc142b53818bbd63a&info="
-						+ droph, this).execute();
+		Parameters params = new Parameters();
+		params.add("key", "39ded27a75232bba451702ab705faeea");
+		params.add("info", droph);
+
+		JuheData.executeWithAPI(1, "http://op.juhe.cn/robot/index", JuheData.GET, params, new DataCallBack() {
+
+			@Override
+			public void resultLoaded(int err, String reason, String result) {
+				if (err == 0) {
+					ChatEntity chatentity = new Gson().fromJson(result, ChatEntity.class);
+					parseText(chatentity.getResult().getText());
+				} else {
+					Toast.makeText(getApplicationContext(), reason, Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
 	}
 
 	private String getTime() {
@@ -115,6 +120,5 @@ public class ChatActivity extends Activity implements HttpGetDataListener,
 		} else {
 			return "";
 		}
-
 	}
 }
