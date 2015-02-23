@@ -1,38 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:background="@android:color/white" >
 
-    <ImageView
-        android:id="@id/img_bg"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scaleType="centerCrop"
-        android:background="@color/black" />
-
-    <FrameLayout
-        android:id="@id/ly_rulers"
-        android:layout_width="fill_parent"
+    <com.juhe.pockettools.ruler.RulerViewInch
+        android:id="@+id/left"
+        android:layout_width="50dp"
         android:layout_height="fill_parent" />
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="120.0dip"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="20.0dip" >
-
-        <Button
-            android:id="@id/btn_swith"
-            android:layout_width="100.0dip"
-            android:layout_height="33.0dip"
-            android:background="@drawable/btn_ruler_switch" />
+    <RelativeLayout
+        android:layout_width="0px"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
 
         <Button
             android:id="@id/btn_close"
             android:layout_width="60.0dip"
             android:layout_height="60.0dip"
-            android:layout_gravity="bottom|center"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/btn_ruler_close" />
-    </FrameLayout>
+    </RelativeLayout>
 
-</FrameLayout>
+    <com.juhe.pockettools.ruler.RulerViewMm
+        android:id="@+id/right"
+        android:layout_width="50dp"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>

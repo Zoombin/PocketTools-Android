@@ -87,8 +87,9 @@
         </activity>
         <activity
             android:name=".ruler.RulerMainActivity"
+            android:configChanges="keyboard|keyboardHidden"
             android:screenOrientation="portrait"
-            android:theme="@*android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
