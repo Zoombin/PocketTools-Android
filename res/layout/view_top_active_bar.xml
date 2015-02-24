@@ -1,13 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:layout_gravity="top" android:layout_width="fill_parent" android:layout_height="49.0dip">
-        <ImageView android:layout_gravity="left|center" android:id="@id/bar_cancel" android:background="@drawable/btn_back_w" android:layout_width="44.0dip" android:layout_height="44.0dip" />
-        <TextView android:textSize="24.0sp" android:textColor="@color/white" android:ellipsize="end" android:gravity="center" android:layout_gravity="center" android:id="@id/bar_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip" android:text="" android:singleLine="true" />
-        <FrameLayout android:layout_gravity="right|center" android:id="@id/right_contaienr" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip">
-            <ProgressBar android:layout_gravity="center" android:layout_width="25.0dip" android:layout_height="25.0dip" style="?android:attr/progressBarStyleLarge" />
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="49.0dip"
+        android:layout_gravity="top" >
+
+        <ImageView
+            android:id="@id/bar_cancel"
+            android:layout_width="44.0dip"
+            android:layout_height="44.0dip"
+            android:layout_gravity="left|center"
+            android:background="@drawable/btn_back_w" />
+
+        <TextView
+            android:id="@id/bar_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30.0dip"
+            android:layout_marginRight="30.0dip"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="24.0sp" />
+
+        <FrameLayout
+            android:id="@id/right_contaienr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="10.0dip"
+            android:visibility="invisible" >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="25.0dip"
+                android:layout_height="25.0dip"
+                android:layout_gravity="center" />
         </FrameLayout>
-        <Button android:textSize="16.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="right|center" android:id="@id/bar_sure" android:background="@drawable/gr_violation_research_res" android:visibility="invisible" android:layout_width="55.0dip" android:layout_height="45.0dip" android:layout_marginRight="10.0dip" android:text="@string/package_search" />
+
+        <Button
+            android:id="@id/bar_sure"
+            android:layout_width="55.0dip"
+            android:layout_height="45.0dip"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="10.0dip"
+            android:background="@drawable/gr_violation_research_res"
+            android:gravity="center"
+            android:text="@string/package_search"
+            android:textColor="@color/white"
+            android:textSize="16.0sp"
+            android:visibility="invisible" />
     </FrameLayout>
-    <FrameLayout android:layout_gravity="bottom" android:id="@id/bar_divider_line" android:background="@color/topbar_divider_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+
+    <FrameLayout
+        android:id="@id/bar_divider_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_gravity="bottom"
+        android:background="@color/topbar_divider_color" />
+
 </FrameLayout>
