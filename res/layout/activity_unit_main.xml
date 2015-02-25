@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_unit"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
@@ -97,21 +98,14 @@
                     android:textSize="12.0sp" />
             </LinearLayout>
 
-            <FrameLayout
-                android:id="@id/ly_btn_rate"
-                android:layout_width="60.0dip"
-                android:layout_height="40.0dip"
-                android:layout_gravity="bottom|center" >
-
-                <Button
-                    android:id="@id/btn_rate_dir"
-                    android:layout_width="14.0dip"
-                    android:layout_height="11.0dip"
-                    android:layout_gravity="bottom|center"
-                    android:layout_marginBottom="3.0dip"
-                    android:background="@drawable/btn_unit_direct_switch"
-                    android:clickable="false" />
-            </FrameLayout>
+            <CheckBox
+                android:id="@id/btn_rate_dir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="3.0dip"
+                android:button="@drawable/btn_unit_direct_switch"
+                android:checked="false" />
         </FrameLayout>
 
         <FrameLayout

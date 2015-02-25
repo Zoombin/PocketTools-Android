@@ -12,9 +12,13 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -29,12 +33,11 @@ import com.juhe.pockettools.home.FullscreenActivity;
 
 public class UnitExchangeMainActivity extends FullscreenActivity {
 	private static final String TAG = "UnitExchangeMainActivity";
+	FrameLayout layout_unit;
 	private TopActiveBarView topactivebarview;
 	private EditText leftinput;
 	private EditText rightinput;
-	private Button btn_rate_dir;
-	private FrameLayout ly_btn_rate;
-	// private boolean g = false;
+	private CheckBox btn_rate_dir;
 	private WheelView unit_1;
 	private WheelView unit_2;
 	private TextView left_detail;
@@ -43,23 +46,9 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 	private Unit unit;
 	private ArrayList<Item> list = new ArrayList<Item>();
 	private Type type = Type.LENGTH;
-	private boolean isRight = true;
+	private boolean isLeft = false;
 	private Item left;
 	private Item right;
-
-	// private boolean s = true;
-
-	private double getTempratureValue(double value1, double value2) {
-		if ((type == Type.TEMPERATURE) && (left.index != right.index)) {
-			if ((!isRight) || (right.doubleinterface == null)) {
-				value1 = right.doubleinterface.getValue(value2);
-				if (left.doubleinterface == null) {
-					return value1;
-				}
-			}
-		}
-		return left.doubleinterface.getValue(value2);
-	}
 
 	private String formatDoubleToString(double paramDouble) {
 		// Log.v("UnitExchangeMainActivity",
@@ -70,16 +59,6 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 		numberformat.setMinimumIntegerDigits(1);
 		return numberformat.format(paramDouble);
 	}
-
-	// private void a() {
-	// isselected = btn_rate_dir.isSelected();
-	// if (isselected) {
-	// }
-	// for (EditText localEditText = leftinput;; localEditText = rightinput) {
-	// a(localEditText);
-	// return;
-	// }
-	// }
 
 	private void refreshWheel(int index) {
 		if (index > Type.values().length) {
@@ -98,7 +77,7 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 		left_detail.setText(left.text);
 		right_detail.setText(right.text);
 		EditText edittext;
-		if (!isRight) {
+		if (!isLeft) {
 			edittext = leftinput;
 		} else {
 			edittext = rightinput;
@@ -107,6 +86,9 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 	}
 
 	private void clickbutton(Button clickbutton) {
+		leftinput.setText("1");
+		rightinput.setText("1");
+		
 		LinearLayout ly_unit_type = (LinearLayout) findViewById(R.id.ly_unit_type);
 
 		for (int i = 0; i < ly_unit_type.getChildCount(); i++) {
@@ -122,81 +104,54 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 	}
 
 	private void showResult(EditText edittext) {
+		String leftdetail = left_detail.getText().toString();
+		String rightdetail = right_detail.getText().toString();
 		double d1 = 0.0D;
-		boolean bool1;
-		boolean bool3;
-		if (edittext == leftinput) {
-			bool1 = true;
-			isRight = bool1;
-			Button localButton = btn_rate_dir;
-			boolean bool2 = isRight;
-			bool3 = false;
-			if (!bool2) {
-				bool3 = true;
+		double d2 = 0.0D;
+		if (leftinput.getText().toString().length() > 0) {
+			d1 = Double.valueOf(leftinput.getText().toString()).doubleValue();
+		}
+		if (rightinput.getText().toString().length() > 0) {
+			d2 = Double.valueOf(rightinput.getText().toString()).doubleValue();
+		}
+		double leftvalue = 0.0D;
+		double rightvalue = 0.0D;
+		ArrayList<Item> itemlist = unit.getList(type);
+		for (Item item : itemlist) {
+			if (leftdetail.equals(item.text)) {
+				leftvalue = item.value;
 			}
-			localButton.setSelected(bool3);
-			if (leftinput.getText().toString().length() <= 0) {
-				for (double d2 = Double.valueOf(leftinput.getText().toString())
-						.doubleValue();; d2 = d1) {
-					if (rightinput.getText().toString().length() > 0) {
-						d1 = Double.valueOf(rightinput.getText().toString())
-								.doubleValue();
+			if (rightdetail.equals(item.text)) {
+				rightvalue = item.value;
+			}
+		}
+
+		if (edittext == leftinput) {
+			if (type != Type.TEMPERATURE) {
+				leftinput.setText(formatDoubleToString(d2 * leftvalue / rightvalue));
+			} else {
+				if (leftdetail.equals(rightdetail)) {
+					leftinput.setText(formatDoubleToString(d2));
+				} else {
+					if (leftdetail.equals("摄氏度")) {
+						leftinput.setText(formatDoubleToString(32.0D + 9.0D * d1 / 5.0D));
+					} else {
+						leftinput.setText(formatDoubleToString(5.0D * (d2 - 32.0D) / 9.0D));
 					}
-					if (isRight) {
-						double d4 = getTempratureValue(d2 / left.value
-								* right.value, d2);
-						if (leftinput.getText().toString().length() == 0) {
-							leftinput.setText("0");
-						}
-						rightinput.setText(formatDoubleToString(d4));
-						return;
-						// bool1 = false;
-						// break;
-					}
-					double d3 = getTempratureValue(d1 / right.value
-							* left.value, d1);
-					if (rightinput.getText().toString().length() == 0) {
-						rightinput.setText("0");
-					}
-					leftinput.setText(formatDoubleToString(d3));
-					return;
 				}
 			}
 		} else {
-			bool1 = true;
-			isRight = bool1;
-			Button localButton = btn_rate_dir;
-			boolean bool2 = isRight;
-			bool3 = false;
-			if (!bool2) {
-				bool3 = true;
-			}
-			localButton.setSelected(bool3);
-			if (leftinput.getText().toString().length() > 0) {
-				for (double d2 = Double.valueOf(leftinput.getText().toString())
-						.doubleValue();; d2 = d1) {
-					if (rightinput.getText().toString().length() > 0) {
-						d1 = Double.valueOf(rightinput.getText().toString())
-								.doubleValue();
+			if (type != Type.TEMPERATURE) {
+				rightinput.setText(formatDoubleToString(d1 * rightvalue / leftvalue));
+			} else {
+				if (leftdetail.equals(rightdetail)) {
+					rightinput.setText(formatDoubleToString(d1));
+				} else {
+					if (leftdetail.equals("摄氏度")) {
+						rightinput.setText(formatDoubleToString(32.0D + 9.0D * d1 / 5.0D));
+					} else {
+						rightinput.setText(formatDoubleToString(5.0D * (d2 - 32.0D) / 9.0D));
 					}
-					if (isRight) {
-						double d4 = getTempratureValue(d2 / left.value
-								* right.value, d2);
-						if (leftinput.getText().toString().length() == 0) {
-							leftinput.setText("0");
-						}
-						rightinput.setText(formatDoubleToString(d4));
-						return;
-						// bool1 = false;
-						// break;
-					}
-					double d3 = getTempratureValue(d1 / right.value
-							* left.value, d1);
-					if (rightinput.getText().toString().length() == 0) {
-						rightinput.setText("0");
-					}
-					leftinput.setText(formatDoubleToString(d3));
-					return;
 				}
 			}
 		}
@@ -214,7 +169,7 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 		left_detail.setText(left.text);
 		right_detail.setText(right.text);
 		EditText edittext;
-		if (!isRight) {
+		if (isLeft) {
 			edittext = leftinput;
 		} else {
 			edittext = rightinput;
@@ -254,17 +209,13 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 
 			@Override
 			public void onScrollingStarted(WheelView wheelview) {
-				// UnitExchangeMainActivity.b(this.a, true);
+				btn_rate_dir.setClickable(false);
 			}
 
 			@Override
 			public void onScrollingFinished(WheelView wheelview) {
-				// UnitExchangeMainActivity.b(this.a, false);
-
+				btn_rate_dir.setClickable(true);
 				setValue(wheelview, wheelview.getCurrentItem());
-				// UnitExchangeMainActivity.a(this.a, paramWheelView,
-				// paramWheelView.getCurrentItem());
-
 			}
 		});
 		unit_2.setVisibleItems(10);
@@ -277,17 +228,13 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 
 			@Override
 			public void onScrollingStarted(WheelView wheelview) {
-				// UnitExchangeMainActivity.b(this.a, true);
+				btn_rate_dir.setClickable(false);
 			}
 
 			@Override
 			public void onScrollingFinished(WheelView wheelview) {
-
-				// UnitExchangeMainActivity.b(this.a, false);
-
+				btn_rate_dir.setClickable(true);
 				setValue(wheelview, wheelview.getCurrentItem());
-				// UnitExchangeMainActivity.a(this.a, paramWheelView,
-				// paramWheelView.getCurrentItem());
 			}
 		});
 	}
@@ -296,6 +243,25 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_unit_main);
+		layout_unit = (FrameLayout) findViewById(R.id.layout_unit);
+		layout_unit.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
+			
+			@Override
+			public void onGlobalLayout() {
+				 //比较Activity根布局与当前布局的大小
+		        int heightDiff = layout_unit.getRootView().getHeight()- layout_unit.getHeight();
+		        if(heightDiff < 100){
+					EditText edittext;
+					if (isLeft) {
+						edittext = leftinput;
+					} else {
+						edittext = rightinput;
+					}
+					showResult(edittext);
+		        }
+			}
+		});
+		
 		// ((ImageView) findViewById(R.id.img_bg)).setImageBitmap(w.a().d());
 		topactivebarview = ((TopActiveBarView) findViewById(R.id.action_bar));
 		topactivebarview.setTiltleText("单位转换");
@@ -304,7 +270,7 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 
 					@Override
 					public void cancel() {
-						// UnitExchangeMainActivity.a(this.a, false);
+						btn_rate_dir.setClickable(false);
 						// k.a(this.a);
 						finish();
 					}
@@ -318,21 +284,28 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 		topactivebarview.setProgressVisiable(View.INVISIBLE);
 		leftinput = ((EditText) findViewById(R.id.leftinput));
 		rightinput = ((EditText) findViewById(R.id.rightinput));
-		btn_rate_dir = ((Button) findViewById(R.id.btn_rate_dir));
+		btn_rate_dir = ((CheckBox) findViewById(R.id.btn_rate_dir));
+		btn_rate_dir.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(CompoundButton checkbotton,
+					boolean checked) {
+				EditText edittext;
+				isLeft = checked;
+				if (isLeft) {
+					edittext = leftinput;
+				} else {
+					edittext = rightinput;
+				}
+				showResult(edittext);
+			}
+		});
 		left_detail = ((TextView) findViewById(R.id.left_detail));
 		right_detail = ((TextView) findViewById(R.id.right_detail));
 		Typeface typeface = Typeface.createFromAsset(getAssets(),
 				"fonts/HelveticaNeue-Thin.otf");
 		leftinput.setTypeface(typeface);
 		rightinput.setTypeface(typeface);
-		ly_btn_rate = ((FrameLayout) findViewById(R.id.ly_btn_rate));
-		ly_btn_rate.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// UnitExchangeMainActivity.a(this.a);
-			}
-		});
 		leftinput.setOnEditorActionListener(new OnEditorActionListener() {
 
 			@Override
@@ -343,8 +316,13 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 					((InputMethodManager) v.getContext().getSystemService(
 							"input_method")).hideSoftInputFromWindow(
 							v.getWindowToken(), 0);
-					// UnitExchangeMainActivity.a(this.a,
-					// UnitExchangeMainActivity.b(this.a));
+					EditText edittext;
+					if (isLeft) {
+						edittext = leftinput;
+					} else {
+						edittext = rightinput;
+					}
+					showResult(edittext);
 					return true;
 				}
 				return false;
@@ -360,8 +338,13 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 					((InputMethodManager) v.getContext().getSystemService(
 							"input_method")).hideSoftInputFromWindow(
 							v.getWindowToken(), 0);
-					// UnitExchangeMainActivity.a(this.a,
-					// UnitExchangeMainActivity.c(this.a));
+					EditText edittext;
+					if (isLeft) {
+						edittext = leftinput;
+					} else {
+						edittext = rightinput;
+					}
+					showResult(edittext);
 					return true;
 				}
 				return false;
@@ -378,8 +361,6 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 		wheeladapter.setData(list);
 		initWheelView();
 		initBottomBar();
-		// new com.fotoable.helpr.Utils.i(leftinput).a(new h(this));
-		// new com.fotoable.helpr.Utils.i(rightinput).a(new i(this));
 	}
 
 	private class WheelAdapter extends

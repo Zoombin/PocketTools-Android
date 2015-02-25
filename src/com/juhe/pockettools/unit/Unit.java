@@ -205,13 +205,11 @@ public class Unit {
 		localp36.index= 500;
 		localp36.text = "摄氏度";
 		localp36.value = 1.0D;
-		localp36.doubleinterface = new FormatCelsius(this);
 		localArrayList5.add(localp36);
 		Item localp37 = new Item();
 		localp37.index= 501;
 		localp37.text = "华氏度";
 		localp37.value = 1.0D;
-		localp37.doubleinterface = new FormatFahrenheit(this);
 		localArrayList5.add(localp37);
 		map.put(Type.TEMPERATURE, localArrayList5);
 	}
