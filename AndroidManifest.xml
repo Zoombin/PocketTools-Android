@@ -99,6 +99,12 @@
             android:name=".unit.UnitExchangeMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name=".exchange.ExChangeMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle"
+            android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -106,10 +112,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".exchange.ExChangeMainActivity"
+            android:name=".sizetable.SizeTableActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/HelprMainStyle"
-            android:windowSoftInputMode="adjustPan" >
+            android:theme="@style/HelprMainStyle" >
         </activity>
     </application>
 

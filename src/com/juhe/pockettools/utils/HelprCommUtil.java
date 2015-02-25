@@ -1,10 +1,17 @@
 package com.juhe.pockettools.utils;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import com.juhe.pockettools.HelprApplication;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Environment;
 import android.view.ViewConfiguration;
@@ -17,7 +24,21 @@ import android.view.ViewConfiguration;
  */
 @SuppressLint("NewApi")
 public class HelprCommUtil {
-	private static final String a = "Helpr_TCommUtil";
+	private static final String TAG = "Helpr_TCommUtil";
+
+	public static final Bitmap getImage(String imagefilename) {
+		Bitmap image = null;
+		AssetManager am = HelprApplication.getContext().getResources()
+				.getAssets();
+		try {
+			InputStream is = am.open(imagefilename);
+			image = BitmapFactory.decodeStream(is);
+			is.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return image;
+	}
 
 	// public static float a()
 	// {
@@ -730,12 +751,13 @@ public class HelprCommUtil {
 				}
 			}
 			if (hasHardwareMenuKey == null) {
-//				if (DeviceInfo.EINK_SCREEN)
-//					hasHardwareMenuKey = false;
-//				else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-//					hasHardwareMenuKey = true;
-//				else
-					hasHardwareMenuKey = false;
+				// if (DeviceInfo.EINK_SCREEN)
+				// hasHardwareMenuKey = false;
+				// else if (Build.VERSION.SDK_INT <
+				// Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+				// hasHardwareMenuKey = true;
+				// else
+				hasHardwareMenuKey = false;
 			}
 		}
 		return hasHardwareMenuKey;

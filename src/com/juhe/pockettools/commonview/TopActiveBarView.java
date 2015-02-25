@@ -85,12 +85,11 @@ public class TopActiveBarView extends FrameLayout {
 	}
 
 	public void setSplitLineVisible(boolean visible) {
-		FrameLayout localFrameLayout = bar_divider_line;
+		FrameLayout framelayout = bar_divider_line;
 		if (visible) {
-		}
-		for (int i = 0;; i = 4) {
-			localFrameLayout.setVisibility(i);
-			return;
+			framelayout.setVisibility(View.VISIBLE);
+		} else {
+			framelayout.setVisibility(View.INVISIBLE);
 		}
 	}
 

@@ -16,14 +16,14 @@
             android:id="@id/img_flag"
             android:layout_width="44.0dip"
             android:layout_height="44.0dip"
-            android:layout_gravity="top|left|center"
-            android:visibility="gone" />
+            android:layout_gravity="top|left|center" />
 
         <TextView
             android:id="@id/currencyCodeLabel"
             android:layout_width="wrap_content"
             android:layout_height="15.0dip"
             android:layout_gravity="top|left|center"
+            android:layout_marginLeft="50.0dip"
             android:gravity="left"
             android:text="CNY"
             android:textColor="@color/white"
@@ -34,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="25.0dip"
             android:layout_gravity="top|left|center"
+            android:layout_marginLeft="50.0dip"
             android:layout_marginTop="16.0dip"
             android:gravity="left"
             android:singleLine="true"

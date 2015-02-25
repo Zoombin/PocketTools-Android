@@ -28,6 +28,7 @@ import com.juhe.pockettools.commonview.ClearableEditText;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.home.FullscreenActivity;
+import com.juhe.pockettools.utils.HelprCommUtil;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
@@ -75,6 +76,9 @@ public class ExChangeMainActivity extends FullscreenActivity {
 		holder.currencyNameLabel.setText(entity.name);
 		float f1 = 100.0F * (value / entity.mBuyPri);
 		holder.currencyResultLabel.setText(String.format("%.2f", f1));
+	    String str = String.format("flags/%s.png", entity.cn.toLowerCase());
+	    holder.img_flag.setImageBitmap(HelprCommUtil.getImage(str));
+		
 	}
 
 	private void showInputView(ExChangeEntity entity) {
