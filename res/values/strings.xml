@@ -29,6 +29,7 @@
     <string name="tool_weather">天气</string>
     <string name="tool_pm2.5">PM2.5</string>
     <string name="tool_mirror">镜子</string>
+    <string name="data_refresh">刷新</string>
     <string name="tool_qr">扫码比价</string>
     <string name="tool_secretphoto">私密相册</string>
     <string name="tool_dictionary">中英词典</string>

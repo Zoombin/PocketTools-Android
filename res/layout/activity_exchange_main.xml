@@ -1,13 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:windowSoftInputMode="adjustPan"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:isScrollContainer="false">
-        <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="50.0dip" />
-        <ListView android:scrollbarThumbVertical="@drawable/custom_scroll_style" android:id="@id/exchange_main_listveiw" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@color/listview_selected_color" android:cacheColorHint="#00000000" android:divider="@color/listview_divider_color" android:dividerHeight="1.0px" android:headerDividersEnabled="false" android:footerDividersEnabled="true" />
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:windowSoftInputMode="adjustPan" >
+
+    <ImageView
+        android:id="@id/img_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:isScrollContainer="false"
+        android:orientation="vertical" >
+
+        <com.juhe.pockettools.commonview.TopActiveBarView
+            android:id="@id/action_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip" >
+
+            <TextView
+                android:id="@+id/txt_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="50.0dip"
+                android:layout_gravity="right"
+                android:layout_marginRight="10.0dip"
+                android:gravity="center"
+                android:text="@string/data_refresh"
+                android:textColor="@color/color_blue_font"
+                android:textSize="16.0sp" />
+        </com.juhe.pockettools.commonview.TopActiveBarView>
+
+        <ListView
+            android:id="@id/exchange_main_listveiw"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:cacheColorHint="#00000000"
+            android:clipChildren="true"
+            android:clipToPadding="true"
+            android:divider="@color/listview_divider_color"
+            android:dividerHeight="1.0px"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="false"
+            android:listSelector="@color/listview_selected_color"
+            android:scrollbarThumbVertical="@drawable/custom_scroll_style" />
     </LinearLayout>
-    <RelativeLayout android:layout_gravity="bottom" android:id="@id/ly_input" android:background="@drawable/gr_textbg" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:windowSoftInputMode="adjustPan">
-        <Button android:id="@id/btn_input_ok" android:background="@drawable/btn_textbutton" android:layout_width="60.0dip" android:layout_height="40.0dip" android:layout_marginRight="10.0dip" android:text="确定" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-        <com.fotoable.helpr.commonview.ClearableEditText android:textSize="18.0sp" android:id="@id/txt_input" android:background="@drawable/input_inner_bg" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="5.0dip" android:singleLine="true" android:digits="0123456789." android:layout_toLeftOf="@id/btn_input_ok" android:layout_centerVertical="true" android:inputType="number" />
+
+    <RelativeLayout
+        android:id="@id/ly_input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/gr_textbg"
+        android:visibility="invisible"
+        android:windowSoftInputMode="adjustPan" >
+
+        <Button
+            android:id="@id/btn_input_ok"
+            android:layout_width="60.0dip"
+            android:layout_height="40.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:background="@drawable/btn_textbutton"
+            android:text="确定" />
+
+        <com.juhe.pockettools.commonview.ClearableEditText
+            android:id="@id/txt_input"
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:layout_marginTop="5.0dip"
+            android:layout_toLeftOf="@id/btn_input_ok"
+            android:background="@drawable/input_inner_bg"
+            android:digits="0123456789."
+            android:inputType="number"
+            android:singleLine="true"
+            android:textSize="18.0sp" />
     </RelativeLayout>
+
 </FrameLayout>

@@ -95,7 +95,7 @@ public class ChatActivity extends Activity implements OnClickListener {
 		params.add("key", "39ded27a75232bba451702ab705faeea");
 		params.add("info", droph);
 
-		JuheData.executeWithAPI(1, "http://op.juhe.cn/robot/index", JuheData.GET, params, new DataCallBack() {
+		JuheData.executeWithAPI(112, "http://op.juhe.cn/robot/index", JuheData.GET, params, new DataCallBack() {
 
 			@Override
 			public void resultLoaded(int err, String reason, String result) {
