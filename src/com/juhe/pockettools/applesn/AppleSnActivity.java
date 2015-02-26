@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
@@ -28,8 +29,8 @@ import com.thinkland.sdk.android.Parameters;
 public class AppleSnActivity extends FullscreenActivity {
 	private static final String TAG = "AppleSnActivity";
 	TopActiveBarView action_bar;
-	private ClearableEditText txt_input;
-	private Button btn_input_ok;
+	private EditText edit_sn_number;
+	private Button btn_sn_search;
 	private TextView tv_help;
 	private LinearLayout ly_info;
 	private TextView phone_model;
@@ -49,16 +50,16 @@ public class AppleSnActivity extends FullscreenActivity {
 		setContentView(R.layout.activity_applesn_main);
 		// ((ImageView) findViewById(R.id.img_bg)).setImageBitmap(w.a().d());
 		
-		btn_input_ok = ((Button) findViewById(R.id.btn_input_ok));
-		btn_input_ok.setOnClickListener(new OnClickListener() {
+		btn_sn_search = ((Button) findViewById(R.id.btn_sn_search));
+		btn_sn_search.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				getData();
 			}
 		});
-		txt_input = ((ClearableEditText) findViewById(R.id.txt_input));
-		txt_input.setOnEditorActionListener(new OnEditorActionListener() {
+		edit_sn_number = ((EditText) findViewById(R.id.edit_sn_number));
+		edit_sn_number.setOnEditorActionListener(new OnEditorActionListener() {
 
 			@Override
 			public boolean onEditorAction(TextView v, int arg1, KeyEvent arg2) {
@@ -100,13 +101,15 @@ public class AppleSnActivity extends FullscreenActivity {
 		tele_support_status = (TextView) findViewById(R.id.tele_support_status);
 		made_area = (TextView) findViewById(R.id.made_area);
 		end_date = (TextView) findViewById(R.id.end_date);
+		action_bar.setProgressVisiable(View.INVISIBLE);
 	}
 	
 	private void getData() {
-		txt_input.clearFocus();
-		hideSoftKeyborad(txt_input);
-		if (txt_input.getText().toString().length() > 0) {
-			String sn = txt_input.getText().toString();
+		action_bar.setProgressVisiable(View.VISIBLE);
+		edit_sn_number.clearFocus();
+		hideSoftKeyborad(edit_sn_number);
+		if (edit_sn_number.getText().toString().length() > 0) {
+			String sn = edit_sn_number.getText().toString();
 			Parameters params = new Parameters();
 			params.add("sn", sn);
 			params.add("key", "e2a4d76a04bc042a8b47045baf6c9873");
@@ -117,6 +120,8 @@ public class AppleSnActivity extends FullscreenActivity {
 						@Override
 						public void resultLoaded(int err, String reason,
 								String result) {
+							action_bar.setProgressVisiable(View.INVISIBLE);
+							
 							if (err == 0) {
 								AppleSnEntity entity = new Gson().fromJson(result, AppleSnEntity.class);
 								if (entity.getError_code() != 0) {
