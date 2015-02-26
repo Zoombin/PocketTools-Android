@@ -200,7 +200,7 @@ public class SizeTableActivity extends FullscreenActivity {
 			}
 
 			@Override
-			public void a() {
+			public void query() {
 
 			}
 		});

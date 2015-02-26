@@ -276,7 +276,7 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 					}
 
 					@Override
-					public void a() {
+					public void query() {
 						// TODO Auto-generated method stub
 
 					}

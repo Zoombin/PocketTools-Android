@@ -116,17 +116,21 @@
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle"
             android:windowSoftInputMode="adjustPan" >
-                        <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".mobilelocale.MobileLocaleMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name=".violation.ViolationMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

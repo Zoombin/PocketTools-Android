@@ -1,32 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <LinearLayout android:orientation="horizontal" android:layout_width="200.0dip" android:layout_height="30.0dip">
-            <TextView android:gravity="right" android:layout_gravity="center_vertical" android:layout_width="70.0dip" android:layout_height="wrap_content" android:text="@string/violation_condition_city" style="@style/text_14_white" />
-            <Button android:gravity="center" android:id="@id/violation_car_city" android:background="@drawable/btn_train_type_res" android:layout_width="75.0dip" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:text="@string/violation_select_city" style="@style/text_14_white" />
-            <ProgressBar android:layout_gravity="center_vertical" android:id="@id/violation_city_waitbar" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="5.0dip" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="200.0dip"
+            android:layout_height="30.0dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/text_14_white"
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:text="@string/violation_condition_city" />
+
+            <Button
+                android:id="@id/violation_car_city"
+                style="@style/text_14_white"
+                android:layout_width="100.0dip"
+                android:layout_height="30.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:background="@drawable/btn_train_type_res"
+                android:gravity="center"
+                android:text="@string/violation_select_city" />
+
+            <ProgressBar
+                android:id="@id/violation_city_waitbar"
+                android:layout_width="15.0dip"
+                android:layout_height="15.0dip"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5.0dip" />
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="30.0dip">
-            <TextView android:gravity="right" android:layout_gravity="center_vertical" android:layout_width="70.0dip" android:layout_height="wrap_content" android:text="@string/violation_condition_car_type" style="@style/text_14_white" />
-            <Button android:gravity="center" android:id="@id/violation_car_type" android:background="@drawable/btn_train_type_res" android:layout_width="75.0dip" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:text="@string/violation_select_cartype" style="@style/text_14_white" />
-            <ProgressBar android:layout_gravity="center_vertical" android:id="@id/violation_cartype_waitbar" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="5.0dip" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30.0dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/text_14_white"
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:text="@string/violation_condition_car_type" />
+
+            <Button
+                android:id="@id/violation_car_type"
+                style="@style/text_14_white"
+                android:layout_width="100.0dip"
+                android:layout_height="30.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:background="@drawable/btn_train_type_res"
+                android:gravity="center"
+                android:text="@string/violation_select_cartype" />
+
+            <ProgressBar
+                android:id="@id/violation_cartype_waitbar"
+                android:layout_width="15.0dip"
+                android:layout_height="15.0dip"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5.0dip" />
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="30.0dip">
-            <TextView android:gravity="right" android:layout_gravity="center_vertical" android:layout_width="70.0dip" android:layout_height="wrap_content" android:text="@string/violation_condition_car_number" style="@style/text_14_white" />
-            <EditText android:textSize="15.0sp" android:textColor="@color/white" android:textColorHint="#ffc8c8c8" android:layout_gravity="center_vertical" android:id="@id/violation_car_num" android:background="@color/transparent_20" android:paddingLeft="7.0dip" android:paddingRight="7.0dip" android:layout_width="150.0dip" android:layout_height="25.0dip" android:layout_marginLeft="10.0dip" android:ems="10" android:singleLine="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30.0dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/text_14_white"
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:text="@string/violation_condition_car_number" />
+
+            <EditText
+                android:id="@id/violation_car_num"
+                android:layout_width="150.0dip"
+                android:layout_height="25.0dip"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10.0dip"
+                android:background="@color/transparent_20"
+                android:ems="10"
+                android:paddingLeft="7.0dip"
+                android:paddingRight="7.0dip"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="#ffc8c8c8"
+                android:textSize="15.0sp" />
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:id="@id/violation_car_engine_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="30.0dip">
-            <TextView android:gravity="right" android:layout_gravity="center_vertical" android:layout_width="70.0dip" android:layout_height="wrap_content" android:text="@string/violation_condition_car_engine" style="@style/text_14_white" />
-            <EditText android:textSize="15.0sp" android:textColor="@color/white" android:textColorHint="#ffc8c8c8" android:layout_gravity="center_vertical" android:id="@id/violation_car_engine" android:background="@color/transparent_20" android:paddingLeft="7.0dip" android:paddingRight="7.0dip" android:layout_width="150.0dip" android:layout_height="25.0dip" android:layout_marginLeft="10.0dip" android:ems="10" android:singleLine="true" />
+
+        <LinearLayout
+            android:id="@id/violation_car_engine_container"
+            android:layout_width="wrap_content"
+            android:layout_height="30.0dip"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                style="@style/text_14_white"
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:text="@string/violation_condition_car_engine" />
+
+            <EditText
+                android:id="@id/violation_car_engine"
+                android:layout_width="150.0dip"
+                android:layout_height="25.0dip"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10.0dip"
+                android:background="@color/transparent_20"
+                android:ems="10"
+                android:paddingLeft="7.0dip"
+                android:paddingRight="7.0dip"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="#ffc8c8c8"
+                android:textSize="15.0sp" />
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:id="@id/violation_car_frame_num_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="30.0dip">
-            <TextView android:gravity="right" android:layout_gravity="center_vertical" android:layout_width="70.0dip" android:layout_height="wrap_content" android:text="@string/violation_condition_car_frame_num" style="@style/text_14_white" />
-            <EditText android:textSize="15.0sp" android:textColor="@color/white" android:textColorHint="#ffc8c8c8" android:layout_gravity="center_vertical" android:id="@id/violation_car_frame_num" android:background="@color/transparent_20" android:paddingLeft="7.0dip" android:paddingRight="7.0dip" android:layout_width="150.0dip" android:layout_height="25.0dip" android:layout_marginLeft="10.0dip" android:ems="10" android:singleLine="true" />
+
+        <LinearLayout
+            android:id="@id/violation_car_frame_num_container"
+            android:layout_width="wrap_content"
+            android:layout_height="30.0dip"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                style="@style/text_14_white"
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:text="@string/violation_condition_car_frame_num" />
+
+            <EditText
+                android:id="@id/violation_car_frame_num"
+                android:layout_width="150.0dip"
+                android:layout_height="25.0dip"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10.0dip"
+                android:background="@color/transparent_20"
+                android:ems="10"
+                android:paddingLeft="7.0dip"
+                android:paddingRight="7.0dip"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="#ffc8c8c8"
+                android:textSize="15.0sp" />
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:id="@id/violation_car_regist_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="30.0dip">
-            <TextView android:gravity="end" android:layout_gravity="center_vertical" android:layout_width="70.0dip" android:layout_height="wrap_content" android:text="@string/violation_condition_car_regist" style="@style/text_14_white" />
-            <EditText android:textSize="15.0sp" android:textColorHint="#ffc8c8c8" android:layout_gravity="center_vertical" android:id="@id/violation_car_regist" android:background="@color/transparent_20" android:paddingLeft="7.0dip" android:paddingRight="7.0dip" android:layout_width="150.0dip" android:layout_height="25.0dip" android:layout_marginLeft="10.0dip" android:ems="10" android:singleLine="true" />
+
+        <LinearLayout
+            android:id="@id/violation_car_regist_container"
+            android:layout_width="wrap_content"
+            android:layout_height="30.0dip"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                style="@style/text_14_white"
+                android:layout_width="70.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="end"
+                android:text="@string/violation_condition_car_regist" />
+
+            <EditText
+                android:id="@id/violation_car_regist"
+                android:layout_width="150.0dip"
+                android:layout_height="25.0dip"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10.0dip"
+                android:background="@color/transparent_20"
+                android:ems="10"
+                android:paddingLeft="7.0dip"
+                android:paddingRight="7.0dip"
+                android:singleLine="true"
+                android:textColorHint="#ffc8c8c8"
+                android:textSize="15.0sp" />
         </LinearLayout>
     </LinearLayout>
+
 </LinearLayout>

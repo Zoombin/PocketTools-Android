@@ -164,7 +164,7 @@ public class ExChangeMainActivity extends FullscreenActivity {
 			}
 
 			@Override
-			public void a() {
+			public void query() {
 
 			}
 		});

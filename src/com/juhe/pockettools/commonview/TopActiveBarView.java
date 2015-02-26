@@ -51,7 +51,7 @@ public class TopActiveBarView extends FrameLayout {
 			@Override
 			public void onClick(View v) {
 				if (interfacetopactivebar != null) {
-					interfacetopactivebar.a();
+					interfacetopactivebar.query();
 				}
 			}
 		});
@@ -123,7 +123,7 @@ public class TopActiveBarView extends FrameLayout {
 	}
 
 	public static abstract interface InterfaceTopActiveBar {
-		public abstract void a();
+		public abstract void query();
 
 		public abstract void cancel();
 	}
