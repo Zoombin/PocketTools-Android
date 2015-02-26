@@ -126,7 +126,7 @@ public class ExChangeMainActivity extends FullscreenActivity {
 
 	public void hideSoftKeyborad(View paramView) {
 		if (paramView != null) {
-			((InputMethodManager) getSystemService("input_method"))
+			((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE))
 					.hideSoftInputFromWindow(paramView.getWindowToken(), 0);
 		}
 	}
