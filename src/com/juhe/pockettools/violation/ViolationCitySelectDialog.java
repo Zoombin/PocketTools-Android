@@ -1,6 +1,7 @@
 package com.juhe.pockettools.violation;
 
 import android.app.AlertDialog;
+import android.app.PendingIntent.CanceledException;
 import android.content.Context;
 import android.view.Window;
 import android.view.WindowManager;
@@ -34,6 +35,10 @@ public class ViolationCitySelectDialog {
 			violationcityselectview = null;
 			return;
 		}
+		if (dialog != null) {
+			dialog.show();
+			return;
+		}
 		dialog = new AlertDialog.Builder(context).create();
 		dialog.setCanceledOnTouchOutside(false);
 		Window localWindow = dialog.getWindow();
@@ -46,18 +51,19 @@ public class ViolationCitySelectDialog {
 		localLayoutParams.height = -2;
 		dialog.show();
 		dialog.getWindow().setAttributes(localLayoutParams);
-		violationcityselectview.a(paramString, cityentity);
+		violationcityselectview.setProvinceWheelData(paramString, cityentity);
 		violationcityselectview.setListener(new ViolationCitySelectView.OnCityListener() {
 			
 			@Override
-			public void getCity(String city, CityEntity paramy) {
-				
+			public void getCity(String province_code, CityEntity cityentity) {
+				cityListener.getCity(province_code, cityentity);
+				dialog.cancel();
 			}
 		});
 		dialog.setContentView(violationcityselectview);
 	}
 
 	public static abstract interface OnCityListener {
-		public abstract void a(String paramString, y paramy);
+		public abstract void getCity(String province_code, CityEntity cityentity);
 	}
 }

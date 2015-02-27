@@ -15,7 +15,7 @@ public class hpzlEntity implements Serializable {
 	private String car;
 	
 	// 车辆类型编号
-	private int id;
+	private String id;
 
 	public String getCar() {
 		return car;
@@ -25,11 +25,11 @@ public class hpzlEntity implements Serializable {
 		this.car = car;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 }

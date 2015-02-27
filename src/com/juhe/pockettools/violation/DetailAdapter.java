@@ -1,6 +1,7 @@
 package com.juhe.pockettools.violation;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,17 +11,18 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.juhe.pockettools.R;
+import com.juhe.pockettools.violation.ViolationDetailEntity.Info;
 
 class DetailAdapter extends BaseAdapter {
 	Context context;
-	ArrayList<ViolationDetailEntity> list;
+	List<Info> list;
 
 	public DetailAdapter(Context context) {
 		this.context = context;
-		this.list = new ArrayList<ViolationDetailEntity>();
+		this.list = new ArrayList<Info>();
 	}
 
-	public void setData(ArrayList<ViolationDetailEntity> list) {
+	public void setData(List<Info> list) {
 		this.list = list;
 		notifyDataSetChanged();
 	}
@@ -43,7 +45,7 @@ class DetailAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		if (list.size() > 0) {
-			final ViolationDetailEntity entity = list.get(position);
+			final Info entity = list.get(position);
 			ViewHolder holder;
 			
 			if (convertView == null) {

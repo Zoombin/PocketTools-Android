@@ -12,8 +12,10 @@ import android.widget.TextView;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
+import com.juhe.pockettools.violation.ViolationDetailEntity.Info;
 //import com.juhe.pockettools.wallpaper.w;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ViolationDetailView extends FrameLayout {
 	private TopActiveBarView action_bar;
@@ -60,7 +62,7 @@ public class ViolationDetailView extends FrameLayout {
 		list_violation_detail.setAdapter(adapter);
 	}
 
-	public void setData(ArrayList<ViolationDetailEntity> list, String totalcode,
+	public void setData(List<Info> list, String totalcode,
 			String totalmoney) {
 		detailheadview.setData(totalcode, totalmoney);
 		adapter.setData(list);

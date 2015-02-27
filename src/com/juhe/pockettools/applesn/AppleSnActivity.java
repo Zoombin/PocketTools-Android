@@ -124,7 +124,7 @@ public class AppleSnActivity extends FullscreenActivity {
 							
 							if (err == 0) {
 								AppleSnEntity entity = new Gson().fromJson(result, AppleSnEntity.class);
-								if (entity.getError_code() != 0) {
+								if (entity.getError_code() != 0 && entity.getError_code() != 200) {
 									Toast.makeText(getApplicationContext(), entity.getReason(),
 											Toast.LENGTH_SHORT).show();
 									return;

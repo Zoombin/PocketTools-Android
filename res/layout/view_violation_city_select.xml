@@ -35,13 +35,13 @@
         android:layout_marginTop="10.0dip"
         android:orientation="horizontal" >
 
-        <com.fotoable.helpr.calendar.datepicker.WheelView
+        <com.juhe.pockettools.calendar.datepicker.WheelView
             android:id="@id/province"
             android:layout_width="0.0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1.0" />
 
-        <com.fotoable.helpr.calendar.datepicker.WheelView
+        <com.juhe.pockettools.calendar.datepicker.WheelView
             android:id="@id/city"
             android:layout_width="0.0dip"
             android:layout_height="wrap_content"

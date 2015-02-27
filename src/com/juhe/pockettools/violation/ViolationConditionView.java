@@ -3,10 +3,9 @@ package com.juhe.pockettools.violation;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.res.Resources;
 import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -14,12 +13,11 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-//import com.fotoable.helpr.Utils.k;
-//import com.fotoable.helpr.a.b;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import com.juhe.pockettools.R;
+import com.juhe.pockettools.violation.ViolationCitySelectDialog.OnCityListener;
+//import com.fotoable.helpr.Utils.k;
+//import com.fotoable.helpr.a.b;
 
 public class ViolationConditionView extends FrameLayout {
 	private Button violation_car_city;
@@ -34,10 +32,7 @@ public class ViolationConditionView extends FrameLayout {
 	private ProgressBar violation_city_waitbar;
 	private ProgressBar violation_cartype_waitbar;
 	private OnConditionListener listener;
-	private String m;
-	private CityEntity cityentity;
-	private hpzlEntity o;
-
+	
 	public ViolationConditionView(Context context) {
 		super(context);
 		initView();
@@ -63,13 +58,121 @@ public class ViolationConditionView extends FrameLayout {
 		violation_car_frame_num_container = ((LinearLayout) findViewById(R.id.violation_car_frame_num_container));
 		violation_city_waitbar = ((ProgressBar) findViewById(R.id.violation_city_waitbar));
 		violation_cartype_waitbar = ((ProgressBar) findViewById(R.id.violation_cartype_waitbar));
-		// violation_car_city.setOnClickListener(new d(this));
-		// violation_car_engine.addTextChangedListener(new f(this));
-		// violation_car_frame_num.addTextChangedListener(new g(this));
-		// violation_car_num.addTextChangedListener(new h(this));
-		// violation_car_regist.addTextChangedListener(new i(this));
+		 violation_car_engine.addTextChangedListener(new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence c, int arg1, int arg2, int arg3) {
+				listener.setEngineno(c.toString());
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+					int arg3) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		 violation_car_frame_num.addTextChangedListener(new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence c, int arg1, int arg2, int arg3) {
+				listener.setClassno(c.toString());
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+					int arg3) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		 violation_car_num.addTextChangedListener(new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence c, int arg1, int arg2, int arg3) {
+				listener.setHphm(c.toString());
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+					int arg3) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+//		 violation_car_regist.addTextChangedListener(new );
 	}
 
+	private void setCityInfo(CityEntity cityentity) {
+		violation_car_city.setText(cityentity.getCity_name());
+		violation_car_num.setText(cityentity.getAbbr());
+		if (cityentity.isEngine()) {
+			violation_car_engine_container.setVisibility(View.VISIBLE);
+			violation_car_engine.setHint("发动机号后" + cityentity.getEngineno() + "位");
+		} else {
+			violation_car_engine_container.setVisibility(View.GONE);
+			violation_car_engine.setText("");
+		}
+		if (cityentity.isClassa()) {
+			violation_car_frame_num_container.setVisibility(View.VISIBLE);
+			violation_car_frame_num.setHint("车架号后" + cityentity.getClassno() + "位");
+		} else {
+			violation_car_frame_num_container.setVisibility(View.GONE);
+			violation_car_frame_num.setText("");
+		}
+		if (cityentity.isRegist()) {
+			violation_car_regist_container.setVisibility(View.VISIBLE);
+			violation_car_regist.setHint("完整注册号后" + cityentity.getRegistno() + "位");
+		} else {
+			violation_car_regist_container.setVisibility(View.GONE);
+			violation_car_regist.setText("");
+		}
+		listener.setCity(cityentity);
+	}
+	
+	public void setSelectCityListener() {
+		final CityEntity cityentity = ViolationMainActivity.citymap.get("江苏").get(3);
+		violation_city_waitbar.setVisibility(View.INVISIBLE);
+		setCityInfo(cityentity);
+		violation_car_city.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if (ViolationMainActivity.cityselectdialog == null) {
+					ViolationMainActivity.cityselectdialog = new ViolationCitySelectDialog(getContext());
+				}
+				
+				ViolationMainActivity.cityselectdialog.initView("江苏", cityentity);
+				ViolationMainActivity.cityselectdialog.setListener(new OnCityListener() {
+					
+					@Override
+					public void getCity(String province_code, CityEntity cityentity) {
+						setCityInfo(cityentity);
+						
+					}
+				});
+			}
+		});
+	}
+	
 	private int cartypeitem = 1;
 	public void setSelectCarTypeListener() {
 		// 小型车牌
@@ -116,139 +219,19 @@ public class ViolationConditionView extends FrameLayout {
 		});
 	}
 
-	public void a() {
-		// String str1 = "北京";
-		// if (b.a().d().e != null) {
-		// str1 = b.a().d().e;
-		// }
-		// String str2 = str1.replace("市", "").replace("省", "");
-		// ArrayList localArrayList1 = (ArrayList) z.a.get(str2);
-		// ArrayList localArrayList2;
-		// String str4;
-		// if ((localArrayList1 == null) || (b.a().d().b == null)) {
-		// String str3 = (String) z.b.get(0);
-		// localArrayList2 = (ArrayList) z.a.get(str3);
-		// str4 = str3;
-		// }
-		// for (;;) {
-		// for (int i1 = 0;; i1++) {
-		// if (i1 >= localArrayList2.size()) {
-		// }
-		// for (;;) {
-		// if (cityentity == null) {
-		// cityentity = ((y) localArrayList2.get(0));
-		// }
-		// a(str4, cityentity);
-		// return;
-		// if (b.a().d() == null) {
-		// break;
-		// }
-		// String str5 = b.a().d().b;
-		// if ((str5 == null)
-		// || (!str5.equals(((y) localArrayList2.get(i1)).k))) {
-		// break;
-		// }
-		// cityentity = ((y) localArrayList2.get(i1));
-		// }
-		// }
-		// str4 = str2;
-		// localArrayList2 = localArrayList1;
-		// }
-	}
-
-	public void a(String paramString, CityEntity cityentity) {
-		// this.m = paramString;
-		// this.cityentity = cityentity;
-		// if (listener != null) {
-		// listener.a(cityentity);
-		// }
-		// violation_car_city.setText(paramy.k);
-		// violation_car_num.setText(paramy.d);
-		// violation_car_num.setSelection(violation_car_num.getText().length());
-		// if (paramy.g) {
-		// violation_car_frame_num_container.setVisibility(0);
-		// if (paramy.h == 0) {
-		// violation_car_frame_num.setHint("完整车架号");
-		// if (!paramy.e) {
-		// break label258;
-		// }
-		// violation_car_engine_container.setVisibility(0);
-		// if (paramy.f != 0) {
-		// break label219;
-		// }
-		// violation_car_frame_num.setHint("完整发动机号");
-		// }
-		// }
-		// for (;;) {
-		// if (paramy.i) {
-		// violation_car_regist_container.setVisibility(0);
-		// if (paramy.j == 0) {
-		// violation_car_frame_num.setHint("完整注册号");
-		// return;
-		// violation_car_frame_num.setHint("车架号后" + String.valueOf(paramy.h) +
-		// "位");
-		// break;
-		// violation_car_frame_num_container.setVisibility(8);
-		// break;
-		// label219: violation_car_engine.setHint("发动机号后" +
-		// String.valueOf(paramy.f)
-		// + "位");
-		// continue;
-		// label258: violation_car_engine_container.setVisibility(8);
-		// continue;
-		// }
-		// violation_car_regist.setHint("注册号后" + String.valueOf(paramy.j) +
-		// "位");
-		// return;
-		// }
-		// }
-		// violation_car_regist_container.setVisibility(View.GONE);
-	}
-
-	public void a(String paramString1, String paramString2) {
-		violation_car_city.setText(paramString1);
-		violation_car_type.setText(paramString2);
-	}
-
-	public void b() {
-//		if (z.c.size() > 2) {
-//		}
-//		for (this.o = ((hpzlEntity) z.c.get(1));; this.o = ((hpzlEntity) z.c
-//				.get(0))) {
-//			a(this.o);
-//			do {
-//				return;
-//			} while (z.c.size() != 1);
-//		}
-	}
-
-	public void c() {
-		violation_city_waitbar.setVisibility(View.INVISIBLE);
-	}
-
-	public void d() {
-		violation_cartype_waitbar.setVisibility(View.INVISIBLE);
-	}
-
 	public void setListener(OnConditionListener listener) {
 		this.listener = listener;
 	}
 
 	public static abstract interface OnConditionListener {
-		public abstract void a();
+		public abstract void setHpzl(hpzlEntity hpzl);
 
-		public abstract void setHpzl(hpzlEntity paramx);
+		public abstract void setCity(CityEntity city);
 
-		public abstract void a(CityEntity paramy);
+		public abstract void setEngineno(String engineno);
 
-		public abstract void a(String paramString);
-
-		public abstract void a(String paramString, CityEntity paramy);
-
-		public abstract void b(String paramString);
-
-		public abstract void c(String paramString);
-
-		public abstract void d(String paramString);
+		public abstract void setClassno(String classno);
+		
+		public abstract void setHphm(String hphm);
 	}
 }

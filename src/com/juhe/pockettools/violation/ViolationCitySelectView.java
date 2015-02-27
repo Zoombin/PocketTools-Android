@@ -44,27 +44,20 @@ public class ViolationCitySelectView extends LinearLayout {
 
 			@Override
 			public void onClick(View v) {
-				// if ((ViolationCitySelectView.a(this.a) != null)
-				// && (ViolationCitySelectView.b(this.a).getCurrentItem() <
-				// this.a.a
-				// .size())
-				// && (ViolationCitySelectView.c(this.a).getCurrentItem() <
-				// this.a.b
-				// .size())) {
-				// ViolationCitySelectView.a(this.a).a(
-				// (String) this.a.a.get(ViolationCitySelectView.b(
-				// this.a).getCurrentItem()),
-				// (y) this.a.b.get(ViolationCitySelectView.c(this.a)
-				// .getCurrentItem()));
-				// }
+				int provinceitem = provincewheel.getCurrentItem();
+				int cityitem = citywheel.getCurrentItem();
+				
+				CityEntity entity = ViolationMainActivity.citymap.get(ViolationMainActivity.provincelist.get(provinceitem)).get(cityitem);
+				citylistener.getCity(entity.getProvince_code(), entity);
 			}
 		});
 		provincewheel.addChangingListener(new OnWheelChangedListener() {
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-				String str = (String) z.b.get(newValue);
-				selectWheel(str, null);
+				String str = (String) ViolationMainActivity.provincelist
+						.get(newValue);
+				selectWheel(str, ViolationMainActivity.citymap.get(str).get(0));
 			}
 		});
 		list = new ArrayList<String>();
@@ -72,25 +65,31 @@ public class ViolationCitySelectView extends LinearLayout {
 	}
 
 	private void selectWheel(String paramString, CityEntity entity) {
-		// citylist = ((ArrayList) z.a.get(paramString));
-		// ArrayList localArrayList = new ArrayList();
-		// int i = 0;
-		// int j = 0;
-		// for (;;) {
-		// if (i >= citylist.size()) {
-		// citywheel.a(new com.fotoable.helpr.calendar.datepicker.c(
-		// localArrayList), null);
-		// citywheel.setCyclic(false);
-		// citywheel.setCurrentItem(j);
-		// return;
-		// }
-		// localArrayList.add(((CityEntity) citylist.get(i)).k);
-		// if ((entity != null)
-		// && (((CityEntity) citylist.get(i)).k.equals(entity.k))) {
-		// j = i;
-		// }
-		// i++;
-		// }
+		citylist = ViolationMainActivity.citymap.get(paramString);
+		for (int i = 0; i < citylist.size(); i++) {
+			if (citylist.get(i).getCity_code().equals(entity.getCity_code())) {
+				citywheel.setAdapter(new WheelAdapter() {
+	
+					@Override
+					public int getMaximumLength() {
+						return -1;
+					}
+	
+					@Override
+					public int getItemsCount() {
+						return citylist.size();
+					}
+	
+					@Override
+					public String getItem(int index) {
+						return citylist.get(index).getCity_name();
+					}
+				}, null);
+				citywheel.setCyclic(false);
+				citywheel.setCurrentItem(i);
+				return;
+			}
+		}
 	}
 
 	public void initWheel() {
@@ -114,13 +113,13 @@ public class ViolationCitySelectView extends LinearLayout {
 		citywheel.setLayoutParams(params2);
 	}
 
-	public void a(String paramString, CityEntity paramy) {
-		list = z.b;
+	public void setProvinceWheelData(String paramString, CityEntity paramy) {
+		list = ViolationMainActivity.provincelist;
 		provincewheel.setAdapter(new WheelAdapter() {
 
 			@Override
 			public int getMaximumLength() {
-				return 0;
+				return -1;
 			}
 
 			@Override
@@ -148,6 +147,6 @@ public class ViolationCitySelectView extends LinearLayout {
 	}
 
 	public static abstract interface OnCityListener {
-		public abstract void getCity(String city, CityEntity paramy);
+		public abstract void getCity(String province_code, CityEntity cityentity);
 	}
 }
