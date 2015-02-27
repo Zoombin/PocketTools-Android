@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="10"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.GET_TASKS" />
@@ -126,6 +126,16 @@
             android:name=".violation.ViolationMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name=".constelltion.ConstelltionMainActivity"
+            android:parentActivityName=".home.HelprActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".home.HelprActivity" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
