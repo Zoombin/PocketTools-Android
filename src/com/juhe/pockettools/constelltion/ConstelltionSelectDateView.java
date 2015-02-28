@@ -43,8 +43,14 @@ public class ConstelltionSelectDateView extends LinearLayout {
 				.inflate(R.layout.view_constelltion_select_container, this, true);
 		constelltion_scroll_select = ((ConstelltionDateScrollView) findViewById(R.id.constelltion_scroll_select));
 		initData();
-		constelltion_scroll_select.a(dateintlist, 0);
-//		constelltion_scroll_select.setLinstener(new s(this));
+		constelltion_scroll_select.setSelectItem(dateintlist, 0);
+		constelltion_scroll_select.setLinstener(new ConstelltionDateScrollView.OnSelectListener() {
+			
+			@Override
+			public void setDateIndex(int index) {
+				listener.setDateStr(datelist.get(index));
+			}
+		});
 	}
 
 	public void a(int paramInt) {
@@ -56,6 +62,6 @@ public class ConstelltionSelectDateView extends LinearLayout {
 	}
 
 	public static abstract interface OnSelectListener {
-		public abstract void a(String paramString);
+		public abstract void setDateStr(String datestr);
 	}
 }

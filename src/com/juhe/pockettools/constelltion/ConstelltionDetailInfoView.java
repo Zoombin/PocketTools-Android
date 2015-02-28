@@ -14,8 +14,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class ConstelltionDetailInfoView extends LinearLayout {
+	private LinearLayout layout_title;
 	private ImageView img_constelltion_detail;
 	private TextView txt_constelltion_detail;
+	private TextView txt_date_range_detail;
 	private TextView title_date;
 	private TextView title_1;
 	private TextView title_2;
@@ -44,8 +46,10 @@ public class ConstelltionDetailInfoView extends LinearLayout {
 		((LayoutInflater) getContext().getSystemService(
 				Context.LAYOUT_INFLATER_SERVICE)).inflate(
 				R.layout.constelltion_detail_info_view, this, true);
+		layout_title = (LinearLayout) findViewById(R.id.layout_title);
 		img_constelltion_detail = ((ImageView) findViewById(R.id.img_constelltion_detail));
 		txt_constelltion_detail = ((TextView) findViewById(R.id.txt_constelltion_detail));
+		txt_date_range_detail = (TextView)  findViewById(R.id.txt_date_range_detail);
 		title_date = ((TextView) findViewById(R.id.title_date));
 		title_1 = ((TextView) findViewById(R.id.title_1));
 		title_2 = ((TextView) findViewById(R.id.title_2));
@@ -77,88 +81,86 @@ public class ConstelltionDetailInfoView extends LinearLayout {
 		txt_detail_6.setTypeface(typeface);
 	}
 
-	public void a(q paramq, String paramString) {
-//		if ((paramq != null) && (paramString.equals("week"))) {
-//			title_date.setText("第" + paramq.z + "周运势");
-//			String str11 = paramq.B.replaceAll("\",\"", "");
-//			title_1.setText(str11.substring(0, 2));
-//			txt_detail_1.setText(str11.substring(3, str11.length()));
-//			String str12 = paramq.C.replaceAll("\",\"", "");
-//			title_2.setText(str12.substring(0, 2));
-//			txt_detail_2.setText(str12.substring(3, str12.length()));
-//			String str13 = paramq.A.replaceAll("\",\"", "");
-//			title_3.setText(str13.substring(0, 2));
-//			txt_detail_3.setText(str13.substring(3, str13.length()));
-//			String str14 = paramq.D.replaceAll("\",\"", "");
-//			title_4.setText(str14.substring(0, 2));
-//			txt_detail_4.setText(str14.substring(3, str14.length()));
-//			String str15 = paramq.E.replaceAll("\",\"", "");
-//			title_5.setText(str15.substring(0, 2));
-//			txt_detail_5.setText(str15.substring(3, str15.length()));
-//		}
-//		String str1;
-//		do {
-//			do {
-//				do {
-//					return;
-//					if ((paramq != null) && (paramString.equals("month"))) {
-//						title_date.setText(paramq.H + "运势");
-//						String str6 = paramq.J.replaceAll("\",\"", "");
-//						title_1.setText("总运势");
-//						txt_detail_1.setText(str6.substring(0, str6.length()));
-//						String str7 = paramq.L.replaceAll("\",\"", "");
-//						title_2.setText("健康");
-//						txt_detail_2.setText(str7.substring(0, str7.length()));
-//						String str8 = paramq.K.replaceAll("\",\"", "");
-//						title_3.setText("爱情");
-//						txt_detail_3.setText(str8.substring(0, str8.length()));
-//						String str9 = paramq.N.replaceAll("\",\"", "");
-//						title_4.setText("财运");
-//						txt_detail_4.setText(str9.substring(0, str9.length()));
-//						String str10 = paramq.O.replaceAll("\",\"", "");
-//						title_5.setText("工作");
-//						txt_detail_5.setText(str10.substring(0, str10.length()));
-//						return;
-//					}
-//				} while ((paramq == null) || (!paramString.equals("year")));
-//				title_date.setText(paramq.T + "运势");
-//				title_1.setText("总运势描述: " + paramq.V);
-//				if (paramq.S != null) {
-//					String str5 = paramq.S.replaceAll("\",\"", "");
-//					if ((str5 != null) && (str5.length() > 2)) {
-//						txt_detail_1.setText(str5.substring(2, -2 + str5.length()));
-//					}
-//				}
-//				title_2.setText("职业");
-//				if (paramq.Y != null) {
-//					String str4 = paramq.Y.replaceAll("\",\"", "");
-//					if ((str4 != null) && (str4.length() > 2)) {
-//						txt_detail_2.setText(str4.substring(2, -2 + str4.length()));
-//					}
-//				}
-//				title_3.setText("爱情");
-//				if (paramq.W != null) {
-//					String str3 = paramq.W.replaceAll("\",\"", "");
-//					if ((str3 != null) && (str3.length() > 2)) {
-//						txt_detail_3.setText(str3.substring(2, -2 + str3.length()));
-//					}
-//				}
-//				title_4.setText("健康");
-//				if (paramq.X != null) {
-//					String str2 = paramq.X.replaceAll("\",\"", "");
-//					if ((str2 != null) && (str2.length() > 2)) {
-//						txt_detail_4.setText(str2.substring(2, -2 + str2.length()));
-//					}
-//				}
-//				title_5.setText("财务");
-//			} while (paramq.Z == null);
-//			str1 = paramq.Z.replaceAll("\",\"", "");
-//		} while ((str1 == null) || (str1.length() <= 2));
-//		txt_detail_5.setText(str1.substring(2, -2 + str1.length()));
+	public void setDayData(ConstalltionDayEntity entity) {
+		title_date.setVisibility(View.GONE);
+		title_1.setText(entity.getSummary());
+		txt_detail_1.setVisibility(View.GONE);
+		title_2.setVisibility(View.GONE);
+		txt_detail_2.setVisibility(View.GONE);
+		title_3.setVisibility(View.GONE);
+		txt_detail_3.setVisibility(View.GONE);
+		title_4.setVisibility(View.GONE);
+		txt_detail_4.setVisibility(View.GONE);
+		title_5.setVisibility(View.GONE);
+		txt_detail_5.setVisibility(View.GONE);
+		title_6.setVisibility(View.GONE);
+		txt_detail_6.setVisibility(View.GONE);
+	}
+	
+	public void setWeekData(ConstalltionWeekEntity entity) {
+		// {"date":"2015年02月22日-2015年02月28日","health":"健康：身体小心炎症。","job":"求职：接受安排是顺势之举。 ","love":"恋情：受本能驱使，缺乏情感理智。与伴侣相处，可能有蛮横不讲理的表现。 ","money":"财运：花销随心情簸荡，财务控制力下降。 ",
+		// "name":"白羊座","weekth":9,"work":"工作：知道自己想要什么，但行动无力，受制于人的可能性大。或企图走捷径，不惜放弃原则。 ","resultcode":"200","error_code":0}
+
+		title_date.setText("第" + entity.getWeekth() + "周运势");
+		title_date.setVisibility(View.VISIBLE);
+		title_1.setText(entity.getHealth().split("：")[0]);
+		txt_detail_1.setText(entity.getHealth().split("：")[1]);
+		title_2.setText(entity.getJob().split("：")[0]);
+		txt_detail_2.setText(entity.getJob().split("：")[1]);
+		title_3.setText(entity.getLove().split("：")[0]);
+		txt_detail_3.setText(entity.getLove().split("：")[1]);
+		title_4.setText(entity.getMoney().split("：")[0]);
+		txt_detail_4.setText(entity.getMoney().split("：")[1]);
+		title_5.setText(entity.getWork().split("：")[0]);
+		txt_detail_5.setText(entity.getWork().split("：")[1]);
+		title_6.setVisibility(View.GONE);
+		txt_detail_6.setVisibility(View.GONE);
+	}
+	
+	public void setMonthData(ConstalltionWeekEntity entity) {
+		// {"date":"2015年02月22日-2015年02月28日","health":"健康：身体小心炎症。","job":"求职：接受安排是顺势之举。 ","love":"恋情：受本能驱使，缺乏情感理智。与伴侣相处，可能有蛮横不讲理的表现。 ","money":"财运：花销随心情簸荡，财务控制力下降。 ",
+		// "name":"白羊座","weekth":9,"work":"工作：知道自己想要什么，但行动无力，受制于人的可能性大。或企图走捷径，不惜放弃原则。 ","resultcode":"200","error_code":0}
+
+		title_date.setVisibility(View.GONE);
+		
+		title_1.setText("总运势");
+		txt_detail_1.setText(entity.getAll());
+		title_2.setText("健康");
+		txt_detail_2.setText(entity.getHealth());
+		title_3.setText("爱情");
+		txt_detail_3.setText(entity.getLove());
+		title_4.setText("财运");
+		txt_detail_4.setText(entity.getMoney());
+		title_5.setText("工作");
+		txt_detail_5.setText(entity.getWork());
+		title_6.setVisibility(View.GONE);
+		txt_detail_6.setVisibility(View.GONE);
+	}
+	
+	public void setYearData(ConstalltionYearEntity entity) {
+		title_date.setVisibility(View.GONE);
+		title_1.setText(entity.getMima().getInfo());
+		txt_detail_1.setText(entity.getMima().getText().get(0));
+		title_2.setText("职业");
+		txt_detail_2.setText(entity.getCareer().get(0));
+		title_3.setText("爱情");
+		txt_detail_3.setText(entity.getLove().get(0));
+		title_4.setText("健康");
+		txt_detail_4.setText(entity.getHealth().get(0));
+		title_5.setText("财务");
+		txt_detail_5.setText(entity.getFinance().get(0));
+		title_6.setVisibility(View.GONE);
+		txt_detail_6.setVisibility(View.GONE);
 	}
 
 	public void setSelectedDetailConstelltion(int index) {
+		layout_title.setVisibility(View.VISIBLE);
 		img_constelltion_detail.setBackgroundResource(ConstalltionConstants.icons[index]);
 		txt_constelltion_detail.setText(ConstalltionConstants.names[index]);
+		txt_date_range_detail.setText(ConstalltionConstants.dates[index]);
+	}
+	
+	public void disableTitleLayout() {
+		layout_title.setVisibility(View.GONE);
 	}
 }

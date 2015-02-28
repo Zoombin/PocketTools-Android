@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -41,9 +42,9 @@ public class ConstelltionMainActivity extends FullscreenActivity {
 	private RightPublishTextView constelltion_content;
 	private LinearLayout detail_info_today;
 	private LinearLayout detail_info_week;
-	private int index = 0;
+	private int consindex = 0;
+	private int typeindex = 0;
 	private String type = "today";
-//	private o n;
 
 	private String getType(String date) {
 		if (date.equals("今日")) {
@@ -64,6 +65,25 @@ public class ConstelltionMainActivity extends FullscreenActivity {
 		return null;
 	}
 
+	private int getIndex(String date) {
+		if (date.equals("今日")) {
+			return 0;
+		}
+		if (date.equals("明日")) {
+			return 1;
+		}
+		if (date.equals("本周")) {
+			return 2;
+		}
+		if (date.equals("本月")) {
+			return 3;
+		}
+		if (date.equals("今年")) {
+			return 4;
+		}
+		return 0;
+	}
+
 	private void showToday() {
 		constelltion_content.setText("");
 		detail_info_today.setVisibility(View.VISIBLE);
@@ -80,37 +100,58 @@ public class ConstelltionMainActivity extends FullscreenActivity {
 	}
 
 	private void showSelectView() {
-		if (constelltionselectview != null) {
-			return;
+		if (constelltionselectview == null) {
+
+			constelltionselectview = new ConstelltionSelectView(this, null);
+			constelltionselectview
+					.setListener(new ConstelltionSelectView.OnSelectListener() {
+
+						@Override
+						public void setPosition(int index) {
+							consindex = index;
+							closeSelectView();
+						}
+
+						@Override
+						public void finish() {
+							closeSelectView();
+						}
+					});
+			ViewGroup viewgroup = (ViewGroup) findViewById(android.R.id.content);
+			viewgroup.addView(constelltionselectview);
+			Animation animation = AnimationUtils.loadAnimation(this,
+					R.anim.fragment_slide_left_enter);
+			constelltionselectview.setAnimation(animation);
 		}
-		ViewGroup localViewGroup = (ViewGroup) findViewById(android.R.id.content);
-		constelltionselectview = new ConstelltionSelectView(this, null);
-		constelltionselectview.setListener(new ConstelltionSelectView.OnSelectListener() {
-			
-			@Override
-			public void setPosition(int paramInt) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void finish() {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-		localViewGroup.addView(constelltionselectview);
-		Animation animation = AnimationUtils.loadAnimation(this,
-				R.anim.fragment_slide_left_enter);
-		constelltionselectview.setAnimation(animation);
+
 	}
 
 	private void closeSelectView() {
 		if (constelltionselectview != null) {
-			ViewGroup localViewGroup = (ViewGroup) findViewById(android.R.id.content);
 			Animation animation = AnimationUtils.loadAnimation(this,
 					R.anim.fragment_slide_right_exit);
-//			animation.setAnimationListener(new n(this, localViewGroup));
+			animation.setAnimationListener(new AnimationListener() {
+
+				@Override
+				public void onAnimationStart(Animation arg0) {
+					// TODO Auto-generated method stub
+
+				}
+
+				@Override
+				public void onAnimationRepeat(Animation arg0) {
+					// TODO Auto-generated method stub
+
+				}
+
+				@Override
+				public void onAnimationEnd(Animation arg0) {
+					ViewGroup viewgroup = (ViewGroup) findViewById(android.R.id.content);
+					viewgroup.removeView(constelltionselectview);
+					constelltionselectview = null;
+					initData();
+				}
+			});
 			constelltionselectview.startAnimation(animation);
 		}
 	}
@@ -129,7 +170,7 @@ public class ConstelltionMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_constelltion_main);
-//		((ImageView) findViewById(R.id.img_bg)).setImageBitmap(w.a().d());
+		// ((ImageView) findViewById(R.id.img_bg)).setImageBitmap(w.a().d());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		constelltion_basicview = ((ConstelltionBasicView) findViewById(R.id.constelltion_basicview));
 		constelltion_content = ((RightPublishTextView) findViewById(R.id.constelltion_content));
@@ -139,64 +180,122 @@ public class ConstelltionMainActivity extends FullscreenActivity {
 		detail_info_week.setVisibility(View.GONE);
 		waitbar = ((ProgressBar) findViewById(R.id.waitbar));
 		constelltion_date = ((ConstelltionSelectDateView) findViewById(R.id.constelltion_date));
-		constelltion_date.setListener(new ConstelltionSelectDateView.OnSelectListener() {
-			
-			@Override
-			public void a(String paramString) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-		action_bar.setTiltleText("所有星座");
+		constelltion_date
+				.setListener(new ConstelltionSelectDateView.OnSelectListener() {
+
+					@Override
+					public void setDateStr(String datestr) {
+						typeindex = getIndex(datestr);
+						type = getType(datestr);
+						initData();
+					}
+				});
+		action_bar.setTiltleText("星座运势");
 		action_bar.setSureTextColor(Color.WHITE);
 		action_bar.b();
 		action_bar.a();
 		action_bar.setSureText("所有星座");
 		action_bar.setListener(new InterfaceTopActiveBar() {
-			
+
 			@Override
 			public void query() {
-				// TODO Auto-generated method stub
-				
+				showSelectView();
 			}
-			
+
 			@Override
 			public void cancel() {
 				finish();
 			}
 		});
-		Typeface localTypeface = Typeface.createFromAsset(getAssets(),
+		Typeface typeface = Typeface.createFromAsset(getAssets(),
 				"fonts/FZKTJT.ttf");
-		constelltion_content.setTypeface(localTypeface);
-		index = 0;
-		constelltion_basicview.setSelectedConstelltion(index);
-		waitbar.setVisibility(View.VISIBLE);
-		
+		constelltion_content.setTypeface(typeface);
+		constelltion_basicview.setSelectedConstelltion(consindex);
+
 		initData();
 	}
-	
+
 	private void initData() {
+		waitbar.setVisibility(View.VISIBLE);
 		Parameters params = new Parameters();
-		params.add("consName", ConstalltionConstants.names[index]);
+		params.add("consName", ConstalltionConstants.names[consindex]);
 		params.add("type", type);
 		params.add("key", "4d928c345f98533ccad7e86942bd36f8");
 		JuheData.executeWithAPI(58,
-				"http://web.juhe.cn:8080/constellation/getAll",
-				JuheData.GET, params, new DataCallBack() {
-	
+				"http://web.juhe.cn:8080/constellation/getAll", JuheData.GET,
+				params, new DataCallBack() {
+
 					@Override
 					public void resultLoaded(int err, String reason,
 							String result) {
 
+						waitbar.setVisibility(View.GONE);
 						if (err == 0) {
-							ConstalltionEntity entity = new Gson().fromJson(result, ConstalltionEntity.class);
-							if (entity.getError_code() != 0 && entity.getError_code() != 200) {
-								Toast.makeText(getApplicationContext(), Integer.toString(entity.getError_code()),
-										Toast.LENGTH_SHORT).show();
-								return;
+							if (typeindex == 0 || typeindex == 1) {
+								ConstalltionDayEntity entity = new Gson()
+										.fromJson(result,
+												ConstalltionDayEntity.class);
+								if (entity.getError_code() != 0
+										&& entity.getError_code() != 200) {
+									Toast.makeText(
+											getApplicationContext(),
+											Integer.toString(entity
+													.getError_code()),
+											Toast.LENGTH_SHORT).show();
+									return;
+								}
+
+								
+								detail_info_today.setVisibility(View.VISIBLE);
+								detail_info_week.setVisibility(View.VISIBLE);
+								constelltion_detail_info.setDayData(entity);
+								constelltion_detail_info.disableTitleLayout();
+								constelltion_basicview.setSelectedConstelltion(consindex);
+								constelltion_basicview.setData(entity);
+							} else if (typeindex == 2 || typeindex == 3) {
+								ConstalltionWeekEntity entity = new Gson()
+										.fromJson(result,
+												ConstalltionWeekEntity.class);
+								if (entity.getError_code() != 0
+										&& entity.getError_code() != 200) {
+									Toast.makeText(
+											getApplicationContext(),
+											Integer.toString(entity
+													.getError_code()),
+											Toast.LENGTH_SHORT).show();
+									return;
+								}
+								
+								detail_info_today.setVisibility(View.GONE);
+								detail_info_week.setVisibility(View.VISIBLE);
+								if (typeindex == 2) {
+									constelltion_detail_info.setWeekData(entity);
+								} else {
+									constelltion_detail_info.setMonthData(entity);
+								}
+								
+								constelltion_detail_info
+										.setSelectedDetailConstelltion(consindex);
+							} else {
+								ConstalltionYearEntity entity = new Gson()
+										.fromJson(result,
+												ConstalltionYearEntity.class);
+								if (entity.getError_code() != 0
+										&& entity.getError_code() != 200) {
+									Toast.makeText(
+											getApplicationContext(),
+											Integer.toString(entity
+													.getError_code()),
+											Toast.LENGTH_SHORT).show();
+									return;
+								}
+
+								detail_info_today.setVisibility(View.GONE);
+								detail_info_week.setVisibility(View.VISIBLE);
+								constelltion_detail_info.setYearData(entity);
+								constelltion_detail_info
+										.setSelectedDetailConstelltion(consindex);
 							}
-							
-							String date = entity.getDate();
 						} else {
 							Toast.makeText(getApplicationContext(), reason,
 									Toast.LENGTH_SHORT).show();

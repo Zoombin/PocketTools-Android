@@ -72,6 +72,6 @@ public class ConstelltionSelectView extends FrameLayout {
 	public static abstract interface OnSelectListener {
 		public abstract void finish();
 
-		public abstract void setPosition(int paramInt);
+		public abstract void setPosition(int index);
 	}
 }

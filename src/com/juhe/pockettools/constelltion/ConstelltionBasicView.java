@@ -55,29 +55,16 @@ public class ConstelltionBasicView extends LinearLayout {
 		img_work.setViewColor(Color.rgb(97, 171, 244));
 	}
 
-//	public void a(q paramq, String paramString) {
-//		if ((paramq != null) && (paramString.equals("today"))) {
-//			item_composite_index.setText(paramq.e);
-//			item_match_index.setText(paramq.f);
-//			item_luky_num.setText(paramq.g);
-//			item_luky_color.setText(paramq.h);
-//			img_health.setIndex(paramq.j);
-//			img_love.setIndex(paramq.i);
-//			img_money.setIndex(paramq.k);
-//			img_work.setIndex(paramq.l);
-//		}
-//
-//		if (paramq != null && paramString.equals("tomorrow")) {
-//			item_composite_index.setText(paramq.o);
-//			item_match_index.setText(paramq.p);
-//			item_luky_num.setText(paramq.q);
-//			item_luky_color.setText(paramq.r);
-//			img_health.setIndex(paramq.t);
-//			img_love.setIndex(paramq.s);
-//			img_money.setIndex(paramq.u);
-//			img_work.setIndex(paramq.v);
-//		}
-//	}
+	public void setData(ConstalltionDayEntity entity) {
+		item_composite_index.setText(entity.getAll());
+		item_match_index.setText(entity.getQFriend());
+		item_luky_num.setText(Integer.toString(entity.getNumber()));
+		item_luky_color.setText(entity.getColor());
+		img_health.setIndex(Integer.parseInt(entity.getHealth().replace("%", "")));
+		img_love.setIndex(Integer.parseInt(entity.getLove().replace("%", "")));
+		img_money.setIndex(Integer.parseInt(entity.getMoney().replace("%", "")));
+		img_work.setIndex(Integer.parseInt(entity.getWork().replace("%", "")));
+	}
 
 	public void setSelectedConstelltion(int index) {
 		img_constelltion

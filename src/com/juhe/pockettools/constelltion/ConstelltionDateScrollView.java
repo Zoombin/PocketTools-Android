@@ -28,26 +28,41 @@ public class ConstelltionDateScrollView extends HorizontalScrollView {
 		initView();
 	}
 
-	private View a(int paramInt1, int paramInt2) {
-		ConstelltionDateItemView localConstelltionDateItemView = new ConstelltionDateItemView(
+	private ConstelltionDateItemView getConstelltionDateItemView(int text, int index) {
+		ConstelltionDateItemView constelltiondateitemview = new ConstelltionDateItemView(
 				getContext(), null);
-		localConstelltionDateItemView.setItemText(paramInt1);
-		localConstelltionDateItemView.setTag(Integer.valueOf(paramInt2));
-//		localConstelltionDateItemView.setOnClickListener(new b(this));
-		layout.addView(localConstelltionDateItemView);
-		return localConstelltionDateItemView;
+		constelltiondateitemview.setItemText(text);
+		constelltiondateitemview.setTag(Integer.valueOf(index));
+		constelltiondateitemview.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if (!v.isSelected()) {
+					if (layout != null) {
+						for (int i=0; i<layout.getChildCount(); i++) {
+							layout.getChildAt(i).setSelected(false);
+						}
+					}
+					setStartScroll(v);
+					listener.setDateIndex((int) v.getTag());
+					v.setSelected(true);
+				}
+			}
+		});
+		layout.addView(constelltiondateitemview);
+		return constelltiondateitemview;
 	}
 
-	private void setStartScroll(View paramView) {
+	private void setStartScroll(View v) {
 		int i = getContext().getResources().getDisplayMetrics().widthPixels;
-		int j = paramView.getLeft();
-		int k = paramView.getWidth();
+		int j = v.getLeft();
+		int k = v.getWidth();
 		int m = getScrollX();
 		if ((j - m > i - k * 2) && (j - m < i + k)) {
-			smoothScrollTo(j - i + k * 2, paramView.getTop());
+			smoothScrollTo(j - i + k * 2, v.getTop());
 		}
-		if ((j - m < k) && (j - m >= -paramView.getWidth())) {
-			smoothScrollTo(j - k, paramView.getTop());
+		if ((j - m < k) && (j - m >= -v.getWidth())) {
+			smoothScrollTo(j - k, v.getTop());
 		}
 	}
 
@@ -62,23 +77,18 @@ public class ConstelltionDateScrollView extends HorizontalScrollView {
 		addView(layout);
 	}
 
-	public void a(ArrayList<Integer> paramArrayList, int paramInt) {
-//		int i = 0;
-//		if (i >= paramArrayList.size()) {
-//			return;
-//		}
-//		if (i == paramInt) {
-//			view = a(((Integer) paramArrayList.get(i)).intValue(), i);
-//		}
-//		for (;;) {
-//			view.setSelected(true);
-//			i++;
-//			break;
-//			a(((Integer) paramArrayList.get(i)).intValue(), i);
-//		}
+	public void setSelectItem(ArrayList<Integer> dateintlist, int index) {
+		for (int i=0; i<dateintlist.size(); i++) {
+			ConstelltionDateItemView v =  getConstelltionDateItemView(((Integer) dateintlist.get(i)).intValue(), i);
+			if (i == index) {
+				v.setSelected(true);
+			} else {
+				v.setSelected(false);
+			}
+		}
 	}
 
-	public void setItemSelceted(int paramInt) {
+	public void setItemSelceted(int index) {
 		if (view != null) {
 			view.setSelected(false);
 		}
@@ -89,13 +99,11 @@ public class ConstelltionDateScrollView extends HorizontalScrollView {
 			System.out.println("allTag:"
 					+ ((ConstelltionDateItemView) layout.getChildAt(i))
 							.getTag());
-			if (paramInt == ((Integer) ((ConstelltionDateItemView) layout
+			if (index == ((Integer) ((ConstelltionDateItemView) layout
 					.getChildAt(i)).getTag()).intValue()) {
 				view.setSelected(false);
 				view = layout.getChildAt(i);
 				view.setSelected(true);
-//				c localc = new c(this);
-//				new Handler().post(localc);
 			}
 		}
 	}
@@ -105,6 +113,6 @@ public class ConstelltionDateScrollView extends HorizontalScrollView {
 	}
 
 	public static abstract interface OnSelectListener {
-		public abstract void a(int paramInt);
+		public abstract void setDateIndex(int index);
 	}
 }
