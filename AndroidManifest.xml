@@ -136,6 +136,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".home.HelprActivity" />
 
+        </activity>
+        <activity
+            android:name=".web.WebActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
