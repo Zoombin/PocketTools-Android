@@ -22,6 +22,7 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.UPDATE_APP_OPS_STATS" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -64,13 +65,19 @@
             android:name=".home.SplashAcitivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+                        <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".home.HelprActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
         <activity
             android:name=".flashlight.FlashLightActivity"
             android:screenOrientation="portrait"
@@ -135,18 +142,17 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".home.HelprActivity" />
-
         </activity>
         <activity
             android:name=".web.WebActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name=".courier.PackageMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

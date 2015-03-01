@@ -24,9 +24,7 @@ public class WebActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-//		url = getIntent().getStringExtra(KEY_URL);
-//		url = "http://m.toutiao.com";
-		url = "http://map.baidu.com/mobile/webapp/index/index#search/search/qt=s&wd=%E5%81%9C%E8%BD%A6%E5%9C%BA&c=224&searchFlag=bigBox&version=5&exptype=dep/vt=";
+		url = getIntent().getStringExtra(KEY_URL);
 		if (TextUtils.isEmpty(url)) {
 			finish();
 		}

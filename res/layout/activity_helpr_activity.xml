@@ -26,65 +26,12 @@
                 android:layout_height="fill_parent"
                 android:orientation="vertical" >
 
-                <FrameLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" >
-
-                    <FrameLayout
-                        android:id="@id/home_search_container"
-                        android:layout_width="fill_parent"
-                        android:layout_height="40.0dip"
-                        android:layout_marginBottom="10.0dip"
-                        android:layout_marginLeft="10.0dip"
-                        android:layout_marginRight="51.0dip"
-                        android:layout_marginTop="10.0dip"
-                        android:background="@drawable/color_transparent_radius_3dp" >
-
-                        <ImageView
-                            android:layout_width="16.0dip"
-                            android:layout_height="16.0dip"
-                            android:layout_gravity="left|center"
-                            android:layout_marginLeft="8.0dip"
-                            android:background="@drawable/gr_searchbg" />
-
-                        <EditText
-                            android:id="@id/home_search"
-                            style="@style/text_16_white"
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_marginLeft="30.0dip"
-                            android:background="@color/transparent"
-                            android:ems="10"
-                            android:paddingLeft="5.0dip"
-                            android:paddingRight="5.0dip" />
-                    </FrameLayout>
-
-                    <Button
-                        android:id="@id/helpr_setting"
-                        android:layout_width="40.0dip"
-                        android:layout_height="40.0dip"
-                        android:layout_gravity="right|center"
-                        android:layout_marginRight="5.0dip"
-                        android:background="@drawable/btn_setup_res" />
-                </FrameLayout>
-
-                <android.support.v4.view.ViewPager
-                    android:id="@id/infosview_pager"
-                    android:layout_width="fill_parent"
-                    android:layout_height="0.0dip"
-                    android:layout_weight="1.0"
-                    android:background="@color/transparent" />
-
-                <FrameLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="20.0dip" >
-
-                    <com.viewpagerindicator.IconPageIndicator
-                        android:id="@id/infoview_indicator"
-                        android:layout_width="fill_parent"
-                        android:layout_height="10.0dip"
-                        android:layout_gravity="center" />
-                </FrameLayout>
+                <GridView
+	                android:id="@+id/gd_modules"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:listSelector="@android:color/transparent"
+	                android:numColumns="4" />
             </LinearLayout>
         </FrameLayout>
 
@@ -106,121 +53,6 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
-
-                <FrameLayout
-                    android:id="@id/tab_tool_container"
-                    android:layout_width="fill_parent"
-                    android:layout_height="161.0dip"
-                    android:layout_gravity="bottom" >
-
-                    <LinearLayout
-                        android:id="@id/daily_tool_container"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:orientation="vertical"
-                        android:visibility="visible" >
-
-                        <android.support.v4.view.ViewPager
-                            android:id="@id/daily_tool_page"
-                            android:layout_width="fill_parent"
-                            android:layout_height="0.0dip"
-                            android:layout_weight="1.0"
-                            android:background="#44252626" />
-
-                        <FrameLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="15.0dip"
-                            android:background="#64252626" >
-
-                            <com.viewpagerindicator.IconPageIndicator
-                                android:id="@id/infoview_indicator_dialytool"
-                                android:layout_width="fill_parent"
-                                android:layout_height="10.0dip"
-                                android:layout_gravity="center" />
-                        </FrameLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@id/read_discover_container"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:orientation="vertical"
-                        android:visibility="invisible" >
-
-                        <android.support.v4.view.ViewPager
-                            android:id="@id/read_discover_page"
-                            android:layout_width="fill_parent"
-                            android:layout_height="0.0dip"
-                            android:layout_weight="1.0"
-                            android:background="#44252626" />
-
-                        <FrameLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="15.0dip"
-                            android:background="#64252626" >
-
-                            <com.viewpagerindicator.IconPageIndicator
-                                android:id="@id/infoview_indicator_phone"
-                                android:layout_width="fill_parent"
-                                android:layout_height="10.0dip"
-                                android:layout_gravity="center" />
-                        </FrameLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@id/life_search_container"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:orientation="vertical"
-                        android:visibility="invisible" >
-
-                        <android.support.v4.view.ViewPager
-                            android:id="@id/life_search_page"
-                            android:layout_width="fill_parent"
-                            android:layout_height="0.0dip"
-                            android:layout_weight="1.0"
-                            android:background="#44252626" />
-
-                        <FrameLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="15.0dip"
-                            android:background="#64252626" >
-
-                            <com.viewpagerindicator.IconPageIndicator
-                                android:id="@id/infoview_indicator_lifesearch"
-                                android:layout_width="fill_parent"
-                                android:layout_height="10.0dip"
-                                android:layout_gravity="center" />
-                        </FrameLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@id/pocket_market_container"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:orientation="vertical"
-                        android:visibility="invisible" >
-
-                        <android.support.v4.view.ViewPager
-                            android:id="@id/pocket_market_page"
-                            android:layout_width="fill_parent"
-                            android:layout_height="0.0dip"
-                            android:layout_weight="1.0"
-                            android:background="#44252626" />
-
-                        <FrameLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="15.0dip"
-                            android:background="#64252626" >
-
-                            <com.viewpagerindicator.IconPageIndicator
-                                android:id="@id/infoview_indicator_pocketmarket"
-                                android:layout_width="fill_parent"
-                                android:layout_height="10.0dip"
-                                android:layout_gravity="center" />
-                        </FrameLayout>
-                    </LinearLayout>
-                </FrameLayout>
 
                 <com.juhe.pockettools.tabrootbutton.mainTabScrollView
                     android:id="@id/main_tabview"
