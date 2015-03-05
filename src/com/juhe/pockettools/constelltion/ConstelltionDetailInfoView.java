@@ -113,6 +113,18 @@ public class ConstelltionDetailInfoView extends LinearLayout {
 		txt_detail_4.setText(entity.getMoney().split("：")[1]);
 		title_5.setText(entity.getWork().split("：")[0]);
 		txt_detail_5.setText(entity.getWork().split("：")[1]);
+
+		title_1.setVisibility(View.VISIBLE);
+		txt_detail_1.setVisibility(View.VISIBLE);
+		title_2.setVisibility(View.VISIBLE);
+		txt_detail_2.setVisibility(View.VISIBLE);
+		title_3.setVisibility(View.VISIBLE);
+		txt_detail_3.setVisibility(View.VISIBLE);
+		title_4.setVisibility(View.VISIBLE);
+		txt_detail_4.setVisibility(View.VISIBLE);
+		title_5.setVisibility(View.VISIBLE);
+		txt_detail_5.setVisibility(View.VISIBLE);
+		
 		title_6.setVisibility(View.GONE);
 		txt_detail_6.setVisibility(View.GONE);
 	}
@@ -133,6 +145,17 @@ public class ConstelltionDetailInfoView extends LinearLayout {
 		txt_detail_4.setText(entity.getMoney());
 		title_5.setText("工作");
 		txt_detail_5.setText(entity.getWork());
+		
+		title_1.setVisibility(View.VISIBLE);
+		txt_detail_1.setVisibility(View.VISIBLE);
+		title_2.setVisibility(View.VISIBLE);
+		txt_detail_2.setVisibility(View.VISIBLE);
+		title_3.setVisibility(View.VISIBLE);
+		txt_detail_3.setVisibility(View.VISIBLE);
+		title_4.setVisibility(View.VISIBLE);
+		txt_detail_4.setVisibility(View.VISIBLE);
+		title_5.setVisibility(View.VISIBLE);
+		txt_detail_5.setVisibility(View.VISIBLE);
 		title_6.setVisibility(View.GONE);
 		txt_detail_6.setVisibility(View.GONE);
 	}
@@ -149,6 +172,18 @@ public class ConstelltionDetailInfoView extends LinearLayout {
 		txt_detail_4.setText(entity.getHealth().get(0));
 		title_5.setText("财务");
 		txt_detail_5.setText(entity.getFinance().get(0));
+		
+		title_1.setVisibility(View.VISIBLE);
+		txt_detail_1.setVisibility(View.VISIBLE);
+		title_2.setVisibility(View.VISIBLE);
+		txt_detail_2.setVisibility(View.VISIBLE);
+		title_3.setVisibility(View.VISIBLE);
+		txt_detail_3.setVisibility(View.VISIBLE);
+		title_4.setVisibility(View.VISIBLE);
+		txt_detail_4.setVisibility(View.VISIBLE);
+		title_5.setVisibility(View.VISIBLE);
+		txt_detail_5.setVisibility(View.VISIBLE);
+		
 		title_6.setVisibility(View.GONE);
 		txt_detail_6.setVisibility(View.GONE);
 	}

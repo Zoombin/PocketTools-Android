@@ -164,7 +164,11 @@ public class ModulesAdapter extends BaseAdapter {
 
 					break;
 				case 20:
-
+					intent = new Intent(context, WebActivity.class);
+					intent.putExtra(
+							WebActivity.KEY_URL,
+							"http://op.juhe.cn/ofpay/pay/recharge");
+					context.startActivity(intent);
 					break;
 				case 21:
 

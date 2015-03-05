@@ -1,6 +1,7 @@
 package com.juhe.pockettools.flashlight;
 
 import android.hardware.Camera;
+import android.hardware.Camera.Parameters;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -30,18 +31,18 @@ public class FlashLightActivity extends FullscreenActivity {
 		try {
 			if ((parameters != null)
 					&& (parameters.getSupportedFlashModes() != null)) {
-				if (parameters.getSupportedFlashModes().contains("torch")) {
-					parameters.setFlashMode("torch");
+				if (parameters.getSupportedFlashModes().contains(Parameters.FLASH_MODE_TORCH)) {
+					parameters.setFlashMode(Parameters.FLASH_MODE_TORCH);
 					camera.setParameters(parameters);
 					return;
 				}
 				flashlight_container.setBackgroundColor(getResources()
-						.getColor(2131099669));
+						.getColor(R.color.white));
 				setScreenBrightness(1.0F);
 				return;
 			}
 			flashlight_container.setBackgroundColor(getResources().getColor(
-					2131099669));
+					R.color.white));
 			setScreenBrightness(1.0F);
 			return;
 		} catch (Exception e) {
@@ -60,8 +61,8 @@ public class FlashLightActivity extends FullscreenActivity {
 		try {
 			if ((parameters != null)
 					&& (parameters.getSupportedFlashModes() != null)) {
-				if (parameters.getSupportedFlashModes().contains("off")) {
-					parameters.setFlashMode("off");
+				if (parameters.getSupportedFlashModes().contains(Parameters.FLASH_MODE_OFF)) {
+					parameters.setFlashMode(Parameters.FLASH_MODE_OFF);
 					camera.setParameters(parameters);
 				}
 			} else {

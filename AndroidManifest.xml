@@ -65,11 +65,6 @@
             android:name=".home.SplashAcitivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-                        <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".home.HelprActivity"
@@ -136,7 +131,6 @@
         </activity>
         <activity
             android:name=".constelltion.ConstelltionMainActivity"
-            android:parentActivityName=".home.HelprActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
             <meta-data
@@ -152,7 +146,16 @@
             android:name=".courier.PackageMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name=".dream.DreamMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
