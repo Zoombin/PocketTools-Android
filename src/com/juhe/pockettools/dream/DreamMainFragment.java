@@ -58,13 +58,12 @@ public class DreamMainFragment extends Fragment {
 		}
 	}
 
-	private void startDreamResultFragment(String paramString, int paramInt) {
-//		ArrayList localArrayList = k.a().a(paramInt);
+	private void startDreamResultFragment(String title, List<Dream.Result> resultlist) {
 		if (getActivity().getSupportFragmentManager().getBackStackEntryCount() < 1) {
 			FragmentTransaction transaction = getActivity()
 					.getSupportFragmentManager().beginTransaction();
 			DreamResultFragment fragment = DreamResultFragment
-					.getDreamResultFragment(paramString, null);
+					.getDreamResultFragment(title, resultlist);
 			transaction.setCustomAnimations(R.anim.fragment_slide_left_enter,
 					R.anim.fragment_slide_left_exit, R.anim.fragment_slide_right_enter, R.anim.fragment_slide_right_exit);
 			transaction.add(R.id.content_frame, fragment);
@@ -140,6 +139,7 @@ public class DreamMainFragment extends Fragment {
 					action_bar.setProgressVisiable(View.VISIBLE);
 					
 					Parameters params = new Parameters();
+					params.add("full", 1);
 					params.add("q", txtiput.getText().toString());
 					params.add("key", "e10ef3445ac25e570094dcf48bece26a");
 					JuheData.executeWithAPI(64, "http://v.juhe.cn/dream/query",
@@ -151,19 +151,18 @@ public class DreamMainFragment extends Fragment {
 									action_bar.setProgressVisiable(View.INVISIBLE);
 
 									if (err == 0) {
-//										DreamEntity entity = new Gson().fromJson(
-//												result, DreamEntity.class);
-//										if (entity.getError_code() != 0
-//												&& entity.getError_code() != 200) {
-//											Toast.makeText(activity,
-//													entity.getReason(),
-//													Toast.LENGTH_SHORT).show();
-//											return;
-//										}
-//										List<DreamEntity.Result> categorylist = entity
-//												.getResult();
-//										setData(categorylist);
-//										startDreamResultFragment(txtiput.getText().toString());
+										Dream entity = new Gson().fromJson(
+												result, Dream.class);
+										if (entity.getError_code() != 0
+												&& entity.getError_code() != 200) {
+											Toast.makeText(activity,
+													entity.getReason(),
+													Toast.LENGTH_SHORT).show();
+											return;
+										}
+										List<Dream.Result> resultlist = entity
+												.getResult();
+										startDreamResultFragment(txtiput.getText().toString(), resultlist);
 									} else {
 										Toast.makeText(activity, reason,
 												Toast.LENGTH_SHORT).show();
@@ -247,7 +246,7 @@ public class DreamMainFragment extends Fragment {
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			Category.Result entity = (Category.Result) categorylist
+			final Category.Result entity = (Category.Result) categorylist
 					.get(position);
 
 			ViewHolder holder;
@@ -274,7 +273,39 @@ public class DreamMainFragment extends Fragment {
 				
 				@Override
 				public void onClick(View v) {
-					
+					action_bar.setProgressVisiable(View.VISIBLE);
+					 
+					Parameters params = new Parameters();
+					params.add("fid", entity.getId());
+					params.add("key", "e10ef3445ac25e570094dcf48bece26a");
+					JuheData.executeWithAPI(64, "http://v.juhe.cn/dream/category",
+							JuheData.GET, params, new DataCallBack() {
+
+								@Override
+								public void resultLoaded(int err, String reason,
+										String result) {
+									action_bar.setProgressVisiable(View.INVISIBLE);
+
+									if (err == 0) {
+										Dream entity = new Gson().fromJson(
+												result, Dream.class);
+										if (entity.getError_code() != 0
+												&& entity.getError_code() != 200) {
+											Toast.makeText(activity,
+													entity.getReason(),
+													Toast.LENGTH_SHORT).show();
+											return;
+										}
+										List<Dream.Result> resultlist = entity
+												.getResult();
+//										setData(categorylist);
+//										startDreamResultFragment(txtiput.getText().toString());
+									} else {
+										Toast.makeText(activity, reason,
+												Toast.LENGTH_SHORT).show();
+									}
+								}
+							});
 				}
 			});
 			holder.txt_category.setText(entity.getName());

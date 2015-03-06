@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
@@ -22,6 +23,7 @@ import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 //import com.fotoable.helpr.wallpaper.w;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -31,14 +33,14 @@ public class DreamResultFragment extends Fragment {
 	private DreamResultAdapter adapter = null;
 	private ListView dream_main_listveiw;
 	private TopActiveBarView action_bar;
-	private ArrayList<Dream> list = new ArrayList<Dream>();
-	private String g;
+	private List<Dream.Result> list = new ArrayList<Dream.Result>();
+	private String title;
 
-	public static DreamResultFragment getDreamResultFragment(String paramString,
-			ArrayList<Dream> list) {
+	public static DreamResultFragment getDreamResultFragment(String title,
+			List<Dream.Result> resultlist) {
 		DreamResultFragment localDreamResultFragment = new DreamResultFragment();
-		localDreamResultFragment.g = paramString;
-		localDreamResultFragment.list = list;
+		localDreamResultFragment.title = title;
+		localDreamResultFragment.list = resultlist;
 		return localDreamResultFragment;
 	}
 
@@ -51,12 +53,12 @@ public class DreamResultFragment extends Fragment {
 		return str;
 	}
 
-	private void startDreamDetailFragment(Dream paramDream) {
+	private void startDreamDetailFragment(Dream.Result entity) {
 		if (getActivity().getSupportFragmentManager().getBackStackEntryCount() < 2) {
 			FragmentTransaction transaction = getActivity()
 					.getSupportFragmentManager().beginTransaction();
 			DreamDetailFragment fragment = DreamDetailFragment
-					.getDreamDetailFragment(paramDream);
+					.getDreamDetailFragment(entity);
 			transaction.setCustomAnimations(R.anim.fragment_slide_left_enter,
 					R.anim.fragment_slide_left_exit, R.anim.fragment_slide_right_enter, R.anim.fragment_slide_right_exit);
 			transaction.add(R.id.content_frame, fragment);
@@ -110,7 +112,7 @@ public class DreamResultFragment extends Fragment {
 //		dream_main_listveiw.setOnItemClickListener(new l(this));
 		action_bar = ((TopActiveBarView) view.findViewById(R.id.action_bar));
 		action_bar.setTiltleText("周公解梦");
-		action_bar.setTiltleText(this.g);
+		action_bar.setTiltleText(title);
 		action_bar.setListener(new InterfaceTopActiveBar() {
 			
 			@Override
@@ -120,22 +122,21 @@ public class DreamResultFragment extends Fragment {
 			
 			@Override
 			public void cancel() {
-				// TODO Auto-generated method stub
-				
+				activity.close();
 			}
 		});
 		return view;
 	}
 
 	private class DreamResultAdapter extends BaseAdapter {
-		private ArrayList<Dream> list = new ArrayList<Dream>();
+		private List<Dream.Result> list = new ArrayList<Dream.Result>();
 		private Context context;
 
 		public DreamResultAdapter(Context context) {
 			this.context = context;
 		}
 
-		public void setData(ArrayList<Dream> list) {
+		public void setData(List<Dream.Result> list) {
 			this.list = list;
 			notifyDataSetChanged();
 		}
@@ -160,7 +161,7 @@ public class DreamResultFragment extends Fragment {
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			Dream entity = (Dream) list.get(position);
+			final Dream.Result entity = (Dream.Result) list.get(position);
 			ViewHolder holder;
 			
 			if (convertView == null) {
@@ -178,8 +179,15 @@ public class DreamResultFragment extends Fragment {
 				holder = (ViewHolder) convertView.getTag();
 			}
 
-//			holder.txt_category.setText(entity.b);
-//			holder.txt_category_detail.setText(entity.c);
+			holder.layout_item.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					startDreamDetailFragment(entity);
+				}
+			});
+			holder.txt_category.setText(entity.getTitle());
+			holder.txt_category_detail.setText(entity.getDes());
 			
 			return convertView;
 		}

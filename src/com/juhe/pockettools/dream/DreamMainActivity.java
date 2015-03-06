@@ -17,13 +17,14 @@ import java.util.ArrayList;
 public class DreamMainActivity extends FullscreenActivity {
 	private static final String TAG = "DreamMainActivity";
 	private ArrayList<Category.Result> categorylist = new ArrayList<Category.Result>();
-
+	FragmentManager fragmentmanager;
+	
 	public ArrayList<Category.Result> getList() {
 		return categorylist;
 	}
 
-	public void b() {
-		FragmentManager fragmentmanager = getSupportFragmentManager();
+	public void close() {
+		fragmentmanager = getSupportFragmentManager();
 		if (fragmentmanager.getBackStackEntryCount() > 0) {
 			FragmentTransaction transaction = getSupportFragmentManager()
 					.beginTransaction();
@@ -54,7 +55,7 @@ public class DreamMainActivity extends FullscreenActivity {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			finish();
+			close();
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);

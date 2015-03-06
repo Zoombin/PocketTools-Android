@@ -19,20 +19,22 @@ import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DreamDetailFragment extends Fragment {
 	private static final String a = "DreamMainFragment";
 	private DreamMainActivity activity;
 	private TopActiveBarView action_bar;
 	private TextView textview;
-	private Dream dream;
+	private Dream.Result dream;
 	private DreamDetailAdapter adapter = null;
 	private ListView dream_main_listveiw;
-	private ArrayList<String> list = new ArrayList<String>();
+	private List<String> list = new ArrayList<String>();
 
-	public static DreamDetailFragment getDreamDetailFragment(Dream dream) {
+	public static DreamDetailFragment getDreamDetailFragment(Dream.Result entity) {
 		DreamDetailFragment fragment = new DreamDetailFragment();
-		fragment.dream = dream;
+		fragment.dream = entity;
 		return fragment;
 	}
 
@@ -48,7 +50,7 @@ public class DreamDetailFragment extends Fragment {
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-		activity = ((DreamMainActivity) activity);
+		this.activity = ((DreamMainActivity) activity);
 		Log.d("DreamMainFragment", "onAttach");
 	}
 
@@ -76,20 +78,22 @@ public class DreamDetailFragment extends Fragment {
 			
 			@Override
 			public void cancel() {
-				// TODO Auto-generated method stub
-				
+				activity.close();
 			}
 		});
 		dream_main_listveiw = ((ListView) view.findViewById(R.id.dream_main_listveiw));
 		adapter = new DreamDetailAdapter(getActivity());
 		dream_main_listveiw.setAdapter(adapter);
-//		action_bar.setTiltleText(dream.b);
-		action_bar.setProgressVisiable(View.VISIBLE);
+		action_bar.setTiltleText(dream.getTitle());
+//		action_bar.setProgressVisiable(View.VISIBLE);
 		new Handler().postDelayed(new Runnable() {
 			
 			@Override
 			public void run() {
-				adapter.setData(list);
+				if (dream.getList() != null) {
+					list = Arrays.asList(dream.getList());
+					adapter.setData(list);
+				}
 			}
 		}, 300L);
 		return view;
@@ -102,14 +106,14 @@ public class DreamDetailFragment extends Fragment {
 	}
 
 	private class DreamDetailAdapter extends BaseAdapter {
-		private ArrayList<String> list = new ArrayList<String>();
+		private List<String> list = new ArrayList<String>();
 		private Context context;
 
 		public DreamDetailAdapter(Context context) {
 			this.context = context;
 		}
 
-		public void setData(ArrayList<String> list) {
+		public void setData(List<String> list) {
 			this.list = list;
 			notifyDataSetChanged();
 		}
