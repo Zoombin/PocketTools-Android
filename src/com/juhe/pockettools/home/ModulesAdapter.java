@@ -18,10 +18,12 @@ import com.juhe.pockettools.applesn.AppleSnActivity;
 import com.juhe.pockettools.calculator.CalculatorMainActivity;
 import com.juhe.pockettools.constelltion.ConstelltionMainActivity;
 import com.juhe.pockettools.courier.PackageMainActivity;
+import com.juhe.pockettools.dream.DreamMainActivity;
 import com.juhe.pockettools.exchange.ExChangeMainActivity;
 import com.juhe.pockettools.flashlight.FlashLightActivity;
 import com.juhe.pockettools.mirror.CameraMirrorActivity;
 import com.juhe.pockettools.mobilelocale.MobileLocaleMainActivity;
+import com.juhe.pockettools.poi.PoiSearchActivity;
 import com.juhe.pockettools.ruler.RulerMainActivity;
 import com.juhe.pockettools.sizetable.SizeTableActivity;
 import com.juhe.pockettools.tuling.ChatActivity;
@@ -129,7 +131,8 @@ public class ModulesAdapter extends BaseAdapter {
 
 					break;
 				case 10:
-
+					intent = new Intent(context, DreamMainActivity.class);
+					context.startActivity(intent);
 					break;
 				case 11:
 
@@ -158,7 +161,8 @@ public class ModulesAdapter extends BaseAdapter {
 					context.startActivity(intent);
 					break;
 				case 18:
-
+					intent = new Intent(context, PoiSearchActivity.class);
+					context.startActivity(intent);
 					break;
 				case 19:
 
