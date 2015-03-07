@@ -82,7 +82,6 @@
             android:name=".home.SplashAcitivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-
         </activity>
         <activity
             android:name=".home.HelprActivity"
@@ -169,23 +168,26 @@
             android:name=".dream.DreamMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
-
         </activity>
         <activity
             android:name=".poi.PoiSearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
-
         </activity>
-                <activity
+        <activity
             android:name=".calendar.activity.CalendarActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
-                        <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".calendar.activity.CalendarDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
         </activity>
     </application>
 
