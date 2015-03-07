@@ -1,31 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <ImageView android:id="@id/detail_image" android:background="#60ffffff" android:layout_width="102.0dip" android:layout_height="153.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:scaleType="centerCrop" />
-            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_weight="1.0">
-                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginBottom="10.0dip">
-                    <TextView android:textSize="20.0sp" android:layout_gravity="center" android:id="@id/detail_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="美国队长美国队长美国队长" style="@style/text_25_white_bold" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@id/detail_image"
+                android:layout_width="102.0dip"
+                android:layout_height="153.0dip"
+                android:layout_marginLeft="15.0dip"
+                android:layout_marginTop="15.0dip"
+                android:background="#60ffffff"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10.0dip"
+                android:layout_weight="1.0"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginBottom="10.0dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@id/detail_name"
+                        style="@style/text_25_white_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="美国队长美国队长美国队长"
+                        android:textSize="20.0sp" />
                 </LinearLayout>
-                <LinearLayout android:orientation="horizontal" android:id="@id/ly_score" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_marginBottom="10.0dip">
-                    <ImageView android:id="@id/detail_star_1" android:background="@drawable/gr_store_star3" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="2.0dip" />
-                    <ImageView android:id="@id/detail_star_2" android:background="@drawable/gr_store_star3" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="2.0dip" />
-                    <ImageView android:id="@id/detail_star_3" android:background="@drawable/gr_store_star3" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="2.0dip" />
-                    <ImageView android:id="@id/detail_star_4" android:background="@drawable/gr_store_star3" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="2.0dip" />
-                    <ImageView android:id="@id/detail_star_5" android:background="@drawable/gr_store_star2" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="2.0dip" />
-                    <TextView android:layout_gravity="left|center" android:id="@id/txt_score" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="7.1" style="@style/text_12_white" />
+
+                <LinearLayout
+                    android:id="@id/ly_score"
+                    android:layout_width="fill_parent"
+                    android:layout_height="20.0dip"
+                    android:layout_marginBottom="10.0dip"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@id/detail_star_1"
+                        android:layout_width="15.0dip"
+                        android:layout_height="15.0dip"
+                        android:layout_marginRight="2.0dip"
+                        android:background="@drawable/gr_store_star3" />
+
+                    <ImageView
+                        android:id="@id/detail_star_2"
+                        android:layout_width="15.0dip"
+                        android:layout_height="15.0dip"
+                        android:layout_marginRight="2.0dip"
+                        android:background="@drawable/gr_store_star3" />
+
+                    <ImageView
+                        android:id="@id/detail_star_3"
+                        android:layout_width="15.0dip"
+                        android:layout_height="15.0dip"
+                        android:layout_marginRight="2.0dip"
+                        android:background="@drawable/gr_store_star3" />
+
+                    <ImageView
+                        android:id="@id/detail_star_4"
+                        android:layout_width="15.0dip"
+                        android:layout_height="15.0dip"
+                        android:layout_marginRight="2.0dip"
+                        android:background="@drawable/gr_store_star3" />
+
+                    <ImageView
+                        android:id="@id/detail_star_5"
+                        android:layout_width="15.0dip"
+                        android:layout_height="15.0dip"
+                        android:layout_marginRight="2.0dip"
+                        android:background="@drawable/gr_store_star2" />
+
+                    <TextView
+                        android:id="@id/txt_score"
+                        style="@style/text_12_white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:layout_marginLeft="3.0dip"
+                        android:text="7.1" />
                 </LinearLayout>
-                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip">
-                    <TextView android:textSize="14.0sp" android:gravity="center" android:layout_gravity="top|left|center" android:id="@id/txt_langguage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:text="语言：英语/汉语 普通话/粤语" style="@style/text_14_white" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10.0dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@id/txt_langguage"
+                        style="@style/text_14_white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|left|center"
+                        android:layout_marginRight="3.0dip"
+                        android:gravity="center"
+                        android:text="语言：英语/汉语 普通话/粤语"
+                        android:textSize="14.0sp" />
                 </LinearLayout>
-                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                    <TextView android:textSize="14.0sp" android:layout_gravity="top|left|center" android:id="@id/txt_times" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:text="片长：166分钟" style="@style/text_14_white" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@id/txt_times"
+                        style="@style/text_14_white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|left|center"
+                        android:layout_marginRight="3.0dip"
+                        android:text="片长：166分钟"
+                        android:textSize="14.0sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
-            <TextView android:textSize="14.0sp" android:layout_gravity="top|left|center" android:id="@id/txt_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="今日排期 （7月18日 星期三）" style="@style/text_14_white" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10.0dip"
+            android:layout_marginTop="10.0dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@id/txt_date"
+                style="@style/text_14_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|left|center"
+                android:layout_marginLeft="15.0dip"
+                android:text="今日排期 （7月18日 星期三）"
+                android:textSize="14.0sp" />
         </LinearLayout>
     </LinearLayout>
+
 </LinearLayout>

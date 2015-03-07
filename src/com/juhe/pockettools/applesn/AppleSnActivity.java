@@ -157,4 +157,5 @@ public class AppleSnActivity extends FullscreenActivity {
 					.hideSoftInputFromWindow(paramView.getWindowToken(), 0);
 		}
 	}
+
 }

@@ -178,6 +178,16 @@
             android:name=".calendar.activity.CalendarActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name=".calendar.activity.CalendarDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name=".moive.MovieMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -185,7 +195,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".calendar.activity.CalendarDetailActivity"
+            android:name=".moive.MovieDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
