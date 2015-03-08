@@ -198,6 +198,11 @@
             android:name=".city.CityActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name=".weather.WeatherMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

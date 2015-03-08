@@ -68,7 +68,7 @@
                 android:layout_gravity="center"
                 android:background="@drawable/city_dailog_background"
                 android:gravity="center"
-                android:textColor="#ffffffff"
+                android:textColor="@color/white"
                 android:textSize="30.0dip"
                 android:visibility="invisible" />
 

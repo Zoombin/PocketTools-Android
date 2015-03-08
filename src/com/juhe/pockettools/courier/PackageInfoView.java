@@ -1,24 +1,19 @@
 package com.juhe.pockettools.courier;
 
-import android.app.Activity;
+import java.util.HashMap;
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-//import com.juhe.pockettools.Utils.CalendarUtil;
+
+import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
+//import com.juhe.pockettools.Utils.CalendarUtil;
 //import com.juhe.pockettools.wallpaper.w;
-import com.juhe.pockettools.R;
-
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class PackageInfoView extends LinearLayout {
 	public static String a = "package_time";

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <attr name="isDropDownStyle" format="boolean" />
     <attr name="isOnBottomStyle" format="boolean" />
     <attr name="isAutoLoadOnBottom" format="boolean" />
-    <attr name="dividerWidth" format="dimension" />
+
     <attr name="maxFontSize" format="dimension" />
     <attr name="aspect" format="string" />
     <attr name="metaButtonBarStyle" format="reference" />
@@ -49,4 +50,12 @@
     <attr name="textColorHint" format="reference|color" />
     <attr name="textColorLink" format="reference|color" />
     <attr name="textAllCaps" format="boolean" />
+
+    <declare-styleable name="HorizontalListView">
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="android:divider" />
+        <attr name="android:requiresFadingEdge" />
+        <attr name="android:fadingEdgeLength" />
+    </declare-styleable>
+
 </resources>

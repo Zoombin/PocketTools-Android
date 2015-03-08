@@ -24,7 +24,8 @@ import com.juhe.pockettools.home.FullscreenActivity;
 
 public class CityActivity extends FullscreenActivity {
 	public static final int a = 3021;
-	public static final String EXTRA_CITYNAME = "SELECTED_CITY_NAME";
+	public static final int REQUEST_CODE_CITYNAME = 1;
+	public static final String EXTRA_CITYNAME = "EXTRA_CITYNAME";
 	private ListView sortListView;
 	private SideBar sideBar;
 	/**
@@ -74,9 +75,13 @@ public class CityActivity extends FullscreenActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				// 这里要利用adapter.getItem(position)来获取当前position所对应的对象
-				Toast.makeText(getApplication(),
-						((SortModel) adapter.getItem(position)).getName(),
-						Toast.LENGTH_SHORT).show();
+//				Toast.makeText(getApplication(),
+//						((SortModel) adapter.getItem(position)).getName(),
+//						Toast.LENGTH_SHORT).show();
+				String cityname = ((SortModel) adapter.getItem(position)).getName();
+				Intent intent = new Intent();
+				setResult(RESULT_OK, intent.putExtra(EXTRA_CITYNAME, cityname));
+				finish();
 			}
 		});
 

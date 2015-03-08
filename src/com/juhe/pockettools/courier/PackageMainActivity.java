@@ -1,8 +1,8 @@
 package com.juhe.pockettools.courier;
 
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.content.res.Resources;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,13 +12,11 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.juhe.pockettools.R;
-import com.juhe.pockettools.applesn.AppleSnEntity;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.home.FullscreenActivity;
@@ -26,8 +24,6 @@ import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
 //import com.juhe.pockettools.wallpaper.w;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class PackageMainActivity extends FullscreenActivity {
 	private TopActiveBarView action_bar;

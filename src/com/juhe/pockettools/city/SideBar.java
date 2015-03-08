@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.juhe.pockettools.R;
 
 public class SideBar extends View {
+
 	// 触摸事件
 	private OnTouchingLetterChangedListener onTouchingLetterChangedListener;
 	// 26个字母
@@ -57,7 +58,7 @@ public class SideBar extends View {
 		int singleHeight = height / b.length;// 获取每一个字母的高度
 
 		for (int i = 0; i < b.length; i++) {
-			paint.setColor(Color.rgb(33, 65, 98));
+			paint.setColor(Color.WHITE);
 			// paint.setColor(Color.WHITE);
 			paint.setTypeface(Typeface.DEFAULT_BOLD);
 			paint.setAntiAlias(true);
