@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.applesn.AppleSnActivity;
 import com.juhe.pockettools.calculator.CalculatorMainActivity;
+import com.juhe.pockettools.calendar.activity.CalendarActivity;
 import com.juhe.pockettools.constelltion.ConstelltionMainActivity;
 import com.juhe.pockettools.courier.PackageMainActivity;
 import com.juhe.pockettools.dream.DreamMainActivity;
@@ -23,12 +24,16 @@ import com.juhe.pockettools.exchange.ExChangeMainActivity;
 import com.juhe.pockettools.flashlight.FlashLightActivity;
 import com.juhe.pockettools.mirror.CameraMirrorActivity;
 import com.juhe.pockettools.mobilelocale.MobileLocaleMainActivity;
+import com.juhe.pockettools.moive.MovieMainActivity;
+import com.juhe.pockettools.oil.OilMainActivity;
+import com.juhe.pockettools.pm.PMMainActivity;
 import com.juhe.pockettools.poi.PoiSearchActivity;
 import com.juhe.pockettools.ruler.RulerMainActivity;
 import com.juhe.pockettools.sizetable.SizeTableActivity;
 import com.juhe.pockettools.tuling.ChatActivity;
 import com.juhe.pockettools.unit.UnitExchangeMainActivity;
 import com.juhe.pockettools.violation.ViolationMainActivity;
+import com.juhe.pockettools.weather.WeatherMainActivity;
 import com.juhe.pockettools.web.WebActivity;
 
 public class ModulesAdapter extends BaseAdapter {
@@ -102,10 +107,12 @@ public class ModulesAdapter extends BaseAdapter {
 					context.startActivity(intent);
 					break;
 				case 2:
-
+					intent = new Intent(context, PMMainActivity.class);
+					context.startActivity(intent);
 					break;
 				case 3:
-
+					intent = new Intent(context, WeatherMainActivity.class);
+					context.startActivity(intent);
 					break;
 				case 4:
 					intent = new Intent(context, ViolationMainActivity.class);
@@ -128,7 +135,8 @@ public class ModulesAdapter extends BaseAdapter {
 					context.startActivity(intent);
 					break;
 				case 9:
-
+					intent = new Intent(context, CalendarActivity.class);
+					context.startActivity(intent);
 					break;
 				case 10:
 					intent = new Intent(context, DreamMainActivity.class);
@@ -141,17 +149,19 @@ public class ModulesAdapter extends BaseAdapter {
 
 					break;
 				case 13:
-
+					intent = new Intent(context, OilMainActivity.class);
+					context.startActivity(intent);
 					break;
 				case 14:
 					intent = new Intent(context, PackageMainActivity.class);
 					context.startActivity(intent);
 					break;
 				case 15:
-
+					intent = new Intent(context, MovieMainActivity.class);
+					context.startActivity(intent);
 					break;
 				case 16:
-
+					
 					break;
 				case 17:
 					intent = new Intent(context, WebActivity.class);
@@ -165,7 +175,7 @@ public class ModulesAdapter extends BaseAdapter {
 					context.startActivity(intent);
 					break;
 				case 19:
-
+					
 					break;
 				case 20:
 					intent = new Intent(context, WebActivity.class);
@@ -175,13 +185,25 @@ public class ModulesAdapter extends BaseAdapter {
 					context.startActivity(intent);
 					break;
 				case 21:
-
+					intent = new Intent(context, WebActivity.class);
+					intent.putExtra(
+							WebActivity.KEY_URL,
+							"http://wvs.m.taobao.com/game_card.htm?spm=0.0.0.0&sid=1c72ee52cc4ce9c966d24fa7c96e9841&pid=null&back_hidden_flag=null&pds=game%23h%23zhichong&type=2&unid=null");
+					context.startActivity(intent);
 					break;
 				case 22:
-
+					intent = new Intent(context, WebActivity.class);
+					intent.putExtra(
+							WebActivity.KEY_URL,
+							"http://touch.lecai.com/?noClientdl=1&agentId=3179#path=page%2Fmain");
+					context.startActivity(intent);
 					break;
 				case 23:
-
+					intent = new Intent(context, WebActivity.class);
+					intent.putExtra(
+							WebActivity.KEY_URL,
+							"http://kdgj.liulianginn.com/koudai/index.html");
+					context.startActivity(intent);
 					break;
 				case 24:
 					intent = new Intent(context, RulerMainActivity.class);

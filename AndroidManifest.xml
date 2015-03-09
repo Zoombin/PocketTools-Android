@@ -223,6 +223,18 @@
             android:name=".oil.OilMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name="com.zbar.lib.CaptureActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".qrcode.QRScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

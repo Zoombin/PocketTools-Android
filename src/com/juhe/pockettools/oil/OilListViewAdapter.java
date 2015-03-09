@@ -201,7 +201,7 @@ public class OilListViewAdapter extends BaseAdapter {
 			holder.txt_type3 = ((TextView) convertView.findViewById(R.id.txt_type3));
 			holder.txt_price1 = ((TextView) convertView.findViewById(R.id.txt_price1));
 			holder.txt_price2 = ((TextView) convertView.findViewById(R.id.txt_price2));
-			holder.txt_price3 = ((TextView) convertView.findViewById(R.id.txt_price2));
+			holder.txt_price3 = ((TextView) convertView.findViewById(R.id.txt_price3));
 			Typeface typeface = Typeface.createFromAsset(
 					context.getAssets(), "fonts/HelveticaNeue-Thin.otf");
 			holder.txt_type1.setTypeface(typeface);
