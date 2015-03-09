@@ -203,6 +203,12 @@
             android:name=".weather.WeatherMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
+
+        </activity>
+                <activity
+            android:name=".pm.PMMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
