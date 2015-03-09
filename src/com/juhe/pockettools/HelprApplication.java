@@ -1,14 +1,15 @@
 package com.juhe.pockettools;
 
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.DisplayMetrics;
 
+import com.baidu.location.GeofenceClient;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.SDKInitializer;
-import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -32,7 +33,14 @@ public class HelprApplication extends Application {
 	public static boolean isAppForeground = true;
 	public static boolean k = true;
 	private static Context context;
-
+	public LocationClient mLocationClient;
+	public GeofenceClient mGeofenceClient;
+	public static HelprApplication self;
+	
+	public static HelprApplication getInstance() {
+		return self;
+	}
+	
 	public static Context getContext() {
 		return context;
 	}
@@ -69,11 +77,18 @@ public class HelprApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		context = getApplicationContext();
+		self = this;
 		// 百度地图
 		SDKInitializer.initialize(getApplicationContext());
 		// 聚合api
 		com.thinkland.sdk.android.SDKInitializer.initialize(getApplicationContext());
 		initImageLoader();
+		
+		mLocationClient = new LocationClient(this.getApplicationContext());
+		LocationClientOption option = new LocationClientOption();
+		option.setIsNeedAddress(true);
+		mLocationClient.setLocOption(option);
+		
 //		try {
 //			context = getApplicationContext();
 //			ActivityManager activitymanager = (ActivityManager) getApplicationContext()

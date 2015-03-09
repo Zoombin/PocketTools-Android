@@ -78,6 +78,16 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="grKLLR2VwrHgkd7y5BHzHaGt" />
 
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".home.SplashAcitivity"
             android:screenOrientation="portrait"
@@ -203,10 +213,14 @@
             android:name=".weather.WeatherMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
-
         </activity>
-                <activity
+        <activity
             android:name=".pm.PMMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name=".oil.OilMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
             <intent-filter>
