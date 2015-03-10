@@ -15,13 +15,13 @@
         android:layout_height="fill_parent"
         android:orientation="vertical" >
 
-        <com.fotoable.helpr.commonview.TopActiveBarView
+        <com.juhe.pockettools.commonview.TopActiveBarView
             android:id="@id/active_top_bar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top" />
 
-        <com.fotoable.helpr.train.TrainTimesSearchResultView
+        <com.juhe.pockettools.train.TrainTimesSearchResultView
             android:id="@id/train_times_result"
             android:layout_width="fill_parent"
             android:layout_height="0.0dip"
