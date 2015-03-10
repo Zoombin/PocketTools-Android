@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.juhe.pockettools.R;
+import com.juhe.pockettools.air.AirMainActivity;
 import com.juhe.pockettools.applesn.AppleSnActivity;
 import com.juhe.pockettools.calculator.CalculatorMainActivity;
 import com.juhe.pockettools.calendar.activity.CalendarActivity;
@@ -31,6 +32,7 @@ import com.juhe.pockettools.poi.PoiSearchActivity;
 import com.juhe.pockettools.qrcode.QRScannerActivity;
 import com.juhe.pockettools.ruler.RulerMainActivity;
 import com.juhe.pockettools.sizetable.SizeTableActivity;
+import com.juhe.pockettools.train.TrainMainActivity;
 import com.juhe.pockettools.tuling.ChatActivity;
 import com.juhe.pockettools.unit.UnitExchangeMainActivity;
 import com.juhe.pockettools.violation.ViolationMainActivity;
@@ -147,7 +149,8 @@ public class ModulesAdapter extends BaseAdapter {
 
 					break;
 				case 12:
-
+					intent = new Intent(context, TrainMainActivity.class);
+					context.startActivity(intent);
 					break;
 				case 13:
 					intent = new Intent(context, OilMainActivity.class);
@@ -162,7 +165,8 @@ public class ModulesAdapter extends BaseAdapter {
 					context.startActivity(intent);
 					break;
 				case 16:
-					
+					intent = new Intent(context, AirMainActivity.class);
+					context.startActivity(intent);
 					break;
 				case 17:
 					intent = new Intent(context, WebActivity.class);
@@ -181,8 +185,7 @@ public class ModulesAdapter extends BaseAdapter {
 					break;
 				case 20:
 					intent = new Intent(context, WebActivity.class);
-					intent.putExtra(
-							WebActivity.KEY_URL,
+					intent.putExtra(WebActivity.KEY_URL,
 							"http://op.juhe.cn/ofpay/pay/recharge");
 					context.startActivity(intent);
 					break;
@@ -195,15 +198,13 @@ public class ModulesAdapter extends BaseAdapter {
 					break;
 				case 22:
 					intent = new Intent(context, WebActivity.class);
-					intent.putExtra(
-							WebActivity.KEY_URL,
+					intent.putExtra(WebActivity.KEY_URL,
 							"http://touch.lecai.com/?noClientdl=1&agentId=3179#path=page%2Fmain");
 					context.startActivity(intent);
 					break;
 				case 23:
 					intent = new Intent(context, WebActivity.class);
-					intent.putExtra(
-							WebActivity.KEY_URL,
+					intent.putExtra(WebActivity.KEY_URL,
 							"http://kdgj.liulianginn.com/koudai/index.html");
 					context.startActivity(intent);
 					break;

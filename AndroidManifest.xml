@@ -240,6 +240,11 @@
             android:name=".train.TrainMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name=".air.AirMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
