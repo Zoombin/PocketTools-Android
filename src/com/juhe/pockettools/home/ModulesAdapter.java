@@ -30,6 +30,7 @@ import com.juhe.pockettools.oil.OilMainActivity;
 import com.juhe.pockettools.pm.PMMainActivity;
 import com.juhe.pockettools.poi.PoiSearchActivity;
 import com.juhe.pockettools.ruler.RulerMainActivity;
+import com.juhe.pockettools.secret.SetPasswordActivity;
 import com.juhe.pockettools.sizetable.SizeTableActivity;
 import com.juhe.pockettools.train.TrainMainActivity;
 import com.juhe.pockettools.tuling.ChatActivity;
@@ -146,7 +147,8 @@ public class ModulesAdapter extends BaseAdapter {
 					context.startActivity(intent);
 					break;
 				case 11:
-
+					intent = new Intent(context, SetPasswordActivity.class);
+					context.startActivity(intent);
 					break;
 				case 12:
 					intent = new Intent(context, TrainMainActivity.class);

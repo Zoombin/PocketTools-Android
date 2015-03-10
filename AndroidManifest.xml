@@ -92,7 +92,7 @@
             android:name=".home.SplashAcitivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-                        <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -250,7 +250,16 @@
             android:name=".air.AirMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
-
+        </activity>
+        <activity
+            android:name=".secret.SetPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
+            android:name=".secret.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
         </activity>
     </application>
 
