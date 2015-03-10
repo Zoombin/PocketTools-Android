@@ -97,7 +97,7 @@
         android:src="@drawable/gr_nav_line" />
 
     <ListView
-        android:id="@+id/air_list"
+        android:id="@id/train_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_gravity="left"

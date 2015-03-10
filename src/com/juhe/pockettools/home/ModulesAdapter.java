@@ -29,7 +29,6 @@ import com.juhe.pockettools.moive.MovieMainActivity;
 import com.juhe.pockettools.oil.OilMainActivity;
 import com.juhe.pockettools.pm.PMMainActivity;
 import com.juhe.pockettools.poi.PoiSearchActivity;
-import com.juhe.pockettools.qrcode.QRScannerActivity;
 import com.juhe.pockettools.ruler.RulerMainActivity;
 import com.juhe.pockettools.sizetable.SizeTableActivity;
 import com.juhe.pockettools.train.TrainMainActivity;
@@ -38,6 +37,7 @@ import com.juhe.pockettools.unit.UnitExchangeMainActivity;
 import com.juhe.pockettools.violation.ViolationMainActivity;
 import com.juhe.pockettools.weather.WeatherMainActivity;
 import com.juhe.pockettools.web.WebActivity;
+import com.zbar.lib.CaptureActivity;
 
 public class ModulesAdapter extends BaseAdapter {
 
@@ -180,7 +180,7 @@ public class ModulesAdapter extends BaseAdapter {
 					context.startActivity(intent);
 					break;
 				case 19:
-					intent = new Intent(context, QRScannerActivity.class);
+					intent = new Intent(context, CaptureActivity.class);
 					context.startActivity(intent);
 					break;
 				case 20:
