@@ -59,6 +59,15 @@ public class QRCodeGoodsInfoView extends LinearLayout {
 		data_from_container = ((FrameLayout) findViewById(R.id.data_from_container));
 	}
 
+	public void setGoodsInfo(QRCodeEntity.Summary summary) {
+//		goods_brand.setText(summary.get);
+//		goods_company.setText(summary.get);
+		goods_price.setText(summary.getInterval());
+//		goods_specification.setText(summary.get);
+		goods_qrcode.setText(summary.getBarcode());
+		goods_name.setText(summary.getName());
+	}
+	
 //	public void a() {
 //		if (goods_info_container.getVisibility() != 0) {
 //			new ArrayList().add(getContext().getResources().getString(

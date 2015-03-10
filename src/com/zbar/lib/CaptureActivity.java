@@ -3,6 +3,7 @@ package com.zbar.lib;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Point;
 import android.media.AudioManager;
@@ -19,8 +20,9 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
+
 import com.juhe.pockettools.R;
+import com.juhe.pockettools.qrcode.QRScannerActivity;
 import com.zbar.lib.camera.CameraManager;
 import com.zbar.lib.decode.CaptureActivityHandler;
 import com.zbar.lib.decode.InactivityTimer;
@@ -170,8 +172,11 @@ public class CaptureActivity extends Activity implements Callback {
 	public void handleDecode(String result) {
 		inactivityTimer.onActivity();
 		playBeepSoundAndVibrate();
-		Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+//		Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
 
+		Intent intent = new Intent(this, QRScannerActivity.class);
+		intent.putExtra("barcode", result);
+		startActivity(intent);
 		// 连续扫描，不发送此消息扫描一次结束后就不能再次扫描
 		// handler.sendEmptyMessage(R.id.restart_preview);
 	}

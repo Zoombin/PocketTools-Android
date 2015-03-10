@@ -1,27 +1,29 @@
 package com.juhe.pockettools.qrcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import com.juhe.pockettools.R;
 
 public class QRCodeGoodsPriceListAdapter extends BaseAdapter {
-	// public static String a = "goods_place";
-	// public static String b = "goods_price";
-	private ArrayList<HashMap<String, String>> list = new ArrayList();
+	private List<QRCodeEntity.Shop> list = new ArrayList<QRCodeEntity.Shop>();
 	private Context context;
 
 	public QRCodeGoodsPriceListAdapter(Context context) {
 		this.context = context;
 	}
 
-	public void setData(ArrayList<HashMap<String, String>> list) {
+	public void setData(List<QRCodeEntity.Shop> list) {
+		if (list == null) {
+			return;
+		}
 		this.list = list;
 		notifyDataSetChanged();
 	}
@@ -49,9 +51,7 @@ public class QRCodeGoodsPriceListAdapter extends BaseAdapter {
 		if (list.size() <= 0) {
 			return convertView;
 		}
-		HashMap localHashMap = (HashMap) list.get(position);
-		// String str1 = (String) localHashMap.get(a);
-		// String str2 = (String) localHashMap.get(b);
+		QRCodeEntity.Shop entity = (QRCodeEntity.Shop) list.get(position);
 		ViewHolder holder;
 
 		if (convertView == null) {
@@ -66,8 +66,8 @@ public class QRCodeGoodsPriceListAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
-//		holder.list_left.setText(str1);
-//		holder.list_right.setText(str2);
+		holder.list_left.setText(entity.getShopname());
+		holder.list_right.setText(entity.getPrice());
 		return convertView;
 	}
 
