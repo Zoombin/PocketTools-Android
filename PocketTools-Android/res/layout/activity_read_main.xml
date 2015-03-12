@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/color_gradient_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/daily_read_bar" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="每日精选" />
+    </com.fotoable.helpr.commonview.TopActiveBarView>
+    <com.fotoable.helpr.news.NewsListView android:id="@id/news_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="49.0dip" />
+</FrameLayout>

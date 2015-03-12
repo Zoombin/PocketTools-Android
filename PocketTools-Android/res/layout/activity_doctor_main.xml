@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:background="@color/black" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <TextView android:textSize="20.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/game_title" android:layout_width="200.0dip" android:layout_height="wrap_content" android:text="@string/doctor_title" android:singleLine="true" />
+        <Button android:textSize="16.0sp" android:textColor="@color/color_little_blue" android:layout_gravity="left" android:id="@id/cancelButton" android:background="@color/transparent" android:layout_width="50.0dip" android:layout_height="50.0dip" android:text="@string/close" />
+        <ProgressBar android:layout_gravity="right|center" android:id="@id/progressbar" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginRight="10.0dip" style="?android:attr/progressBarStyleLarge" />
+    </FrameLayout>
+    <WebView android:scrollbarThumbVertical="@drawable/rcolor_webview_scrollba" android:id="@id/novel_content" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+</LinearLayout>

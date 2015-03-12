@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="vertical" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="60.0dip">
+            <com.fotoable.helpr.commonview.ClearableEditText android:textSize="26.0sp" android:textColor="@color/white" android:textColorHint="@color/default_texthint_color" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/txtiput" android:background="@color/txt_input_white_bgcolor" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="85.0dip" android:hint="单词或句子" android:singleLine="true" android:inputType="none" android:imeOptions="actionSearch" />
+            <Button android:textSize="16.0sp" android:textColor="@color/color_btn_blue_txt" android:layout_gravity="right|center" android:id="@id/btn_search" android:background="@drawable/btn_package_search_res" android:layout_width="67.0dip" android:layout_height="44.0dip" android:layout_marginRight="10.0dip" android:text="@string/package_search" />
+        </FrameLayout>
+        <TextView android:textSize="24.0sp" android:textColor="@color/white" android:gravity="left|center" android:id="@id/wordLabel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ListView android:scrollbarThumbVertical="@drawable/custom_scroll_style" android:id="@id/dictionary_listveiw" android:focusable="false" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:listSelector="@color/transparent" android:cacheColorHint="#00000000" android:divider="@null" android:isScrollContainer="false" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

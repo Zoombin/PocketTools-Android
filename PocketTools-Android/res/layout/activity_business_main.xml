@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/color_gradient_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+        <EditText android:textColor="@color/transparent_black_50" android:textColorHint="@color/default_texthint_color" android:layout_gravity="top|left|center" android:id="@id/business_edittext" android:background="@color/txt_input_white_bgcolor" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_margin="10.0dip" android:hint="@string/button_search" android:singleLine="true" android:inputType="text" android:imeOptions="actionSearch" />
+        <com.fotoable.helpr.merchant.BusinessSelectView android:id="@id/business_select" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" />
+        <ImageView android:background="@drawable/gr_nav_line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <ListView android:scrollbarThumbVertical="@drawable/custom_scroll_style" android:layout_gravity="left" android:id="@id/business_list" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/color_list_select" android:cacheColorHint="#00000000" android:divider="@color/listview_divider_color" android:dividerHeight="1.0px" android:headerDividersEnabled="true" android:footerDividersEnabled="true" android:isScrollContainer="false" />
+    </LinearLayout>
+</FrameLayout>

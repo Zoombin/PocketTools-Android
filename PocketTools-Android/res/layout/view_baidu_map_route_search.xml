@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/color_gradient_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip">
+            <TextView android:textSize="16.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="起点:" />
+            <AutoCompleteTextView android:textColor="@color/white" android:ellipsize="end" android:id="@id/map_start_node" android:background="@color/transparent_20" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="我的位置" android:singleLine="true" android:inputType="none" android:imeOptions="actionSearch" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip">
+            <TextView android:textSize="16.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="终点:" />
+            <EditText android:textColor="@color/transparent_80" android:id="@id/map_end_node" android:background="@color/transparent_20" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="我的位置" android:editable="false" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="60.0dip" android:layout_weight="1.0">
+                <Button android:textColor="@color/white" android:layout_gravity="center" android:id="@id/map_route_drive" android:background="@drawable/gr_package_select_res" android:layout_width="60.0dip" android:layout_height="45.0dip" android:text="@string/baidumap_route_drive" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="60.0dip" android:layout_weight="1.0">
+                <Button android:textColor="@color/white" android:layout_gravity="center" android:id="@id/map_route_transit" android:background="@drawable/gr_package_select_res" android:layout_width="60.0dip" android:layout_height="45.0dip" android:text="@string/baidumap_route_transit" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="60.0dip" android:layout_weight="1.0">
+                <Button android:textColor="@color/white" android:layout_gravity="center" android:id="@id/map_route_walk" android:background="@drawable/gr_package_select_res" android:layout_width="60.0dip" android:layout_height="45.0dip" android:text="@string/baidumap_route_walk" />
+            </FrameLayout>
+        </LinearLayout>
+        <ListView android:layout_gravity="left" android:id="@id/map_route_list" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@color/transparent" android:cacheColorHint="#00000000" android:divider="#99f0f0f0" android:dividerHeight="1.0px" android:headerDividersEnabled="true" android:footerDividersEnabled="true" android:isScrollContainer="false" />
+    </LinearLayout>
+</FrameLayout>

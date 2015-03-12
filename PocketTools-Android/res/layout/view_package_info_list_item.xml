@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+        <TextView
+        android:id="@id/item2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_black_50"
+        android:paddingBottom="10.0dip"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:paddingTop="10.0dip"
+        android:text="2014-08-15(星期五)"
+        android:textColor="@color/white"
+        android:textSize="20.0sp" />
+        
+    <LinearLayout
+        android:id="@id/item1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@id/item1_time"
+            android:layout_width="60.0dip"
+            android:layout_height="30.0dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:background="@drawable/color_package_info_time_bg"
+            android:text="13:14"
+            android:textColor="@color/white"
+            android:textSize="16.0sp" />
+
+        <TextView
+            android:id="@id/item1_content"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="10.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_weight="1.0"
+            android:text="哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈"
+            android:textColor="@color/white"
+            android:textSize="17.0sp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

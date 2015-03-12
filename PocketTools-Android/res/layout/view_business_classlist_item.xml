@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <LinearLayout android:layout_gravity="top|left|center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="36.0dip" android:layout_marginLeft="10.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/image_group" android:background="@drawable/gr_store_groupon" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="3.0dip" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/image_coupon" android:background="@drawable/gr_store_coupon" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="3.0dip" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/image_order" android:background="@drawable/gr_store_reserve" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="3.0dip" />
+            <TextView android:gravity="center_vertical" android:id="@id/text_name" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="2.0dip" android:layout_marginRight="10.0dip" android:text="haha" android:singleLine="true" style="@style/text_18_white" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="26.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="33.0dip" android:layout_marginRight="10.0dip">
+            <TextView android:gravity="top" android:layout_gravity="top|left|center" android:id="@id/text_address" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="haha" android:singleLine="true" android:layout_weight="1.0" style="@style/text_12_little_gray" />
+            <TextView android:gravity="top|right|center" android:layout_gravity="top|right|center" android:id="@id/text_distance" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="120.2公里" style="@style/text_12_little_gray" />
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

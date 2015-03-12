@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center" android:paddingTop="@dimen/drop_down_list_header_padding_top" android:paddingBottom="@dimen/drop_down_list_header_padding_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:id="@id/drop_down_list_header_progress_bar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" android:layout_toLeftOf="@id/drop_down_list_header_default_text_layout" style="@style/drop_down_list_header_progress_bar_style" />
+    <ImageView android:id="@id/drop_down_list_header_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/drop_down_list_arrow" android:layout_toLeftOf="@id/drop_down_list_header_default_text_layout" android:contentDescription="@string/image_content" />
+    <RelativeLayout android:gravity="center" android:id="@id/drop_down_list_header_default_text_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_centerHorizontal="true">
+        <TextView android:gravity="center" android:id="@id/drop_down_list_header_default_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" style="@style/drop_down_list_header_font_style" />
+        <TextView android:gravity="center" android:id="@id/drop_down_list_header_second_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/drop_down_list_header_default_text" style="@style/drop_down_list_header_second_font_style" />
+    </RelativeLayout>
+</RelativeLayout>

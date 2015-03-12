@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/color_gradient_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/weekaccount_bar" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/account_detail_account" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/color_blue_font" android:gravity="right|center" android:layout_gravity="right" android:id="@id/detail_account_edit" android:visibility="invisible" android:layout_width="40.0dip" android:layout_height="50.0dip" android:layout_marginRight="10.0dip" android:text="@string/edit" />
+    </com.fotoable.helpr.commonview.TopActiveBarView>
+    <com.baoyz.swipemenulistview.SwipeMenuListView android:scrollbarThumbVertical="@drawable/custom_scroll_style" android:id="@id/listview_week_account" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip" android:listSelector="@color/transparent_20" android:divider="@color/listview_divider_color" android:dividerHeight="1.0px" />
+</FrameLayout>

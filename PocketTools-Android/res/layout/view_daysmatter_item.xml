@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_gravity="center" android:id="@id/ly_main" android:layout_width="fill_parent" android:layout_height="180.0dip" android:layout_marginLeft="30.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="30.0dip" android:layout_marginBottom="15.0dip">
+        <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+        <TextView android:textSize="14.0sp" android:textColor="#6031270e" android:gravity="center" android:layout_gravity="top|right|center" android:id="@id/txt_juli" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="20.0dip" android:text="距离" android:ems="1" />
+        <TextView android:textSize="29.0sp" android:textColor="#9031270e" android:gravity="top|center" android:layout_gravity="top|right|center" android:id="@id/txt_title" android:layout_width="wrap_content" android:layout_height="170.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="42.0dip" android:text="恋爱纪念日" android:ems="1" />
+        <FrameLayout android:layout_gravity="top|left|center" android:id="@id/ly_desc" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_marginLeft="140.0dip" android:layout_marginTop="20.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="#6031270e" android:gravity="center" android:id="@id/txt_desc" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="还有" android:ems="1" />
+        </FrameLayout>
+        <FrameLayout android:layout_gravity="top|right|center" android:id="@id/ly_days" android:layout_width="64.0dip" android:layout_height="64.0dip" android:layout_marginTop="60.0dip" android:layout_marginRight="100.0dip">
+            <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/gr_circle" android:scaleType="centerCrop" />
+            <TextView android:textSize="30.0sp" android:textColor="#6031270e" android:gravity="center" android:id="@id/txt_days" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="50" android:ems="1" />
+            <TextView android:textSize="16.0sp" android:textColor="#9031270e" android:gravity="center" android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_marginBottom="6.0dip" android:text="天" android:ems="1" />
+        </FrameLayout>
+        <Button android:layout_gravity="bottom|left|center" android:id="@id/btn_edit" android:background="@drawable/btn_more" android:layout_width="50.0dip" android:layout_height="44.0dip" />
+    </FrameLayout>
+</FrameLayout>

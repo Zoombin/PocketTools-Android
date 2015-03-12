@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:id="@id/drop_down_list_footer_progress_bar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" android:layout_toLeftOf="@id/drop_down_list_footer_button" android:layout_centerVertical="true" style="@style/drop_down_list_footer_progress_bar_style" />
+    <Button android:gravity="center" android:id="@id/drop_down_list_footer_button" android:background="@*android:color/transparent" android:layout_width="wrap_content" android:layout_height="@dimen/drop_down_list_footer_button_height" android:layout_marginLeft="@dimen/drop_down_list_footer_button_margin_left" android:text="@string/drop_down_list_footer_default_text" android:layout_centerInParent="true" style="@style/drop_down_list_footer_font_style" />
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="isDropDownStyle" format="boolean" />
+    <attr name="isOnBottomStyle" format="boolean" />
+    <attr name="isAutoLoadOnBottom" format="boolean" />
+
+    <attr name="maxFontSize" format="dimension" />
+    <attr name="aspect" format="string" />
+    <attr name="metaButtonBarStyle" format="reference" />
+    <attr name="metaButtonBarButtonStyle" format="reference" />
+    <attr name="textwidth" format="integer" />
+    <attr name="typeface">
+        <enum name="normal" value="0" />
+        <enum name="sans" value="1" />
+        <enum name="serif" value="2" />
+        <enum name="monospace" value="3" />
+    </attr>
+    <attr name="textSize" format="dimension" />
+    <attr name="textColor" format="reference|color" />
+    <attr name="lineSpacingExtra" format="dimension" />
+    <attr name="frameDrawable" format="reference|color" />
+    <attr name="stateDrawable" format="reference|color" />
+    <attr name="stateMaskDrawable" format="reference|color" />
+    <attr name="sliderDrawable" format="reference|color" />
+    <attr name="withTextInterval" format="dimension" />
+    <attr name="switchStyle" format="reference" />
+    <attr name="thumb" format="reference" />
+    <attr name="track" format="reference" />
+    <attr name="textOn" format="string" />
+    <attr name="textOff" format="string" />
+    <attr name="thumbTextPadding" format="dimension" />
+    <attr name="switchTextAppearance" format="reference" />
+    <attr name="switchMinWidth" format="dimension" />
+    <attr name="switchPadding" format="dimension" />
+    <attr name="switchtextColor" format="reference|color" />
+    <attr name="switchtextSize" format="dimension" />
+    <attr name="textStyle">
+        <flag name="normal" value="0x00000000" />
+        <flag name="bold" value="0x00000001" />
+        <flag name="italic" value="0x00000002" />
+    </attr>
+    <attr name="switchtypeface">
+        <enum name="normal" value="0" />
+        <enum name="sans" value="1" />
+        <enum name="serif" value="2" />
+        <enum name="monospace" value="3" />
+    </attr>
+    <attr name="textColorHighlight" format="reference|color" />
+    <attr name="textColorHint" format="reference|color" />
+    <attr name="textColorLink" format="reference|color" />
+    <attr name="textAllCaps" format="boolean" />
+
+    <declare-styleable name="HorizontalListView">
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="android:divider" />
+        <attr name="android:requiresFadingEdge" />
+        <attr name="android:fadingEdgeLength" />
+    </declare-styleable>
+
+</resources>

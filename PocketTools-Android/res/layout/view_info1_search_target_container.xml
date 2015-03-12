@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="250.0dip" android:layout_height="30.0dip">
+        <Button android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/button_search_baidu" android:background="@drawable/view_search_item_bg" android:layout_width="50.0dip" android:layout_height="fill_parent" android:layout_marginRight="17.0dip" android:text="@string/search_baidu" />
+        <Button android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/button_search_picture" android:background="@drawable/view_search_item_bg" android:layout_width="50.0dip" android:layout_height="fill_parent" android:layout_marginRight="17.0dip" android:text="@string/search_picture" />
+        <Button android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/button_search_map" android:background="@drawable/view_search_item_bg" android:visibility="gone" android:layout_width="50.0dip" android:layout_height="fill_parent" android:layout_marginRight="16.0dip" android:text="@string/search_map" />
+        <Button android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/button_search_novel" android:background="@drawable/view_search_item_bg" android:layout_width="50.0dip" android:layout_height="fill_parent" android:layout_marginRight="16.0dip" android:text="@string/search_novel" />
+        <Button android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/button_search_google" android:background="@drawable/view_search_item_bg" android:layout_width="50.0dip" android:layout_height="fill_parent" android:text="@string/search_google" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="250.0dip" android:layout_height="30.0dip" android:layout_marginTop="5.0dip">
+        <Button android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/button_search_jd" android:background="@drawable/view_search_item_bg" android:layout_width="50.0dip" android:layout_height="fill_parent" android:layout_marginRight="17.0dip" android:text="@string/search_jd" />
+        <Button android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/button_search_taobao" android:background="@drawable/view_search_item_bg" android:layout_width="50.0dip" android:layout_height="fill_parent" android:text="@string/search_taobao" />
+    </LinearLayout>
+</LinearLayout>

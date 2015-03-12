@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/color_gradient_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+        <ScrollView android:scrollbarThumbVertical="@drawable/custom_scroll_style" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.fotoable.helpr.merchant.BusinessDetailBasicView android:id="@id/detail_basic_component" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <FrameLayout android:id="@id/detail_telephone_container" android:background="@color/transparent_black_50" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginTop="100.0dip">
+                    <TextView android:layout_gravity="left|center" android:id="@id/detail_telephone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:text="01010101011" style="@style/text_25_white" />
+                    <ImageView android:layout_gravity="left|center" android:background="@drawable/gr_store_phone" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="15.0dip" />
+                </FrameLayout>
+                <FrameLayout android:id="@id/detail_address_container" android:background="@color/transparent_black_50" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="60.0dip">
+                    <ImageView android:layout_gravity="top" android:background="@drawable/gr_nav_line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <TextView android:textSize="15.0sp" android:textColor="@color/white" android:layout_gravity="left|center" android:id="@id/detail_address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:text="回龙观平西府地铁站" />
+                    <ImageView android:layout_gravity="left|center" android:background="@drawable/gr_store_address" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="15.0dip" />
+                </FrameLayout>
+                <FrameLayout android:id="@id/detail_group_container" android:background="@color/transparent_black_50" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                    <ImageView android:layout_gravity="top" android:background="@drawable/gr_nav_line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <ImageView android:layout_gravity="left|center" android:background="@drawable/gr_store_groupon" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="15.0dip" />
+                    <TextView android:textSize="16.0sp" android:textColor="@color/color_green_business" android:ellipsize="end" android:layout_gravity="left|center" android:id="@id/detail_group" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:layout_marginRight="35.0dip" android:singleLine="true" />
+                    <ImageView android:layout_gravity="right|center" android:background="@drawable/gr_store_more" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginRight="5.0dip" />
+                </FrameLayout>
+                <FrameLayout android:id="@id/detail_coupon_container" android:background="@color/transparent_black_50" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                    <ImageView android:layout_gravity="top" android:background="@drawable/gr_nav_line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <ImageView android:layout_gravity="left|center" android:background="@drawable/gr_store_coupon" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="15.0dip" />
+                    <TextView android:textSize="16.0sp" android:textColor="@color/color_green_business" android:ellipsize="end" android:layout_gravity="left|center" android:id="@id/detail_coupon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:layout_marginRight="35.0dip" android:singleLine="true" />
+                    <ImageView android:layout_gravity="right|center" android:background="@drawable/gr_store_more" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginRight="5.0dip" />
+                </FrameLayout>
+                <FrameLayout android:id="@id/detail_order_container" android:background="@color/transparent_black_50" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                    <ImageView android:layout_gravity="top" android:background="@drawable/gr_nav_line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <ImageView android:layout_gravity="left|center" android:background="@drawable/gr_store_reserve" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="15.0dip" />
+                    <TextView android:textSize="16.0sp" android:textColor="@color/color_green_business" android:layout_gravity="left|center" android:id="@id/detail_order" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:layout_marginRight="35.0dip" android:text="@string/business_detail_order" android:singleLine="true" />
+                    <ImageView android:layout_gravity="right|center" android:background="@drawable/gr_store_more" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginRight="5.0dip" />
+                </FrameLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>

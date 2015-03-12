@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@id/txt_category_detail"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="top|left|center"
+        android:layout_marginBottom="10.0dip"
+        android:layout_marginTop="10.0dip"
+        android:gravity="left"
+        android:lineSpacingMultiplier="1.2"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:textColor="@color/white"
+        android:textSize="@dimen/listview_item_title_size" />
+
+</FrameLayout>

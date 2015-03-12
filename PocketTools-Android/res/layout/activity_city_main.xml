@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/color_gradient_bg"  >
+
+    <ImageView
+        android:id="@id/img_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@id/actionBar"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:layout_gravity="top"
+            android:background="@color/transparent" >
+
+            <TextView
+                android:id="@id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="选择城市"
+                android:textColor="@color/white"
+                android:textSize="24.0sp" />
+
+            <FrameLayout
+                android:id="@id/btn_cancel"
+                android:layout_width="90.0dip"
+                android:layout_height="48.0dip"
+                android:layout_gravity="top|left|center" >
+
+                <Button
+                    android:id="@id/btn_back"
+                    android:layout_width="44.0dip"
+                    android:layout_height="44.0dip"
+                    android:layout_gravity="left|center"
+                    android:background="@drawable/btn_nav_back"
+                    android:clickable="false" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <ListView
+                android:id="@id/country_lvcountry"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:cacheColorHint="#00000000"
+                android:divider="@null"
+                android:listSelector="@color/listview_selected_color"
+                android:scrollbars="none" />
+
+            <TextView
+                android:id="@id/dialog"
+                android:layout_width="80.0dip"
+                android:layout_height="80.0dip"
+                android:layout_gravity="center"
+                android:background="@drawable/city_dailog_background"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="30.0dip"
+                android:visibility="invisible" />
+
+            <com.juhe.pockettools.city.SideBar
+                android:id="@id/sidrbar"
+                android:layout_width="30.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right|center"
+                android:layout_marginRight="4.0dip" />
+        </FrameLayout>
+    </LinearLayout>
+
+</FrameLayout>

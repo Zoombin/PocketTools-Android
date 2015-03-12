@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="180.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10.0dip"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_search_cn"
+                android:layout_width="60.0dip"
+                android:layout_height="30.0dip"
+                android:background="@drawable/bg_train_btn_search"
+                android:text="内地"
+                android:textColor="@color/txt_train_btn_search"
+                android:textSize="12.0sp" />
+
+            <Button
+                android:id="@+id/btn_search_us"
+                android:layout_width="60.0dip"
+                android:layout_height="30.0dip"
+                android:background="@drawable/bg_train_btn_search"
+                android:text="北美"
+                android:textColor="@color/txt_train_btn_search"
+                android:textSize="12.0sp" />
+
+            <Button
+                android:id="@+id/btn_search_hk"
+                android:layout_width="60.0dip"
+                android:layout_height="30.0dip"
+                android:background="@drawable/bg_train_btn_search"
+                android:text="香港"
+                android:textColor="@color/txt_train_btn_search"
+                android:textSize="12.0sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="@color/listview_divider_color" />
+
+        <ListView
+            android:id="@id/cinema_listveiw"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:cacheColorHint="#00000000"
+            android:clipChildren="true"
+            android:divider="@color/listview_divider_color"
+            android:dividerHeight="1.0px"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="false"
+            android:isScrollContainer="false"
+            android:listSelector="@drawable/color_list_select"
+            android:scrollbarThumbVertical="@drawable/custom_scroll_style" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/correct_camera_orientation_dialog_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="5.0dip">
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/adjustmode_scroll_unselected_bg" android:gravity="center" android:layout_width="220.0dip" android:layout_height="wrap_content" android:text="@string/title_correct_preview_orien" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_gravity="center_horizontal" android:layout_width="220.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
+        <TextView android:textSize="16.0sp" android:textColor="@color/adjustmode_scroll_unselected_bg" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/content_correct_preview_orien" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_gravity="center_horizontal" android:layout_width="220.0dip" android:layout_height="114.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip">
+        <View android:id="@id/center_correct_img" android:layout_width="10.0dip" android:layout_height="fill_parent" android:layout_centerHorizontal="true" />
+        <ImageView android:background="@drawable/correct_preview_orien_icon1" android:layout_width="100.0dip" android:layout_height="114.0dip" android:layout_toLeftOf="@id/center_correct_img" />
+        <ImageView android:background="@drawable/correct_preview_orien_icon2" android:layout_width="100.0dip" android:layout_height="114.0dip" android:layout_toRightOf="@id/center_correct_img" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_gravity="center_horizontal" android:layout_width="220.0dip" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip">
+        <Button android:textSize="20.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/btn_correct_orien" android:background="@drawable/btn_bg_correct_camera_orientation" android:layout_width="200.0dip" android:layout_height="40.0dip" android:text="@string/correct_preview_start_btn" android:layout_alignParentBottom="true" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</LinearLayout>

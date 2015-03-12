@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@id/img_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <com.juhe.pockettools.commonview.TopActiveBarView
+            android:id="@id/action_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip" />
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="44.0dip"
+            android:layout_marginBottom="20.0dip"
+            android:layout_marginTop="10.0dip" >
+
+            <EditText
+                android:id="@+id/edit_sn_number"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_marginEnd="87.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="87.0dip"
+                android:layout_marginStart="10.0dip"
+                android:background="@color/txt_input_white_bgcolor"
+                android:inputType="text"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:textColor="@color/white"
+                android:textColorHint="@color/default_texthint_color" />
+
+            <Button
+                android:id="@+id/btn_sn_search"
+                android:layout_width="67.0dip"
+                android:layout_height="44.0dip"
+                android:layout_gravity="right|center"
+                android:layout_marginRight="10.0dip"
+                android:background="@drawable/btn_package_search_res"
+                android:text="@string/package_search"
+                android:textColor="@color/color_btn_blue_txt"
+                android:textSize="16.0sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip"
+            android:layout_marginTop="100dip"
+            android:gravity="center_horizontal|bottom"
+            android:text="查看序列号的方法: 设置 -> 通用 -> 关于本机"
+            android:textColor="@color/white"
+            android:textSize="16.0sp" />
+
+        <LinearLayout
+            android:id="@+id/ly_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dip"
+                    android:gravity="right"
+                    android:text="设备型号"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:id="@+id/phone_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dip"
+                    android:gravity="right"
+                    android:text="设备系列号"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:id="@+id/serial_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dip"
+                    android:gravity="right"
+                    android:text="IMEI号"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:id="@+id/imei_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dip"
+                    android:gravity="right"
+                    android:text="激活状态"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:id="@+id/active"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dip"
+                    android:gravity="right"
+                    android:text="保修状态"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:id="@+id/warranty_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dip"
+                    android:gravity="right"
+                    android:text="保修到期"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:id="@+id/warranty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dip"
+                    android:gravity="right"
+                    android:text="电话支持到期 "
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:id="@+id/tele_support"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dip"
+                    android:gravity="right"
+                    android:text="电话支持状态"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:id="@+id/tele_support_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dip"
+                    android:gravity="right"
+                    android:text="生产工厂"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:id="@+id/made_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dip"
+                    android:gravity="right"
+                    android:text="生产时间"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:id="@+id/end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="15dip"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
