@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="45.0dip">
-        <ImageView android:layout_gravity="left" android:id="@id/bar_cancel" android:background="@drawable/btn_back_w" android:layout_width="45.0dip" android:layout_height="45.0dip" />
-        <TextView android:textColor="@color/white" android:layout_gravity="center" android:id="@id/bar_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="万年历" />
-        <TextView android:textColor="@color/white" android:layout_gravity="right|center" android:id="@id/bar_sure" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="选项" />
-    </FrameLayout>
-</FrameLayout>
