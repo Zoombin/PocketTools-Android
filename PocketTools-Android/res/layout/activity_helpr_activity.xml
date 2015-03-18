@@ -8,12 +8,27 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/background_main" />
+        android:src="@color/white" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f7f7f7"
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/title_logo" />
+        </RelativeLayout>
 
         <FrameLayout
             android:id="@id/infosview_container"
@@ -27,40 +42,54 @@
                 android:orientation="vertical" >
 
                 <GridView
-	                android:id="@+id/gd_modules"
-	                android:layout_width="match_parent"
-	                android:layout_height="wrap_content"
-	                android:listSelector="@android:color/transparent"
-	                android:numColumns="4" />
+                    android:id="@+id/gd_modules"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:listSelector="@android:color/transparent"
+                    android:numColumns="4" />
             </LinearLayout>
         </FrameLayout>
 
         <FrameLayout
             android:id="@id/bottom_container_all"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom" >
 
-            <ImageView
-                android:id="@id/img_bottom"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:background="@color/transparent"
-                android:scaleType="centerCrop" />
-
-            <LinearLayout
-                android:id="@id/bottom_container"
-                android:layout_width="fill_parent"
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="horizontal" >
 
-                <com.juhe.pockettools.tabrootbutton.mainTabScrollView
-                    android:id="@id/main_tabview"
-                    android:layout_width="fill_parent"
+                <RadioButton
+                    android:id="@+id/btn_tool"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:background="#64252626" />
-            </LinearLayout>
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_tool"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center" />
+
+                <RadioButton
+                    android:id="@+id/btn_life"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_life"
+                    android:button="@null"
+                    android:gravity="center" />
+
+                <RadioButton
+                    android:id="@+id/btn_read"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_read"
+                    android:button="@null"
+                    android:gravity="center" />
+            </RadioGroup>
         </FrameLayout>
     </LinearLayout>
 

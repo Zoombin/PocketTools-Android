@@ -23,7 +23,7 @@ public class SplashAcitivity extends FullscreenActivity {
 
 	private void startAnim() {
 		animation = new AlphaAnimation(1.0F, 1.0F);
-		animation.setDuration(400L);
+		animation.setDuration(3000L);
 		view.startAnimation(animation);
 		animation.setAnimationListener(new AnimationListener() {
 			
@@ -43,7 +43,7 @@ public class SplashAcitivity extends FullscreenActivity {
 			public void onAnimationEnd(Animation animation) {
 			    Intent intent = new Intent(SplashAcitivity.this, HelprActivity.class);
 			    startActivity(intent);
-			    overridePendingTransition(0, 2130968589);
+			    overridePendingTransition(0, R.anim.hold);
 			    finish();
 			}
 		});

@@ -19,14 +19,13 @@
             android:id="@+id/iv_module"
             android:layout_width="70dip"
             android:layout_height="70dip"
-            android:scaleType="fitCenter"
-            android:src="@drawable/gr_search_id" />
+            android:scaleType="fitCenter"/>
 
         <TextView
             android:id="@+id/tv_module"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/gray"
             android:textSize="16sp" />
     </LinearLayout>
 

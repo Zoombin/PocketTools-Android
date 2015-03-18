@@ -3,7 +3,7 @@ package com.juhe.pockettools.home;
 public class ModuleInfo {
 
 	private String name;
-	private String icon;
+	private int icon;
 	private int id;
 
 	public String getName() {
@@ -14,11 +14,11 @@ public class ModuleInfo {
 		this.name = name;
 	}
 
-	public String getIcon() {
+	public int getIcon() {
 		return icon;
 	}
 
-	public void setIcon(String icon) {
+	public void setIcon(int icon) {
 		this.icon = icon;
 	}
 

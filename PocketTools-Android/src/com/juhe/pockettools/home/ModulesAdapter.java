@@ -244,7 +244,8 @@ public class ModulesAdapter extends BaseAdapter {
 			}
 		});
 		holder.tv_module.setText(info.getName());
-
+		holder.iv_module.setBackgroundResource(info.getIcon());
+		
 		return convertView;
 	}
 
