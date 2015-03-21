@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
@@ -8,89 +8,264 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="centerCrop"
-        android:src="@color/white" />
+        android:src="@drawable/color_gradient_bg" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#f7f7f7"
-            android:paddingBottom="5dip"
-            android:paddingTop="5dip" >
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
 
-            <ImageView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/title_logo" />
-        </RelativeLayout>
+                android:layout_gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
 
-        <FrameLayout
-            android:id="@id/infosview_container"
-            android:layout_width="fill_parent"
+            <Button
+                android:id="@+id/btn_setting"
+                android:layout_width="50.0dip"
+                android:layout_height="50.0dip"
+                android:layout_gravity="right|center"
+                android:layout_marginRight="5.0dip"
+                android:background="@drawable/btn_setup_res" />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="0.0dip"
             android:layout_weight="1.0" >
 
+            <TextView
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_updatetime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_city"
+                android:layout_marginLeft="15dip"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical" >
-
-                <GridView
-                    android:id="@+id/gd_modules"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:listSelector="@android:color/transparent"
-                    android:numColumns="4" />
-            </LinearLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@id/bottom_container_all"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom" >
-
-            <RadioGroup
-                android:id="@+id/radiogroup"
+                android:id="@+id/ly_weather_hour_listview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/transparent"
+                android:orientation="vertical" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2.0px"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="15dip"
+                    android:layout_marginTop="5.0dip"
+                    android:background="@color/listview_divider_color" />
+
+                <com.juhe.pockettools.commonview.HorizontalListView
+                    android:id="@id/weather_hour_listview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="100.0dip" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2.0px"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="15dip"
+                    android:background="@color/listview_divider_color" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/ly_weather_centigrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/ly_weather_hour_listview"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dip" >
+
+                <TextView
+                    android:id="@id/txt_weather_centigrade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="60.0sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_toRightOf="@id/txt_weather_centigrade"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:layout_width="16.0dip"
+                            android:layout_height="16.0dip"
+                            android:layout_gravity="left|center"
+                            android:background="@drawable/gr_weather_up" />
+
+                        <TextView
+                            android:id="@id/txt_weather_up"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center"
+                            android:layout_marginLeft="3.0dip"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/white"
+                            android:textSize="18.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:layout_width="16.0dip"
+                            android:layout_height="16.0dip"
+                            android:layout_gravity="left|center"
+                            android:background="@drawable/gr_weather_dn" />
+
+                        <TextView
+                            android:id="@id/txt_weather_dn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center"
+                            android:layout_marginLeft="3.0dip"
+                            android:gravity="center_vertical"
+                            android:textColor="#2ce4ff"
+                            android:textSize="18.0sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/ly_weather_centigrade"
+                android:layout_marginLeft="15dip"
+                android:gravity="center_vertical"
                 android:orientation="horizontal" >
 
-                <RadioButton
-                    android:id="@+id/btn_tool"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/btn_tool"
-                    android:button="@null"
-                    android:checked="true"
-                    android:gravity="center" />
+                <ImageView
+                    android:id="@id/image_weather"
+                    android:layout_width="30.0dip"
+                    android:layout_height="30.0dip" />
 
-                <RadioButton
-                    android:id="@+id/btn_life"
-                    android:layout_width="match_parent"
+                <com.juhe.pockettools.commonview.FZKTTextView
+                    android:id="@id/txt_weather"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/btn_life"
-                    android:button="@null"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
 
-                <RadioButton
-                    android:id="@+id/btn_read"
-                    android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/ly_weather_hour_listview"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/btn_read"
-                    android:button="@null"
-                    android:gravity="center" />
-            </RadioGroup>
-        </FrameLayout>
+                    android:layout_gravity="center_horizontal"
+                    android:text="PM2.5"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@id/txt_pm_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="30.0sp" />
+
+                <com.juhe.pockettools.commonview.FZKTTextView
+                    android:id="@id/txt_pm_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:paddingLeft="5dip"
+                    android:paddingRight="5dip"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/gd_modules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="4" />
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/btn_tool"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_tool"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/btn_life"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_life"
+                android:button="@null"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/btn_read"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_read"
+                android:button="@null"
+                android:gravity="center" />
+        </RadioGroup>
     </LinearLayout>
 
-</FrameLayout>
+</RelativeLayout>
