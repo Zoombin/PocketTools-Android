@@ -1,14 +1,11 @@
 package com.juhe.pockettools.home;
 
-import java.util.List;
-
 import android.content.Context;
 import android.content.Intent;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -40,71 +37,43 @@ import com.juhe.pockettools.weather.WeatherMainActivity;
 import com.juhe.pockettools.web.WebActivity;
 import com.zbar.lib.CaptureActivity;
 
-public class ModulesAdapter extends BaseAdapter {
+public class itemButton extends FrameLayout {
+	TextView item_text;
+	ImageView item_image;
+	RelativeLayout itembutton_container;
+	Context context;
 
-	private Context context;
-	private List<ModuleInfo> infos;
-
-	public ModulesAdapter(Context context, List<ModuleInfo> infos) {
+	public itemButton(Context context) {
+		super(context);
 		this.context = context;
-		this.infos = infos;
+		initView();
 	}
 
-	public void setData(List<ModuleInfo> infos) {
-		this.infos = infos;
-		notifyDataSetChanged();
+	public itemButton(Context context, AttributeSet attributeSet) {
+		super(context, attributeSet);
+		this.context = context;
+		initView();
 	}
 
-	@Override
-	public int getCount() {
-		return infos.size();
+	private void initView() {
+		LayoutInflater localLayoutInflater = (LayoutInflater) getContext()
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		localLayoutInflater.inflate(R.layout.view_maintab_grid_item2, this,
+				true);
+		this.item_image = ((ImageView) findViewById(R.id.item_image));
+		this.item_text = ((TextView) findViewById(R.id.item_text));
+		this.itembutton_container = ((RelativeLayout) findViewById(R.id.itembutton_container));
 	}
 
-	@Override
-	public Object getItem(int position) {
-		return infos.get(position);
-	}
-
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
-
-	public void clearData() {
-		infos.clear();
-	}
-
-	@Override
-	public View getView(final int position, View convertView, ViewGroup parent) {
-		final ModuleInfo info = infos.get(position);
-		ViewHolder holder;
-
-		if (convertView == null) {
-			convertView = LayoutInflater.from(context).inflate(
-					R.layout.home_module_item, parent, false);
-
-			holder = new ViewHolder();
-
-			holder.layout_module = (RelativeLayout) convertView
-					.findViewById(R.id.layout_module);
-
-			holder.iv_module = (ImageView) convertView
-					.findViewById(R.id.iv_module);
-
-			holder.tv_module = (TextView) convertView
-					.findViewById(R.id.tv_module);
-
-			convertView.setTag(holder);
-		} else {
-			holder = (ViewHolder) convertView.getTag();
-		}
-
-		holder.layout_module.setOnClickListener(new OnClickListener() {
+	public void setData(final int id, int icon, String name) {
+		this.item_image.setBackgroundResource(icon);
+		this.item_text.setText(name);
+		this.itembutton_container.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent();
-				switch (info.getId()) {
+				Intent intent;
+				switch (id) {
 				case 1:
 					intent = new Intent(context, WebActivity.class);
 					intent.putExtra(WebActivity.KEY_URL, "http://m.toutiao.com");
@@ -243,15 +212,5 @@ public class ModulesAdapter extends BaseAdapter {
 				}
 			}
 		});
-		holder.tv_module.setText(info.getName());
-		holder.iv_module.setBackgroundResource(info.getIcon());
-		
-		return convertView;
-	}
-
-	public class ViewHolder {
-		RelativeLayout layout_module;
-		ImageView iv_module;
-		TextView tv_module;
 	}
 }
