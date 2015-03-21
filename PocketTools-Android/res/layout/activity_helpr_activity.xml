@@ -217,55 +217,212 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
                     android:paddingLeft="5dip"
                     android:paddingRight="5dip"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
                     android:textSize="16.0sp" />
             </LinearLayout>
         </RelativeLayout>
 
-        <GridView
-            android:id="@+id/gd_modules"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@id/bottom_container"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:listSelector="@android:color/transparent"
-            android:numColumns="4" />
+            android:layout_gravity="bottom"
+            android:orientation="vertical" >
 
-        <RadioGroup
-            android:id="@+id/radiogroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            <FrameLayout
+                android:id="@id/tab_tool_container"
+                android:layout_width="fill_parent"
+                android:layout_height="161.0dip"
+                android:layout_gravity="bottom" >
 
-            <RadioButton
-                android:id="@+id/btn_tool"
-                android:layout_width="match_parent"
+                <LinearLayout
+                    android:id="@id/daily_tool_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible" >
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@id/daily_tool_page"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0"
+                        android:background="#44252626" />
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="15.0dip"
+                        android:background="#64252626" >
+
+                        <com.viewpagerindicator.IconPageIndicator
+                            android:id="@id/infoview_indicator_dialytool"
+                            android:layout_width="fill_parent"
+                            android:layout_height="10.0dip"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/read_discover_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:visibility="invisible" >
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@id/read_discover_page"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0"
+                        android:background="#44252626" />
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="15.0dip"
+                        android:background="#64252626" >
+
+                        <com.viewpagerindicator.IconPageIndicator
+                            android:id="@id/infoview_indicator_phone"
+                            android:layout_width="fill_parent"
+                            android:layout_height="10.0dip"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/life_search_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:visibility="invisible" >
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@id/life_search_page"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0"
+                        android:background="#44252626" />
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="15.0dip"
+                        android:background="#64252626" >
+
+                        <com.viewpagerindicator.IconPageIndicator
+                            android:id="@id/infoview_indicator_lifesearch"
+                            android:layout_width="fill_parent"
+                            android:layout_height="10.0dip"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/pocket_market_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:visibility="invisible" >
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@id/pocket_market_page"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0"
+                        android:background="#44252626" />
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="15.0dip"
+                        android:background="#64252626" >
+
+                        <com.viewpagerindicator.IconPageIndicator
+                            android:id="@id/infoview_indicator_pocketmarket"
+                            android:layout_width="fill_parent"
+                            android:layout_height="10.0dip"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/main_bottom"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn_tool"
-                android:button="@null"
-                android:checked="true"
-                android:gravity="center" />
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
 
-            <RadioButton
-                android:id="@+id/btn_life"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn_life"
-                android:button="@null"
-                android:gravity="center" />
+                <Button
+                    android:id="@+id/btn_tool"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/tab_bg_selector"
+                    android:button="@null"
+                    android:drawableTop="@drawable/ic_tool_selector"
+                    android:onClick="onTabClicked"
+                    android:paddingBottom="3dip"
+                    android:paddingTop="8dip"
+                    android:singleLine="true"
+                    android:tag="home"
+                    android:text="日常工具"
+                    android:textColor="@color/color_tab"
+                    android:textSize="14sp" />
 
-            <RadioButton
-                android:id="@+id/btn_read"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn_read"
-                android:button="@null"
-                android:gravity="center" />
-        </RadioGroup>
+                <Button
+                    android:id="@+id/btn_life"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/tab_bg_selector"
+                    android:button="@null"
+                    android:drawableTop="@drawable/ic_life_selector"
+                    android:onClick="onTabClicked"
+                    android:paddingBottom="3dip"
+                    android:paddingTop="8dip"
+                    android:singleLine="true"
+                    android:tag="sort"
+                    android:text="生活服务"
+                    android:textColor="@color/color_tab"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/tab_bg_selector"
+                    android:button="@null"
+                    android:drawableTop="@drawable/ic_service_selector"
+                    android:onClick="onTabClicked"
+                    android:paddingBottom="3dip"
+                    android:paddingTop="8dip"
+                    android:singleLine="true"
+                    android:tag="store"                   
+                    android:text="充值服务"
+                    android:textColor="@color/color_tab"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_store"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/tab_bg_selector"
+                    android:button="@null"
+                    android:drawableTop="@drawable/ic_store_selector"
+                    android:onClick="onTabClicked"
+                    android:paddingBottom="3dip"
+                    android:paddingTop="8dip"
+                    android:singleLine="true"
+                    android:tag="shopcart"
+                    android:text="99商城"
+                    android:textColor="@color/color_tab"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
