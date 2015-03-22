@@ -37,7 +37,7 @@ import com.juhe.pockettools.weather.WeatherTools;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
-import com.viewpagerindicator.IconPageIndicator;
+import com.viewpagerindicator.CirclePageIndicator;
 
 @SuppressLint("NewApi")
 public class HelprActivity extends FullscreenActivity {
@@ -63,16 +63,16 @@ public class HelprActivity extends FullscreenActivity {
 	List<ModuleInfo> storeinfos;
 	private LinearLayout tool_container;
 	private ViewPager tool_page;
-	private IconPageIndicator infoview_indicator_tool;
+	private CirclePageIndicator infoview_indicator_tool;
 	private LinearLayout life_container;
 	private ViewPager life_page;
-	private IconPageIndicator infoview_indicator_life;
+	private CirclePageIndicator infoview_indicator_life;
 	private LinearLayout service_container;
 	private ViewPager service_page;
-	private IconPageIndicator infoview_indicator_service;
+	private CirclePageIndicator infoview_indicator_service;
 	private LinearLayout store_container;
 	private ViewPager store_page;
-	private IconPageIndicator infoview_indicator_store;
+	private CirclePageIndicator infoview_indicator_store;
 	private int index;
 	private int currentTabIndex;
 	private Button[] mTabs;
@@ -136,25 +136,25 @@ public class HelprActivity extends FullscreenActivity {
 		tool_container = (LinearLayout) findViewById(R.id.tool_container);
 		tool_page = (ViewPager) findViewById(R.id.tool_page);
 		tool_page.setAdapter(new ItemPagerAdapter(this, getSupportFragmentManager(), toolinfos));
-		infoview_indicator_tool = (IconPageIndicator) findViewById(R.id.infoview_indicator_tool);
+		infoview_indicator_tool = (CirclePageIndicator) findViewById(R.id.infoview_indicator_tool);
 		infoview_indicator_tool.setViewPager(tool_page);
 		
 		life_container = (LinearLayout) findViewById(R.id.life_container);
 		life_page = (ViewPager) findViewById(R.id.life_page);
 		life_page.setAdapter(new ItemPagerAdapter(this, getSupportFragmentManager(), lifeinfos));
-		infoview_indicator_life = (IconPageIndicator) findViewById(R.id.infoview_indicator_life);
+		infoview_indicator_life = (CirclePageIndicator) findViewById(R.id.infoview_indicator_life);
 		infoview_indicator_life.setViewPager(life_page);
 		
 		service_container = (LinearLayout) findViewById(R.id.service_container);
 		service_page = (ViewPager) findViewById(R.id.service_page);
 		service_page.setAdapter(new ItemPagerAdapter(this, getSupportFragmentManager(), serviceinfos));
-		infoview_indicator_service = (IconPageIndicator) findViewById(R.id.infoview_indicator_service);
+		infoview_indicator_service = (CirclePageIndicator) findViewById(R.id.infoview_indicator_service);
 		infoview_indicator_service.setViewPager(service_page);
 		
 		store_container = (LinearLayout) findViewById(R.id.store_container);
 		store_page = (ViewPager) findViewById(R.id.store_page);
 		store_page.setAdapter(new ItemPagerAdapter(this, getSupportFragmentManager(), storeinfos));
-		infoview_indicator_store = (IconPageIndicator) findViewById(R.id.infoview_indicator_store);
+		infoview_indicator_store = (CirclePageIndicator) findViewById(R.id.infoview_indicator_store);
 		infoview_indicator_store.setViewPager(store_page);
 
 		this.mTabs = new Button[4];

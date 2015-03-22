@@ -241,7 +241,7 @@
             <FrameLayout
                 android:id="@+id/tab_tool_container"
                 android:layout_width="fill_parent"
-                android:layout_height="160.0dip"
+                android:layout_height="161.0dip"
                 android:layout_gravity="bottom" >
 
                 <LinearLayout
@@ -262,7 +262,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="15.0dip" >
 
-                        <com.viewpagerindicator.IconPageIndicator
+                        <com.viewpagerindicator.CirclePageIndicator
                             android:id="@+id/infoview_indicator_tool"
                             android:layout_width="fill_parent"
                             android:layout_height="10.0dip"
@@ -288,7 +288,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="15.0dip" >
 
-                        <com.viewpagerindicator.IconPageIndicator
+                        <com.viewpagerindicator.CirclePageIndicator
                             android:id="@+id/infoview_indicator_life"
                             android:layout_width="fill_parent"
                             android:layout_height="10.0dip"
@@ -314,7 +314,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="15.0dip" >
 
-                        <com.viewpagerindicator.IconPageIndicator
+                        <com.viewpagerindicator.CirclePageIndicator
                             android:id="@+id/infoview_indicator_service"
                             android:layout_width="fill_parent"
                             android:layout_height="10.0dip"
@@ -340,7 +340,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="15.0dip" >
 
-                        <com.viewpagerindicator.IconPageIndicator
+                        <com.viewpagerindicator.CirclePageIndicator
                             android:id="@+id/infoview_indicator_store"
                             android:layout_width="fill_parent"
                             android:layout_height="10.0dip"
@@ -365,7 +365,7 @@
                     android:button="@null"
                     android:drawableTop="@drawable/ic_tool_selector"
                     android:onClick="onTabClicked"
-                    android:paddingBottom="3dip"
+                    android:paddingBottom="5dip"
                     android:paddingTop="8dip"
                     android:singleLine="true"
                     android:tag="home"
@@ -382,7 +382,7 @@
                     android:button="@null"
                     android:drawableTop="@drawable/ic_life_selector"
                     android:onClick="onTabClicked"
-                    android:paddingBottom="3dip"
+                    android:paddingBottom="5dip"
                     android:paddingTop="8dip"
                     android:singleLine="true"
                     android:tag="sort"
@@ -399,7 +399,7 @@
                     android:button="@null"
                     android:drawableTop="@drawable/ic_service_selector"
                     android:onClick="onTabClicked"
-                    android:paddingBottom="3dip"
+                    android:paddingBottom="5dip"
                     android:paddingTop="8dip"
                     android:singleLine="true"
                     android:tag="store"
@@ -416,7 +416,7 @@
                     android:button="@null"
                     android:drawableTop="@drawable/ic_store_selector"
                     android:onClick="onTabClicked"
-                    android:paddingBottom="3dip"
+                    android:paddingBottom="5dip"
                     android:paddingTop="8dip"
                     android:singleLine="true"
                     android:tag="shopcart"

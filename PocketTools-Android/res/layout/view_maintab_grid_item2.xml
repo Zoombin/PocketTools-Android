@@ -2,12 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@id/itembutton_container"
     android:layout_width="fill_parent"
-    android:layout_height="80.0dip" >
+    android:layout_height="70.0dip" >
 
     <LinearLayout
         android:id="@+id/itembutton_container"
         android:layout_width="fill_parent"
-        android:layout_height="80.0dip"
+        android:layout_height="70.0dip"
         android:orientation="vertical" >
 
         <ImageView

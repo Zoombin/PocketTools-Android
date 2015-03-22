@@ -18,9 +18,6 @@ public class ItemPagerAdapter extends FragmentPagerAdapter implements
 	Context context;
 	List<ModuleInfo> list;
 	private int pagesize = 0;
-	protected static final int[] ICONS = new int[] {
-			R.color.vpi__bright_foreground_disabled_holo_dark, R.color.vpi__bright_foreground_disabled_holo_light };
-	private int position;
 
 	public ItemPagerAdapter(Context context, FragmentManager fragmentmanager,
 			List<ModuleInfo> list) {
@@ -35,7 +32,6 @@ public class ItemPagerAdapter extends FragmentPagerAdapter implements
 	}
 
 	public Fragment getItem(int position) {
-		this.position = position;
 		ItemPageTabView itempagetabview = ItemPageTabView.getInstance();
 		List<ModuleInfo> listtemp = new ArrayList<ModuleInfo>();
 		for (int j = 0; j < 8; j++) {
@@ -62,6 +58,6 @@ public class ItemPagerAdapter extends FragmentPagerAdapter implements
 
 	@Override
 	public int getIconResId(int index) {
-		return R.drawable.home_page1_icon;
+		return R.drawable.pageicon_selected;
 	}
 }
