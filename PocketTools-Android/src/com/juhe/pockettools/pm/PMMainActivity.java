@@ -24,6 +24,7 @@ import com.juhe.pockettools.R;
 import com.juhe.pockettools.city.CityActivity;
 import com.juhe.pockettools.commonview.CircleProgressBar;
 import com.juhe.pockettools.home.FullscreenActivity;
+import com.juhe.pockettools.utils.Config;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
@@ -230,6 +231,7 @@ public class PMMainActivity extends FullscreenActivity {
 		pmheaderview = new PMHeaderView(this);
 		view_bg = findViewById(R.id.view_bg);
 		img_bg = ((ImageView) findViewById(R.id.img_bg));
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
 		txt_pm_state = ((TextView) pmheaderview.findViewById(R.id.txt_pm_state));
 		txt_pm_value = ((TextView) pmheaderview.findViewById(R.id.txt_pm_value));
 		lbl_pm25 = ((TextView) pmheaderview.findViewById(R.id.lbl_pm25));

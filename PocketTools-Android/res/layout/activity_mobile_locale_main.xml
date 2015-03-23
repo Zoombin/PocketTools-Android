@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/color_gradient_bg" >
+    android:layout_height="fill_parent" >
 
     <ImageView
         android:id="@id/img_bg"
@@ -42,7 +41,7 @@
             android:layout_height="1dip"
             android:layout_marginLeft="10.0dip"
             android:layout_marginRight="10.0dip"
-            android:background="#dde0ea" />
+            android:background="@color/listview_divider_color" />
 
         <Button
             android:id="@id/btn_locale_search"

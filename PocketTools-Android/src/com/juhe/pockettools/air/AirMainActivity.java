@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,12 +16,14 @@ import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.home.FullscreenActivity;
+import com.juhe.pockettools.utils.Config;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
 
 public class AirMainActivity extends FullscreenActivity {
 
+	private ImageView img_bg;
 	private EditText air_edit_start;
 	private EditText air_edit_end;
 	private Button air_btn_select_time;
@@ -50,6 +53,9 @@ public class AirMainActivity extends FullscreenActivity {
 
 			}
 		});
+		
+		img_bg = (ImageView) findViewById(R.id.img_bg);
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
 		air_edit_start = (EditText) findViewById(R.id.air_edit_start);
 		air_edit_end = (EditText) findViewById(R.id.air_edit_end);
 		air_btn_select_time = (Button) findViewById(R.id.air_btn_select_time);
