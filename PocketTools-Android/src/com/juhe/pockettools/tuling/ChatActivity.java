@@ -8,15 +8,20 @@ import java.util.List;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.juhe.pockettools.R;
+import com.juhe.pockettools.commonview.TopActiveBarView;
+import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
+import com.juhe.pockettools.utils.Config;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
@@ -24,6 +29,7 @@ import com.thinkland.sdk.android.Parameters;
 @SuppressLint("SimpleDateFormat")
 public class ChatActivity extends Activity implements OnClickListener {
 
+	private TopActiveBarView action_bar;
 	private List<ListData> lists;
 	private ListView lv;
 	private EditText sendtext;
@@ -41,6 +47,25 @@ public class ChatActivity extends Activity implements OnClickListener {
 	}
 
 	private void initView() {
+		ImageView img_bg = (ImageView) findViewById(R.id.img_bg);
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+		
+		action_bar = (TopActiveBarView) findViewById(R.id.action_bar);
+		action_bar.setTiltleText("聊天机器人");
+		action_bar.setSplitLineVisible(true);
+		action_bar.setListener(new InterfaceTopActiveBar() {
+
+			@Override
+			public void cancel() {
+				finish();
+			}
+
+			@Override
+			public void query() {
+
+			}
+		});
+		
 		lv = (ListView) findViewById(R.id.lv);
 		sendtext = (EditText) findViewById(R.id.sendText);
 		send_btn = (Button) findViewById(R.id.send_btn);
@@ -79,6 +104,9 @@ public class ChatActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		getTime();
 		content_str = sendtext.getText().toString();
+		if (TextUtils.isEmpty(content_str)) {
+			return;
+		}
 		sendtext.setText("");
 		String dropk = content_str.replace(" ", "");
 		String droph = dropk.replace("\n", "");

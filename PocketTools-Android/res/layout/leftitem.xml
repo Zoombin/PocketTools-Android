@@ -7,7 +7,8 @@
         android:id="@+id/time"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:textColor="@color/white" />
 
     <ImageView
         android:id="@+id/iv"
@@ -25,6 +26,7 @@
         android:layout_marginRight="50dp"
         android:layout_toRightOf="@id/iv"
         android:background="@drawable/aio_friend_bg_nor_11"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textColor="@color/white" />
 
 </RelativeLayout>
