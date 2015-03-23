@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
+import android.graphics.Path;
 
 import com.github.mikephil.charting.components.LimitLine;
 import com.github.mikephil.charting.components.LimitLine.LimitLabelPosition;
@@ -14,8 +15,9 @@ import com.github.mikephil.charting.components.YAxis.YAxisLabelPosition;
 import com.github.mikephil.charting.utils.PointD;
 import com.github.mikephil.charting.utils.Transformer;
 import com.github.mikephil.charting.utils.Utils;
+import com.github.mikephil.charting.utils.ViewPortHandler;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class YAxisRenderer extends AxisRenderer {
 
@@ -266,17 +268,18 @@ public class YAxisRenderer extends AxisRenderer {
      */
     public void renderLimitLines(Canvas c) {
 
-        ArrayList<LimitLine> limitLines = mYAxis.getLimitLines();
+        List<LimitLine> limitLines = mYAxis.getLimitLines();
 
         if (limitLines == null || limitLines.size() <= 0)
             return;
 
         float[] pts = new float[4];
-
+        Path limitLinePath = new Path();
+               
         for (int i = 0; i < limitLines.size(); i++) {
 
             LimitLine l = limitLines.get(i);
-
+            
             pts[1] = l.getLimit();
             pts[3] = l.getLimit();
 
@@ -284,12 +287,17 @@ public class YAxisRenderer extends AxisRenderer {
 
             pts[0] = mViewPortHandler.contentLeft();
             pts[2] = mViewPortHandler.contentRight();
+            
+            limitLinePath.moveTo(pts[0], pts[1]);
+            limitLinePath.lineTo(pts[2], pts[3]);
 
             mLimitLinePaint.setColor(l.getLineColor());
             mLimitLinePaint.setPathEffect(l.getDashPathEffect());
             mLimitLinePaint.setStrokeWidth(l.getLineWidth());
 
-            c.drawLines(pts, mLimitLinePaint);
+            c.drawPath(limitLinePath, mLimitLinePaint);
+            limitLinePath.reset();
+//            c.drawLines(pts, mLimitLinePaint);
 
             String label = l.getLabel();
 

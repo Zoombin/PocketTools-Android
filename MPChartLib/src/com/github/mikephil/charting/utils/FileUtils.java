@@ -16,6 +16,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Utilities class for interacting with the assets and the devices storage to
@@ -33,14 +34,14 @@ public class FileUtils {
      * @param path the name of the file on the sd-card (+ path if needed)
      * @return
      */
-    public static ArrayList<Entry> loadEntriesFromFile(String path) {
+    public static List<Entry> loadEntriesFromFile(String path) {
 
         File sdcard = Environment.getExternalStorageDirectory();
 
         // Get the text file
         File file = new File(sdcard, path);
 
-        ArrayList<Entry> entries = new ArrayList<Entry>();
+        List<Entry> entries = new ArrayList<Entry>();
 
         try {
             @SuppressWarnings("resource")
@@ -49,17 +50,17 @@ public class FileUtils {
 
             while ((line = br.readLine()) != null) {
                 String[] split = line.split("#");
-                
-                if(split.length <= 2) {
+
+                if (split.length <= 2) {
                     entries.add(new Entry(Float.parseFloat(split[0]), Integer.parseInt(split[1])));
                 } else {
-                    
+
                     float[] vals = new float[split.length - 1];
-                    
-                    for(int i = 0; i < vals.length; i++) {
+
+                    for (int i = 0; i < vals.length; i++) {
                         vals[i] = Float.parseFloat(split[i]);
-                    }                 
-                    
+                    }
+
                     entries.add(new BarEntry(vals, Integer.parseInt(split[split.length - 1])));
                 }
             }
@@ -74,7 +75,7 @@ public class FileUtils {
         // // Get the text file
         // File file = new File(sdcard, path);
         //
-        // ArrayList<Entry> entries = new ArrayList<Entry>();
+        // List<Entry> entries = new ArrayList<Entry>();
         // String label = "";
         //
         // try {
@@ -105,9 +106,9 @@ public class FileUtils {
      * @param path the name of the file in the assets folder (+ path if needed)
      * @return
      */
-    public static ArrayList<Entry> loadEntriesFromAssets(AssetManager am, String path) {
+    public static List<Entry> loadEntriesFromAssets(AssetManager am, String path) {
 
-        ArrayList<Entry> entries = new ArrayList<Entry>();
+        List<Entry> entries = new ArrayList<Entry>();
 
         BufferedReader reader = null;
         try {
@@ -119,19 +120,130 @@ public class FileUtils {
             while (line != null) {
                 // process line
                 String[] split = line.split("#");
-                
-                if(split.length <= 2) {
+
+                if (split.length <= 2) {
                     entries.add(new Entry(Float.parseFloat(split[0]), Integer.parseInt(split[1])));
                 } else {
-                    
+
                     float[] vals = new float[split.length - 1];
-                    
-                    for(int i = 0; i < vals.length; i++) {
+
+                    for (int i = 0; i < vals.length; i++) {
                         vals[i] = Float.parseFloat(split[i]);
-                    }                 
-                    
+                    }
+
                     entries.add(new BarEntry(vals, Integer.parseInt(split[split.length - 1])));
                 }
+                line = reader.readLine();
+            }
+        } catch (IOException e) {
+            Log.e(LOG, e.toString());
+
+        } finally {
+
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    Log.e(LOG, e.toString());
+                }
+            }
+        }
+
+        return entries;
+
+        // String label = null;
+        // List<Entry> entries = new ArrayList<Entry>();
+        //
+        // BufferedReader reader = null;
+        // try {
+        // reader = new BufferedReader(
+        // new InputStreamReader(am.open(path), "UTF-8"));
+        //
+        // // do reading, usually loop until end of file reading
+        // label = reader.readLine();
+        // String line = reader.readLine();
+        //
+        // while (line != null) {
+        // // process line
+        // String[] split = line.split("#");
+        // entries.add(new Entry(Float.parseFloat(split[0]),
+        // Integer.parseInt(split[1])));
+        // line = reader.readLine();
+        // }
+        // } catch (IOException e) {
+        // Log.e(LOG, e.toString());
+        //
+        // } finally {
+        //
+        // if (reader != null) {
+        // try {
+        // reader.close();
+        // } catch (IOException e) {
+        // Log.e(LOG, e.toString());
+        // }
+        // }
+        // }
+        //
+        // DataSet ds = new DataSet(entries, label);
+        // return ds;
+    }
+
+    /**
+     * Saves an Array of Entries to the specified location on the sdcard
+     * 
+     * @param ds
+     * @param path
+     */
+    public static void saveToSdCard(List<Entry> entries, String path) {
+
+        File sdcard = Environment.getExternalStorageDirectory();
+
+        File saved = new File(sdcard, path);
+        if (!saved.exists())
+        {
+            try
+            {
+                saved.createNewFile();
+            } catch (IOException e)
+            {
+                Log.e(LOG, e.toString());
+            }
+        }
+        try
+        {
+            // BufferedWriter for performance, true to set append to file flag
+            BufferedWriter buf = new BufferedWriter(new FileWriter(saved, true));
+
+            for (Entry e : entries) {
+
+                buf.append(e.getVal() + "#" + e.getXIndex());
+                buf.newLine();
+            }
+
+            buf.close();
+        } catch (IOException e)
+        {
+            Log.e(LOG, e.toString());
+        }
+    }
+
+    public static List<BarEntry> loadBarEntriesFromAssets(AssetManager am, String path) {
+
+        List<BarEntry> entries = new ArrayList<BarEntry>();
+
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(
+                    new InputStreamReader(am.open(path), "UTF-8"));
+
+            String line = reader.readLine();
+
+            while (line != null) {
+                // process line
+                String[] split = line.split("#");
+
+                entries.add(new BarEntry(Float.parseFloat(split[0]), Integer.parseInt(split[1])));
+
                 line = reader.readLine();
             }
         } catch (IOException e) {
@@ -185,44 +297,5 @@ public class FileUtils {
         //
         // DataSet ds = new DataSet(entries, label);
         // return ds;
-    }
-
-    /**
-     * Saves an Array of Entries to the specified location on the sdcard
-     * 
-     * @param ds
-     * @param path
-     */
-    public static void saveToSdCard(ArrayList<Entry> entries, String path) {
-
-        File sdcard = Environment.getExternalStorageDirectory();
-
-        File saved = new File(sdcard, path);
-        if (!saved.exists())
-        {
-            try
-            {
-                saved.createNewFile();
-            } catch (IOException e)
-            {
-                Log.e(LOG, e.toString());
-            }
-        }
-        try
-        {
-            // BufferedWriter for performance, true to set append to file flag
-            BufferedWriter buf = new BufferedWriter(new FileWriter(saved, true));
-
-            for (Entry e : entries) {
-
-                buf.append(e.getVal() + "#" + e.getXIndex());
-                buf.newLine();
-            }
-
-            buf.close();
-        } catch (IOException e)
-        {
-            Log.e(LOG, e.toString());
-        }
     }
 }

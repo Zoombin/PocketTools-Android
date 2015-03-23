@@ -17,7 +17,7 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.renderer.PieChartRenderer;
 import com.github.mikephil.charting.utils.Utils;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * View that represents a pie chart. Draws cake like slices.
@@ -33,7 +33,7 @@ public class PieChart extends PieRadarChartBase<PieData> {
     private RectF mCircleBox = new RectF();
 
     /** flag indicating if the x-labels should be drawn or not */
-    protected boolean mDrawXLabels = true;
+    private boolean mDrawXLabels = true;
 
     /** array that holds the width of each pie-slice in degrees */
     private float[] mDrawAngles;
@@ -93,10 +93,10 @@ public class PieChart extends PieRadarChartBase<PieData> {
         if (mDataNotSet)
             return;
 
+        mRenderer.drawData(canvas);
+
         if (mHighlightEnabled && valuesToHighlight())
             mRenderer.drawHighlighted(canvas, mIndicesToHightlight);
-
-        mRenderer.drawData(canvas);
 
         mRenderer.drawExtras(canvas);
 
@@ -106,7 +106,7 @@ public class PieChart extends PieRadarChartBase<PieData> {
 
         drawDescription(canvas);
 
-//        canvas.drawBitmap(mDrawBitmap, 0, 0, mDrawPaint);
+        // canvas.drawBitmap(mDrawBitmap, 0, 0, mDrawPaint);
     }
 
     @Override
@@ -149,14 +149,14 @@ public class PieChart extends PieRadarChartBase<PieData> {
         mDrawAngles = new float[mData.getYValCount()];
         mAbsoluteAngles = new float[mData.getYValCount()];
 
-        ArrayList<PieDataSet> dataSets = mData.getDataSets();
+        List<PieDataSet> dataSets = mData.getDataSets();
 
         int cnt = 0;
 
         for (int i = 0; i < mData.getDataSetCount(); i++) {
 
             PieDataSet set = dataSets.get(i);
-            ArrayList<Entry> entries = set.getYVals();
+            List<Entry> entries = set.getYVals();
 
             for (int j = 0; j < entries.size(); j++) {
 
@@ -230,7 +230,7 @@ public class PieChart extends PieRadarChartBase<PieData> {
      */
     public int getDataSetIndexForIndex(int xIndex) {
 
-        ArrayList<? extends DataSet<? extends Entry>> dataSets = mData.getDataSets();
+        List<? extends DataSet<? extends Entry>> dataSets = mData.getDataSets();
 
         for (int i = 0; i < dataSets.size(); i++) {
             if (dataSets.get(i).getEntryForXIndex(xIndex) != null)
@@ -488,6 +488,11 @@ public class PieChart extends PieRadarChartBase<PieData> {
         mUsePercentValues = enabled;
     }
 
+    /**
+     * Returns true if using percentage values is enabled for the chart.
+     * 
+     * @return
+     */
     public boolean isUsePercentValuesEnabled() {
         return mUsePercentValues;
     }

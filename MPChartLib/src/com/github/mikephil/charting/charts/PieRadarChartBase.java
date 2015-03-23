@@ -21,6 +21,7 @@ import com.github.mikephil.charting.utils.SelInfo;
 import com.github.mikephil.charting.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Baseclass of PieChart and RadarChart.
@@ -32,12 +33,15 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends DataSet<? 
 
     /** holds the current rotation angle of the chart */
     protected float mRotationAngle = 270f;
+    
+    /** the angle where the dragging started */
+    private float mStartAngle = 0f;
 
     /** flag that indicates if rotation is enabled or not */
     protected boolean mRotateEnabled = true;
 
     /** the pie- and radarchart touchlistener */
-    private OnTouchListener mListener;
+    protected OnTouchListener mListener;
 
     public PieRadarChartBase(Context context) {
         super(context);
@@ -152,9 +156,6 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends DataSet<? 
             Log.i(LOG_TAG, "offsetLeft: " + offsetLeft + ", offsetTop: " + offsetTop
                     + ", offsetRight: " + offsetRight + ", offsetBottom: " + offsetBottom);
     }
-
-    /** the angle where the dragging started */
-    private float mStartAngle = 0f;
 
     /**
      * sets the starting angle of the rotation, this is only used by the touch
@@ -393,9 +394,9 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends DataSet<? 
      *
      * @return
      */
-    public ArrayList<SelInfo> getYValsAtIndex(int xIndex) {
+    public List<SelInfo> getYValsAtIndex(int xIndex) {
 
-        ArrayList<SelInfo> vals = new ArrayList<SelInfo>();
+        List<SelInfo> vals = new ArrayList<SelInfo>();
 
         for (int i = 0; i < mData.getDataSetCount(); i++) {
 

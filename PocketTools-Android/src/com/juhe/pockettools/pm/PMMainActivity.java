@@ -7,6 +7,7 @@ import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.XAxis.XAxisPosition;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.gson.Gson;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.city.CityActivity;
@@ -46,51 +54,74 @@ public class PMMainActivity extends FullscreenActivity {
 	private ImageView img_bg;
 	private PMHeaderView pmheaderview;
 	private CityListViewAdapter citylistviewadapter;
-	private BarChart chartbarpm;
+	private BarChart mChart;
 	private CircleProgressBar circle_progress_bar;
 
 	private String cityname = "苏州";
 
-	// private void a(double[] paramArrayOfDouble, String[] paramArrayOfString,
-	// String paramString) {
-	// chartbarpm.setDrawYValues(true);
-	// chartbarpm.setDescription(" ");
-	// chartbarpm.setDrawValuesForWholeStack(true);
-	// chartbarpm.setValueTextColor(-1);
-	// chartbarpm.setDrawBarShadow(false);
-	// chartbarpm.setDrawVerticalGrid(true);
-	// chartbarpm.setDrawHorizontalGrid(false);
-	// chartbarpm.setDrawGridBackground(false);
-	// o localo = chartbarpm.getXLabels();
-	// localo.a(-1);
-	// localo.a(o.a.b);
-	// chartbarpm.setDrawGridBackground(false);
-	// localo.a(true);
-	// localo.b(0);
-	// chartbarpm.setDrawYLabels(true);
-	// p localp = chartbarpm.getYLabels();
-	// localp.a(-1);
-	// localp.a(p.a.a);
-	// localp.c(true);
-	// localp.b(true);
-	// chartbarpm.setDrawYAxisEnabled(true);
-	// chartbarpm.setDrawBorder(true);
-	// chartbarpm.setStartAtZero(true);
-	// chartbarpm.setDrawLegend(false);
-	// chartbarpm.setDrawLegend(false);
-	// chartbarpm.setDoubleTapToZoomEnabled(false);
-	// chartbarpm.D();
-	// chartbarpm.setScaleEnabled(false);
-	// chartbarpm.setClickHightEnabled(false);
-	// chartbarpm.setDrawPMLastValueBarEnabled(true);
-	// chartbarpm.c(2500);
-	// a(paramArrayOfDouble, paramArrayOfString);
-	// }
+	private void showPmChart(List<CityAirEntity.PM> weekpmlist) {
+		mChart.setDescription("");
+
+		// if more than 60 entries are displayed in the chart, no values will be
+		// drawn
+		mChart.setMaxVisibleValueCount(60);
+
+		// scaling can now only be done on x- and y-axis separately
+		mChart.setPinchZoom(false);
+
+		mChart.setDrawBarShadow(false);
+		mChart.setDrawGridBackground(false);
+
+		XAxis xAxis = mChart.getXAxis();
+		xAxis.setPosition(XAxisPosition.BOTTOM);
+		xAxis.setTextColor(Color.WHITE);
+		xAxis.setSpaceBetweenLabels(0);
+		xAxis.setDrawGridLines(false);
+		
+		YAxis leftAxis = mChart.getAxisLeft();
+		leftAxis.setTextColor(Color.WHITE);
+		mChart.getAxisRight().setEnabled(false);
+		
+		mChart.getAxisLeft().setDrawGridLines(false);
+
+		ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
+
+		for (int i = 0; i < 7; i++) {
+			yVals1.add(new BarEntry(Integer.parseInt(weekpmlist.get(i).getAQI()), i));
+		}
+
+		ArrayList<String> xVals = new ArrayList<String>();
+
+		for (int i = weekpmlist.size() - 1; i > weekpmlist.size() - 8; i--) {
+			xVals.add(weekpmlist.get(i).getDate().substring(5));
+		}
+
+		BarDataSet set1 = new BarDataSet(yVals1, "Data Set");
+		set1.setColors(ColorTemplate.VORDIPLOM_COLORS);
+		set1.setDrawValues(false);
+
+		ArrayList<BarDataSet> dataSets = new ArrayList<BarDataSet>();
+		dataSets.add(set1);
+
+		BarData data = new BarData(xVals, dataSets);
+
+		mChart.setData(data);
+		mChart.invalidate();
+
+		// add a nice and smooth animation
+		mChart.animateY(2500);
+
+		mChart.getLegend().setEnabled(false);
+		
+
+	}
 
 	private void setPMData(PMEntity.Result entity, String pm25) {
 		txtTitle.setText(entity.getCity());
-		txt_pm_state.setText(PMTools.getQualityStr(Integer.parseInt(entity.getAQI())));
-		txt_pm_state.setBackgroundColor(PMTools.getQualityBackground(Integer.parseInt(entity.getAQI())));
+		txt_pm_state.setText(PMTools.getQualityStr(Integer.parseInt(entity
+				.getAQI())));
+		txt_pm_state.setBackgroundColor(PMTools.getQualityBackground(Integer
+				.parseInt(entity.getAQI())));
 		txt_pm_value.setText(entity.getAQI());
 		lbl_pm25.setText(pm25);
 		lbl_pm10.setText(entity.getPM10());
@@ -98,11 +129,12 @@ public class PMMainActivity extends FullscreenActivity {
 		lbl_NO.setText(entity.getNO2());
 	}
 
-	private void setAirData(CityAirEntity.PM entity, List<CityAirEntity.PM> pmlist, List<CityAirEntity.Moni> monilist) {
+	private void setAirData(CityAirEntity.PM entity,
+			List<CityAirEntity.PM> pmlist, List<CityAirEntity.Moni> monilist) {
 		citylistviewadapter.setData(monilist);
-		
+
 	}
-	
+
 	private void getData() {
 		Parameters params = new Parameters();
 		params.add("city", cityname);
@@ -165,6 +197,24 @@ public class PMMainActivity extends FullscreenActivity {
 								JSONObject lastTwoWeeks = ((JSONObject) new JSONObject(
 										result).getJSONArray("result").get(0))
 										.getJSONObject("lastTwoWeeks");
+								// {"19":{"date":"2015-03-13","quality":"轻度污染","AQI":"145","city":"苏州"},"17":{"date":"2015-03-11","quality":"良","AQI":"97","city":"苏州"},"18":{"date":"2015-03-12","quality":"中度污染","AQI":"187","city":"苏州"},"15":{"date":"2015-03-09","quality":"良","AQI":"94","city":"苏州"},"16":{"date":"2015-03-10","quality":"良","AQI":"55","city":"苏州"},"13":{"date":"2015-03-07","quality":"轻度污染","AQI":"109","city":"苏州"},"14":{"date":"2015-03-08","quality":"良","AQI":"67","city":"苏州"},"11":{"date":"2015-03-05","quality":"良","AQI":"56","city":"苏州"},"12":{"date":"2015-03-06","quality":"良","AQI":"61","city":"苏州"},"21":{"date":"2015-03-15","quality":"良","AQI":"97","city":"苏州"},"20":{"date":"2015-03-14","quality":"轻度污染","AQI":"123","city":"苏州"},"22":{"date":"2015-03-16","quality":"良","AQI":"60","city":"苏州"},"23":{"date":"2015-03-17","quality":"良","AQI":"84","city":"苏州"},"24":{"date":"2015-03-18","quality":"良","AQI":"58","city":"苏州"},"25":{"date":"2015-03-19","quality":"良","AQI":"97","city":"苏州"},"26":{"date":"2015-03-20","quality":"良","AQI":"96","city":"苏州"},"27":{"date":"2015-03-21","quality":"轻度污染","AQI":"109","city":"苏州"},"28":{"date":"2015-03-22","quality":"良","AQI":"84","city":"苏州"},"3":{"date":"2015-02-25","quality":"良","AQI":"54","city":"苏州"},"2":{"date":"2015-02-24","quality":"良","AQI":"84","city":"苏州"},"10":{"date":"2015-03-04","quality":"优","AQI":"50","city":"苏州"},"1":{"date":"2015-02-23","quality":"良","AQI":"92","city":"苏州"},"7":{"date":"2015-03-01","quality":"轻度污染","AQI":"126","city":"苏州"},"6":{"date":"2015-02-28","quality":"良","AQI":"69","city":"苏州"},"5":{"date":"2015-02-27","quality":"优","AQI":"34","city":"苏州"},"4":{"date":"2015-02-26","quality":"良","AQI":"58","city":"苏州"},"9":{"date":"2015-03-03","quality":"良","AQI":"84","city":"苏州"},"8":{"date":"2015-03-02","quality":"轻度污染","AQI":"128","city":"苏州"}}
+								List<CityAirEntity.PM> weekpmlist = new ArrayList<CityAirEntity.PM>();
+								for (int i = 1; i < 31; i++) {
+									try {
+										String d = lastTwoWeeks.getJSONObject(
+												i + "").toString();
+										CityAirEntity.PM pm = new Gson()
+												.fromJson(d,
+														CityAirEntity.PM.class);
+										weekpmlist.add(pm);
+									} catch (Exception e) {
+										continue;
+									}
+
+								}
+								if (weekpmlist.size() != 0) {
+									showPmChart(weekpmlist);
+								}
 
 								List<CityAirEntity.PM> pmlist = new ArrayList<CityAirEntity.PM>();
 								try {
@@ -211,7 +261,8 @@ public class PMMainActivity extends FullscreenActivity {
 								} catch (Exception e) {
 								}
 
-								setAirData(entity.getResult().get(0).getCitynow(), pmlist, monilist);
+								setAirData(entity.getResult().get(0)
+										.getCitynow(), pmlist, monilist);
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
@@ -242,7 +293,7 @@ public class PMMainActivity extends FullscreenActivity {
 				.findViewById(R.id.pm_state_container));
 		circle_progress_bar = ((CircleProgressBar) pmheaderview
 				.findViewById(R.id.circle_progress_bar));
-		chartbarpm = ((BarChart) pmheaderview.findViewById(R.id.chartbarpm));
+		mChart = ((BarChart) pmheaderview.findViewById(R.id.chartbarpm));
 		week_pm_listveiw = ((ListView) findViewById(R.id.week_pm_listveiw));
 		week_pm_listveiw.addHeaderView(pmheaderview);
 		citylistviewadapter = new CityListViewAdapter(this);
