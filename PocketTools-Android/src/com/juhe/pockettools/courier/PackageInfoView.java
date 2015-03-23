@@ -6,6 +6,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -14,6 +15,7 @@ import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 //import com.juhe.pockettools.Utils.CalendarUtil;
 //import com.juhe.pockettools.wallpaper.w;
+import com.juhe.pockettools.utils.Config;
 
 public class PackageInfoView extends LinearLayout {
 	public static String a = "package_time";
@@ -39,7 +41,7 @@ public class PackageInfoView extends LinearLayout {
 	private void initView() {
 		((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE))
 				.inflate(R.layout.view_package_show_info, this, true);
-//		((ImageView) findViewById(R.id.action_bar)).setImageBitmap(w.a().d());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config.getBgDrawableResId());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		package_info_list = ((ListView) findViewById(R.id.package_info_list));
 		adapter = new PackageInfoAdapter(getContext());

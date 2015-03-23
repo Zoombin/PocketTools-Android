@@ -2,6 +2,7 @@ package com.juhe.pockettools.oil;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.home.FullscreenActivity;
+import com.juhe.pockettools.utils.Config;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
@@ -30,7 +32,7 @@ public class OilMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_oil_main);
-//		((ImageView) findViewById(R.id.img_bg)).setImageBitmap(w.a().d());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config.getBgDrawableResId());
 		oil_listveiw = ((ListView) findViewById(R.id.oil_listveiw));
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		adapter = new OilListViewAdapter(this);

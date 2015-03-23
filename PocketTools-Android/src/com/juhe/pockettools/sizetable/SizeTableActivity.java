@@ -20,6 +20,7 @@ import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.home.FullscreenActivity;
+import com.juhe.pockettools.utils.Config;
 import com.juhe.pockettools.utils.HelprCommUtil;
 
 //import com.fotoable.helpr.wallpaper.w;
@@ -174,7 +175,8 @@ public class SizeTableActivity extends FullscreenActivity {
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_sizetable);
-		// ((ImageView) findViewById(R.id.img_bg)).setImageBitmap(w.a().d());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
+				.getBgDrawableResId());
 		btn_womensize = ((Button) findViewById(R.id.btn_womensize));
 		btn_mensize = ((Button) findViewById(R.id.btn_mensize));
 		btn_childrensize = ((Button) findViewById(R.id.btn_childrensize));

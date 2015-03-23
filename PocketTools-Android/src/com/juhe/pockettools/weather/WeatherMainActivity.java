@@ -29,6 +29,7 @@ import com.juhe.pockettools.commonview.HorizontalListView;
 import com.juhe.pockettools.exchange.ExChangeEntity;
 import com.juhe.pockettools.home.FullscreenActivity;
 import com.juhe.pockettools.home.SplashAcitivity;
+import com.juhe.pockettools.utils.Config;
 import com.juhe.pockettools.utils.HelprCommUtil;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
@@ -110,6 +111,7 @@ public class WeatherMainActivity extends FullscreenActivity {
 		txtTitle = ((TextView) findViewById(R.id.txtTitle));
 		view_bg = findViewById(R.id.view_bg);
 		img_bg = ((ImageView) findViewById(R.id.img_bg));
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
 		view_bg.setAlpha(0.15F);
 		weatherheaderview = new WeatherHeaderView(this);
 		txt_weather_centigrade = ((TextView) weatherheaderview

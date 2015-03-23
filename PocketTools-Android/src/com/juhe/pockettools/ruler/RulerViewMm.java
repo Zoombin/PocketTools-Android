@@ -1,5 +1,7 @@
 package com.juhe.pockettools.ruler;
 
+import com.juhe.pockettools.R;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
@@ -38,7 +40,7 @@ public class RulerViewMm extends View {
 	}
 
 	public void onDraw(Canvas canvas) {
-		canvas.drawColor(0xffffffff);
+		canvas.drawColor(0x00000000);
 		for (int i = 1;; ++i) {
 			float y = i * pxmm;
 			if (y > height) {

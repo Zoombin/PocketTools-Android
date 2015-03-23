@@ -3,16 +3,19 @@ package com.juhe.pockettools.moive;
 import java.util.List;
 
 import android.os.Bundle;
+import android.provider.ContactsContract.CommonDataKinds.Im;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.home.FullscreenActivity;
+import com.juhe.pockettools.utils.Config;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
@@ -41,8 +44,8 @@ public class MovieMainActivity extends FullscreenActivity {
 		super.onCreate(bundle);
 		getWindow().setSoftInputMode(2);
 		setContentView(R.layout.activity_movie_main);
-		// ((ImageView) findViewById(R.id.img_bg))
-		// .setImageBitmap(com.fotoable.helpr.wallpaper.w.a().d());
+		ImageView img_bg =  (ImageView) findViewById(R.id.img_bg);
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
 		bar_cancel = ((Button) findViewById(R.id.bar_cancel));
 		progress_contaienr = ((FrameLayout) findViewById(R.id.progress_contaienr));
 		bar_cancel.setOnClickListener(new OnClickListener() {

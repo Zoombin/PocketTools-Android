@@ -21,6 +21,7 @@ import android.widget.TextView;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
+import com.juhe.pockettools.utils.Config;
 //import com.fotoable.helpr.wallpaper.w;
 import java.util.ArrayList;
 import java.util.List;
@@ -106,8 +107,8 @@ public class DreamResultFragment extends Fragment {
 		Log.v("DreamResultFragment", "DreamResultFragment onCreateView");
 		View view = inflater.inflate(R.layout.fragment_dream_result,
 				container, false);
-//		((ImageView) view.findViewById(R.id.img_bg)).setImageBitmap(w.a()
-//				.d());
+		ImageView img_bg = (ImageView) view.findViewById(R.id.img_bg);
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
 		dream_main_listveiw = ((ListView) view.findViewById(R.id.dream_main_listveiw));
 //		dream_main_listveiw.setOnItemClickListener(new l(this));
 		action_bar = ((TopActiveBarView) view.findViewById(R.id.action_bar));

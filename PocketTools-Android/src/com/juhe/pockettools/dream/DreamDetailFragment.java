@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
+import com.juhe.pockettools.utils.Config;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -66,8 +67,8 @@ public class DreamDetailFragment extends Fragment {
 		Log.v("DreamMainFragment", "DreamMainFragment onCreateView");
 		View view = inflater.inflate(R.layout.fragment_dream_detail,
 				container, false);
-//		((ImageView) view.findViewById(R.id.img_bg)).setImageBitmap(w.a()
-//				.d());
+		ImageView img_bg = (ImageView) view.findViewById(R.id.img_bg);
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
 		action_bar = ((TopActiveBarView) view.findViewById(R.id.action_bar));
 		action_bar.setListener(new InterfaceTopActiveBar() {
 			

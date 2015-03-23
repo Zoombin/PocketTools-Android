@@ -28,6 +28,7 @@ import com.juhe.pockettools.commonview.ClearableEditText;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.home.FullscreenActivity;
+import com.juhe.pockettools.utils.Config;
 import com.juhe.pockettools.utils.HelprCommUtil;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
@@ -76,9 +77,9 @@ public class ExChangeMainActivity extends FullscreenActivity {
 		holder.currencyNameLabel.setText(entity.name);
 		float f1 = 100.0F * (value / entity.mBuyPri);
 		holder.currencyResultLabel.setText(String.format("%.2f", f1));
-	    String str = String.format("flags/%s.png", entity.cn.toLowerCase());
-	    holder.img_flag.setImageBitmap(HelprCommUtil.getImage(str));
-		
+		String str = String.format("flags/%s.png", entity.cn.toLowerCase());
+		holder.img_flag.setImageBitmap(HelprCommUtil.getImage(str));
+
 	}
 
 	private void showInputView(ExChangeEntity entity) {
@@ -106,8 +107,8 @@ public class ExChangeMainActivity extends FullscreenActivity {
 						action_bar.setProgressVisiable(View.INVISIBLE);
 
 						if (err == 0) {
-							exchangelist = ExchangeRateManager
-									.getInstance().formatList(result);
+							exchangelist = ExchangeRateManager.getInstance()
+									.formatList(result);
 							if (exchangelist != null) {
 								if (adapter == null) {
 									adapter = new ListViewAdatper(
@@ -136,7 +137,8 @@ public class ExChangeMainActivity extends FullscreenActivity {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_exchange_main);
 		getWindow().setSoftInputMode(3);
-		// ((ImageView) findViewById(R.id.img_bg)).setImageBitmap(w.a().d());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
+				.getBgDrawableResId());
 		btn_input_ok = ((Button) findViewById(R.id.btn_input_ok));
 		ly_input = ((RelativeLayout) findViewById(R.id.ly_input));
 		txt_input = ((ClearableEditText) findViewById(R.id.txt_input));
@@ -180,17 +182,18 @@ public class ExChangeMainActivity extends FullscreenActivity {
 		});
 		exchange_main_listveiw = ((ListView) findViewById(R.id.exchange_main_listveiw));
 		exchange_main_listveiw
-			.setOnItemClickListener(new OnItemClickListener() {
+				.setOnItemClickListener(new OnItemClickListener() {
 
-				@Override
-				public void onItemClick(AdapterView<?> parent, View view,
-						int position, long id) {
-					if (view != null) {
-						ExChangeEntity entity = (ExChangeEntity) exchangelist.get(position);
-						showInputView(entity);
+					@Override
+					public void onItemClick(AdapterView<?> parent, View view,
+							int position, long id) {
+						if (view != null) {
+							ExChangeEntity entity = (ExChangeEntity) exchangelist
+									.get(position);
+							showInputView(entity);
+						}
 					}
-				}
-			});
+				});
 
 		btn_input_ok.setOnClickListener(new OnClickListener() {
 

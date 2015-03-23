@@ -1,9 +1,6 @@
 package com.juhe.pockettools.qrcode;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
@@ -11,12 +8,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-//import com.nostra13.universalimageloader.core.c.a;
-//import com.nostra13.universalimageloader.core.d;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import com.juhe.pockettools.R;
+import com.juhe.pockettools.utils.Config;
+//import com.nostra13.universalimageloader.core.c.a;
+//import com.nostra13.universalimageloader.core.d;
 
 public class QRCodeGoodsInfoView extends LinearLayout {
 	private TextView goods_name;
@@ -45,6 +41,8 @@ public class QRCodeGoodsInfoView extends LinearLayout {
 	private void initView() {
 		((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE))
 				.inflate(R.layout.view_qrcode_shop_info, this, true);
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
+				.getBgDrawableResId());
 		goods_brand = ((TextView) findViewById(R.id.goods_brand));
 		goods_company = ((TextView) findViewById(R.id.goods_company));
 		goods_price = ((TextView) findViewById(R.id.goods_price));

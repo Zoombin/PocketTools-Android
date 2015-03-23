@@ -6,17 +6,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.secret.LocusPassWordView.OnCompleteListener;
+import com.juhe.pockettools.utils.Config;
 
 public class SetPasswordActivity extends Activity {
 
 	private LocusPassWordView lpwv;
 	private String password;
 
+	private ImageView img_bg;
 	private Button btnRight;
 	private Button btnLeft;
 
@@ -33,6 +36,8 @@ public class SetPasswordActivity extends Activity {
 	}
 
 	private void findViews() {
+		img_bg = (ImageView) findViewById(R.id.img_bg);
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
 		btnRight = (Button) findViewById(R.id.btnright);
 		btnLeft = (Button) findViewById(R.id.btnleft);
 		lpwv = (LocusPassWordView) findViewById(R.id.mLocusPassWordView);

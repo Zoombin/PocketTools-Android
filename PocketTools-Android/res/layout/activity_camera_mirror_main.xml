@@ -22,14 +22,16 @@
             android:layout_height="40.0dip"
             android:layout_gravity="right|center"
             android:layout_marginRight="10.0dip"
-            android:background="@drawable/btn_camerasetting" />
+            android:background="@drawable/btn_camerasetting"
+            android:visibility="gone" />
 
         <ImageView
             android:id="@id/btn_close_mirror"
             android:layout_width="40.0dip"
             android:layout_height="40.0dip"
             android:layout_gravity="center"
-            android:background="@drawable/btn_view_close_res" />
+            android:background="@drawable/btn_view_close_res"
+             />
     </FrameLayout>
 
 </FrameLayout>

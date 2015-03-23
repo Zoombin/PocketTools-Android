@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/color_gradient_bg" >
+    android:layout_height="fill_parent" >
 
     <ImageView
         android:id="@id/img_bg"
@@ -20,9 +19,10 @@
             android:layout_width="fill_parent"
             android:layout_height="50.0dip" />
 
-        <FrameLayout
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="60.0dip" >
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
             <EditText
                 android:id="@id/txtiput"
@@ -32,7 +32,7 @@
                 android:layout_marginLeft="10.0dip"
                 android:layout_marginRight="10.0dip"
                 android:layout_marginTop="10.0dip"
-                android:background="@color/txt_input_white_bgcolor"
+                android:background="@color/transparent"
                 android:ems="10"
                 android:gravity="left|center"
                 android:hint="你梦到了什么"
@@ -41,12 +41,35 @@
                 android:paddingRight="5.0dip"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textColorHint="@color/default_texthint_color"
+                android:textColorHint="@color/white"
                 android:textSize="18.0sp" >
 
                 <requestFocus />
             </EditText>
-        </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:background="@color/listview_divider_color" />
+
+            <Button
+                android:id="@+id/btn_dream_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:layout_marginBottom="20.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:background="@drawable/common_btn_bg"
+                android:paddingBottom="5.0dip"
+                android:paddingTop="5.0dip"
+                android:text="@string/package_search"
+                android:textColor="@color/white"
+                android:textSize="20.0sp" />
+        </LinearLayout>
 
         <ListView
             android:id="@id/dream_main_listveiw"

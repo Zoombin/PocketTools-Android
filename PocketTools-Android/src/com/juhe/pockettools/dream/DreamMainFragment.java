@@ -15,6 +15,7 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -28,6 +29,7 @@ import com.juhe.pockettools.R;
 import com.juhe.pockettools.applesn.AppleSnEntity;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
+import com.juhe.pockettools.utils.Config;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
@@ -42,7 +44,8 @@ public class DreamMainFragment extends Fragment {
 	private ListView dream_main_listveiw;
 	private TopActiveBarView action_bar;
 	private EditText txtiput;
-
+	private Button btn_dream_search;
+	
 	private void startDreamDetailFragment(String searchtext) {
 		if ((searchtext != null) && (searchtext.length() != 0)) {
 			FragmentTransaction transaction = getActivity()
@@ -107,9 +110,10 @@ public class DreamMainFragment extends Fragment {
 		Log.v("DreamMainFragment", "DreamMainFragment onCreateView");
 		View view = inflater.inflate(R.layout.fragment_dream_main, container,
 				false);
-		// ((ImageView)
-		// localView.findViewById(R.id.img_bg)).setImageBitmap(w.a()
-		// .d());
+
+		ImageView img_bg = (ImageView) view.findViewById(R.id.img_bg);
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+		
 		action_bar = ((TopActiveBarView) view.findViewById(R.id.action_bar));
 		action_bar.setTiltleText("周公解梦");
 		action_bar.setProgressVisiable(View.VISIBLE);
@@ -125,6 +129,16 @@ public class DreamMainFragment extends Fragment {
 				activity.finish();
 			}
 		});
+
+		btn_dream_search = (Button) view.findViewById(R.id.btn_dream_search);
+		btn_dream_search.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
+		
 		txtiput = ((EditText) view.findViewById(R.id.txtiput));
 		txtiput.setOnEditorActionListener(new OnEditorActionListener() {
 

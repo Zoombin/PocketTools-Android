@@ -1,20 +1,13 @@
 package com.juhe.pockettools.constelltion;
 
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -22,15 +15,16 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.juhe.pockettools.R;
-import com.juhe.pockettools.applesn.AppleSnEntity;
 import com.juhe.pockettools.commonview.RightPublishTextView;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.home.FullscreenActivity;
-//import com.fotoable.helpr.wallpaper.w;
+import com.juhe.pockettools.utils.Config;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
+//import android.graphics.Bitmap.Config;
+//import com.fotoable.helpr.wallpaper.w;
 
 public class ConstelltionMainActivity extends FullscreenActivity {
 	private ConstelltionSelectDateView constelltion_date;
@@ -170,7 +164,7 @@ public class ConstelltionMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_constelltion_main);
-		// ((ImageView) findViewById(R.id.img_bg)).setImageBitmap(w.a().d());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config.getBgDrawableResId());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		constelltion_basicview = ((ConstelltionBasicView) findViewById(R.id.constelltion_basicview));
 		constelltion_content = ((RightPublishTextView) findViewById(R.id.constelltion_content));

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.AutoResizeTextView;
 import com.juhe.pockettools.home.FullscreenActivity;
+import com.juhe.pockettools.utils.Config;
 //import com.fotoable.helpr.wallpaper.w;
 import java.text.DecimalFormat;
 import java.util.StringTokenizer;
@@ -374,7 +375,8 @@ public class CalculatorMainActivity extends FullscreenActivity {
 	public void onCreate(Bundle paramBundle) {
 		super.onCreate(paramBundle);
 		setContentView(R.layout.activity_calcautor_mian);
-		// ((ImageView) findViewById(R.id.img_bg)).setImageBitmap(w.a().d());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
+				.getBgDrawableResId());
 		input = ((AutoResizeTextView) findViewById(R.id.input));
 		mem = ((TextView) findViewById(R.id.mem));
 		btn_num[0] = ((Button) findViewById(R.id.zero));

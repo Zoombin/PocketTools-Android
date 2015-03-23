@@ -21,6 +21,7 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
@@ -28,6 +29,7 @@ import android.widget.TextView.OnEditorActionListener;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.home.FullscreenActivity;
+import com.juhe.pockettools.utils.Config;
 
 //import com.fotoable.helpr.wallpaper.w;
 
@@ -243,6 +245,9 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_unit_main);
+		
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
+				.getBgDrawableResId());
 		layout_unit = (FrameLayout) findViewById(R.id.layout_unit);
 		layout_unit.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
 			

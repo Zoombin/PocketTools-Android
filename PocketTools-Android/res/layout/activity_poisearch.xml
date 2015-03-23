@@ -5,39 +5,57 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="50dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
         android:orientation="horizontal" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="在" >
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:text="在"
+            android:textSize="20sp" >
         </TextView>
 
         <EditText
             android:id="@+id/city"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="北京" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:background="#b2b7c4"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:text="北京"
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="市内找" >
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:text="市内找"
+            android:textSize="20sp" >
         </TextView>
 
         <AutoCompleteTextView
             android:id="@+id/searchkey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
             android:layout_weight="0.88"
-            android:text="餐厅" />
+            android:background="#b2b7c4"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:text="餐厅"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="50dip"
         android:orientation="horizontal" >
@@ -46,21 +64,29 @@
             android:id="@+id/search"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
             android:layout_weight="12"
-            android:background="@drawable/button_style"
+            android:background="@drawable/common_btn_bg"
             android:onClick="searchButtonProcess"
-            android:padding="10dip"
-            android:text="开始" />
+            android:padding="5dip"
+            android:text="开始"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/map_next_data"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
             android:layout_weight="12"
-            android:background="@drawable/button_style"
+            android:background="@drawable/common_btn_bg"
             android:onClick="goToNextPage"
-            android:padding="10dip"
-            android:text="下一组数据" />
+            android:padding="5dip"
+            android:text="下一组数据"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <fragment
