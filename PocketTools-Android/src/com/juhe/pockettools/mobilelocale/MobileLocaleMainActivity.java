@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -13,6 +14,7 @@ import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.home.FullscreenActivity;
 import com.juhe.pockettools.mobilelocale.MobileLocaleEntity.Result;
+import com.juhe.pockettools.utils.Config;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
@@ -66,7 +68,7 @@ public class MobileLocaleMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_mobile_locale_main);
-//		((ImageView) findViewById(R.id.img_bg)).setImageBitmap(w.a().d());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config.getBgDrawableResId());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		locale_content = ((MobileLocaleContentView) findViewById(R.id.locale_content));
 		edit_locale_number = ((EditText) findViewById(R.id.edit_locale_number));

@@ -65,6 +65,7 @@ public class SettingActivity extends FullscreenActivity implements
 		adapter = new WapperBgAdapter(this, list);
 		wapper_bg_listview.setAdapter(adapter);
 		wapper_bg_listview.setOnItemClickListener(this);
+		adapter.setSelected(Config.getBgIndex());
 	}
 
 	@Override
