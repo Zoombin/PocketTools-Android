@@ -16,7 +16,7 @@ import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.home.FullscreenActivity;
 import com.juhe.pockettools.utils.Config;
 
-public class SettingAcitivity extends FullscreenActivity implements
+public class SettingActivity extends FullscreenActivity implements
 		OnItemClickListener {
 
 	ImageView img_bg;

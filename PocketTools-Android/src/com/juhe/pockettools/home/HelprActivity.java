@@ -9,6 +9,7 @@ import java.util.List;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -28,6 +29,8 @@ import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.HorizontalListView;
 import com.juhe.pockettools.pm.PMEntity;
 import com.juhe.pockettools.pm.PMTools;
+import com.juhe.pockettools.setting.SettingActivity;
+import com.juhe.pockettools.utils.Config;
 import com.juhe.pockettools.utils.HelprCommUtil;
 import com.juhe.pockettools.weather.Hour;
 import com.juhe.pockettools.weather.Weather;
@@ -43,6 +46,7 @@ import com.viewpagerindicator.CirclePageIndicator;
 public class HelprActivity extends FullscreenActivity {
 
 	View view;
+	private ImageView img_bg;
 	private Button btn_setting;
 	private TextView tv_city;
 	private TextView tv_updatetime;
@@ -108,13 +112,16 @@ public class HelprActivity extends FullscreenActivity {
 		HelprApplication.getInstance().mGeofenceClient = new GeofenceClient(getApplicationContext());
 		HelprApplication.getInstance().mLocationClient.start();
 		
+		img_bg = (ImageView) findViewById(R.id.img_bg);
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+		
 		btn_setting = (Button) findViewById(R.id.btn_setting);
 		btn_setting.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-//				Intent intent = new Intent(HelprActivity.this, SettingActivity.class);
-//				startActivity(intent);
+				Intent intent = new Intent(HelprActivity.this, SettingActivity.class);
+				startActivityForResult(intent, 0);
 			}
 		});
 		tv_city = (TextView) findViewById(R.id.tv_city);
@@ -165,6 +172,13 @@ public class HelprActivity extends FullscreenActivity {
 		this.mTabs[0].setSelected(true);
 	}
 
+	@Override
+	protected void onActivityResult(int arg0, int arg1, Intent arg2) {
+		super.onActivityResult(arg0, arg1, arg2);
+		
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+	}
+	
 	public void onTabClicked(View v) {
 		tabSelect(v.getId());
 	}
