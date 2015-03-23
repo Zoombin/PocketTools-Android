@@ -1,44 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res/com.fotoable.helpr">
-    <ImageView android:id="@id/img_bg" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <com.fotoable.helpr.commonview.TopActiveBarView android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="50.0dip" />
-        <ScrollView android:id="@id/scrollView1" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <LinearLayout android:orientation="vertical" android:background="#32000000" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                    <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="left" android:id="@id/bar_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="@string/change_background" />
-                    <com.fotoable.comlib.ui.HorizontalListView android:id="@id/wapper_bg_listview" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="175.0dip" />
-                    <Button android:textSize="16.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/btn_background" android:background="@drawable/btn_setting_normal" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/choose_pic_gallery" />
-                </LinearLayout>
-                <FrameLayout android:background="#32000000" android:layout_width="fill_parent" android:layout_height="75.0dip" android:layout_marginTop="20.0dip">
-                    <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="图标排序" />
-                    <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="36.0dip" android:layout_marginBottom="10.0dip" android:text="按照使用次数排列" />
-                    <ToggleButton android:layout_gravity="right" android:id="@id/switch_arrange" android:background="@*android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:layout_marginRight="10.0dip" android:checked="false" android:button="@drawable/ios7_btn" android:textOn="" android:textOff="" android:text="" />
-                </FrameLayout>
-                <FrameLayout android:background="#32000000" android:layout_width="fill_parent" android:layout_height="75.0dip" android:layout_marginTop="20.0dip">
-                    <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="启动默认界面" />
-                    <LinearLayout android:layout_gravity="left" android:orientation="horizontal" android:id="@id/ly_homepage" android:layout_width="250.0dip" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="35.0dip">
-                        <Button android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/btn_random" android:tag="-1" android:background="@drawable/view_search_item_bg" android:layout_width="50.0dip" android:layout_height="fill_parent" android:layout_marginRight="17.0dip" android:text="自动" />
-                        <Button android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/btn_calendar" android:tag="0" android:background="@drawable/view_search_item_bg" android:layout_width="50.0dip" android:layout_height="fill_parent" android:layout_marginRight="17.0dip" android:text="万年历" />
-                        <Button android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/btn_weather" android:tag="1" android:background="@drawable/view_search_item_bg" android:layout_width="50.0dip" android:layout_height="fill_parent" android:layout_marginRight="16.0dip" android:text="天气" />
-                        <Button android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/btn_violation" android:tag="2" android:background="@drawable/view_search_item_bg" android:layout_width="50.0dip" android:layout_height="fill_parent" android:layout_marginRight="16.0dip" android:text="星座" />
-                    </LinearLayout>
-                </FrameLayout>
-                <FrameLayout android:background="#32000000" android:layout_width="fill_parent" android:layout_height="75.0dip" android:layout_marginTop="20.0dip">
-                    <Button android:textSize="16.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/btn_clear_diskcache" android:background="@drawable/btn_setting_normal" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:text="清理缓存" />
-                </FrameLayout>
-                <LinearLayout android:orientation="vertical" android:background="#32000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
-                    <Button android:textSize="16.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/btn_helpr" android:background="@color/red" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:text="关于我们" />
-                </LinearLayout>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@id/img_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <com.juhe.pockettools.commonview.TopActiveBarView
+            android:id="@id/action_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip" />
+
+        <ScrollView
+            android:id="@id/scrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#32000000"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@id/bar_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:text="@string/change_background"
+                    android:textColor="@color/white"
+                    android:textSize="14.0sp" />
+
+                <com.juhe.pockettools.commonview.HorizontalListView
+                    android:id="@id/wapper_bg_listview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="175.0dip"
+                    android:background="@color/transparent" />
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
-    <FrameLayout android:id="@id/process_mask" android:background="#32000000" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <FrameLayout android:layout_gravity="top|center" android:id="@id/ly_process" android:background="@drawable/bg_process_dailog" android:layout_width="160.0dip" android:layout_height="80.0dip" android:layout_marginTop="125.0dip">
-            <ProgressBar android:layout_gravity="left|center" android:id="@id/loading" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginLeft="15.0dip" />
-            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:layout_gravity="left|center" android:clickable="false" android:layout_width="wrap_content" android:layout_height="20.0dip" android:layout_marginLeft="90.0dip" android:text="正在处理中，请稍后..." />
+
+    <FrameLayout
+        android:id="@id/process_mask"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#32000000"
+        android:visibility="invisible" >
+
+        <FrameLayout
+            android:id="@id/ly_process"
+            android:layout_width="160.0dip"
+            android:layout_height="80.0dip"
+            android:layout_gravity="top|center"
+            android:layout_marginTop="125.0dip"
+            android:background="@drawable/bg_process_dailog" >
+
+            <ProgressBar
+                android:id="@id/loading"
+                android:layout_width="50.0dip"
+                android:layout_height="50.0dip"
+                android:layout_gravity="left|center"
+                android:layout_marginLeft="15.0dip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20.0dip"
+                android:layout_gravity="left|center"
+                android:layout_marginLeft="90.0dip"
+                android:clickable="false"
+                android:text="正在处理中，请稍后..."
+                android:textColor="@color/white"
+                android:textSize="14.0sp" />
         </FrameLayout>
     </FrameLayout>
+
 </FrameLayout>

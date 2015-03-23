@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.fotoable.helpr.setting.StatusImageView android:layout_gravity="fill" android:id="@id/item_icon" android:layout_width="87.0dip" android:layout_height="155.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:scaleType="centerCrop" />
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical" >
+
+    <com.juhe.pockettools.setting.StatusImageView
+        android:id="@id/item_icon"
+        android:layout_width="87.0dip"
+        android:layout_height="155.0dip"
+        android:layout_gravity="fill"
+        android:layout_marginBottom="10.0dip"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginTop="10.0dip"
+        android:scaleType="centerCrop" />
+
 </FrameLayout>
