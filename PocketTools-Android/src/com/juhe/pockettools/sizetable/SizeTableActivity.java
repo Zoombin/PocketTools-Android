@@ -2,14 +2,14 @@ package com.juhe.pockettools.sizetable;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -21,7 +21,6 @@ import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.home.FullscreenActivity;
 import com.juhe.pockettools.utils.Config;
-import com.juhe.pockettools.utils.HelprCommUtil;
 
 //import com.fotoable.helpr.wallpaper.w;
 
@@ -104,28 +103,38 @@ public class SizeTableActivity extends FullscreenActivity {
 
 	private void showTypeContent(Button button, int delayMillis) {
 		button.setSelected(true);
-		String[] strings = new String[2];
-		strings[0] = "sizes";
-		strings[1] = ((String) button.getTag());
-		final String str = String.format("%s/%s.png", strings);
-		if ((str != null) && (str.length() > 0)) {
-			handler.postDelayed(new Runnable() {
-
-				@Override
-				public void run() {
-					final Bitmap bitmap = HelprCommUtil.getImage(str);
-					if (bitmap != null) {
-						SizeTableActivity.this.runOnUiThread(new Runnable() {
-							
-							@Override
-							public void run() {
-								setImage(bitmap);
-							}
-						});
-					}
-				}
-			}, delayMillis);
-		}
+//		String[] strings = new String[2];
+//		strings[0] = "sizes";
+//		strings[1] = ((String) button.getTag());
+		final String str = (String) button.getTag();
+		Resources res = getResources();
+		final String packageName = getPackageName();
+		int imageResId = res.getIdentifier(str, "drawable", packageName);
+		imag_size.setBackgroundResource(imageResId);
+//		final String str = String.format("%s/%s.png", strings);
+//		if ((str != null) && (str.length() > 0)) {
+//			handler.postDelayed(new Runnable() {
+//
+//				@Override
+//				public void run() {
+//					Resources res = getResources();
+//					final String packageName = getPackageName();
+//					int imageResId = res.getIdentifier(str, "drawable", packageName);
+//					final Bitmap bitmap = BitmapFactory.decodeResource(res, imageResId);
+//					
+////					final Bitmap bitmap = HelprCommUtil.getImage(str);
+//					if (bitmap != null) {
+//						SizeTableActivity.this.runOnUiThread(new Runnable() {
+//							
+//							@Override
+//							public void run() {
+//								setImage(bitmap);
+//							}
+//						});
+//					}
+//				}
+//			}, delayMillis);
+//		}
 	}
 
 	private void unclickbutton(LinearLayout linearlayout) {

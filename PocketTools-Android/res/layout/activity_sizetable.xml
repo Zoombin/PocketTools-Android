@@ -286,17 +286,11 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <FrameLayout
-                    android:id="@id/ly_pic"
+                <ImageView
+                    android:id="@id/imag_size"
                     android:layout_width="fill_parent"
-                    android:layout_height="100.0dip" >
-
-                    <ImageView
-                        android:id="@id/imag_size"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:scaleType="fitXY" />
-                </FrameLayout>
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY" />
 
                 <LinearLayout
                     android:layout_width="fill_parent"
