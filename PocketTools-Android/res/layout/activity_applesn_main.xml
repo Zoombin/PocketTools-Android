@@ -29,7 +29,7 @@
             android:layout_marginRight="10.0dip"
             android:layout_marginTop="10.0dip"
             android:background="@color/transparent"
-            android:hint="@string/locale_edittext_hint"
+            android:hint="请输入苹果序列号"
             android:inputType="number"
             android:paddingLeft="5.0dip"
             android:paddingRight="5.0dip"

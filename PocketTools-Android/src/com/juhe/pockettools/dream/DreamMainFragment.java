@@ -135,7 +135,7 @@ public class DreamMainFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				
+				getData();
 			}
 		});
 		
@@ -145,44 +145,9 @@ public class DreamMainFragment extends Fragment {
 			@Override
 			public boolean onEditorAction(TextView v, int arg1, KeyEvent arg2) {
 				if (arg1 == 6) {
-					((InputMethodManager) v.getContext().getSystemService(
-							Context.INPUT_METHOD_SERVICE))
-							.hideSoftInputFromWindow(v.getWindowToken(), 0);
-					txtiput.clearFocus();
-					
-					action_bar.setProgressVisiable(View.VISIBLE);
-					
-					Parameters params = new Parameters();
-					params.add("full", 1);
-					params.add("q", txtiput.getText().toString());
-					params.add("key", "e10ef3445ac25e570094dcf48bece26a");
-					JuheData.executeWithAPI(64, "http://v.juhe.cn/dream/query",
-							JuheData.GET, params, new DataCallBack() {
 
-								@Override
-								public void resultLoaded(int err, String reason,
-										String result) {
-									action_bar.setProgressVisiable(View.INVISIBLE);
-
-									if (err == 0) {
-										Dream entity = new Gson().fromJson(
-												result, Dream.class);
-										if (entity.getError_code() != 0
-												&& entity.getError_code() != 200) {
-											Toast.makeText(activity,
-													entity.getReason(),
-													Toast.LENGTH_SHORT).show();
-											return;
-										}
-										List<Dream.Result> resultlist = entity
-												.getResult();
-										startDreamResultFragment(txtiput.getText().toString(), resultlist);
-									} else {
-										Toast.makeText(activity, reason,
-												Toast.LENGTH_SHORT).show();
-									}
-								}
-							});
+					
+					getData();
 					
 					return true;
 				}
@@ -227,6 +192,50 @@ public class DreamMainFragment extends Fragment {
 		return view;
 	}
 
+	private void getData() {
+
+		
+		txtiput.clearFocus();
+		
+		action_bar.setProgressVisiable(View.VISIBLE);
+		
+		Parameters params = new Parameters();
+		params.add("full", 1);
+		params.add("q", txtiput.getText().toString());
+		params.add("key", "e10ef3445ac25e570094dcf48bece26a");
+		JuheData.executeWithAPI(64, "http://v.juhe.cn/dream/query",
+				JuheData.GET, params, new DataCallBack() {
+
+					@Override
+					public void resultLoaded(int err, String reason,
+							String result) {
+						action_bar.setProgressVisiable(View.INVISIBLE);
+
+						if (err == 0) {
+							Dream entity = new Gson().fromJson(
+									result, Dream.class);
+							if (entity.getError_code() != 0
+									&& entity.getError_code() != 200) {
+								Toast.makeText(activity,
+										entity.getReason(),
+										Toast.LENGTH_SHORT).show();
+								return;
+							}
+							((InputMethodManager) txtiput.getContext().getSystemService(
+									Context.INPUT_METHOD_SERVICE))
+									.hideSoftInputFromWindow(txtiput.getWindowToken(), 0);
+							
+							List<Dream.Result> resultlist = entity
+									.getResult();
+							startDreamResultFragment(txtiput.getText().toString(), resultlist);
+						} else {
+							Toast.makeText(activity, reason,
+									Toast.LENGTH_SHORT).show();
+						}
+					}
+				});
+	}
+	
 	private class DreamAdapter extends BaseAdapter {
 		private List<Category.Result> categorylist = new ArrayList<Category.Result>();
 		private Context context;
