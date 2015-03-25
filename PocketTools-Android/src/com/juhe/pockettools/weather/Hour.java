@@ -40,7 +40,9 @@ public class Hour implements Serializable {
 		this.result = result;
 	}
 
-	public class Result {
+	public class Result  implements Serializable {
+
+		private static final long serialVersionUID = 1L;
 		// "weatherid": "00",/*天气标识ID*/
 		// "weather": "晴", /*天气*/
 		// "temp1": "27", /*低温*/

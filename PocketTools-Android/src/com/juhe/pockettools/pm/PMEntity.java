@@ -41,7 +41,9 @@ public class PMEntity implements Serializable {
 		this.result = result;
 	}
 
-	public class Result {
+	public class Result implements Serializable {
+
+		private static final long serialVersionUID = 1L;
 		// {"city":"苏州","PM2.5":"60","AQI":"81","quality":"良","PM10":"59","CO":"0.7","NO2":"39","O3":"65","SO2":"15","time":"2015-03-09 15:46:58"}
 		private String city;
 		// private String PM2.5;

@@ -61,7 +61,9 @@ public class Weather implements Serializable {
 		this.result = result;
 	}
 
-	public class Result {
+	public class Result implements Serializable {
+
+		private static final long serialVersionUID = 1L;
 		private SK sk;
 		private Today today;
 
@@ -82,7 +84,9 @@ public class Weather implements Serializable {
 		}
 	}
 
-	public class SK {
+	public class SK implements Serializable {
+
+		private static final long serialVersionUID = 1L;
 		// "sk": { /*当前实况天气*/
 		// "temp": "21", /*当前温度*/
 		// "wind_direction": "西风", /*当前风向*/
@@ -137,7 +141,9 @@ public class Weather implements Serializable {
 
 	}
 
-	public class Today {
+	public class Today implements Serializable {
+
+		private static final long serialVersionUID = 1L;
 		// "today": {
 		// "city": "天津",
 		// "date_y": "2014年03月21日",
@@ -296,7 +302,9 @@ public class Weather implements Serializable {
 
 	}
 
-	public class WeatherId {
+	public class WeatherId implements Serializable {
+
+		private static final long serialVersionUID = 1L;
 		private String fa;
 		private String fb;
 
@@ -318,16 +326,18 @@ public class Weather implements Serializable {
 
 	}
 
-	public class Future {
-//		 "temperature": "28℃~36℃",
-//         "weather": "晴转多云",
-//         "weather_id": {
-//             "fa": "00",
-//             "fb": "01"
-//         },
-//         "wind": "南风3-4级",
-//         "week": "星期一",
-//         "date": "20140804"
+	public class Future implements Serializable {
+
+		private static final long serialVersionUID = 1L;
+		// "temperature": "28℃~36℃",
+		// "weather": "晴转多云",
+		// "weather_id": {
+		// "fa": "00",
+		// "fb": "01"
+		// },
+		// "wind": "南风3-4级",
+		// "week": "星期一",
+		// "date": "20140804"
 
 		private String temperature;
 		private String weather;
@@ -383,6 +393,5 @@ public class Weather implements Serializable {
 		public void setDate(String date) {
 			this.date = date;
 		}
-
 	}
 }
