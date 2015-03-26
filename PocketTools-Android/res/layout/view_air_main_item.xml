@@ -3,9 +3,10 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" >
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="80.0dip" >
+        android:layout_height="80.0dip"
+        android:orientation="horizontal" >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -35,9 +36,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dip"
             android:layout_height="80.0dip"
-            android:layout_gravity="center"
+			android:layout_weight="1"
+            android:layout_marginLeft="10.0dip"
             android:orientation="vertical" >
 
             <TextView
@@ -63,7 +65,6 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="80.0dip"
-            android:layout_gravity="right"
             android:layout_marginRight="10.0dip"
             android:orientation="vertical" >
 
@@ -86,6 +87,6 @@
                 android:textColor="@color/white"
                 android:textSize="16.0sp" />
         </LinearLayout>
-    </FrameLayout>
+    </LinearLayout>
 
 </FrameLayout>
