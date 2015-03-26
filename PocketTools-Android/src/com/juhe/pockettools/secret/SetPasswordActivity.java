@@ -84,26 +84,29 @@ public class SetPasswordActivity extends Activity {
 				}
 			});
 		} else {// 密码不为空，不显示设置按钮，只绘制密码
-			title.setText("确认已保存的密码图案");
-			btnRight.setVisibility(View.GONE);
-			btnLeft.setVisibility(View.GONE);
-
-			lpwv.setOnCompleteListener(new OnCompleteListener() {// 绘制密码
-				@Override
-				public void onComplete(String mPassword) {
-					if (lpwv.verifyPassword(mPassword)) {// 绘制的密码一致，删除密码
-						lpwv.clearPassword();
-						lpwv.resetPassWord("");// 密码置空
-						Toast.makeText(getApplicationContext(), "登录密码已经取消！",
-								Toast.LENGTH_SHORT).show();
-						finish();
-					} else {// 绘制的密码不一致，提示用户
-						Toast.makeText(getApplicationContext(), "密码绘制错误！",
-								Toast.LENGTH_SHORT).show();
-						lpwv.clearPassword();
-					}
-				}
-			});
+//			title.setText("确认已保存的密码图案");
+//			btnRight.setVisibility(View.GONE);
+//			btnLeft.setVisibility(View.GONE);
+//
+//			lpwv.setOnCompleteListener(new OnCompleteListener() {// 绘制密码
+//				@Override
+//				public void onComplete(String mPassword) {
+//					if (lpwv.verifyPassword(mPassword)) {// 绘制的密码一致，删除密码
+//						lpwv.clearPassword();
+//						lpwv.resetPassWord("");// 密码置空
+//						Toast.makeText(getApplicationContext(), "登录密码已经取消！",
+//								Toast.LENGTH_SHORT).show();
+//						finish();
+//					} else {// 绘制的密码不一致，提示用户
+//						Toast.makeText(getApplicationContext(), "密码绘制错误！",
+//								Toast.LENGTH_SHORT).show();
+//						lpwv.clearPassword();
+//					}
+//				}
+//			});
+			Intent intent = new Intent(SetPasswordActivity.this, LoginActivity.class);
+			startActivity(intent);
+			finish();
 		}
 	}
 

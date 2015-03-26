@@ -5,11 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.secret.LocusPassWordView.OnCompleteListener;
+import com.juhe.pockettools.secretalbum.SecretAlbumActivity;
+import com.juhe.pockettools.utils.Config;
 
 public class LoginActivity extends Activity {
 
@@ -25,6 +28,8 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 
+		ImageView img_bg = (ImageView) findViewById(R.id.img_bg);
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
 		title = (TextView) findViewById(R.id.login_toast);
 		lpwv = (LocusPassWordView) this.findViewById(R.id.mLocusPassWordView);
 
@@ -35,8 +40,8 @@ public class LoginActivity extends Activity {
 			handler.postDelayed(new Runnable() {
 				@Override
 				public void run() {
-//					intent.setClass(getApplicationContext(), MainActivity.class);
-//					startActivity(intent);
+					intent.setClass(getApplicationContext(), SecretAlbumActivity.class);
+					startActivity(intent);
 					finish();
 				}
 			}, SPLASH_SHOW_TIME);
@@ -47,11 +52,10 @@ public class LoginActivity extends Activity {
 				public void onComplete(String mPassword) {
 					// 如果密码正确,则进入主页面。
 					if (lpwv.verifyPassword(mPassword)) {
-						Toast.makeText(LoginActivity.this, "登录成功！",
-								Toast.LENGTH_SHORT).show();
-//						intent.setClass(getApplicationContext(),
-//								MainActivity.class);
-//						startActivity(intent);
+//						Toast.makeText(LoginActivity.this, "登录成功！",
+//								Toast.LENGTH_SHORT).show();
+						intent.setClass(getApplicationContext(), SecretAlbumActivity.class);
+						startActivity(intent);
 						finish();
 					} else {
 						Toast.makeText(LoginActivity.this, "密码输入错误,请重新输入",
