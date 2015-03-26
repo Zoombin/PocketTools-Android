@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.View;
 
-public class RulerViewInch extends View {
+public class RulerViewInchLeft extends View {
 	static private float pxinch;
 	float width, height;
 	float density = 1.0F;
@@ -19,7 +19,7 @@ public class RulerViewInch extends View {
 	private double inch_heightPixels = 1.0D;
 	private double inch_widthPixels = 1.0D;
 	
-	public RulerViewInch(Context context, AttributeSet foo) {
+	public RulerViewInchLeft(Context context, AttributeSet foo) {
 		super(context, foo);
 		setBackgroundColor(context.getResources().getColor(R.color.transparent));
 		DisplayMetrics metrics = context.getResources().getDisplayMetrics();

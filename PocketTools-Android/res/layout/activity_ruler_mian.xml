@@ -5,8 +5,14 @@
     android:layout_height="fill_parent"
     android:orientation="horizontal" >
 
-    <com.juhe.pockettools.ruler.RulerViewInch
-        android:id="@+id/left"
+    <com.juhe.pockettools.ruler.RulerViewInchLeft
+        android:id="@+id/left1"
+        android:layout_width="50dp"
+        android:layout_height="fill_parent"
+        android:visibility="gone" />
+
+    <com.juhe.pockettools.ruler.RulerViewMmLeft
+        android:id="@+id/left2"
         android:layout_width="50dp"
         android:layout_height="fill_parent" />
 
@@ -16,17 +22,32 @@
         android:layout_weight="1" >
 
         <Button
+            android:id="@id/btn_swith"
+            android:layout_width="100.0dip"
+            android:layout_height="33.0dip"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_ruler_switch" />
+
+        <Button
             android:id="@id/btn_close"
             android:layout_width="60.0dip"
             android:layout_height="60.0dip"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="30dp"
             android:background="@drawable/btn_ruler_close" />
     </RelativeLayout>
 
-    <com.juhe.pockettools.ruler.RulerViewMm
-        android:id="@+id/right"
+    <com.juhe.pockettools.ruler.RulerViewInchRight
+        android:id="@+id/right1"
+        android:layout_width="50dp"
+        android:layout_height="fill_parent"
+        android:visibility="gone" />
+
+    <com.juhe.pockettools.ruler.RulerViewMmRight
+        android:id="@+id/right2"
         android:layout_width="50dp"
         android:layout_height="fill_parent" />
 
