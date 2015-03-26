@@ -12,9 +12,11 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -36,8 +38,8 @@ public class SecretAlbumActivity extends FullscreenActivity {
 	public static final String a = "com.fotoable.helpr.wallpaper.IMAGES";
 	public static final String b = "com.fotoable.helpr.wallpaper.IMAGE_POSITION";
 	private static final String e = "SecretAlbumActivity";
-	private static final int i = 3023;
-	private static final int j = 3021;
+	private static final int RESULT_CRMERA_IMAGE = 3023;
+	private static final int RESULT_LOAD_IMAGE = 3021;
 	private static final String u = "secrect_edit_mode";
 	// protected com.nostra13.universalimageloader.core.d c =
 	// com.nostra13.universalimageloader.core.d
@@ -159,9 +161,14 @@ public class SecretAlbumActivity extends FullscreenActivity {
 	private void getGallery() {
 		Intent localIntent = new Intent();
 		localIntent.setType("image/*");
+		File localFile = new File(Environment
+				.getExternalStorageDirectory().getPath() + "/.tmp/");
+		localFile.mkdirs();
+		Uri localUri = Uri.fromFile(new File(localFile, System.currentTimeMillis() + ".jpg"));
+		localIntent.putExtra("output", localUri);
 		localIntent.setAction("android.intent.action.GET_CONTENT");
 		try {
-			startActivityForResult(localIntent, 3021);
+			startActivityForResult(localIntent, RESULT_LOAD_IMAGE);
 			return;
 		} catch (ActivityNotFoundException localActivityNotFoundException) {
 			Toast.makeText(this, R.string.photoPickerNotFoundText1, 1).show();
@@ -174,12 +181,11 @@ public class SecretAlbumActivity extends FullscreenActivity {
 				File localFile = new File(Environment
 						.getExternalStorageDirectory().getPath() + "/.tmp/");
 				localFile.mkdirs();
-				Uri localUri = Uri.fromFile(new File(localFile, "capture.jpg"));
+				Uri localUri = Uri.fromFile(new File(localFile, System.currentTimeMillis() + ".jpg"));
 				Intent localIntent = new Intent(
 						"android.media.action.IMAGE_CAPTURE");
 				localIntent.putExtra("output", localUri);
-				localIntent.putExtra("output", localUri);
-				startActivityForResult(localIntent, 3023);
+				startActivityForResult(localIntent, RESULT_CRMERA_IMAGE);
 				return;
 			}
 			new AlertDialog.Builder(this)
@@ -261,41 +267,56 @@ public class SecretAlbumActivity extends FullscreenActivity {
 	// protected void a(String paramString) {
 	// }
 	//
-	// protected void onActivityResult(int paramInt1, int paramInt2,
-	// Intent paramIntent) {
-	// if (paramInt2 != -1) {
-	// return;
-	// }
-	// boolean bool = false;
-	// Uri localUri;
-	// switch (paramInt1) {
-	// case 3022:
-	// default:
-	// localUri = null;
-	// }
-	// while (localUri != null) {
-	// Log.v("SecretAlbumActivity",
-	// "SecretAlbumActivityselected image uri:"
-	// + localUri.toString());
-	// String str = l.b(localUri);
-	// Log.v("SecretAlbumActivity",
-	// "SecretAlbumActivityselected image filepath:" + str);
-	// a(str, bool);
-	// return;
-	// if (paramIntent == null) {
-	// Toast.makeText(this, "Load photo from gallery failed", 1)
-	// .show();
-	// return;
-	// }
-	// localUri = paramIntent.getData();
-	// bool = false;
-	// continue;
-	// localUri = Uri.fromFile(new File(Environment
-	// .getExternalStorageDirectory().getPath()
-	// + "/.tmp/capture.jpg"));
-	// bool = true;
-	// }
-	// }
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {  
+        super.onActivityResult(requestCode, resultCode, data);  
+		if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {  
+            Uri selectedImage = data.getData();
+            String[] filePathColumn = { MediaStore.Images.Media.DATA };  
+   
+            Cursor cursor = getContentResolver().query(selectedImage,  
+                    filePathColumn, null, null, null);  
+            cursor.moveToFirst();  
+   
+            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);  
+            String picturePath = cursor.getString(columnIndex);  
+            cursor.close();  
+   
+//            ImageView imageView = (ImageView) findViewById(R.id.imgView);  
+//            imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));  
+   
+        }
+		
+
+//		boolean bool = false;
+//		Uri localUri;
+//		switch (paramInt1) {
+//		case 3022:
+//		default:
+//			localUri = null;
+//		}
+//		while (localUri != null) {
+//			Log.v("SecretAlbumActivity",
+//					"SecretAlbumActivityselected image uri:"
+//							+ localUri.toString());
+//			String str = l.b(localUri);
+//			Log.v("SecretAlbumActivity",
+//					"SecretAlbumActivityselected image filepath:" + str);
+//			a(str, bool);
+//			return;
+//			if (paramIntent == null) {
+//				Toast.makeText(this, "Load photo from gallery failed", 1)
+//						.show();
+//				return;
+//			}
+//			localUri = paramIntent.getData();
+//			bool = false;
+//			continue;
+//			localUri = Uri.fromFile(new File(Environment
+//					.getExternalStorageDirectory().getPath()
+//					+ "/.tmp/capture.jpg"));
+//			bool = true;
+//		}
+	}
 
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
