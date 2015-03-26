@@ -1,21 +1,19 @@
 package com.juhe.pockettools.secretalbum;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import com.juhe.pockettools.R;
-import com.juhe.pockettools.home.FullscreenActivity;
-import com.juhe.pockettools.utils.Config;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -34,20 +32,19 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.juhe.pockettools.R;
+import com.juhe.pockettools.home.FullscreenActivity;
+import com.juhe.pockettools.utils.Config;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 public class SecretAlbumActivity extends FullscreenActivity {
-	public static final String a = "com.fotoable.helpr.wallpaper.IMAGES";
-	public static final String b = "com.fotoable.helpr.wallpaper.IMAGE_POSITION";
-	private static final String e = "SecretAlbumActivity";
+	private static final String TAG = "SecretAlbumActivity";
 	private static final int RESULT_CRMERA_IMAGE = 3023;
 	private static final int RESULT_LOAD_IMAGE = 3021;
-	private static final String u = "secrect_edit_mode";
-	// protected com.nostra13.universalimageloader.core.d c =
-	// com.nostra13.universalimageloader.core.d
-	// .a();
 	protected GridViewAdapter adapter = null;
 	private GridView gridview;
-	private ArrayList<m> list = new ArrayList<m>();
-	// private com.nostra13.universalimageloader.core.c h;
+	private ArrayList<SecretEntity> list = new ArrayList<SecretEntity>();
+
 	private Button btn_back;
 	private FrameLayout btn_edit;
 	private TextView txtEdit;
@@ -57,32 +54,11 @@ public class SecretAlbumActivity extends FullscreenActivity {
 	private Button btn_decrypt;
 	private LinearLayout addLayout;
 	private LinearLayout editLayout;
-	private boolean editmode = false;
+	private boolean viewmode = true;
 
-	// private void a(int paramInt) {
-	// Intent localIntent = new Intent(this, ImagePagerActivity.class);
-	// localIntent.putExtra("com.fotoable.helpr.wallpaper.IMAGES", b());
-	// localIntent.putExtra("com.fotoable.helpr.wallpaper.IMAGE_POSITION",
-	// paramInt);
-	// startActivity(localIntent);
-	// }
-	//
-	// private void a(String paramString, boolean paramBoolean) {
-	// if (paramString == null) {
-	// }
-	// do {
-	// n localn;
-	// do {
-	// return;
-	// FlurryAgent.logEvent("SecretAlbumActivity_加密图片");
-	// localn = l.a().a(paramString, paramBoolean);
-	// } while (localn == null);
-	// m localm = new m(localn);
-	// list.add(0, localm);
-	// } while (adapter == null);
-	// adapter.notifyDataSetChanged();
-	// }
-	//
+	private String filepath = Environment.getExternalStorageDirectory()
+			.getPath() + "/.tmp/";
+
 	private void setButtonVisibility(boolean paramBoolean) {
 		if (paramBoolean) {
 			txtEdit.setText("取消");
@@ -94,6 +70,7 @@ public class SecretAlbumActivity extends FullscreenActivity {
 					R.anim.online_push_up_in);
 			editLayout.startAnimation(localAnimation4);
 			editLayout.setVisibility(View.VISIBLE);
+			viewmode = !paramBoolean;
 			return;
 		}
 		txtEdit.setText("编辑");
@@ -105,66 +82,16 @@ public class SecretAlbumActivity extends FullscreenActivity {
 				R.anim.online_push_up_in);
 		addLayout.startAnimation(localAnimation2);
 		addLayout.setVisibility(View.VISIBLE);
+		viewmode = !paramBoolean;
 	}
-
-	//
-	// private String[] b() {
-	// String[] arrayOfString = new String[list.size()];
-	// for (int i1 = 0;; i1++) {
-	// if (i1 >= list.size()) {
-	// return arrayOfString;
-	// }
-	// arrayOfString[i1] = Uri.fromFile(
-	// new File(((m) list.get(i1)).b().e())).toString();
-	// }
-	// }
-	//
-	// private void d() {
-	// int i1 = 0;
-	// boolean bool;
-	// Iterator localIterator;
-	// if (editmode) {
-	// bool = false;
-	// editmode = bool;
-	// a(editmode);
-	// if (!editmode) {
-	// localIterator = list.iterator();
-	// label39: if (localIterator.hasNext()) {
-	// break label100;
-	// }
-	// if (gridview != null) {
-	// Log.v("SecretAlbumActivity",
-	// "SecretAlbumActivitygridview childCount: "
-	// + gridview.getChildCount());
-	// }
-	// }
-	// }
-	// for (;;) {
-	// if (i1 > gridview.getChildCount()) {
-	// return;
-	// bool = true;
-	// break;
-	// label100: ((m) localIterator.next()).a(false);
-	// break label39;
-	// }
-	// View localView = gridview.getChildAt(i1);
-	// if (localView != null) {
-	// Object localObject = localView.getTag();
-	// if ((localObject != null) && ((localObject instanceof b))) {
-	// ((b) localObject).c.setVisibility(4);
-	// }
-	// }
-	// i1++;
-	// }
-	// }
 
 	private void getGallery() {
 		Intent localIntent = new Intent();
 		localIntent.setType("image/*");
-		File localFile = new File(Environment
-				.getExternalStorageDirectory().getPath() + "/.tmp/");
+		File localFile = new File(filepath);
 		localFile.mkdirs();
-		Uri localUri = Uri.fromFile(new File(localFile, System.currentTimeMillis() + ".jpg"));
+		Uri localUri = Uri.fromFile(new File(localFile, System
+				.currentTimeMillis() + ".jpg"));
 		localIntent.putExtra("output", localUri);
 		localIntent.setAction("android.intent.action.GET_CONTENT");
 		try {
@@ -181,7 +108,8 @@ public class SecretAlbumActivity extends FullscreenActivity {
 				File localFile = new File(Environment
 						.getExternalStorageDirectory().getPath() + "/.tmp/");
 				localFile.mkdirs();
-				Uri localUri = Uri.fromFile(new File(localFile, System.currentTimeMillis() + ".jpg"));
+				Uri localUri = Uri.fromFile(new File(localFile, System
+						.currentTimeMillis() + ".jpg"));
 				Intent localIntent = new Intent(
 						"android.media.action.IMAGE_CAPTURE");
 				localIntent.putExtra("output", localUri);
@@ -197,125 +125,84 @@ public class SecretAlbumActivity extends FullscreenActivity {
 		}
 	}
 
-	// private void g() {
-	// ArrayList localArrayList = new ArrayList();
-	// Iterator localIterator1 = list.iterator();
-	// Iterator localIterator2;
-	// if (!localIterator1.hasNext()) {
-	// if (localArrayList.size() > 0) {
-	// a("处理中");
-	// localIterator2 = localArrayList.iterator();
-	// }
-	// }
-	// for (;;) {
-	// if (!localIterator2.hasNext()) {
-	// adapter.notifyDataSetChanged();
-	// a();
-	// return;
-	// m localm1 = (m) localIterator1.next();
-	// if (!localm1.a()) {
-	// break;
-	// }
-	// localArrayList.add(localm1);
-	// break;
-	// }
-	// m localm2 = (m) localIterator2.next();
-	// String str = localm2.b().e();
-	// int i1 = localm2.b().a();
-	// if (l.a().a(i1, str)) {
-	// list.remove(localm2);
-	// }
-	// }
-	// }
+	public void copyFile(String oldPath, String newPath) {
+		try {
+			int bytesum = 0;
+			int byteread = 0;
+			File oldfile = new File(oldPath);
+			if (oldfile.exists()) { // 文件存在时
+				InputStream inStream = new FileInputStream(oldPath); // 读入原文件
+				FileOutputStream fs = new FileOutputStream(newPath);
+				byte[] buffer = new byte[1444];
+				int length;
+				while ((byteread = inStream.read(buffer)) != -1) {
+					bytesum += byteread; // 字节数 文件大小
+					System.out.println(bytesum);
+					fs.write(buffer, 0, byteread);
+				}
+				inStream.close();
+			}
+		} catch (Exception e) {
+			System.out.println("复制单个文件操作出错");
+			e.printStackTrace();
 
-	// private void h() {
-	// FlurryAgent.logEvent("SecretAlbumActivity_解密图片");
-	// ArrayList localArrayList = new ArrayList();
-	// Iterator localIterator1 = list.iterator();
-	// Iterator localIterator2;
-	// if (!localIterator1.hasNext()) {
-	// if (localArrayList.size() > 0) {
-	// localIterator2 = localArrayList.iterator();
-	// }
-	// }
-	// for (;;) {
-	// if (!localIterator2.hasNext()) {
-	// adapter.notifyDataSetChanged();
-	// a();
-	// return;
-	// m localm1 = (m) localIterator1.next();
-	// if (!localm1.a()) {
-	// break;
-	// }
-	// localArrayList.add(localm1);
-	// break;
-	// }
-	// m localm2 = (m) localIterator2.next();
-	// String str1 = localm2.b().e();
-	// String str2 = localm2.b().d();
-	// int i1 = localm2.b().a();
-	// String str3 = l.a().a(i1, str1, str2);
-	// if ((str3 != null) && (str3.length() > 0)) {
-	// list.remove(localm2);
-	// }
-	// }
-	// }
-	//
-	// protected void a() {
-	// }
-	//
-	// protected void a(String paramString) {
-	// }
-	//
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {  
-        super.onActivityResult(requestCode, resultCode, data);  
-		if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {  
-            Uri selectedImage = data.getData();
-            String[] filePathColumn = { MediaStore.Images.Media.DATA };  
-   
-            Cursor cursor = getContentResolver().query(selectedImage,  
-                    filePathColumn, null, null, null);  
-            cursor.moveToFirst();  
-   
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);  
-            String picturePath = cursor.getString(columnIndex);  
-            cursor.close();  
-   
-//            ImageView imageView = (ImageView) findViewById(R.id.imgView);  
-//            imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));  
-   
-        }
-		
+		}
+	}
 
-//		boolean bool = false;
-//		Uri localUri;
-//		switch (paramInt1) {
-//		case 3022:
-//		default:
-//			localUri = null;
-//		}
-//		while (localUri != null) {
-//			Log.v("SecretAlbumActivity",
-//					"SecretAlbumActivityselected image uri:"
-//							+ localUri.toString());
-//			String str = l.b(localUri);
-//			Log.v("SecretAlbumActivity",
-//					"SecretAlbumActivityselected image filepath:" + str);
-//			a(str, bool);
-//			return;
-//			if (paramIntent == null) {
-//				Toast.makeText(this, "Load photo from gallery failed", 1)
-//						.show();
-//				return;
-//			}
-//			localUri = paramIntent.getData();
-//			bool = false;
-//			continue;
-//			localUri = Uri.fromFile(new File(Environment
-//					.getExternalStorageDirectory().getPath()
-//					+ "/.tmp/capture.jpg"));
-//			bool = true;
-//		}
+	public void getFileDir(String filePath) {
+        try{
+        	if (list != null) {
+        		list.clear();
+        	}
+            File f = new File(filePath);  
+            File[] files = f.listFiles();// 列出所有文件  
+//            // 如果不是根目录,则列出返回根目录和上一目录选项  
+//            if (!filePath.equals(rootPath)) {  
+//                items.add("返回根目录");  
+//                paths.add(rootPath);  
+//                items.add("返回上一层目录");  
+//                paths.add(f.getParent());  
+//            }
+            // 将所有文件存入list中  
+            if(files != null){  
+                int count = files.length;// 文件个数  
+                for (int i = 0; i < count; i++) {  
+                    File file = files[i];
+                    SecretEntity entity = new SecretEntity();
+                    entity.setFilename(filepath + file.getName());
+                    list.add(entity);
+                }
+            }  
+  
+            if (adapter != null) {
+            	adapter.notifyDataSetChanged();
+            }
+
+        }catch(Exception ex){  
+            ex.printStackTrace();  
+        }	
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK
+				&& null != data) {
+			Uri selectedImage = data.getData();
+			String[] filePathColumn = { MediaStore.Images.Media.DATA };
+
+			Cursor cursor = getContentResolver().query(selectedImage,
+					filePathColumn, null, null, null);
+			cursor.moveToFirst();
+
+			int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+			String picturePath = cursor.getString(columnIndex);
+			cursor.close();
+
+			copyFile(picturePath, filepath + System.currentTimeMillis()
+					+ ".jpg");
+		}
+		getFileDir(filepath);
 	}
 
 	public void onCreate(Bundle bundle) {
@@ -323,19 +210,7 @@ public class SecretAlbumActivity extends FullscreenActivity {
 		setContentView(R.layout.activity_secretalbum_main);
 		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
 				.getBgDrawableResId());
-		ArrayList localArrayList = null;//l.a().c();
-//		if (localArrayList != null) {
-//			list.clear();
-//		}
-//		for (int i1 = 0;; i1++) {
-//			if (i1 >= localArrayList.size()) {
-//				m localm = new m((n) localArrayList.get(i1));
-//				list.add(localm);
-//			}
-//		}
 
-		// this.h = new c.a().a(null).b(null).c(null).b(true).d(false)
-		// .a(true).e(true).a(Bitmap.Config.RGB_565).d();
 		addLayout = ((LinearLayout) findViewById(R.id.addLayout));
 		editLayout = ((LinearLayout) findViewById(R.id.editLayout));
 		gridview = ((GridView) findViewById(R.id.gridview));
@@ -361,8 +236,7 @@ public class SecretAlbumActivity extends FullscreenActivity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-
+				setButtonVisibility(viewmode);
 			}
 		});
 		btn_gallery = ((Button) findViewById(R.id.btn_gallery));
@@ -386,41 +260,25 @@ public class SecretAlbumActivity extends FullscreenActivity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-
+				for (SecretEntity entity : list) {
+					if (entity.isChecked()) {
+						File f = new File(entity.getFilename());
+						f.delete();
+					}
+				}
+				getFileDir(filepath);
 			}
 		});
-		btn_decrypt = ((Button) findViewById(R.id.btn_decrypt));
-		btn_decrypt.setOnClickListener(new OnClickListener() {
+//		btn_decrypt = ((Button) findViewById(R.id.btn_decrypt));
+//		btn_decrypt.setOnClickListener(new OnClickListener() {
+//
+//			@Override
+//			public void onClick(View v) {
+//
+//			}
+//		});
 
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-
-			}
-		});
-		if ((bundle != null) && (bundle.containsKey("secrect_edit_mode"))) {
-			editmode = bundle.getBoolean("secrect_edit_mode");
-			setButtonVisibility(editmode);
-		}
-		HashMap<String, String> localHashMap = new HashMap<String, String>();
-		localHashMap.put("itemName", "SecretAlbumItemUseTime");
-		return;
-	}
-
-	// protected void onDestroy() {
-	// l.b();
-	// com.nostra13.universalimageloader.core.d.a().d();
-	// HashMap localHashMap = new HashMap();
-	// localHashMap.put("itemName", "SecretAlbumItemUseTime");
-	// FlurryAgent.endTimedEvent("SecretAlbumItemUseTime", localHashMap);
-	// super.onDestroy();
-	// }
-
-	@Override
-	public void onSaveInstanceState(Bundle paramBundle) {
-		super.onSaveInstanceState(paramBundle);
-		paramBundle.putBoolean("secrect_edit_mode", editmode);
+		getFileDir(filepath);
 	}
 
 	protected void onStart() {
@@ -429,14 +287,6 @@ public class SecretAlbumActivity extends FullscreenActivity {
 
 	public class GridViewAdapter extends BaseAdapter {
 		public GridViewAdapter() {
-		}
-
-		public String getImageFileName(int position) {
-			m entity = (m) list.get(position);
-			if (entity != null) {
-				return Uri.fromFile(new File(entity.b().e())).toString();
-			}
-			return null;
 		}
 
 		@Override
@@ -455,18 +305,15 @@ public class SecretAlbumActivity extends FullscreenActivity {
 		}
 
 		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			m entity = (m) getItem(position);
-			ViewHolder holder;
+		public View getView(final int position, View convertView, ViewGroup parent) {
+			SecretEntity entity = (SecretEntity) getItem(position);
+			final ViewHolder holder;
 			if (convertView == null) {
 				convertView = SecretAlbumActivity.this.getLayoutInflater()
 						.inflate(R.layout.view_secretalbum_grid_item, parent,
 								false);
 				holder = new ViewHolder();
 
-				// if ((!b) && (paramView == null)) {
-				// throw new AssertionError();
-				// }
 				holder.image = ((ImageView) convertView
 						.findViewById(R.id.image));
 				holder.progress = ((ProgressBar) convertView
@@ -478,15 +325,29 @@ public class SecretAlbumActivity extends FullscreenActivity {
 				holder = (ViewHolder) convertView.getTag();
 			}
 
-			// label194: for (int i = 0;; i = 4) {
-			// localButton.setVisibility(i);
-			// SecretAlbumActivity.this.c.a(a(paramInt), localb1.a,
-			// SecretAlbumActivity.b(SecretAlbumActivity.this), new i(
-			// this, localb1), new j(this, localb1));
-			// return paramView;
-			// localb1 = (SecretAlbumActivity.b) paramView.getTag();
-			// break;
-			// }
+			holder.progress.setVisibility(View.GONE);
+			ImageLoader.getInstance().displayImage("file://" + entity.getFilename(), holder.image);
+			holder.checkbox.setVisibility(View.GONE);
+			holder.image.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					if (viewmode) {
+						Intent intent = new Intent(SecretAlbumActivity.this, ImagePagerActivity.class);
+						intent.putExtra("list", list);
+						intent.putExtra(ImagePagerActivity.EXTRA_STATE_POSITION, position);
+						startActivity(intent);
+					} else {
+						boolean ischecked = list.get(position).isChecked();
+						if (!ischecked) { 
+							holder.checkbox.setVisibility(View.VISIBLE);
+						} else {
+							holder.checkbox.setVisibility(View.GONE);
+						}
+						list.get(position).setChecked(!ischecked);
+					}
+				}
+			});
 			return convertView;
 		}
 	}
