@@ -73,6 +73,8 @@ public class SecretAlbumActivity extends FullscreenActivity {
 			viewmode = !paramBoolean;
 			return;
 		}
+		
+		getFileDir(filepath);
 		txtEdit.setText("编辑");
 		Animation localAnimation1 = AnimationUtils.loadAnimation(this,
 				R.anim.online_push_up_out);

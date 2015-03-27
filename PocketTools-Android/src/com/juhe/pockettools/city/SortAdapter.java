@@ -98,7 +98,7 @@ public class SortAdapter extends BaseAdapter implements SectionIndexer {
 			holder.catalog.setVisibility(View.GONE);
 		}
 
-		holder.title.setText(entity.getName());
+		holder.title.setText(entity.getCityName());
 
 		return convertView;
 	}

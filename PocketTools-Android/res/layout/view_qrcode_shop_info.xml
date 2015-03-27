@@ -3,12 +3,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <ImageView
-        android:id="@id/img_bg"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scaleType="centerCrop" />
-
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -23,29 +17,23 @@
                 android:id="@id/goods_basic_info_container"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10.0dip"
                 android:orientation="horizontal" >
 
-                <FrameLayout
-                    android:layout_width="70.0dip"
-                    android:layout_height="70.0dip"
-                    android:layout_gravity="top|left|center"
-                    android:layout_marginLeft="10.0dip"
-                    android:layout_marginRight="10.0dip"
-                    android:background="@color/white" >
-
-                    <ImageView
-                        android:id="@id/goods_img"
-                        android:layout_width="66.0dip"
-                        android:layout_height="66.0dip"
-                        android:layout_gravity="top|left|center"
-                        android:layout_margin="2.0dip"
-                        android:scaleType="fitXY" />
-                </FrameLayout>
+                <ImageView
+                    android:id="@id/goods_img"
+                    android:layout_width="66.0dip"
+                    android:layout_height="66.0dip"
+                    android:layout_gravity="center_vertical"
+                    
+                    android:background="@color/white"
+                    android:scaleType="fitXY" />
 
                 <LinearLayout
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
+                    android:layout_marginLeft="10.0dip"
                     android:orientation="vertical" >
 
                     <TextView
@@ -61,84 +49,8 @@
                         android:id="@id/goods_info_container"
                         android:layout_width="fill_parent"
                         android:layout_height="0.0dip"
-                        android:layout_marginBottom="20.0dip"
                         android:layout_weight="1.0"
                         android:orientation="vertical" >
-
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:minHeight="22.0dip"
-                            android:orientation="horizontal" >
-
-                            <TextView
-                                android:layout_width="45.0dip"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:text="@string/goods_company"
-                                android:textColor="@color/white"
-                                android:textSize="15.0sp" />
-
-                            <TextView
-                                android:id="@id/goods_company"
-                                android:layout_width="0.0dip"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1.0"
-                                android:gravity="left|center"
-                                android:textColor="@color/white"
-                                android:textSize="15.0sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:minHeight="22.0dip"
-                            android:orientation="horizontal" >
-
-                            <TextView
-                                android:layout_width="45.0dip"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:gravity="left|center"
-                                android:text="@string/goods_brand"
-                                android:textColor="@color/white"
-                                android:textSize="15.0sp" />
-
-                            <TextView
-                                android:id="@id/goods_brand"
-                                android:layout_width="0.0dip"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1.0"
-                                android:textColor="@color/white"
-                                android:textSize="15.0sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:minHeight="22.0dip"
-                            android:orientation="horizontal" >
-
-                            <TextView
-                                android:layout_width="45.0dip"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:text="@string/goods_specification"
-                                android:textColor="@color/white"
-                                android:textSize="15.0sp" />
-
-                            <TextView
-                                android:id="@id/goods_specification"
-                                android:layout_width="0.0dip"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1.0"
-                                android:gravity="left|center"
-                                android:textColor="@color/white"
-                                android:textSize="15.0sp" />
-                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="fill_parent"
@@ -211,11 +123,6 @@
                 android:headerDividersEnabled="true"
                 android:isScrollContainer="false"
                 android:listSelector="@drawable/color_list_select" />
-
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/gr_nav_line" />
         </LinearLayout>
     </ScrollView>
 

@@ -11,15 +11,13 @@ import android.widget.TextView;
 
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.utils.Config;
+import com.nostra13.universalimageloader.core.ImageLoader;
 //import com.nostra13.universalimageloader.core.c.a;
 //import com.nostra13.universalimageloader.core.d;
 
 public class QRCodeGoodsInfoView extends LinearLayout {
 	private TextView goods_name;
-	private TextView goods_company;
 	private TextView goods_price;
-	private TextView goods_specification;
-	private TextView goods_brand;
 	private TextView goods_qrcode;
 	private ImageView goods_img;
 	private ListView goods_place_price_list;
@@ -41,12 +39,7 @@ public class QRCodeGoodsInfoView extends LinearLayout {
 	private void initView() {
 		((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE))
 				.inflate(R.layout.view_qrcode_shop_info, this, true);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
-				.getBgDrawableResId());
-		goods_brand = ((TextView) findViewById(R.id.goods_brand));
-		goods_company = ((TextView) findViewById(R.id.goods_company));
 		goods_price = ((TextView) findViewById(R.id.goods_price));
-		goods_specification = ((TextView) findViewById(R.id.goods_specification));
 		goods_qrcode = ((TextView) findViewById(R.id.goods_qrcode));
 		goods_name = ((TextView) findViewById(R.id.goods_name));
 		goods_img = ((ImageView) findViewById(R.id.goods_img));
@@ -58,12 +51,11 @@ public class QRCodeGoodsInfoView extends LinearLayout {
 	}
 
 	public void setGoodsInfo(QRCodeEntity.Summary summary) {
-//		goods_brand.setText(summary.get);
-//		goods_company.setText(summary.get);
-		goods_price.setText(summary.getInterval());
-//		goods_specification.setText(summary.get);
-		goods_qrcode.setText(summary.getBarcode());
+//		"barcode":"6901028062008","name":"苏烟五星红杉树","imgurl":"","shopNum":0,"eshopNum":0,"interval":"￥:0.0"}}
 		goods_name.setText(summary.getName());
+		goods_price.setText(summary.getInterval());
+		goods_qrcode.setText(summary.getBarcode());
+		ImageLoader.getInstance().displayImage(summary.getImgurl(), goods_img);
 	}
 	
 //	public void a() {

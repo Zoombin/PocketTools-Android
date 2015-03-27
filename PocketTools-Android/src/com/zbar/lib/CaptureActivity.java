@@ -177,6 +177,7 @@ public class CaptureActivity extends Activity implements Callback {
 		Intent intent = new Intent(this, QRScannerActivity.class);
 		intent.putExtra("barcode", result);
 		startActivity(intent);
+		finish();
 		// 连续扫描，不发送此消息扫描一次结束后就不能再次扫描
 		// handler.sendEmptyMessage(R.id.restart_preview);
 	}

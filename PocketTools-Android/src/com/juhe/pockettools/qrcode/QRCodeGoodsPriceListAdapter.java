@@ -25,7 +25,6 @@ public class QRCodeGoodsPriceListAdapter extends BaseAdapter {
 			return;
 		}
 		this.list = list;
-		notifyDataSetChanged();
 	}
 
 	@Override
@@ -67,7 +66,7 @@ public class QRCodeGoodsPriceListAdapter extends BaseAdapter {
 		}
 
 		holder.list_left.setText(entity.getShopname());
-		holder.list_right.setText(entity.getPrice());
+		holder.list_right.setText(entity.getPrice() + "元");
 		return convertView;
 	}
 
