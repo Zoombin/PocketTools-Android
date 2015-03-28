@@ -199,11 +199,7 @@
             android:name=".moive.MovieMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
-                                    <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".moive.MovieDetailActivity"
@@ -252,6 +248,11 @@
             android:name=".air.AirMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
+                                                <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".secret.SetPasswordActivity"

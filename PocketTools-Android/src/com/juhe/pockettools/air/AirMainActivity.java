@@ -26,7 +26,6 @@ public class AirMainActivity extends FullscreenActivity {
 	private ImageView img_bg;
 	private EditText air_edit_start;
 	private EditText air_edit_end;
-	private Button air_btn_select_time;
 	private Button air_btn_search;
 	private ListView air_list;
 	private AirAdapter adapter;
@@ -58,7 +57,6 @@ public class AirMainActivity extends FullscreenActivity {
 		img_bg.setBackgroundResource(Config.getBgDrawableResId());
 		air_edit_start = (EditText) findViewById(R.id.air_edit_start);
 		air_edit_end = (EditText) findViewById(R.id.air_edit_end);
-		air_btn_select_time = (Button) findViewById(R.id.air_btn_select_time);
 		air_list = (ListView) findViewById(R.id.air_list); 
 		air_btn_search = (Button) findViewById(R.id.air_btn_search);
 		air_btn_search.setOnClickListener(new OnClickListener() {
