@@ -3,17 +3,13 @@ package com.juhe.pockettools.moive;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.gson.Gson;
 import com.juhe.pockettools.R;
-import com.juhe.pockettools.applesn.AppleSnEntity;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
-import com.thinkland.sdk.android.DataCallBack;
-import com.thinkland.sdk.android.JuheData;
-import com.thinkland.sdk.android.Parameters;
+import com.juhe.pockettools.utils.Config;
 
 public class MovieDetailActivity extends Activity {
 	private TopActiveBarView action_bar;
@@ -25,6 +21,9 @@ public class MovieDetailActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_calendar_detail);
+		
+		ImageView img_bg = (ImageView) findViewById(R.id.img_bg);
+		img_bg.setBackgroundResource(Config.getBgDrawableResId());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		action_bar.setListener(new InterfaceTopActiveBar() {
 
