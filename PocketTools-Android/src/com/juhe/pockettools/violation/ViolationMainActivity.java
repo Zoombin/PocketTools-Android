@@ -1,32 +1,5 @@
 package com.juhe.pockettools.violation;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Toast;
-
-import com.google.gson.Gson;
-import com.juhe.pockettools.R;
-import com.juhe.pockettools.applesn.AppleSnEntity;
-import com.juhe.pockettools.commonview.TopActiveBarView;
-import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
-import com.juhe.pockettools.exchange.ExChangeMainActivity;
-import com.juhe.pockettools.exchange.ExchangeRateManager;
-import com.juhe.pockettools.home.FullscreenActivity;
-import com.juhe.pockettools.tuling.ChatEntity;
-import com.juhe.pockettools.utils.SizeTool;
-import com.juhe.pockettools.violation.ViolationConditionView.OnConditionListener;
-import com.thinkland.sdk.android.DataCallBack;
-import com.thinkland.sdk.android.JuheData;
-import com.thinkland.sdk.android.Parameters;
-//import com.juhe.pockettools.wallpaper.w;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -34,6 +7,31 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.app.AlertDialog;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.juhe.pockettools.R;
+import com.juhe.pockettools.commonview.TopActiveBarView;
+import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
+import com.juhe.pockettools.home.FullscreenActivity;
+import com.juhe.pockettools.utils.Config;
+import com.juhe.pockettools.violation.ViolationConditionView.OnConditionListener;
+import com.thinkland.sdk.android.DataCallBack;
+import com.thinkland.sdk.android.JuheData;
+import com.thinkland.sdk.android.Parameters;
+//import com.juhe.pockettools.wallpaper.w;
 
 public class ViolationMainActivity extends FullscreenActivity {
 	ListView list_recently_search;
@@ -49,24 +47,26 @@ public class ViolationMainActivity extends FullscreenActivity {
 	private ViolationDetailView violationdetailview;
 	private ViolationHistoryAdapter adapter;
 	private ArrayList<HashMap<String, String>> historylist;
+	private Button violation_btn_search;
 
+	
 	private void startDetailView() {
 		ViewGroup localViewGroup = (ViewGroup) findViewById(android.R.id.content);
 		violationdetailview = new ViolationDetailView(this);
 		violationdetailview.setTitle(hphm);
-//		violationdetailview.setListener(new a() {
-//			
-//			@Override
-//			public void a() {
-//				// TODO Auto-generated method stub
-//				
-//			}
-//		});
+		// violationdetailview.setListener(new a() {
+		//
+		// @Override
+		// public void a() {
+		// // TODO Auto-generated method stub
+		//
+		// }
+		// });
 		localViewGroup.addView(violationdetailview);
 		Animation localAnimation = AnimationUtils.loadAnimation(this,
 				R.anim.fragment_slide_left_enter);
 		violationdetailview.setAnimation(localAnimation);
-		
+
 	}
 
 	private void setViolationdetailviewAnimation() {
@@ -114,13 +114,14 @@ public class ViolationMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle paramBundle) {
 		super.onCreate(paramBundle);
 		setContentView(R.layout.activity_violation_main);
-		// ((ImageView) findViewById(R.id.img_bg)).setImageBitmap(w.a().d());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
+				.getBgDrawableResId());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		violation_condition = ((ViolationConditionView) findViewById(R.id.violation_condition));
 		list_recently_search = ((ListView) findViewById(R.id.list_recently_search));
 		adapter = new ViolationHistoryAdapter(this);
 		list_recently_search.setAdapter(adapter);
-
+		
 		historylist = new ArrayList<HashMap<String, String>>();
 		adapter.setData(historylist);
 		// list_recently_search.setOnItemClickListener(new k(this));
@@ -133,6 +134,19 @@ public class ViolationMainActivity extends FullscreenActivity {
 
 			@Override
 			public void query() {
+				
+
+			}
+		});
+		action_bar.setTiltleText("违章查询");
+		
+		violation_btn_search = (Button) findViewById(R.id.violation_btn_search);
+		violation_btn_search.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				action_bar.setProgressVisiable(View.VISIBLE);
+				
 				Parameters params = new Parameters();
 				params.add("key", "e4ff4be7d2b4e89b3df1cbdd08fcb67e");
 				params.add("city", cityentity.getCity_code());
@@ -144,7 +158,7 @@ public class ViolationMainActivity extends FullscreenActivity {
 				if (cityentity.isClassa()) {
 					params.add("classno", classno);
 				}
-				
+
 				JuheData.executeWithAPI(36, "http://v.juhe.cn/wz/query",
 						JuheData.GET, params, new DataCallBack() {
 
@@ -152,29 +166,31 @@ public class ViolationMainActivity extends FullscreenActivity {
 							public void resultLoaded(int err, String reason,
 									String result) {
 
+								action_bar.setProgressVisiable(View.GONE);
+								
 								if (err == 0) {
-									ViolationDetailEntity entity = new Gson().fromJson(result, ViolationDetailEntity.class);
-									if (entity.getError_code() != 0 && entity.getError_code() != 200) {
-										Toast.makeText(getApplicationContext(), entity.getReason(),
+									ViolationDetailEntity entity = new Gson()
+											.fromJson(result,
+													ViolationDetailEntity.class);
+									if (entity.getError_code() != 0
+											&& entity.getError_code() != 200) {
+										Toast.makeText(getApplicationContext(),
+												entity.getReason(),
 												Toast.LENGTH_SHORT).show();
 										return;
 									}
-									
+
 									startDetailView();
-									violationdetailview.setData(entity.getResult().getLists(), "", "");
+									violationdetailview.setData(entity
+											.getResult().getLists(), "", "");
 								} else {
 									Toast.makeText(getApplicationContext(),
 											reason, Toast.LENGTH_SHORT).show();
 								}
 							}
 						});
-
 			}
 		});
-		action_bar.setTiltleText("违章查询");
-		action_bar.setSureText(getResources()
-				.getString(R.string.package_search));
-		action_bar.setSureSelect(true);
 		violation_condition.setListener(new OnConditionListener() {
 
 			@Override
@@ -228,7 +244,7 @@ public class ViolationMainActivity extends FullscreenActivity {
 								JSONObject str = json.getJSONObject("result");
 								provincecodelist.add("BJ");
 								provincecodelist.add("SH");
-								provincecodelist.add("SC");
+//								provincecodelist.add("SC");
 								provincecodelist.add("ZJ");
 								provincecodelist.add("FJ");
 								provincecodelist.add("JL");

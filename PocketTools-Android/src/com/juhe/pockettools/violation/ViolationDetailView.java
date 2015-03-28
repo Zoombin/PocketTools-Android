@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
+import com.juhe.pockettools.utils.Config;
 import com.juhe.pockettools.violation.ViolationDetailEntity.Info;
 //import com.juhe.pockettools.wallpaper.w;
 import java.util.ArrayList;
@@ -30,30 +31,31 @@ public class ViolationDetailView extends FrameLayout {
 		initView();
 	}
 
-	public ViolationDetailView(Context context,
-			AttributeSet attributeSet) {
+	public ViolationDetailView(Context context, AttributeSet attributeSet) {
 		super(context, attributeSet);
 		initView();
 	}
 
 	private void initView() {
-		((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE))
-				.inflate(R.layout.view_violation_detail, this, true);
-//		((ImageView) findViewById(R.id.view_violation_detail)).setImageBitmap(w.a().d());
+		((LayoutInflater) getContext().getSystemService(
+				Context.LAYOUT_INFLATER_SERVICE)).inflate(
+				R.layout.view_violation_detail, this, true);
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
+				.getBgDrawableResId());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		list_violation_detail = ((ListView) findViewById(R.id.list_violation_detail));
 		detail_no_data = ((TextView) findViewById(R.id.detail_no_data));
 		action_bar.setListener(new InterfaceTopActiveBar() {
-			
+
 			@Override
 			public void cancel() {
-//				ViolationDetailView.this.cl
+				// ViolationDetailView.this.cl
 			}
-			
+
 			@Override
 			public void query() {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
 		adapter = new DetailAdapter(getContext());
@@ -62,8 +64,7 @@ public class ViolationDetailView extends FrameLayout {
 		list_violation_detail.setAdapter(adapter);
 	}
 
-	public void setData(List<Info> list, String totalcode,
-			String totalmoney) {
+	public void setData(List<Info> list, String totalcode, String totalmoney) {
 		detailheadview.setData(totalcode, totalmoney);
 		adapter.setData(list);
 	}

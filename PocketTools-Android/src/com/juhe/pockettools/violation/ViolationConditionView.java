@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
@@ -32,6 +33,9 @@ public class ViolationConditionView extends FrameLayout {
 	private ProgressBar violation_city_waitbar;
 	private ProgressBar violation_cartype_waitbar;
 	private OnConditionListener listener;
+	private ImageView engine_line;
+	private ImageView frame_line;
+	private ImageView regist_line;
 	
 	public ViolationConditionView(Context context) {
 		super(context);
@@ -47,6 +51,10 @@ public class ViolationConditionView extends FrameLayout {
 		((LayoutInflater) getContext().getSystemService(
 				Context.LAYOUT_INFLATER_SERVICE)).inflate(
 				R.layout.view_violation_search_condition, this, true);
+		engine_line = (ImageView) findViewById(R.id.engine_line);
+		frame_line = (ImageView) findViewById(R.id.frame_line);
+		regist_line = (ImageView) findViewById(R.id.regist_line);
+		
 		violation_car_city = ((Button) findViewById(R.id.violation_car_city));
 		violation_car_type = ((Button) findViewById(R.id.violation_car_type));
 		violation_car_num = ((EditText) findViewById(R.id.violation_car_num));
@@ -125,23 +133,29 @@ public class ViolationConditionView extends FrameLayout {
 		violation_car_city.setText(cityentity.getCity_name());
 		violation_car_num.setText(cityentity.getAbbr());
 		if (cityentity.isEngine()) {
+			engine_line.setVisibility(View.VISIBLE);
 			violation_car_engine_container.setVisibility(View.VISIBLE);
 			violation_car_engine.setHint("发动机号后" + cityentity.getEngineno() + "位");
 		} else {
+			engine_line.setVisibility(View.GONE);
 			violation_car_engine_container.setVisibility(View.GONE);
 			violation_car_engine.setText("");
 		}
 		if (cityentity.isClassa()) {
+			frame_line.setVisibility(View.VISIBLE);
 			violation_car_frame_num_container.setVisibility(View.VISIBLE);
 			violation_car_frame_num.setHint("车架号后" + cityentity.getClassno() + "位");
 		} else {
+			frame_line.setVisibility(View.GONE);
 			violation_car_frame_num_container.setVisibility(View.GONE);
 			violation_car_frame_num.setText("");
 		}
 		if (cityentity.isRegist()) {
+			regist_line.setVisibility(View.VISIBLE);
 			violation_car_regist_container.setVisibility(View.VISIBLE);
 			violation_car_regist.setHint("完整注册号后" + cityentity.getRegistno() + "位");
 		} else {
+			regist_line.setVisibility(View.GONE);
 			violation_car_regist_container.setVisibility(View.GONE);
 			violation_car_regist.setText("");
 		}
