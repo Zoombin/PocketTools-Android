@@ -143,7 +143,7 @@ public class ConstelltionMainActivity extends FullscreenActivity {
 					ViewGroup viewgroup = (ViewGroup) findViewById(android.R.id.content);
 					viewgroup.removeView(constelltionselectview);
 					constelltionselectview = null;
-					initData();
+					initData(typeindex);
 				}
 			});
 			constelltionselectview.startAnimation(animation);
@@ -181,7 +181,7 @@ public class ConstelltionMainActivity extends FullscreenActivity {
 					public void setDateStr(String datestr) {
 						typeindex = getIndex(datestr);
 						type = getType(datestr);
-						initData();
+						initData(typeindex);
 					}
 				});
 		action_bar.setTiltleText("星座运势");
@@ -206,10 +206,10 @@ public class ConstelltionMainActivity extends FullscreenActivity {
 		constelltion_content.setTypeface(typeface);
 		constelltion_basicview.setSelectedConstelltion(consindex);
 
-		initData();
+		initData(typeindex);
 	}
 
-	private void initData() {
+	private void initData(final int typeindex) {
 		waitbar.setVisibility(View.VISIBLE);
 		Parameters params = new Parameters();
 		params.add("consName", ConstalltionConstants.names[consindex]);
