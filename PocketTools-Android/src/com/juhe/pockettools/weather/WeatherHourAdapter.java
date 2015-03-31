@@ -18,17 +18,17 @@ import android.widget.TextView;
 
 public class WeatherHourAdapter extends ArrayAdapter<WeatherHourInfo> {
 	private boolean ishome = false;
-	private Activity context;
+	private Context context;
 	
 	private LayoutInflater layoutinflater = (LayoutInflater) getContext()
 			.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-	public WeatherHourAdapter(Activity context, WeatherHourInfo[] infos) {
+	public WeatherHourAdapter(Context context, WeatherHourInfo[] infos) {
 		super(context, R.layout.view_weather_hour_item, infos);
 		this.context = context;
 	}
 	
-	public WeatherHourAdapter(Activity context, WeatherHourInfo[] infos, boolean ishome) {
+	public WeatherHourAdapter(Context context, WeatherHourInfo[] infos, boolean ishome) {
 		super(context, R.layout.view_weather_hour_item, infos);
 		this.context = context;
 		this.ishome = ishome;
@@ -59,6 +59,7 @@ public class WeatherHourAdapter extends ArrayAdapter<WeatherHourInfo> {
 			public void onClick(View v) {
 				if (ishome) {
 					Intent intent = new Intent(context, WeatherMainActivity.class);
+					intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 					context.startActivity(intent);
 				}
 			}
