@@ -269,7 +269,7 @@ public class WeatherMainActivity extends FullscreenActivity {
 									infos[i].hour = WeatherTools.getDateStr(list.get(i).getSfdate());
 									infos[i].temp =  WeatherTools.getTemp(list.get(i).getTemp1());
 								}
-								weather_hour_listview.setAdapter(new WeatherHourAdapter(getApplicationContext(), infos));
+								weather_hour_listview.setAdapter(new WeatherHourAdapter(WeatherMainActivity.this, infos));
 							} catch (Exception e) {
 								e.printStackTrace();
 							}

@@ -18,6 +18,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ import com.juhe.pockettools.HelprApplication;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.HorizontalListView;
 import com.juhe.pockettools.pm.PMEntity;
+import com.juhe.pockettools.pm.PMMainActivity;
 import com.juhe.pockettools.pm.PMTools;
 import com.juhe.pockettools.setting.SettingActivity;
 import com.juhe.pockettools.utils.Config;
@@ -37,6 +39,7 @@ import com.juhe.pockettools.weather.Hour;
 import com.juhe.pockettools.weather.Weather;
 import com.juhe.pockettools.weather.WeatherHourAdapter;
 import com.juhe.pockettools.weather.WeatherHourInfo;
+import com.juhe.pockettools.weather.WeatherMainActivity;
 import com.juhe.pockettools.weather.WeatherTools;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
@@ -54,6 +57,8 @@ public class HelprActivity extends FullscreenActivity {
 	private ImageView image_weather;
 	private TextView txt_weather;
 	private HorizontalListView weather_hour_listview;
+	private RelativeLayout ly_weather_centigrade;
+	private LinearLayout ly_pm;
 	private TextView txt_weather_centigrade;
 	private ImageView iv_weather_up;
 	private TextView txt_weather_up;
@@ -128,6 +133,25 @@ public class HelprActivity extends FullscreenActivity {
 				startActivityForResult(intent, 0);
 			}
 		});
+		ly_weather_centigrade = (RelativeLayout) findViewById(R.id.ly_weather_centigrade);
+		ly_weather_centigrade.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(HelprActivity.this, WeatherMainActivity.class);
+				startActivity(intent);
+			}
+		});
+		ly_pm = (LinearLayout) findViewById(R.id.ly_pm);
+		ly_pm.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(HelprActivity.this, PMMainActivity.class);
+				startActivity(intent);
+			}
+		});
+		
 		tv_city = (TextView) findViewById(R.id.tv_city);
 		tv_updatetime = (TextView) findViewById(R.id.tv_updatetime);
 		image_weather = (ImageView) findViewById(R.id.image_weather);
@@ -310,7 +334,7 @@ public class HelprActivity extends FullscreenActivity {
 			}
 			weather_hour_listview
 					.setAdapter(new WeatherHourAdapter(
-							getApplicationContext(), infos));
+							HelprActivity.this, infos, true));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

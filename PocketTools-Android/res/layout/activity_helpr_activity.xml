@@ -106,6 +106,7 @@
                     android:textSize="60.0sp" />
 
                 <LinearLayout
+                    android:id="@+id/ly_weather"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -189,6 +190,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ly_pm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@id/ly_weather_hour_listview"
