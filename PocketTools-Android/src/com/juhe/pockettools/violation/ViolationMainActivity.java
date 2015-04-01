@@ -3,11 +3,10 @@ package com.juhe.pockettools.violation;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +19,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
@@ -111,11 +109,12 @@ public class ViolationMainActivity extends FullscreenActivity {
 	public static List<hpzlEntity> hpzllist;
 	public ArrayList<String> provincecodelist = new ArrayList<String>();
 
+	@SuppressLint("NewApi")
 	protected void onCreate(Bundle paramBundle) {
 		super.onCreate(paramBundle);
 		setContentView(R.layout.activity_violation_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
-				.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		violation_condition = ((ViolationConditionView) findViewById(R.id.violation_condition));
 		list_recently_search = ((ListView) findViewById(R.id.list_recently_search));

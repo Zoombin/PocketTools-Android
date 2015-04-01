@@ -48,7 +48,7 @@ public class QRScannerActivity extends FullscreenActivity {
 		super.onCreate(bundle);
 		
 		setContentView(R.layout.activity_qr_scan);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
 		view_goods_info = ((QRCodeGoodsInfoView) findViewById(R.id.view_goods_info));
 		view_txt = ((TextView) findViewById(R.id.view_txt));
 		

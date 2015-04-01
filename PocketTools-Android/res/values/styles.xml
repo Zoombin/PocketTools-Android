@@ -193,4 +193,8 @@
         <item name="android:minLines">3</item>
     </style>
 
+    <style name="Theme.CustomDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/filled_box</item>
+    </style>
+
 </resources>

@@ -1,16 +1,17 @@
 package com.juhe.pockettools.moive;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.utils.Config;
 
+@SuppressLint("NewApi")
 public class MovieDetailActivity extends Activity {
 	private TopActiveBarView action_bar;
 	private OnlineEntity.Result onlineentity;
@@ -22,8 +23,7 @@ public class MovieDetailActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_calendar_detail);
 		
-		ImageView img_bg = (ImageView) findViewById(R.id.img_bg);
-		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		action_bar.setListener(new InterfaceTopActiveBar() {
 

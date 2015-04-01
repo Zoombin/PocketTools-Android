@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import kankan.wheel.widget.OnWheelScrollListener;
 import kankan.wheel.widget.WheelView;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -90,7 +91,7 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 	private void clickbutton(Button clickbutton) {
 		leftinput.setText("1");
 		rightinput.setText("1");
-		
+
 		LinearLayout ly_unit_type = (LinearLayout) findViewById(R.id.ly_unit_type);
 
 		for (int i = 0; i < ly_unit_type.getChildCount(); i++) {
@@ -130,29 +131,35 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 
 		if (edittext == leftinput) {
 			if (type != Type.TEMPERATURE) {
-				leftinput.setText(formatDoubleToString(d2 * leftvalue / rightvalue));
+				leftinput.setText(formatDoubleToString(d2 * leftvalue
+						/ rightvalue));
 			} else {
 				if (leftdetail.equals(rightdetail)) {
 					leftinput.setText(formatDoubleToString(d2));
 				} else {
 					if (leftdetail.equals("摄氏度")) {
-						leftinput.setText(formatDoubleToString(32.0D + 9.0D * d1 / 5.0D));
+						leftinput
+								.setText(formatDoubleToString(32.0D + 9.0D * d1 / 5.0D));
 					} else {
-						leftinput.setText(formatDoubleToString(5.0D * (d2 - 32.0D) / 9.0D));
+						leftinput
+								.setText(formatDoubleToString(5.0D * (d2 - 32.0D) / 9.0D));
 					}
 				}
 			}
 		} else {
 			if (type != Type.TEMPERATURE) {
-				rightinput.setText(formatDoubleToString(d1 * rightvalue / leftvalue));
+				rightinput.setText(formatDoubleToString(d1 * rightvalue
+						/ leftvalue));
 			} else {
 				if (leftdetail.equals(rightdetail)) {
 					rightinput.setText(formatDoubleToString(d1));
 				} else {
 					if (leftdetail.equals("摄氏度")) {
-						rightinput.setText(formatDoubleToString(32.0D + 9.0D * d1 / 5.0D));
+						rightinput
+								.setText(formatDoubleToString(32.0D + 9.0D * d1 / 5.0D));
 					} else {
-						rightinput.setText(formatDoubleToString(5.0D * (d2 - 32.0D) / 9.0D));
+						rightinput
+								.setText(formatDoubleToString(5.0D * (d2 - 32.0D) / 9.0D));
 					}
 				}
 			}
@@ -241,32 +248,34 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 		});
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_unit_main);
-		
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
-				.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
 		layout_unit = (FrameLayout) findViewById(R.id.layout_unit);
-		layout_unit.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
-			
-			@Override
-			public void onGlobalLayout() {
-				 //比较Activity根布局与当前布局的大小
-		        int heightDiff = layout_unit.getRootView().getHeight()- layout_unit.getHeight();
-		        if(heightDiff < 100){
-					EditText edittext;
-					if (isLeft) {
-						edittext = leftinput;
-					} else {
-						edittext = rightinput;
+		layout_unit.getViewTreeObserver().addOnGlobalLayoutListener(
+				new OnGlobalLayoutListener() {
+
+					@Override
+					public void onGlobalLayout() {
+						// 比较Activity根布局与当前布局的大小
+						int heightDiff = layout_unit.getRootView().getHeight()
+								- layout_unit.getHeight();
+						if (heightDiff < 100) {
+							EditText edittext;
+							if (isLeft) {
+								edittext = leftinput;
+							} else {
+								edittext = rightinput;
+							}
+							showResult(edittext);
+						}
 					}
-					showResult(edittext);
-		        }
-			}
-		});
-		
+				});
+
 		// ((ImageView) findViewById(R.id.img_bg)).setImageBitmap(w.a().d());
 		topactivebarview = ((TopActiveBarView) findViewById(R.id.action_bar));
 		topactivebarview.setTiltleText("单位转换");

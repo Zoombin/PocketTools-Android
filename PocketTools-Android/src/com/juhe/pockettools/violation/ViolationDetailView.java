@@ -1,5 +1,6 @@
 package com.juhe.pockettools.violation;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -8,7 +9,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
@@ -36,12 +36,13 @@ public class ViolationDetailView extends FrameLayout {
 		initView();
 	}
 
+	@SuppressLint("NewApi")
 	private void initView() {
 		((LayoutInflater) getContext().getSystemService(
 				Context.LAYOUT_INFLATER_SERVICE)).inflate(
 				R.layout.view_violation_detail, this, true);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
-				.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		list_violation_detail = ((ListView) findViewById(R.id.list_violation_detail));
 		detail_no_data = ((TextView) findViewById(R.id.detail_no_data));

@@ -51,7 +51,7 @@ public class PMMainActivity extends FullscreenActivity {
 	private Button btn_back;
 	private View btn_save;
 	private View view_bg;
-	private ImageView img_bg;
+//	private ImageView img_bg;
 	private PMHeaderView pmheaderview;
 	private CityListViewAdapter citylistviewadapter;
 	private BarChart mChart;
@@ -281,8 +281,7 @@ public class PMMainActivity extends FullscreenActivity {
 		txtTitle = ((TextView) findViewById(R.id.txtTitle));
 		pmheaderview = new PMHeaderView(this);
 		view_bg = findViewById(R.id.view_bg);
-		img_bg = ((ImageView) findViewById(R.id.img_bg));
-		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
 		txt_pm_state = ((TextView) pmheaderview.findViewById(R.id.txt_pm_state));
 		txt_pm_value = ((TextView) pmheaderview.findViewById(R.id.txt_pm_value));
 		lbl_pm25 = ((TextView) pmheaderview.findViewById(R.id.lbl_pm25));

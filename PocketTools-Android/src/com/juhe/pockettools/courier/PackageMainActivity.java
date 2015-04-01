@@ -1,8 +1,8 @@
 package com.juhe.pockettools.courier;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -34,9 +34,9 @@ public class PackageMainActivity extends FullscreenActivity {
 	private EditText edit_package_number;
 	private Button btn_package_search;
 	private ListView list_recently_search;
-	private String f = "ems";
-	private PackageRencentListAdapter adapter;
-	private ArrayList<HashMap<String, String>> list;
+//	private String f = "ems";
+//	private PackageRencentListAdapter adapter;
+//	private ArrayList<HashMap<String, String>> list;
 	private PackageInfoView packageinfoview;
 	// private boolean j = false;
 	// private int k = -1;
@@ -180,11 +180,11 @@ public class PackageMainActivity extends FullscreenActivity {
 		}
 	}
 
+	@SuppressLint("NewApi")
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_package_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
-				.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		package_company_select = ((PackageSelectView) findViewById(R.id.package_company_select));
 		edit_package_number = ((EditText) findViewById(R.id.edit_package_number));
@@ -247,7 +247,7 @@ public class PackageMainActivity extends FullscreenActivity {
 						});
 			}
 		});
-		adapter = new PackageRencentListAdapter(this);
+//		adapter = new PackageRencentListAdapter(this);
 		// list_recently_search.setAdapter(adapter);
 		// list_recently_search.setOnItemClickListener(new OnItemClickListener()
 		// {

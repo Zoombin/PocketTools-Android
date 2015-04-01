@@ -50,7 +50,18 @@
                     android:background="@color/transparent" />
 
             </LinearLayout>
+            
         </ScrollView>
+        <Button 
+            android:id="@+id/select_bg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="10dp"
+            android:text="从相册选择背景"
+            android:textColor="#ffffff"
+            />
     </LinearLayout>
 
     <FrameLayout

@@ -1,5 +1,6 @@
 package com.juhe.pockettools.mobilelocale;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -7,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
@@ -65,10 +65,11 @@ public class MobileLocaleMainActivity extends FullscreenActivity {
 				});
 	}
 
+	@SuppressLint("NewApi")
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_mobile_locale_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		locale_content = ((MobileLocaleContentView) findViewById(R.id.locale_content));
 		edit_locale_number = ((EditText) findViewById(R.id.edit_locale_number));

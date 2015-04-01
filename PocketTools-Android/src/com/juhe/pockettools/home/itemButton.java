@@ -17,6 +17,7 @@ import com.juhe.pockettools.calculator.CalculatorMainActivity;
 import com.juhe.pockettools.calendar.activity.CalendarActivity;
 import com.juhe.pockettools.constelltion.ConstelltionMainActivity;
 import com.juhe.pockettools.courier.PackageMainActivity;
+import com.juhe.pockettools.ctrip.XiechengMainActivity;
 import com.juhe.pockettools.dream.DreamMainActivity;
 import com.juhe.pockettools.exchange.ExChangeMainActivity;
 import com.juhe.pockettools.flashlight.FlashLightActivity;
@@ -24,6 +25,7 @@ import com.juhe.pockettools.mirror.CameraMirrorActivity;
 import com.juhe.pockettools.mobilelocale.MobileLocaleMainActivity;
 import com.juhe.pockettools.moive.MovieMainActivity;
 import com.juhe.pockettools.oil.OilMainActivity;
+import com.juhe.pockettools.parking.ParkingLotSearchActivity;
 import com.juhe.pockettools.pm.PMMainActivity;
 import com.juhe.pockettools.poi.PoiSearchActivity;
 import com.juhe.pockettools.ruler.RulerMainActivity;
@@ -140,10 +142,11 @@ public class itemButton extends FrameLayout {
 					context.startActivity(intent);
 					break;
 				case 17:
-					intent = new Intent(context, WebActivity.class);
-					intent.putExtra(
-							WebActivity.KEY_URL,
-							"http://map.baidu.com/mobile/webapp/index/index#search/search/qt=s&wd=%E5%81%9C%E8%BD%A6%E5%9C%BA&c=224&searchFlag=bigBox&version=5&exptype=dep/vt=");
+//					intent = new Intent(context, WebActivity.class);
+//					intent.putExtra(
+//							WebActivity.KEY_URL,
+//							"http://map.baidu.com/mobile/webapp/index/index#search/search/qt=s&wd=%E5%81%9C%E8%BD%A6%E5%9C%BA&c=224&searchFlag=bigBox&version=5&exptype=dep/vt=");
+					intent = new Intent(context, ParkingLotSearchActivity.class);
 					context.startActivity(intent);
 					break;
 				case 18:
@@ -205,6 +208,10 @@ public class itemButton extends FrameLayout {
 					break;
 				case 30:
 					intent = new Intent(context, FlashLightActivity.class);
+					context.startActivity(intent);
+					break;
+				case 31:
+					intent = new Intent(context, XiechengMainActivity.class);
 					context.startActivity(intent);
 					break;
 				default:

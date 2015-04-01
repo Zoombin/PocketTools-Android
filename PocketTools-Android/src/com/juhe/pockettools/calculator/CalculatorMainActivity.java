@@ -1,5 +1,6 @@
 package com.juhe.pockettools.calculator;
 
+import android.annotation.SuppressLint;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -123,7 +124,7 @@ public class CalculatorMainActivity extends FullscreenActivity {
 			break;
 		}
 
-//		tip.setText(tipmessage);
+		// tip.setText(tipmessage);
 	}
 
 	/*
@@ -372,11 +373,12 @@ public class CalculatorMainActivity extends FullscreenActivity {
 		}
 	}
 
+	@SuppressLint("NewApi")
 	public void onCreate(Bundle paramBundle) {
 		super.onCreate(paramBundle);
 		setContentView(R.layout.activity_calcautor_mian);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
-				.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
 		input = ((AutoResizeTextView) findViewById(R.id.input));
 		mem = ((TextView) findViewById(R.id.mem));
 		btn_num[0] = ((Button) findViewById(R.id.zero));
@@ -772,7 +774,7 @@ public class CalculatorMainActivity extends FullscreenActivity {
 				return;
 			}
 			input.setText(String.valueOf(FP(number[0]))); // 输出最终结果
-//			tip.setText("计算完毕，要继续请按归零键 C");
+			// tip.setText("计算完毕，要继续请按归零键 C");
 			mem.setText(str_old + "=" + String.valueOf(FP(number[0])));
 		}
 
@@ -815,24 +817,22 @@ public class CalculatorMainActivity extends FullscreenActivity {
 				message = "值太大了，我不行了";
 			}
 			input.setText("\"" + str + "\"" + ": " + message);
-//			tip.setText(message + "\n" + "计算完毕，要继续请按归零键 C");
+			// tip.setText(message + "\n" + "计算完毕，要继续请按归零键 C");
 		}
 	}
 
 	/*
-     * 向input输出字符
-     * input.setText(str);为清屏后输出
-     * input.append(str);为在屏幕原str后增添字符
-     */
-    private void print(String str) { 
-        if(vbegin)
-            input.setText(str);
-        else
-            input.append(str);
+	 * 向input输出字符 input.setText(str);为清屏后输出 input.append(str);为在屏幕原str后增添字符
+	 */
+	private void print(String str) {
+		if (vbegin)
+			input.setText(str);
+		else
+			input.append(str);
 
-        vbegin = false;
-    }
-    
+		vbegin = false;
+	}
+
 	/*
 	 * 键盘命令扑捉
 	 */

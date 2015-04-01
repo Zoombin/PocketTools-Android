@@ -1,5 +1,6 @@
 package com.juhe.pockettools.constelltion;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -9,7 +10,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
-
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
@@ -17,6 +17,7 @@ import com.juhe.pockettools.utils.Config;
 
 //import com.fotoable.helpr.wallpaper.w;
 
+@SuppressLint("NewApi")
 public class ConstelltionSelectView extends FrameLayout {
 	private TopActiveBarView action_bar;
 	private ListView constelltion_list;
@@ -38,7 +39,7 @@ public class ConstelltionSelectView extends FrameLayout {
 				Context.LAYOUT_INFLATER_SERVICE)).inflate(
 				R.layout.view_constelltion_select_list, this, true);
 		ImageView img_bg = (ImageView) findViewById(R.id.img_bg);
-		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+		img_bg.setBackground(Config.getBgDrawable());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		constelltion_list = ((ListView) findViewById(R.id.constelltion_list));
 		action_bar.setTiltleText("选择星座");

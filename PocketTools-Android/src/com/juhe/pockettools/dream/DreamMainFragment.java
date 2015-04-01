@@ -1,19 +1,22 @@
 package com.juhe.pockettools.dream;
 
+//import com.fotoable.helpr.wallpaper.w;
+import java.util.ArrayList;
+import java.util.List;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.InputMethodManager;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,21 +24,17 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.juhe.pockettools.R;
-import com.juhe.pockettools.applesn.AppleSnEntity;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.utils.Config;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
-//import com.fotoable.helpr.wallpaper.w;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DreamMainFragment extends Fragment {
 	private static final String TAG = "DreamMainFragment";
@@ -104,6 +103,7 @@ public class DreamMainFragment extends Fragment {
 		Log.v("DreamMainFragment", "DreamMainFragment onCreate");
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -111,8 +111,8 @@ public class DreamMainFragment extends Fragment {
 		View view = inflater.inflate(R.layout.fragment_dream_main, container,
 				false);
 
-		ImageView img_bg = (ImageView) view.findViewById(R.id.img_bg);
-		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+		((ImageView) view.findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
 		
 		action_bar = ((TopActiveBarView) view.findViewById(R.id.action_bar));
 		action_bar.setTiltleText("周公解梦");

@@ -37,7 +37,7 @@ public class ChatActivity extends Activity implements OnClickListener {
 	private String content_str;
 	private TextAdapter adapter;
 	private String[] welcome_array;
-	private double currentTime=0, oldTime = 0;
+	private double currentTime = 0, oldTime = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +46,10 @@ public class ChatActivity extends Activity implements OnClickListener {
 		initView();
 	}
 
+	@SuppressLint("NewApi")
 	private void initView() {
-		ImageView img_bg = (ImageView) findViewById(R.id.img_bg);
-		img_bg.setBackgroundResource(Config.getBgDrawableResId());
-		
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
 		action_bar = (TopActiveBarView) findViewById(R.id.action_bar);
 		action_bar.setTiltleText("聊天机器人");
 		action_bar.setSplitLineVisible(true);
@@ -65,7 +65,7 @@ public class ChatActivity extends Activity implements OnClickListener {
 
 			}
 		});
-		
+
 		lv = (ListView) findViewById(R.id.lv);
 		sendtext = (EditText) findViewById(R.id.sendText);
 		send_btn = (Button) findViewById(R.id.send_btn);
@@ -91,8 +91,7 @@ public class ChatActivity extends Activity implements OnClickListener {
 	public void parseText(String str) {
 		try {
 			ListData listData;
-			listData = new ListData(str, ListData.RECEIVER,
-					getTime());
+			listData = new ListData(str, ListData.RECEIVER, getTime());
 			lists.add(listData);
 			adapter.notifyDataSetChanged();
 		} catch (Exception e) {
@@ -123,18 +122,22 @@ public class ChatActivity extends Activity implements OnClickListener {
 		params.add("key", "39ded27a75232bba451702ab705faeea");
 		params.add("info", droph);
 
-		JuheData.executeWithAPI(112, "http://op.juhe.cn/robot/index", JuheData.GET, params, new DataCallBack() {
+		JuheData.executeWithAPI(112, "http://op.juhe.cn/robot/index",
+				JuheData.GET, params, new DataCallBack() {
 
-			@Override
-			public void resultLoaded(int err, String reason, String result) {
-				if (err == 0) {
-					ChatEntity chatentity = new Gson().fromJson(result, ChatEntity.class);
-					parseText(chatentity.getResult().getText());
-				} else {
-					Toast.makeText(getApplicationContext(), reason, Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
+					@Override
+					public void resultLoaded(int err, String reason,
+							String result) {
+						if (err == 0) {
+							ChatEntity chatentity = new Gson().fromJson(result,
+									ChatEntity.class);
+							parseText(chatentity.getResult().getText());
+						} else {
+							Toast.makeText(getApplicationContext(), reason,
+									Toast.LENGTH_SHORT).show();
+						}
+					}
+				});
 	}
 
 	private String getTime() {

@@ -1,11 +1,11 @@
 package com.juhe.pockettools.oil;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.GeofenceClient;
@@ -28,11 +28,12 @@ public class OilMainActivity extends FullscreenActivity {
 	private TopActiveBarView action_bar;
 	private MyLocationListener mMyLocationListener;
 
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_oil_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
 		oil_listveiw = ((ListView) findViewById(R.id.oil_listveiw));
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		adapter = new OilListViewAdapter(this);

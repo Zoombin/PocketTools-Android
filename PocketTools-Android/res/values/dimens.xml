@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <dimen name="drop_down_list_header_padding_top">12.0dip</dimen>
     <dimen name="drop_down_list_header_padding_bottom">15.0dip</dimen>
     <dimen name="drop_down_list_header_release_min_distance">20.0dip</dimen>
@@ -28,4 +29,15 @@
     <dimen name="btn_length">50.0px</dimen>
     <dimen name="listview_item_title_size">18.0sp</dimen>
     <dimen name="listview_item_detail_size">12.0sp</dimen>
+
+    <!--  -->
+
+    <dimen name="list_title">18sp</dimen>
+    <dimen name="textsize_16sp">16sp</dimen>
+    <dimen name="textsize_14sp">14sp</dimen>
+    <dimen name="textsize_12sp">12sp</dimen>
+    <dimen name="title">20sp</dimen>
+    <dimen name="header_footer_left_right_padding">24dp</dimen>
+    <dimen name="radio_text_size">15sp</dimen>
+
 </resources>

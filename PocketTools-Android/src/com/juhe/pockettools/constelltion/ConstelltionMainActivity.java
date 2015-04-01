@@ -1,5 +1,6 @@
 package com.juhe.pockettools.constelltion;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -12,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.RightPublishTextView;
@@ -26,6 +26,7 @@ import com.thinkland.sdk.android.Parameters;
 //import android.graphics.Bitmap.Config;
 //import com.fotoable.helpr.wallpaper.w;
 
+@SuppressLint("NewApi")
 public class ConstelltionMainActivity extends FullscreenActivity {
 	private ConstelltionSelectDateView constelltion_date;
 	private ConstelltionSelectView constelltionselectview;
@@ -164,7 +165,7 @@ public class ConstelltionMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_constelltion_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		constelltion_basicview = ((ConstelltionBasicView) findViewById(R.id.constelltion_basicview));
 		constelltion_content = ((RightPublishTextView) findViewById(R.id.constelltion_content));

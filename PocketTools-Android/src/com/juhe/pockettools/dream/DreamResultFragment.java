@@ -1,5 +1,6 @@
 package com.juhe.pockettools.dream;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -17,7 +18,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
@@ -61,7 +61,9 @@ public class DreamResultFragment extends Fragment {
 			DreamDetailFragment fragment = DreamDetailFragment
 					.getDreamDetailFragment(entity);
 			transaction.setCustomAnimations(R.anim.fragment_slide_left_enter,
-					R.anim.fragment_slide_left_exit, R.anim.fragment_slide_right_enter, R.anim.fragment_slide_right_exit);
+					R.anim.fragment_slide_left_exit,
+					R.anim.fragment_slide_right_enter,
+					R.anim.fragment_slide_right_exit);
 			transaction.add(R.id.content_frame, fragment);
 			transaction.addToBackStack(null);
 			transaction.commitAllowingStateLoss();
@@ -101,26 +103,28 @@ public class DreamResultFragment extends Fragment {
 		Log.v("DreamResultFragment", "DreamResultFragment onCreate");
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		Log.v("DreamResultFragment", "DreamResultFragment onCreateView");
-		View view = inflater.inflate(R.layout.fragment_dream_result,
-				container, false);
-		ImageView img_bg = (ImageView) view.findViewById(R.id.img_bg);
-		img_bg.setBackgroundResource(Config.getBgDrawableResId());
-		dream_main_listveiw = ((ListView) view.findViewById(R.id.dream_main_listveiw));
-//		dream_main_listveiw.setOnItemClickListener(new l(this));
+		View view = inflater.inflate(R.layout.fragment_dream_result, container,
+				false);
+		((ImageView) view.findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
+		dream_main_listveiw = ((ListView) view
+				.findViewById(R.id.dream_main_listveiw));
+		// dream_main_listveiw.setOnItemClickListener(new l(this));
 		action_bar = ((TopActiveBarView) view.findViewById(R.id.action_bar));
 		action_bar.setTiltleText("周公解梦");
 		action_bar.setTiltleText(title);
 		action_bar.setListener(new InterfaceTopActiveBar() {
-			
+
 			@Override
 			public void query() {
-				
+
 			}
-			
+
 			@Override
 			public void cancel() {
 				activity.close();
@@ -164,24 +168,27 @@ public class DreamResultFragment extends Fragment {
 		public View getView(int position, View convertView, ViewGroup parent) {
 			final Dream.Result entity = (Dream.Result) list.get(position);
 			ViewHolder holder;
-			
+
 			if (convertView == null) {
 				holder = new ViewHolder();
-				
+
 				convertView = ((LayoutInflater) context
-						.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(
-						R.layout.view_dream_category_item, null);
-				holder.layout_item = (FrameLayout) convertView.findViewById(R.id.layout_item);
-				holder.txt_category = (TextView) convertView.findViewById(R.id.txt_category);
-				holder.txt_category_detail = (TextView) convertView.findViewById(R.id.txt_category_detail);
-				
+						.getSystemService(Context.LAYOUT_INFLATER_SERVICE))
+						.inflate(R.layout.view_dream_category_item, null);
+				holder.layout_item = (FrameLayout) convertView
+						.findViewById(R.id.layout_item);
+				holder.txt_category = (TextView) convertView
+						.findViewById(R.id.txt_category);
+				holder.txt_category_detail = (TextView) convertView
+						.findViewById(R.id.txt_category_detail);
+
 				convertView.setTag(holder);
 			} else {
 				holder = (ViewHolder) convertView.getTag();
 			}
 
 			holder.layout_item.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					startDreamDetailFragment(entity);
@@ -189,7 +196,7 @@ public class DreamResultFragment extends Fragment {
 			});
 			holder.txt_category.setText(entity.getTitle());
 			holder.txt_category_detail.setText(entity.getDes());
-			
+
 			return convertView;
 		}
 	}

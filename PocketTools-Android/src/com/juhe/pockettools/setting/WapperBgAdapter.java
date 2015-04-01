@@ -14,20 +14,21 @@ import android.widget.BaseAdapter;
 
 public class WapperBgAdapter extends BaseAdapter {
 	StatusImageView a;
-//	d b = null;
+	// d b = null;
 	List<WapperBgEntity> list;
-//	HashMap<Integer, View> d = new HashMap();
+	// HashMap<Integer, View> d = new HashMap();
 	private final Context context;
 	private LayoutInflater layoutinflater;
 	public int selectedindex = -1;
-//	private c h;
+
+	// private c h;
 
 	public WapperBgAdapter(Context context, List<WapperBgEntity> list) {
 		this.context = context;
 
 		this.list = list;
-//		this.h = new c.a().a(null).b(null).c(null).b(true).d(false).a(true)
-//				.e(true).a(Bitmap.Config.RGB_565).d();
+		// this.h = new c.a().a(null).b(null).c(null).b(true).d(false).a(true)
+		// .e(true).a(Bitmap.Config.RGB_565).d();
 		layoutinflater = ((LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE));
 	}
@@ -36,52 +37,53 @@ public class WapperBgAdapter extends BaseAdapter {
 		this.selectedindex = selectedindex;
 		notifyDataSetChanged();
 	}
-//	private void a(m paramm, a parama) {
-//		if ((paramm == null) || (this.b == null)) {
-//			return;
-//		}
-//		String str1 = "";
-//		if (paramm.a == o.a) {
-//			str1 = "assets://" + paramm.b;
-//		}
-//		while ((str1 != null) && (str1.length() > 0)) {
-//			parama.b.a();
-//			d.a().a(str1, parama.b, this.h, null, null);
-//			return;
-//			if (paramm.a == o.c) {
-//				String str2 = w.a().b(paramm.b);
-//				str1 = "file:///" + str2;
-//			}
-//		}
-//		parama.b.setImageBitmap(null);
-//	}
 
-//	public void clearData() {
-//		this.d.clear();
-//		notifyDataSetChanged();
-//	}
-//
-//	public void a(int paramInt) {
-//		this.g = paramInt;
-//		View localView = (View) this.d.get(Integer.valueOf(paramInt));
-//		if (localView != null) {
-//			a locala = (a) localView.getTag();
-//			if (locala != null) {
-//				StatusImageView localStatusImageView = locala.b;
-//				if (this.a != null) {
-//					this.a.setIsSelected(false);
-//				}
-//				localStatusImageView.setIsSelected(true);
-//				this.a = localStatusImageView;
-//			}
-//		}
-//	}
-//
-//	public void setData(ArrayList<m> list) {
-//		this.list = list;
-//		this.d.clear();
-//		notifyDataSetChanged();
-//	}
+	// private void a(m paramm, a parama) {
+	// if ((paramm == null) || (this.b == null)) {
+	// return;
+	// }
+	// String str1 = "";
+	// if (paramm.a == o.a) {
+	// str1 = "assets://" + paramm.b;
+	// }
+	// while ((str1 != null) && (str1.length() > 0)) {
+	// parama.b.a();
+	// d.a().a(str1, parama.b, this.h, null, null);
+	// return;
+	// if (paramm.a == o.c) {
+	// String str2 = w.a().b(paramm.b);
+	// str1 = "file:///" + str2;
+	// }
+	// }
+	// parama.b.setImageBitmap(null);
+	// }
+
+	// public void clearData() {
+	// this.d.clear();
+	// notifyDataSetChanged();
+	// }
+	//
+	// public void a(int paramInt) {
+	// this.g = paramInt;
+	// View localView = (View) this.d.get(Integer.valueOf(paramInt));
+	// if (localView != null) {
+	// a locala = (a) localView.getTag();
+	// if (locala != null) {
+	// StatusImageView localStatusImageView = locala.b;
+	// if (this.a != null) {
+	// this.a.setIsSelected(false);
+	// }
+	// localStatusImageView.setIsSelected(true);
+	// this.a = localStatusImageView;
+	// }
+	// }
+	// }
+	//
+	// public void setData(ArrayList<m> list) {
+	// this.list = list;
+	// this.d.clear();
+	// notifyDataSetChanged();
+	// }
 
 	public int getCount() {
 		if (list == null) {
@@ -105,7 +107,7 @@ public class WapperBgAdapter extends BaseAdapter {
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		final WapperBgEntity entity = list.get(position);
-		
+
 		ViewHolder holder;
 		if (convertView == null) {
 			holder = new ViewHolder();
@@ -113,20 +115,23 @@ public class WapperBgAdapter extends BaseAdapter {
 					R.layout.view_wallpaperbg_item, parent, false);
 			holder.item_icon = (StatusImageView) convertView
 					.findViewById(R.id.item_icon);
-//			item_icon.setTag(localm);
+			// item_icon.setTag(localm);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		
+
 		if (position == selectedindex) {
 			holder.item_icon.setIsSelected(true);
 		} else {
 			holder.item_icon.setIsSelected(false);
 		}
-		
-		holder.item_icon.setBackgroundResource(entity.getBg());
-		
+		if (entity.getBg() != 0) {
+			holder.item_icon.setBackgroundResource(entity.getBg());
+		} else if (entity.getBg() == 0 && entity.getBgDrawable() != null) {
+			holder.item_icon.setBackgroundDrawable(entity.getBgDrawable());
+		}
+
 		// try {
 		// m localm = (m) getItem(paramInt);
 		// Object localObject2;
@@ -183,7 +188,7 @@ public class WapperBgAdapter extends BaseAdapter {
 	}
 
 	private class ViewHolder {
-//		public Bitmap bitmap;
+		// public Bitmap bitmap;
 		public StatusImageView item_icon;
 	}
 }

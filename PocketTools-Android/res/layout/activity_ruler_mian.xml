@@ -1,54 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ly_ruler"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="horizontal" >
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
-    <com.juhe.pockettools.ruler.RulerViewInchLeft
-        android:id="@+id/left1"
-        android:layout_width="50dp"
+    <ImageView
+        android:id="@id/img_bg"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:visibility="gone" />
+        android:contentDescription="@null"
+        android:scaleType="centerCrop" />
 
-    <com.juhe.pockettools.ruler.RulerViewMmLeft
-        android:id="@+id/left2"
-        android:layout_width="50dp"
-        android:layout_height="fill_parent" />
-
-    <RelativeLayout
-        android:layout_width="0px"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="1" >
+        android:orientation="horizontal" >
 
-        <Button
-            android:id="@id/btn_swith"
-            android:layout_width="100.0dip"
-            android:layout_height="33.0dip"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/btn_ruler_switch" />
+        <com.juhe.pockettools.ruler.RulerViewInchLeft
+            android:id="@+id/left1"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:visibility="gone" />
 
-        <Button
-            android:id="@id/btn_close"
-            android:layout_width="60.0dip"
-            android:layout_height="60.0dip"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/btn_ruler_close" />
-    </RelativeLayout>
+        <com.juhe.pockettools.ruler.RulerViewMmLeft
+            android:id="@+id/left2"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent" />
 
-    <com.juhe.pockettools.ruler.RulerViewInchRight
-        android:id="@+id/right1"
-        android:layout_width="50dp"
-        android:layout_height="fill_parent"
-        android:visibility="gone" />
+        <RelativeLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
 
-    <com.juhe.pockettools.ruler.RulerViewMmRight
-        android:id="@+id/right2"
-        android:layout_width="50dp"
-        android:layout_height="fill_parent" />
+            <Button
+                android:id="@id/btn_swith"
+                android:layout_width="100.0dip"
+                android:layout_height="33.0dip"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_ruler_switch" />
 
-</LinearLayout>
+            <Button
+                android:id="@id/btn_close"
+                android:layout_width="60.0dip"
+                android:layout_height="60.0dip"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/btn_ruler_close" />
+        </RelativeLayout>
+
+        <com.juhe.pockettools.ruler.RulerViewInchRight
+            android:id="@+id/right1"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:visibility="gone" />
+
+        <com.juhe.pockettools.ruler.RulerViewMmRight
+            android:id="@+id/right2"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent" />
+    </LinearLayout>
+
+</FrameLayout>

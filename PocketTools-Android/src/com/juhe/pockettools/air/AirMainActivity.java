@@ -31,8 +31,8 @@ public class AirMainActivity extends FullscreenActivity {
 	private AirAdapter adapter;
 	private TopActiveBarView action_bar;
 	
-	@Override
 	@SuppressLint("NewApi")
+	@Override
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_air_main);
@@ -54,7 +54,7 @@ public class AirMainActivity extends FullscreenActivity {
 		});
 		
 		img_bg = (ImageView) findViewById(R.id.img_bg);
-		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+		img_bg.setBackground(Config.getBgDrawable());
 		air_edit_start = (EditText) findViewById(R.id.air_edit_start);
 		air_edit_end = (EditText) findViewById(R.id.air_edit_end);
 		air_list = (ListView) findViewById(R.id.air_list); 

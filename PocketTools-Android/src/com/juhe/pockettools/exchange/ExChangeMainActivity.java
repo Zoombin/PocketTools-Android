@@ -1,7 +1,7 @@
 package com.juhe.pockettools.exchange;
 
 import java.util.ArrayList;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -21,7 +21,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
-
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.AutoResizeTextView;
 import com.juhe.pockettools.commonview.ClearableEditText;
@@ -132,13 +131,14 @@ public class ExChangeMainActivity extends FullscreenActivity {
 		}
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_exchange_main);
 		getWindow().setSoftInputMode(3);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
-				.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
 		btn_input_ok = ((Button) findViewById(R.id.btn_input_ok));
 		ly_input = ((RelativeLayout) findViewById(R.id.ly_input));
 		txt_input = ((ClearableEditText) findViewById(R.id.txt_input));

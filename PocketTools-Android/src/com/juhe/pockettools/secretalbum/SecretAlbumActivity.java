@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
-
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -31,7 +31,6 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.home.FullscreenActivity;
 import com.juhe.pockettools.utils.Config;
@@ -207,11 +206,12 @@ public class SecretAlbumActivity extends FullscreenActivity {
 		getFileDir(filepath);
 	}
 
+	@SuppressLint("NewApi")
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_secretalbum_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
-				.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
 
 		addLayout = ((LinearLayout) findViewById(R.id.addLayout));
 		editLayout = ((LinearLayout) findViewById(R.id.editLayout));

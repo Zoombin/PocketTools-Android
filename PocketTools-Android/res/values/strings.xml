@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="drop_down_list_header_default_text">Click to refresh…</string>
     <string name="drop_down_list_header_pull_text">Drop Down to refresh…</string>
     <string name="drop_down_list_header_release_text">Release to refresh…</string>
@@ -531,7 +532,7 @@ CONTENT"</string>
     <string name="new_version_cancel">忽略</string>
     <string name="switch_on">On</string>
     <string name="switch_off">Off</string>
-    
+
     <string-array name="welcome_tips">
         <item>主人，奴婢在此等候多时了</item>
         <item>主人，近来一切可好</item>
@@ -539,4 +540,47 @@ CONTENT"</string>
         <item>欢迎归来，我亲爱的主人</item>
         <item>我是小灵机器人，很高兴为您服务</item>
     </string-array>
+
+    <!-- 停车场 -->
+
+    <string name="parking_lot">停车场</string>
+    <string name="real_time_parking_lot">实时停车场</string>
+    <string name="parking_lot_info">停车场详情</string>
+    <string name="parking_lot_class">停车场分类</string>
+    <string name="parking_lot_type">停车场类型</string>
+    <string name="search_keyword">关键字搜索</string>
+    <string name="search">搜索</string>
+    <string name="near_by">附近</string>
+    <string name="number_of_parking">车位数：</string>
+    <string name="parking_lot_entrance">出入口</string>
+    <string name="parking_lot_zcw">总停车位:</string>
+    <string name="parking_lot_kcw">空停车位:</string>
+    <string name="price_day">白天:</string>
+    <string name="price_night">晚上:</string>
+    <string name="open_time">营业时间:</string>
+    <string name="parking_lot_info_class">分类</string>
+    <string name="parking_lot_info_type">类型</string>
+    <string name="parking_lot_forecast">未来车位使用预测</string>
+    <string name="parking_lot_yc">停车场预测</string>
+    <string name="locate_city">正在定位城市…</string>
+
+    <!-- 携程 -->
+    <string name="no_ticket">抱歉，暂无相关门票售卖</string>
+    <string name="screen">筛选</string>
+    <string name="xiechenglvyou">携程旅游</string>
+    <string name="star">A景区</string>
+    <string name="market_price">原价：</string>
+    <string name="ctrip_point">分</string>
+    <string name="start">起</string>
+    <string name="money">¥</string>
+    <string name="view_introduce">景点介绍</string>
+    <string name="ticket_query">票价详情</string>
+    <string name="tick">  √ </string>
+    <string name="book_ticket">前可定今日票</string>
+    <string name="details_info">详细信息 ></string>
+    <string name="marketprice_2">原价: ¥</string>
+    <string name="book_time">预订时间</string>
+    <string name="book_time_text">您最晚要在出行当天以上时间前下单，请尽早预订，以免耽误行程。</string>
+    <string name="put_in_viewname">景点名称/游玩主题</string>
+
 </resources>

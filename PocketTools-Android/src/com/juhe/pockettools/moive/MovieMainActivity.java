@@ -1,7 +1,7 @@
 package com.juhe.pockettools.moive;
 
 import java.util.List;
-
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.provider.ContactsContract.CommonDataKinds.Im;
 import android.view.View;
@@ -11,7 +11,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.home.FullscreenActivity;
@@ -39,13 +38,13 @@ public class MovieMainActivity extends FullscreenActivity {
 	private CinemaAdapter cinemaadapter;
 	private OnlineAdapter onlineadapter;
 	
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		getWindow().setSoftInputMode(2);
 		setContentView(R.layout.activity_movie_main);
-		ImageView img_bg =  (ImageView) findViewById(R.id.img_bg);
-		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
 		bar_cancel = ((Button) findViewById(R.id.bar_cancel));
 		progress_contaienr = ((FrameLayout) findViewById(R.id.progress_contaienr));
 		bar_cancel.setOnClickListener(new OnClickListener() {

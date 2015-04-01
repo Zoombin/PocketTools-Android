@@ -22,29 +22,29 @@ public class ConstelltionDateScrollView extends HorizontalScrollView {
 		initView();
 	}
 
-	public ConstelltionDateScrollView(Context context,
-			AttributeSet attributeSet) {
+	public ConstelltionDateScrollView(Context context, AttributeSet attributeSet) {
 		super(context, attributeSet);
 		initView();
 	}
 
-	private ConstelltionDateItemView getConstelltionDateItemView(int text, int index) {
+	private ConstelltionDateItemView getConstelltionDateItemView(int text,
+			int index) {
 		ConstelltionDateItemView constelltiondateitemview = new ConstelltionDateItemView(
 				getContext(), null);
 		constelltiondateitemview.setItemText(text);
 		constelltiondateitemview.setTag(Integer.valueOf(index));
 		constelltiondateitemview.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				if (!v.isSelected()) {
 					if (layout != null) {
-						for (int i=0; i<layout.getChildCount(); i++) {
+						for (int i = 0; i < layout.getChildCount(); i++) {
 							layout.getChildAt(i).setSelected(false);
 						}
 					}
 					setStartScroll(v);
-					listener.setDateIndex((int) v.getTag());
+					listener.setDateIndex((Integer) v.getTag());
 					v.setSelected(true);
 				}
 			}
@@ -78,8 +78,9 @@ public class ConstelltionDateScrollView extends HorizontalScrollView {
 	}
 
 	public void setSelectItem(ArrayList<Integer> dateintlist, int index) {
-		for (int i=0; i<dateintlist.size(); i++) {
-			ConstelltionDateItemView v =  getConstelltionDateItemView(((Integer) dateintlist.get(i)).intValue(), i);
+		for (int i = 0; i < dateintlist.size(); i++) {
+			ConstelltionDateItemView v = getConstelltionDateItemView(
+					((Integer) dateintlist.get(i)).intValue(), i);
 			if (i == index) {
 				v.setSelected(true);
 			} else {

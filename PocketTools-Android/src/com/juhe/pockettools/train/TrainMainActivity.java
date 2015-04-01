@@ -1,5 +1,6 @@
 package com.juhe.pockettools.train;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,7 +11,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.home.FullscreenActivity;
 import com.juhe.pockettools.utils.Config;
@@ -63,11 +63,13 @@ public class TrainMainActivity extends FullscreenActivity {
 		finish();
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_train_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
 		bar_cancel = ((Button) findViewById(R.id.bar_cancel));
 		btn_search_city = ((Button) findViewById(R.id.btn_search_city));
 		btn_search_times = ((Button) findViewById(R.id.btn_search_times));

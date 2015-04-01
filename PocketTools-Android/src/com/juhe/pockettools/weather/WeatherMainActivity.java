@@ -1,14 +1,18 @@
 package com.juhe.pockettools.weather;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import org.json.JSONObject;
+
 import android.annotation.SuppressLint;
-import android.content.BroadcastReceiver;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -19,34 +23,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.juhe.pockettools.R;
-import com.juhe.pockettools.applesn.AppleSnEntity;
 //import com.juhe.pockettools.helpr.Utils.k;
 import com.juhe.pockettools.city.CityActivity;
 import com.juhe.pockettools.commonview.CircleProgressBar;
 import com.juhe.pockettools.commonview.HorizontalListView;
-import com.juhe.pockettools.exchange.ExChangeEntity;
 import com.juhe.pockettools.home.FullscreenActivity;
-import com.juhe.pockettools.home.SplashAcitivity;
 import com.juhe.pockettools.utils.Config;
 import com.juhe.pockettools.utils.HelprCommUtil;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
-
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class WeatherMainActivity extends FullscreenActivity {
 	private WeatherHeaderView weatherheaderview;
@@ -67,7 +54,6 @@ public class WeatherMainActivity extends FullscreenActivity {
 	private TextView washLabel;
 	private TextView execriseLabel;
 	private View view_bg;
-	private ImageView img_bg;
 	private FrameLayout ly_hour_weather;
 	private CircleProgressBar circle_progress_bar;
 	private HorizontalListView weather_hour_listview;
@@ -110,8 +96,8 @@ public class WeatherMainActivity extends FullscreenActivity {
 		setContentView(R.layout.activity_weather_main);
 		txtTitle = ((TextView) findViewById(R.id.txtTitle));
 		view_bg = findViewById(R.id.view_bg);
-		img_bg = ((ImageView) findViewById(R.id.img_bg));
-		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
 		view_bg.setAlpha(0.15F);
 		weatherheaderview = new WeatherHeaderView(this);
 		txt_weather_centigrade = ((TextView) weatherheaderview

@@ -54,7 +54,7 @@ public class HelprActivity extends FullscreenActivity {
 	private Button[] mTabs;
 
 	public class MyViewPagerAdapter extends FragmentPagerAdapter {
-		
+
 		public MyViewPagerAdapter(FragmentManager fm) {
 			super(fm);
 		}
@@ -69,7 +69,7 @@ public class HelprActivity extends FullscreenActivity {
 			return fragmentlist.size();
 		}
 	}
-	
+
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		view = View.inflate(this, R.layout.activity_helpr_activity, null);
@@ -80,7 +80,7 @@ public class HelprActivity extends FullscreenActivity {
 		setContentView(view);
 
 		img_bg = (ImageView) findViewById(R.id.img_bg);
-		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+		img_bg.setBackground(Config.getBgDrawable());
 
 		btn_setting = (Button) findViewById(R.id.btn_setting);
 		btn_setting.setOnClickListener(new OnClickListener() {
@@ -101,10 +101,11 @@ public class HelprActivity extends FullscreenActivity {
 		constelltionfragment = new ConstelltionFragment();
 		fragmentlist.add(weatherfragment);
 		fragmentlist.add(constelltionfragment);
-		pager_home.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager()));
+		pager_home.setAdapter(new MyViewPagerAdapter(
+				getSupportFragmentManager()));
 		indicator_home = (CirclePageIndicator) findViewById(R.id.indicator_home);
 		indicator_home.setViewPager(pager_home);
-		
+
 		tool_container = (LinearLayout) findViewById(R.id.tool_container);
 		tool_page = (ViewPager) findViewById(R.id.tool_page);
 		tool_page.setAdapter(new ItemPagerAdapter(this,
@@ -145,7 +146,7 @@ public class HelprActivity extends FullscreenActivity {
 	protected void onActivityResult(int arg0, int arg1, Intent arg2) {
 		super.onActivityResult(arg0, arg1, arg2);
 
-		img_bg.setBackgroundResource(Config.getBgDrawableResId());
+		img_bg.setBackground(Config.getBgDrawable());
 	}
 
 	public void onTabClicked(View v) {
@@ -398,5 +399,11 @@ public class HelprActivity extends FullscreenActivity {
 		info30.setId(30);
 		info30.setIcon(R.drawable.gr_flashlight);
 		storeinfos.add(info30);
+		
+		ModuleInfo info31 = new ModuleInfo();
+		info30.setName("携程门票");
+		info30.setId(31);
+		info30.setIcon(R.drawable.gr_ctrip_ticket);
+		storeinfos.add(info31);
 	}
 }

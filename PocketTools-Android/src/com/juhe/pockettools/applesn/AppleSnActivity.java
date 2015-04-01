@@ -1,5 +1,6 @@
 package com.juhe.pockettools.applesn;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -8,19 +9,17 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
-import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.juhe.pockettools.R;
-import com.juhe.pockettools.commonview.ClearableEditText;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.home.FullscreenActivity;
-import com.juhe.pockettools.tuling.ChatEntity;
 import com.juhe.pockettools.utils.Config;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
@@ -29,7 +28,7 @@ import com.thinkland.sdk.android.Parameters;
 //import com.fotoable.helpr.wallpaper.w;
 
 public class AppleSnActivity extends FullscreenActivity {
-	private static final String TAG = "AppleSnActivity";
+//	private static final String TAG = "AppleSnActivity";
 	TopActiveBarView action_bar;
 	private EditText edit_sn_number;
 	private Button btn_sn_search;
@@ -46,11 +45,12 @@ public class AppleSnActivity extends FullscreenActivity {
 	private TextView made_area;
 	private TextView end_date;
 	
+	@SuppressLint("NewApi")
 	@Override
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_applesn_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
 		
 		btn_sn_search = ((Button) findViewById(R.id.btn_sn_search));
 		btn_sn_search.setOnClickListener(new OnClickListener() {

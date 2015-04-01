@@ -1,5 +1,6 @@
 package com.juhe.pockettools.sizetable;
 
+import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,7 +16,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
@@ -180,12 +180,13 @@ public class SizeTableActivity extends FullscreenActivity {
 		}
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_sizetable);
-		((ImageView) findViewById(R.id.img_bg)).setBackgroundResource(Config
-				.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
 		btn_womensize = ((Button) findViewById(R.id.btn_womensize));
 		btn_mensize = ((Button) findViewById(R.id.btn_mensize));
 		btn_childrensize = ((Button) findViewById(R.id.btn_childrensize));

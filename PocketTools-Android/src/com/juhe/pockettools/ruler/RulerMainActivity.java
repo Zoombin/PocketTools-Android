@@ -1,19 +1,19 @@
 package com.juhe.pockettools.ruler;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.utils.Config;
 
 public class RulerMainActivity extends Activity {
 
-	LinearLayout ly_ruler;
 	Button btn_close, btn_swith;
 	static Paint paint = new Paint(), textPaint = new Paint();
 	boolean inchstate = false;
@@ -23,11 +23,12 @@ public class RulerMainActivity extends Activity {
 	RulerViewMmLeft left2;
 	RulerViewMmRight right2;
 	
+	@SuppressLint("NewApi")
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ruler_mian);
-		ly_ruler = (LinearLayout) findViewById(R.id.ly_ruler);
-		ly_ruler.setBackgroundResource(Config.getBgDrawableResId());
+		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
+				.getBgDrawable());
 		btn_close = (Button) findViewById(R.id.btn_close);
 		btn_close.setOnClickListener(new OnClickListener() {
 			
