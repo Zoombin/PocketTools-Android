@@ -68,15 +68,14 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:theme="@android:style/Theme.Light.NoTitleBar" >
-
-        <!-- JH41a366915882gsb57a3145f5a821d9cd JH3d10c81c2da5d095c11b5537360a47ac -->
         <meta-data
             android:name="com.thinkland.juheapi.openid"
-            android:value="JH41a366915882gsb57a3145f5a821d9cd" />
+            android:value="JH3d10c81c2da5d095c11b5537360a47ac" />
 
         <!-- grKLLR2VwrHgkd7y5BHzHaGt -->
-        
-        <!-- com.baidu.android.lbs.API_KEY com.baidu.lbsapi.API_KEY-->
+
+
+        <!-- com.baidu.android.lbs.API_KEY com.baidu.lbsapi.API_KEY -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="8BOqtMUsGoN53K9O8KGcg0io" />

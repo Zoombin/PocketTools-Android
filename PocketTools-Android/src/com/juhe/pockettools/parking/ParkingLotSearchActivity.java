@@ -2,9 +2,11 @@ package com.juhe.pockettools.parking;
 
 import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -27,8 +29,9 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
+import android.widget.Toast;
+
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
@@ -66,7 +69,6 @@ public class ParkingLotSearchActivity extends FullscreenActivity implements
 	private ArrayList<String> cities;// = new ArrayList<String>();
 
 	private String city;
-	private String qycs;
 
 	private final int CALLBACK_OK = 0x01;
 	private final int CALLBACK_ERROR = 0x02;

@@ -14,32 +14,40 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.juhe.pockettools.HelprApplication;
+import com.juhe.pockettools.R;
 import com.juhe.pockettools.utils.HelprCommUtil;
+
 //import com.helpr.application.HelprApplication;
 
 /**
  * 全屏activity
+ * 
  * @author daiye
  *
  */
 public class FullscreenActivity extends FragmentActivity {
 	private static final String TAG = "FullscreenActivity";
+	protected Tracker mTracker;
 
 	public boolean isAppRunning() {
 		ActivityManager activitymanager = (ActivityManager) getApplicationContext()
 				.getSystemService(Context.ACTIVITY_SERVICE);
 		String packagename = getApplicationContext().getPackageName();
-		List<RunningAppProcessInfo> appList  = activitymanager.getRunningAppProcesses();
-		if (appList  == null) {
+		List<RunningAppProcessInfo> appList = activitymanager
+				.getRunningAppProcesses();
+		if (appList == null) {
 			return false;
 		}
-		Iterator<RunningAppProcessInfo> iterator = appList .iterator();
+		Iterator<RunningAppProcessInfo> iterator = appList.iterator();
 		ActivityManager.RunningAppProcessInfo runningappprocessinfo;
 		while (iterator.hasNext()) {
-			runningappprocessinfo = (ActivityManager.RunningAppProcessInfo) iterator.next();
+			runningappprocessinfo = (ActivityManager.RunningAppProcessInfo) iterator
+					.next();
 			if ((runningappprocessinfo.processName.equals(packagename))
-				&& (runningappprocessinfo.importance != RunningAppProcessInfo.IMPORTANCE_FOREGROUND)) { 
+					&& (runningappprocessinfo.importance != RunningAppProcessInfo.IMPORTANCE_FOREGROUND)) {
 				return true;
 			}
 		}
@@ -51,8 +59,18 @@ public class FullscreenActivity extends FragmentActivity {
 		super.onCreate(bundle);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		if (HelprCommUtil.hasNavigationBar(this)) {
-			getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+			getWindow().getDecorView().setSystemUiVisibility(
+					View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 		}
+
+		String contextString = toString();
+		mTracker = ((HelprApplication) getApplication()).getTracker();
+		// Set screen name.
+		// Where path is a String representing the screen name.
+		mTracker.setScreenName(contextString.substring(
+				contextString.lastIndexOf(".") + 1, contextString.indexOf("@")));
+		// Send a screen view.
+		mTracker.send(new HitBuilders.AppViewBuilder().build());
 	}
 
 	protected void onDestroy() {
