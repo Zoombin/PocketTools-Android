@@ -19,6 +19,7 @@ import android.view.Window;
 import com.juhe.pockettools.HelprApplication;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.utils.HelprCommUtil;
+import com.umeng.analytics.MobclickAgent;
 
 //import com.helpr.application.HelprApplication;
 
@@ -84,6 +85,12 @@ public class FullscreenActivity extends FragmentActivity {
 			Log.v("FullscreenActivity", "FullscreenActivity Helpr App 进入前台");
 			sendBroadcast(new Intent("ApplicationWillEnterForegroundNoti"));
 		}
+		MobclickAgent.onResume(this);
+	}
+	
+	protected void onPause() {
+		super.onPause();
+		MobclickAgent.onPause(this);
 	}
 
 	protected void onStart() {
