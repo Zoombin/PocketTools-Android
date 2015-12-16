@@ -75,21 +75,9 @@ public class Config {
 		case 0:
 			return R.color.bg_color_1;
 		case 1:
-			return R.color.bg_color_2;
-		case 2:
-			return R.color.bg_color_3;
-		case 3:
 			return R.color.bg_color_4;
-		case 4:
-			return R.color.bg_color_5;
-		case 5:
+		case 2:
 			return R.color.bg_color_6;
-		case 6:
-			return R.color.bg_color_7;
-		case 7:
-			return R.color.bg_color_8;
-		case 8:
-			return R.color.bg_color_9;
 		default:
 			return R.color.bg_color_1;
 		}

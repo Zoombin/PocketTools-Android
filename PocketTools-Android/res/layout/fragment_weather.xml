@@ -24,7 +24,7 @@
         android:id="@+id/ly_weather_hour_listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/ly_pm"
         android:background="@color/transparent"
         android:orientation="vertical" >
 
@@ -54,7 +54,7 @@
         android:id="@+id/ly_weather_centigrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/ly_weather_hour_listview"
+        android:layout_below="@+id/ly_weather_icon"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="15dip" >
 
@@ -133,9 +133,10 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/ly_weather_centigrade"
+        android:layout_below="@id/tv_updatetime"
         android:layout_marginLeft="15dip"
         android:gravity="center_vertical"
+        android:id="@+id/ly_weather_icon"
         android:orientation="horizontal" >
 
         <ImageView
@@ -156,7 +157,7 @@
         android:id="@+id/ly_pm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/ly_weather_hour_listview"
+        android:layout_below="@+id/ly_weather_icon"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dip"
         android:orientation="vertical" >
