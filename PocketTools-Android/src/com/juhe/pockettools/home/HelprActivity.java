@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,6 +21,7 @@ import com.juhe.pockettools.R;
 import com.juhe.pockettools.setting.SettingActivity;
 import com.juhe.pockettools.utils.Config;
 import com.juhe.pockettools.utils.HelprCommUtil;
+import com.qq.e.ads.splash.SplashAD;
 import com.viewpagerindicator.CirclePageIndicator;
 
 @SuppressLint("NewApi")
@@ -38,7 +40,7 @@ public class HelprActivity extends FullscreenActivity {
 	List<ModuleInfo> serviceinfos;
 	List<ModuleInfo> storeinfos;
 	List<ModuleInfo> aboutinfos;
-	
+
 	private LinearLayout tool_container;
 	private ViewPager tool_page;
 	private CirclePageIndicator infoview_indicator_tool;
@@ -54,10 +56,13 @@ public class HelprActivity extends FullscreenActivity {
 	private LinearLayout about_container;
 	private ViewPager about_page;
 	private CirclePageIndicator infoview_indicator_about;
-	
+
 	private int index;
 	private int currentTabIndex;
 	private Button[] mTabs;
+
+	private SplashAD splashAD;
+	private ViewGroup container;
 
 	public class MyViewPagerAdapter extends FragmentPagerAdapter {
 
@@ -139,7 +144,7 @@ public class HelprActivity extends FullscreenActivity {
 				getSupportFragmentManager(), storeinfos));
 		infoview_indicator_store = (CirclePageIndicator) findViewById(R.id.infoview_indicator_store);
 		infoview_indicator_store.setViewPager(store_page);
-		
+
 		about_container = (LinearLayout) findViewById(R.id.about_container);
 		about_page = (ViewPager) findViewById(R.id.about_page);
 		about_page.setAdapter(new ItemPagerAdapter(this,
@@ -428,25 +433,25 @@ public class HelprActivity extends FullscreenActivity {
 		info30.setId(30);
 		info30.setIcon(R.drawable.gr_flashlight);
 		storeinfos.add(info30);
-		
+
 		ModuleInfo info31 = new ModuleInfo();
 		info30.setName("携程门票");
 		info30.setId(31);
 		info30.setIcon(R.drawable.gr_ctrip_ticket);
 		storeinfos.add(info31);
-		
+
 		// 关于我们
 		aboutinfos = new ArrayList<ModuleInfo>();
-		
+
 		ModuleInfo info32 = new ModuleInfo();
 		info32.setName("关于我们");
 		info32.setId(32);
 		info32.setIcon(R.drawable.gr_aboutus);
 		aboutinfos.add(info32);
-		
+
 		ModuleInfo info33 = new ModuleInfo();
 		info33.setName("应用推荐");
-		info33.setId(32);
+		info33.setId(33);
 		info33.setIcon(R.drawable.gr_apprecommend);
 		aboutinfos.add(info33);
 	}

@@ -2,6 +2,7 @@ package com.juhe.pockettools.home;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,9 +36,11 @@ import com.juhe.pockettools.sizetable.SizeTableActivity;
 import com.juhe.pockettools.train.TrainMainActivity;
 import com.juhe.pockettools.tuling.ChatActivity;
 import com.juhe.pockettools.unit.UnitExchangeMainActivity;
+import com.juhe.pockettools.utils.Constants;
 import com.juhe.pockettools.violation.ViolationMainActivity;
 import com.juhe.pockettools.weather.WeatherMainActivity;
 import com.juhe.pockettools.web.WebActivity;
+import com.qq.e.ads.appwall.APPWall;
 import com.zbar.lib.CaptureActivity;
 
 public class itemButton extends FrameLayout {
@@ -220,7 +223,9 @@ public class itemButton extends FrameLayout {
 					context.startActivity(intent);
 					break;
 				case 33:
-					
+					APPWall wall = new APPWall(context, Constants.APPID, Constants.APPWallPosID);
+			        wall.setScreenOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+			        wall.doShowAppWall();
 					break;
 				default:
 					break;

@@ -119,8 +119,8 @@ public class SettingActivity extends FullscreenActivity implements
 		wapper_bg_listview = ((HorizontalListView) findViewById(R.id.wapper_bg_listview));
 		list = new ArrayList<WapperBgEntity>();
 		
-		Integer[] colors = {R.color.bg_color_1, R.color.bg_color_2, R.color.bg_color_3, R.color.bg_color_4, R.color.bg_color_5, R.color.bg_color_6, R.color.bg_color_7, R.color.bg_color_8, R.color.bg_color_9};
-		for (int i = 0; i < 9; i++) {
+		Integer[] colors = {R.color.bg_color_1, R.color.bg_color_4, R.color.bg_color_6};
+		for (int i = 0; i < colors.length; i++) {
 			WapperBgEntity entity = new WapperBgEntity();
 			entity.setId(0);
 			entity.setBg(colors[i]);
