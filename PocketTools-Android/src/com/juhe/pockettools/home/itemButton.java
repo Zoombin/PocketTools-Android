@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.juhe.pockettools.R;
+import com.juhe.pockettools.aboutus.AboutUsActivity;
 import com.juhe.pockettools.air.AirMainActivity;
 import com.juhe.pockettools.applesn.AppleSnActivity;
 import com.juhe.pockettools.calculator.CalculatorMainActivity;
@@ -213,6 +214,13 @@ public class itemButton extends FrameLayout {
 				case 31:
 					intent = new Intent(context, XiechengMainActivity.class);
 					context.startActivity(intent);
+					break;
+				case 32:
+					intent = new Intent(context, AboutUsActivity.class);
+					context.startActivity(intent);
+					break;
+				case 33:
+					
 					break;
 				default:
 					break;

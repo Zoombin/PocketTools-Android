@@ -125,6 +125,11 @@
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
+            android:name=".aboutus.AboutUsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HelprMainStyle" >
+        </activity>
+        <activity
             android:name=".ruler.RulerMainActivity"
             android:configChanges="keyboard|keyboardHidden"
             android:screenOrientation="portrait"

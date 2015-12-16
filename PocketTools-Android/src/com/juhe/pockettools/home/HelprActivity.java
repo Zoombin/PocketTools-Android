@@ -37,6 +37,8 @@ public class HelprActivity extends FullscreenActivity {
 	List<ModuleInfo> lifeinfos;
 	List<ModuleInfo> serviceinfos;
 	List<ModuleInfo> storeinfos;
+	List<ModuleInfo> aboutinfos;
+	
 	private LinearLayout tool_container;
 	private ViewPager tool_page;
 	private CirclePageIndicator infoview_indicator_tool;
@@ -49,6 +51,10 @@ public class HelprActivity extends FullscreenActivity {
 	private LinearLayout store_container;
 	private ViewPager store_page;
 	private CirclePageIndicator infoview_indicator_store;
+	private LinearLayout about_container;
+	private ViewPager about_page;
+	private CirclePageIndicator infoview_indicator_about;
+	
 	private int index;
 	private int currentTabIndex;
 	private Button[] mTabs;
@@ -133,12 +139,20 @@ public class HelprActivity extends FullscreenActivity {
 				getSupportFragmentManager(), storeinfos));
 		infoview_indicator_store = (CirclePageIndicator) findViewById(R.id.infoview_indicator_store);
 		infoview_indicator_store.setViewPager(store_page);
+		
+		about_container = (LinearLayout) findViewById(R.id.about_container);
+		about_page = (ViewPager) findViewById(R.id.about_page);
+		about_page.setAdapter(new ItemPagerAdapter(this,
+				getSupportFragmentManager(), aboutinfos));
+		infoview_indicator_about = (CirclePageIndicator) findViewById(R.id.infoview_indicator_about);
+		infoview_indicator_about.setViewPager(about_page);
 
-		this.mTabs = new Button[4];
+		this.mTabs = new Button[5];
 		this.mTabs[0] = ((Button) findViewById(R.id.btn_tool));
 		this.mTabs[1] = ((Button) findViewById(R.id.btn_life));
 		this.mTabs[2] = ((Button) findViewById(R.id.btn_service));
 		this.mTabs[3] = ((Button) findViewById(R.id.btn_store));
+		this.mTabs[4] = ((Button) findViewById(R.id.btn_aboutus));
 		this.mTabs[0].setSelected(true);
 	}
 
@@ -171,6 +185,10 @@ public class HelprActivity extends FullscreenActivity {
 			index = 3;
 			selectTab();
 			break;
+		case R.id.btn_aboutus:
+			index = 4;
+			selectTab();
+			break;
 		default:
 			break;
 		}
@@ -184,24 +202,35 @@ public class HelprActivity extends FullscreenActivity {
 				life_container.setVisibility(View.INVISIBLE);
 				service_container.setVisibility(View.INVISIBLE);
 				store_container.setVisibility(View.INVISIBLE);
+				about_container.setVisibility(View.INVISIBLE);
 				break;
 			case 1:
 				tool_container.setVisibility(View.INVISIBLE);
 				life_container.setVisibility(View.VISIBLE);
 				service_container.setVisibility(View.INVISIBLE);
 				store_container.setVisibility(View.INVISIBLE);
+				about_container.setVisibility(View.INVISIBLE);
 				break;
 			case 2:
 				tool_container.setVisibility(View.INVISIBLE);
 				life_container.setVisibility(View.INVISIBLE);
 				service_container.setVisibility(View.VISIBLE);
 				store_container.setVisibility(View.INVISIBLE);
+				about_container.setVisibility(View.INVISIBLE);
 				break;
 			case 3:
 				tool_container.setVisibility(View.INVISIBLE);
 				life_container.setVisibility(View.INVISIBLE);
 				service_container.setVisibility(View.INVISIBLE);
 				store_container.setVisibility(View.VISIBLE);
+				about_container.setVisibility(View.INVISIBLE);
+				break;
+			case 4:
+				tool_container.setVisibility(View.INVISIBLE);
+				life_container.setVisibility(View.INVISIBLE);
+				service_container.setVisibility(View.INVISIBLE);
+				store_container.setVisibility(View.INVISIBLE);
+				about_container.setVisibility(View.VISIBLE);
 				break;
 			default:
 				break;
@@ -405,5 +434,20 @@ public class HelprActivity extends FullscreenActivity {
 		info30.setId(31);
 		info30.setIcon(R.drawable.gr_ctrip_ticket);
 		storeinfos.add(info31);
+		
+		// 关于我们
+		aboutinfos = new ArrayList<ModuleInfo>();
+		
+		ModuleInfo info32 = new ModuleInfo();
+		info32.setName("关于我们");
+		info32.setId(32);
+		info32.setIcon(R.drawable.gr_aboutus);
+		aboutinfos.add(info32);
+		
+		ModuleInfo info33 = new ModuleInfo();
+		info33.setName("应用推荐");
+		info33.setId(32);
+		info33.setIcon(R.drawable.gr_apprecommend);
+		aboutinfos.add(info33);
 	}
 }

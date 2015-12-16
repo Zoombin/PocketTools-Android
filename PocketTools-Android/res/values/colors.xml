@@ -19,7 +19,7 @@
     <color name="default_title_indicator_footer_color">#ff33b5e5</color>
     <color name="default_title_indicator_selected_color">#ffffffff</color>
     <color name="default_title_indicator_text_color">#bbffffff</color>
-    <color name="tab_bg_normal">#33000000</color>
+    <color name="tab_bg_normal">#00000000</color>
     <color name="default_underline_indicator_selected_color">#ff33b5e5</color>
     <color name="black">#ff000000</color>
     <color name="white">#ffffffff</color>
@@ -87,7 +87,7 @@
     <color name="light_grey">#fff0f0f0</color>
     <color name="super_light_grey">#fff6f6f6</color>
     <color name="switchtextcolor">#ffffffff</color>
-    <color name="tab_text_normal">#ff848484</color>
+    <color name="tab_text_normal">#ff000000</color>
     
         <!--  -->
     <color name="title_background">#3000</color>

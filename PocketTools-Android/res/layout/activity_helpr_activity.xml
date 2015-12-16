@@ -169,6 +169,32 @@
                             android:layout_gravity="center" />
                     </FrameLayout>
                 </LinearLayout>
+                
+                 <LinearLayout
+                    android:id="@+id/about_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#44252626"
+                    android:orientation="vertical"
+                    android:visibility="invisible" >
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/about_page"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0" />
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="15.0dip" >
+
+                        <com.viewpagerindicator.CirclePageIndicator
+                            android:id="@+id/infoview_indicator_about"
+                            android:layout_width="fill_parent"
+                            android:layout_height="10.0dip"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
             </FrameLayout>
 
             <LinearLayout
@@ -242,7 +268,24 @@
                     android:paddingTop="8dip"
                     android:singleLine="true"
                     android:tag="shopcart"
-                    android:text="99商城"
+                    android:text="微商城"
+                    android:textColor="@color/color_tab"
+                    android:textSize="14sp" />
+                
+                <Button
+                    android:id="@+id/btn_aboutus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/tab_bg_selector"
+                    android:button="@null"
+                    android:drawableTop="@drawable/ic_about_selector"
+                    android:onClick="onTabClicked"
+                    android:paddingBottom="3dip"
+                    android:paddingTop="8dip"
+                    android:singleLine="true"
+                    android:tag="shopcart"
+                    android:text="关于我们"
                     android:textColor="@color/color_tab"
                     android:textSize="14sp" />
             </LinearLayout>
