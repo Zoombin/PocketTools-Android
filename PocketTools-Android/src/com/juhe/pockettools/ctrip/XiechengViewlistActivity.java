@@ -20,15 +20,16 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.utils.Config;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;
-import com.thinkland.swiperefresh.PullToRefreshBase;
-import com.thinkland.swiperefresh.PullToRefreshListView;
-import com.thinkland.swiperefresh.PullToRefreshBase.Mode;
-import com.thinkland.swiperefresh.PullToRefreshBase.OnRefreshListener;
+
 
 public class XiechengViewlistActivity extends Activity implements
 		OnClickListener {

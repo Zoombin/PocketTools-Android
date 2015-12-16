@@ -10,8 +10,8 @@ import com.baidu.location.GeofenceClient;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.SDKInitializer;
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.Tracker;
+//import com.google.android.gms.analytics.GoogleAnalytics;
+//import com.google.android.gms.analytics.Tracker;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -81,16 +81,16 @@ public class HelprApplication extends Application {
 	// }
 	// return mTrackers.get(trackerId);
 	// }
-	private static final String PROPERTY_ID = "UA-61207131-1";
-	private Tracker mTracker;
-
-	public synchronized Tracker getTracker() {
-		if (mTracker == null) {
-			GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
-			mTracker = analytics.newTracker(PROPERTY_ID);
-		}
-		return mTracker;
-	}
+//	private static final String PROPERTY_ID = "UA-61207131-1";
+//	private Tracker mTracker;
+//
+//	public synchronized Tracker getTracker() {
+//		if (mTracker == null) {
+//			GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+//			mTracker = analytics.newTracker(PROPERTY_ID);
+//		}
+//		return mTracker;
+//	}
 
 	private void initImageLoader() {
 		DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()

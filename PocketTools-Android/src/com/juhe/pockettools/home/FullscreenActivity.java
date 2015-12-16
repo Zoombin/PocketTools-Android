@@ -14,8 +14,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
+//import com.google.android.gms.analytics.HitBuilders;
+//import com.google.android.gms.analytics.Tracker;
 import com.juhe.pockettools.HelprApplication;
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.utils.HelprCommUtil;
@@ -30,7 +30,7 @@ import com.juhe.pockettools.utils.HelprCommUtil;
  */
 public class FullscreenActivity extends FragmentActivity {
 	private static final String TAG = "FullscreenActivity";
-	protected Tracker mTracker;
+//	protected Tracker mTracker;
 
 	public boolean isAppRunning() {
 		ActivityManager activitymanager = (ActivityManager) getApplicationContext()
@@ -64,13 +64,13 @@ public class FullscreenActivity extends FragmentActivity {
 		}
 
 		String contextString = toString();
-		mTracker = ((HelprApplication) getApplication()).getTracker();
-		// Set screen name.
-		// Where path is a String representing the screen name.
-		mTracker.setScreenName(contextString.substring(
-				contextString.lastIndexOf(".") + 1, contextString.indexOf("@")));
-		// Send a screen view.
-		mTracker.send(new HitBuilders.AppViewBuilder().build());
+//		mTracker = ((HelprApplication) getApplication()).getTracker();
+//		// Set screen name.
+//		// Where path is a String representing the screen name.
+//		mTracker.setScreenName(contextString.substring(
+//				contextString.lastIndexOf(".") + 1, contextString.indexOf("@")));
+//		// Send a screen view.
+//		mTracker.send(new HitBuilders.AppViewBuilder().build());
 	}
 
 	protected void onDestroy() {
