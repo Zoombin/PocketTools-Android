@@ -377,8 +377,7 @@ public class CalculatorMainActivity extends FullscreenActivity {
 	public void onCreate(Bundle paramBundle) {
 		super.onCreate(paramBundle);
 		setContentView(R.layout.activity_calcautor_mian);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		input = ((AutoResizeTextView) findViewById(R.id.input));
 		mem = ((TextView) findViewById(R.id.mem));
 		btn_num[0] = ((Button) findViewById(R.id.zero));

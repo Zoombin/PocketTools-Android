@@ -54,7 +54,7 @@ public class AirMainActivity extends FullscreenActivity {
 		});
 		
 		img_bg = (ImageView) findViewById(R.id.img_bg);
-		img_bg.setBackground(Config.getBgDrawable());
+		img_bg.setBackgroundColor(getResources().getColor(Config.getColor()));
 		air_edit_start = (EditText) findViewById(R.id.air_edit_start);
 		air_edit_end = (EditText) findViewById(R.id.air_edit_end);
 		air_list = (ListView) findViewById(R.id.air_list); 

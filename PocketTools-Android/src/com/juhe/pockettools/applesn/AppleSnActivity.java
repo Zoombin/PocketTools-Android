@@ -50,7 +50,7 @@ public class AppleSnActivity extends FullscreenActivity {
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_applesn_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		
 		btn_sn_search = ((Button) findViewById(R.id.btn_sn_search));
 		btn_sn_search.setOnClickListener(new OnClickListener() {

@@ -62,8 +62,7 @@ public class ParkingLotListActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_parkinglot_list);
 		mContext = this;
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		tvTitle = (TextView) findViewById(R.id.tv_title);
 		tvTitle.setText(R.string.real_time_parking_lot);
 		loadProgressBar = (ProgressBar) findViewById(R.id.loading_progressBar);

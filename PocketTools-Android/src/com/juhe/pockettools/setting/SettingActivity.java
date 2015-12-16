@@ -10,8 +10,9 @@ import java.util.List;
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -25,6 +26,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.juhe.pockettools.R;
 import com.juhe.pockettools.commonview.HorizontalListView;
@@ -54,8 +56,11 @@ public class SettingActivity extends FullscreenActivity implements
 		super.onCreate(paramBundle);
 		setContentView(R.layout.activity_setting);
 		img_bg = ((ImageView) findViewById(R.id.img_bg));
-		img_bg.setBackground(Config.getBgDrawable());
+		img_bg.setBackgroundColor(getResources().getColor(Config.getColor()));
 
+		TextView tv_version = (TextView) findViewById(R.id.tv_version);
+		tv_version.setText(getVersion());
+		
 		button_select_bg = (Button) findViewById(R.id.select_bg);
 		button_select_bg.setOnClickListener(new OnClickListener() {
 
@@ -113,27 +118,22 @@ public class SettingActivity extends FullscreenActivity implements
 		});
 		wapper_bg_listview = ((HorizontalListView) findViewById(R.id.wapper_bg_listview));
 		list = new ArrayList<WapperBgEntity>();
-		WapperBgEntity entity1 = new WapperBgEntity();
-		entity1.setId(0);
-		entity1.setBg(R.drawable.bg1);
-		list.add(entity1);
-
-		WapperBgEntity entity2 = new WapperBgEntity();
-		entity2.setId(0);
-		entity2.setBg(R.drawable.bg2);
-		list.add(entity2);
-
-		WapperBgEntity entity3 = new WapperBgEntity();
-		entity3.setId(0);
-		entity3.setBg(R.drawable.bg3);
-		list.add(entity3);
-		File f = new File("/sdcard/myFolder/temp_cropped.jpg");
-		if (f.exists()) {
-			entity4.setId(0);
-			entity4.setBgDrawable(new BitmapDrawable(BitmapFactory
-					.decodeFile("/sdcard/myFolder/temp_cropped.jpg")));
-			list.add(entity4);
+		
+		Integer[] colors = {R.color.bg_color_1, R.color.bg_color_2, R.color.bg_color_3, R.color.bg_color_4, R.color.bg_color_5, R.color.bg_color_6, R.color.bg_color_7, R.color.bg_color_8, R.color.bg_color_9};
+		for (int i = 0; i < 9; i++) {
+			WapperBgEntity entity = new WapperBgEntity();
+			entity.setId(0);
+			entity.setBg(colors[i]);
+			list.add(entity);
 		}
+		
+//		File f = new File("/sdcard/myFolder/temp_cropped.jpg");
+//		if (f.exists()) {
+//			entity4.setId(0);
+//			entity4.setBgDrawable(new BitmapDrawable(BitmapFactory
+//					.decodeFile("/sdcard/myFolder/temp_cropped.jpg")));
+//			list.add(entity4);
+//		}
 
 		adapter = new WapperBgAdapter(this, list);
 
@@ -148,7 +148,8 @@ public class SettingActivity extends FullscreenActivity implements
 			long id) {
 		Config.setBgIndex(position);
 		adapter.setSelected(position);
-		img_bg.setBackground(Config.getBgDrawable());
+//		img_bg.setBackground(Config.getBgDrawable());
+		img_bg.setBackgroundColor(getResources().getColor(Config.getColor()));
 	}
 
 	@Override
@@ -259,5 +260,21 @@ public class SettingActivity extends FullscreenActivity implements
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.ex_change_main, menu);
 		return true;
+	}
+	
+	/**
+	 * 获取版本号
+	 * @return 当前应用的版本号
+	 */
+	public String getVersion() {
+	    try {
+	        PackageManager manager = this.getPackageManager();
+	        PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
+	        String version = info.versionName;
+	        return "版本号:V" + version;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return "版本号:V1.0.0";
+	    }
 	}
 }

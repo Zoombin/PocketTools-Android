@@ -185,8 +185,7 @@ public class SizeTableActivity extends FullscreenActivity {
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_sizetable);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		btn_womensize = ((Button) findViewById(R.id.btn_womensize));
 		btn_mensize = ((Button) findViewById(R.id.btn_mensize));
 		btn_childrensize = ((Button) findViewById(R.id.btn_childrensize));

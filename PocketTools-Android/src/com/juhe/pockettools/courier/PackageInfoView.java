@@ -41,7 +41,7 @@ public class PackageInfoView extends LinearLayout {
 	private void initView() {
 		((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE))
 				.inflate(R.layout.view_package_show_info, this, true);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		package_info_list = ((ListView) findViewById(R.id.package_info_list));
 		adapter = new PackageInfoAdapter(getContext());

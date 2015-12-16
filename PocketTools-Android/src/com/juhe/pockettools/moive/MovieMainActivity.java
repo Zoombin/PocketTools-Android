@@ -44,7 +44,7 @@ public class MovieMainActivity extends FullscreenActivity {
 		super.onCreate(bundle);
 		getWindow().setSoftInputMode(2);
 		setContentView(R.layout.activity_movie_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		bar_cancel = ((Button) findViewById(R.id.bar_cancel));
 		progress_contaienr = ((FrameLayout) findViewById(R.id.progress_contaienr));
 		bar_cancel.setOnClickListener(new OnClickListener() {

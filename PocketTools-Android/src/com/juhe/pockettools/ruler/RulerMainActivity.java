@@ -27,8 +27,7 @@ public class RulerMainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ruler_mian);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		btn_close = (Button) findViewById(R.id.btn_close);
 		btn_close.setOnClickListener(new OnClickListener() {
 			

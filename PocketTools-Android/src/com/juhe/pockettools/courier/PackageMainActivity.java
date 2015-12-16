@@ -184,7 +184,7 @@ public class PackageMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_package_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		package_company_select = ((PackageSelectView) findViewById(R.id.package_company_select));
 		edit_package_number = ((EditText) findViewById(R.id.edit_package_number));

@@ -23,7 +23,7 @@ public class MovieDetailActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_calendar_detail);
 		
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		action_bar.setListener(new InterfaceTopActiveBar() {
 

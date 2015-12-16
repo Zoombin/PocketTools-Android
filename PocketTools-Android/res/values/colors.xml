@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources> 
+    <color name="bg_color_1">#ff34b46a</color>
+    <color name="bg_color_2">#fffe7e9f</color>
+    <color name="bg_color_3">#fffd78c7</color>
+    <color name="bg_color_4">#ff9275e9</color>
+    <color name="bg_color_5">#ff7483f6</color>
+    <color name="bg_color_6">#ff41b0e8</color>
+    <color name="bg_color_7">#ff2cc294</color>
+    <color name="bg_color_8">#fffd608d</color>
+    <color name="bg_color_9">#ff49bb3f</color>
+    
     <color name="drop_down_list_header_font_color">#ff000000</color>
     <color name="drop_down_list_header_second_font_color">#ff000000</color>
     <color name="drop_down_list_footer_font_color">#ff000000</color>

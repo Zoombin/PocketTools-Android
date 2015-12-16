@@ -111,8 +111,7 @@ public class DreamMainFragment extends Fragment {
 		View view = inflater.inflate(R.layout.fragment_dream_main, container,
 				false);
 
-		((ImageView) view.findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) view.findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		
 		action_bar = ((TopActiveBarView) view.findViewById(R.id.action_bar));
 		action_bar.setTiltleText("周公解梦");

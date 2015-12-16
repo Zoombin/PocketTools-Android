@@ -126,11 +126,12 @@ public class WapperBgAdapter extends BaseAdapter {
 		} else {
 			holder.item_icon.setIsSelected(false);
 		}
-		if (entity.getBg() != 0) {
+//		if (entity.getBg() != 0) {
+//			holder.item_icon.setBackgroundColor(entity.getBg());
 			holder.item_icon.setBackgroundResource(entity.getBg());
-		} else if (entity.getBg() == 0 && entity.getBgDrawable() != null) {
-			holder.item_icon.setBackgroundDrawable(entity.getBgDrawable());
-		}
+//		} else if (entity.getBg() == 0 && entity.getBgDrawable() != null) {
+//			holder.item_icon.setBackgroundDrawable(entity.getBgDrawable());
+//		}
 
 		// try {
 		// m localm = (m) getItem(paramInt);

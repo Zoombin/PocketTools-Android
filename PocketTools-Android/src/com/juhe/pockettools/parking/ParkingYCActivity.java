@@ -27,8 +27,7 @@ public class ParkingYCActivity extends FullscreenActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_parkingyc_list);
 		context = this;
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		tvTitle = (TextView) findViewById(R.id.tv_title);
 		tvTitle.setText(R.string.parking_lot_yc);
 

@@ -36,8 +36,7 @@ public class SetPasswordActivity extends Activity {
 
 	@SuppressLint("NewApi")
 	private void findViews() {
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		btnRight = (Button) findViewById(R.id.btnright);
 		btnLeft = (Button) findViewById(R.id.btnleft);
 		lpwv = (LocusPassWordView) findViewById(R.id.mLocusPassWordView);

@@ -33,7 +33,7 @@ public class OilMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_oil_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		oil_listveiw = ((ListView) findViewById(R.id.oil_listveiw));
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		adapter = new OilListViewAdapter(this);

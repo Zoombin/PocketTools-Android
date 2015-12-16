@@ -39,7 +39,7 @@ public class ConstelltionSelectView extends FrameLayout {
 				Context.LAYOUT_INFLATER_SERVICE)).inflate(
 				R.layout.view_constelltion_select_list, this, true);
 		ImageView img_bg = (ImageView) findViewById(R.id.img_bg);
-		img_bg.setBackground(Config.getBgDrawable());
+		img_bg.setBackgroundColor(getResources().getColor(Config.getColor()));
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		constelltion_list = ((ListView) findViewById(R.id.constelltion_list));
 		action_bar.setTiltleText("选择星座");

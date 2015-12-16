@@ -253,8 +253,7 @@ public class UnitExchangeMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_unit_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		layout_unit = (FrameLayout) findViewById(R.id.layout_unit);
 		layout_unit.getViewTreeObserver().addOnGlobalLayoutListener(
 				new OnGlobalLayoutListener() {

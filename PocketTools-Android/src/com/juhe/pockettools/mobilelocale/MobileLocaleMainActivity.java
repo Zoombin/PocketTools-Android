@@ -69,7 +69,7 @@ public class MobileLocaleMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_mobile_locale_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		locale_content = ((MobileLocaleContentView) findViewById(R.id.locale_content));
 		edit_locale_number = ((EditText) findViewById(R.id.edit_locale_number));

@@ -113,8 +113,7 @@ public class ViolationMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle paramBundle) {
 		super.onCreate(paramBundle);
 		setContentView(R.layout.activity_violation_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		violation_condition = ((ViolationConditionView) findViewById(R.id.violation_condition));
 		list_recently_search = ((ListView) findViewById(R.id.list_recently_search));

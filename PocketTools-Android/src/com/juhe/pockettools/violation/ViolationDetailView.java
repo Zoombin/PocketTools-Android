@@ -41,8 +41,7 @@ public class ViolationDetailView extends FrameLayout {
 		((LayoutInflater) getContext().getSystemService(
 				Context.LAYOUT_INFLATER_SERVICE)).inflate(
 				R.layout.view_violation_detail, this, true);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		list_violation_detail = ((ListView) findViewById(R.id.list_violation_detail));
 		detail_no_data = ((TextView) findViewById(R.id.detail_no_data));

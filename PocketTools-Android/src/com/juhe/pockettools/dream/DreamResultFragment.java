@@ -110,8 +110,7 @@ public class DreamResultFragment extends Fragment {
 		Log.v("DreamResultFragment", "DreamResultFragment onCreateView");
 		View view = inflater.inflate(R.layout.fragment_dream_result, container,
 				false);
-		((ImageView) view.findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) view.findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		dream_main_listveiw = ((ListView) view
 				.findViewById(R.id.dream_main_listveiw));
 		// dream_main_listveiw.setOnItemClickListener(new l(this));

@@ -68,8 +68,7 @@ public class TrainMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_train_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		bar_cancel = ((Button) findViewById(R.id.bar_cancel));
 		btn_search_city = ((Button) findViewById(R.id.btn_search_city));
 		btn_search_times = ((Button) findViewById(R.id.btn_search_times));

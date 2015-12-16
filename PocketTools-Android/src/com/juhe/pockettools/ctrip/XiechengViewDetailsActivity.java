@@ -146,8 +146,7 @@ public class XiechengViewDetailsActivity extends Activity implements
 	@SuppressLint("NewApi")
 	private void initView() {
 
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		// 返回按钮
 		iv_back = (ImageView) findViewById(R.id.iv_title_back);
 		iv_back.setVisibility(View.VISIBLE);

@@ -29,8 +29,7 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		title = (TextView) findViewById(R.id.login_toast);
 		lpwv = (LocusPassWordView) this.findViewById(R.id.mLocusPassWordView);
 

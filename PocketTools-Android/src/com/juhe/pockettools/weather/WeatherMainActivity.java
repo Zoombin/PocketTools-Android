@@ -96,8 +96,7 @@ public class WeatherMainActivity extends FullscreenActivity {
 		setContentView(R.layout.activity_weather_main);
 		txtTitle = ((TextView) findViewById(R.id.txtTitle));
 		view_bg = findViewById(R.id.view_bg);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		view_bg.setAlpha(0.15F);
 		weatherheaderview = new WeatherHeaderView(this);
 		txt_weather_centigrade = ((TextView) weatherheaderview

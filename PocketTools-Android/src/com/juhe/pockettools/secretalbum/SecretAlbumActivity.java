@@ -210,8 +210,7 @@ public class SecretAlbumActivity extends FullscreenActivity {
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_secretalbum_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 
 		addLayout = ((LinearLayout) findViewById(R.id.addLayout));
 		editLayout = ((LinearLayout) findViewById(R.id.editLayout));

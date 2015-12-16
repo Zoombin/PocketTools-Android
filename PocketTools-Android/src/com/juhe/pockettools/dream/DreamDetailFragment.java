@@ -70,8 +70,7 @@ public class DreamDetailFragment extends Fragment {
 		Log.v("DreamMainFragment", "DreamMainFragment onCreateView");
 		View view = inflater.inflate(R.layout.fragment_dream_detail, container,
 				false);
-		((ImageView) view.findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) view.findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		action_bar = ((TopActiveBarView) view.findViewById(R.id.action_bar));
 		action_bar.setListener(new InterfaceTopActiveBar() {
 

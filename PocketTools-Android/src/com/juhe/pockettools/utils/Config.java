@@ -40,35 +40,59 @@ public class Config {
 	// }
 	// }
 
-	public static Drawable getBgDrawable() {
+//	public static Drawable getBgDrawable() {
+//
+//		switch (getBgIndex()) {
+//		case 0:
+//			return HelprApplication.getContext().getResources()
+//					.getDrawable(R.drawable.bg1);
+//		case 1:
+//			return HelprApplication.getContext().getResources()
+//					.getDrawable(R.drawable.bg2);
+//		case 2:
+//			return HelprApplication.getContext().getResources()
+//					.getDrawable(R.drawable.bg3);
+//		case 3:
+//			File f = new File("/sdcard/myFolder/temp_cropped.jpg");
+//			if (f.exists()) {
+//				Bitmap bit = BitmapFactory
+//						.decodeFile("/sdcard/myFolder/temp_cropped.jpg");
+//				Drawable dw = new BitmapDrawable(bit);
+//				return dw;
+//			} else {
+//				setBgIndex(0);
+//				return getBgDrawable();
+//			}
+//
+//		default:
+//			return HelprApplication.getContext().getResources()
+//					.getDrawable(R.drawable.bg1);
+//		}
+//	}
 
+	public static Integer getColor() {
 		switch (getBgIndex()) {
 		case 0:
-			return HelprApplication.getContext().getResources()
-					.getDrawable(R.drawable.bg1);
+			return R.color.bg_color_1;
 		case 1:
-			return HelprApplication.getContext().getResources()
-					.getDrawable(R.drawable.bg2);
+			return R.color.bg_color_2;
 		case 2:
-			return HelprApplication.getContext().getResources()
-					.getDrawable(R.drawable.bg3);
+			return R.color.bg_color_3;
 		case 3:
-			File f = new File("/sdcard/myFolder/temp_cropped.jpg");
-			if (f.exists()) {
-				Bitmap bit = BitmapFactory
-						.decodeFile("/sdcard/myFolder/temp_cropped.jpg");
-				Drawable dw = new BitmapDrawable(bit);
-				return dw;
-			} else {
-				setBgIndex(0);
-				return getBgDrawable();
-			}
-
+			return R.color.bg_color_4;
+		case 4:
+			return R.color.bg_color_5;
+		case 5:
+			return R.color.bg_color_6;
+		case 6:
+			return R.color.bg_color_7;
+		case 7:
+			return R.color.bg_color_8;
+		case 8:
+			return R.color.bg_color_9;
 		default:
-			return HelprApplication.getContext().getResources()
-					.getDrawable(R.drawable.bg1);
+			return R.color.bg_color_1;
 		}
-
 	}
 
 	// 首页天气数据

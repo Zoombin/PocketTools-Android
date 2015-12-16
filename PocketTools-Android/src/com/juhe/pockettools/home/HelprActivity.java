@@ -86,7 +86,7 @@ public class HelprActivity extends FullscreenActivity {
 		setContentView(view);
 
 		img_bg = (ImageView) findViewById(R.id.img_bg);
-		img_bg.setBackground(Config.getBgDrawable());
+		img_bg.setBackgroundColor(getResources().getColor(Config.getColor()));
 
 		btn_setting = (Button) findViewById(R.id.btn_setting);
 		btn_setting.setOnClickListener(new OnClickListener() {
@@ -160,7 +160,7 @@ public class HelprActivity extends FullscreenActivity {
 	protected void onActivityResult(int arg0, int arg1, Intent arg2) {
 		super.onActivityResult(arg0, arg1, arg2);
 
-		img_bg.setBackground(Config.getBgDrawable());
+		img_bg.setBackgroundColor(getResources().getColor(Config.getColor()));
 	}
 
 	public void onTabClicked(View v) {

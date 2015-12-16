@@ -281,7 +281,7 @@ public class PMMainActivity extends FullscreenActivity {
 		txtTitle = ((TextView) findViewById(R.id.txtTitle));
 		pmheaderview = new PMHeaderView(this);
 		view_bg = findViewById(R.id.view_bg);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		txt_pm_state = ((TextView) pmheaderview.findViewById(R.id.txt_pm_state));
 		txt_pm_value = ((TextView) pmheaderview.findViewById(R.id.txt_pm_value));
 		lbl_pm25 = ((TextView) pmheaderview.findViewById(R.id.lbl_pm25));

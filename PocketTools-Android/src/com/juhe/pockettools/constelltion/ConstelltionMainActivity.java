@@ -165,7 +165,7 @@ public class ConstelltionMainActivity extends FullscreenActivity {
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_constelltion_main);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		action_bar = ((TopActiveBarView) findViewById(R.id.action_bar));
 		constelltion_basicview = ((ConstelltionBasicView) findViewById(R.id.constelltion_basicview));
 		constelltion_content = ((RightPublishTextView) findViewById(R.id.constelltion_content));

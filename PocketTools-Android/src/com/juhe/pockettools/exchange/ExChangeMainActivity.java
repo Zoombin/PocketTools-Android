@@ -137,8 +137,7 @@ public class ExChangeMainActivity extends FullscreenActivity {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_exchange_main);
 		getWindow().setSoftInputMode(3);
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		btn_input_ok = ((Button) findViewById(R.id.btn_input_ok));
 		ly_input = ((RelativeLayout) findViewById(R.id.ly_input));
 		txt_input = ((ClearableEditText) findViewById(R.id.txt_input));

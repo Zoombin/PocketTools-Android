@@ -48,11 +48,10 @@
                     android:layout_width="fill_parent"
                     android:layout_height="175.0dip"
                     android:background="@color/transparent" />
-
             </LinearLayout>
-            
         </ScrollView>
-        <Button 
+
+        <Button
             android:id="@+id/select_bg"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -61,7 +60,15 @@
             android:paddingTop="10dp"
             android:text="从相册选择背景"
             android:textColor="#ffffff"
-            />
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|center"
+            android:textColor="@color/white"
+            android:text="版本号:V1.0.0" />
     </LinearLayout>
 
     <FrameLayout

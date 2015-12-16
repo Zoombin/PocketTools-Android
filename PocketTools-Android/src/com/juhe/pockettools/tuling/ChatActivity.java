@@ -48,8 +48,7 @@ public class ChatActivity extends Activity implements OnClickListener {
 
 	@SuppressLint("NewApi")
 	private void initView() {
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 		action_bar = (TopActiveBarView) findViewById(R.id.action_bar);
 		action_bar.setTiltleText("聊天机器人");
 		action_bar.setSplitLineVisible(true);

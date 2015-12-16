@@ -89,8 +89,7 @@ public class ParkingLotSearchActivity extends FullscreenActivity implements
 	@SuppressLint("NewApi")
 	private void initViews() {
 
-		((ImageView) findViewById(R.id.img_bg)).setBackground(Config
-				.getBgDrawable());
+		((ImageView) findViewById(R.id.img_bg)).setBackgroundColor(getResources().getColor(Config.getColor()));
 
 		// title
 		tvTitle = (TextView) findViewById(R.id.tv_title);
