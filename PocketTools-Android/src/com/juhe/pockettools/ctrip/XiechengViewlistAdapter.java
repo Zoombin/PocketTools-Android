@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class XiechengViewlistAdapter extends BaseAdapter {

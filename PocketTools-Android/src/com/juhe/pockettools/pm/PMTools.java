@@ -3,7 +3,7 @@ package com.juhe.pockettools.pm;
 import android.graphics.Color;
 
 import com.juhe.pockettools.HelprApplication;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class PMTools {
 	public static int getQuality(int quality) {

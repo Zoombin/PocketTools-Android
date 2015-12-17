@@ -20,7 +20,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.calendar.calendar.LunarCalendar;
 import com.juhe.pockettools.calendar.calendar.SpecialCalendar;
 import com.juhe.pockettools.calendar.dao.ScheduleDAO;

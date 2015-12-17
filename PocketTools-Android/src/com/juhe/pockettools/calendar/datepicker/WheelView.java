@@ -27,7 +27,7 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.Scroller;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class WheelView extends View {
 	/** 滚动的间隔 */

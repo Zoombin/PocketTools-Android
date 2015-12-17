@@ -7,7 +7,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.baidu.platform.comapi.map.y;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class ViolationCitySelectDialog {
 	OnCityListener cityListener;

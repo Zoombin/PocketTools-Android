@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class PackageSelectView extends LinearLayout {
 	private Button btn_ems;

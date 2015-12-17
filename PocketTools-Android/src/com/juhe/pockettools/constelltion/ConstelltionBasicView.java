@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class ConstelltionBasicView extends LinearLayout {
 	private ImageView img_constelltion;

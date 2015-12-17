@@ -2,7 +2,7 @@ package com.zbar.lib.decode;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.os.Handler;

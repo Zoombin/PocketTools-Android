@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.juhe.pockettools.HelprApplication;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.commonview.RightPublishTextView;
 import com.juhe.pockettools.constelltion.ConstalltionConstants;
 import com.juhe.pockettools.constelltion.ConstalltionDayEntity;

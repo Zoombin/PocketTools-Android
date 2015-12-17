@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 class PackageInfoAdapter extends BaseAdapter {
 	private List<PackageEntity.PEntity> list;

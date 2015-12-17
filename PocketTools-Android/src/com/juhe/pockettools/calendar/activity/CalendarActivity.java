@@ -40,7 +40,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.calendar.borderText.BorderText;
 import com.juhe.pockettools.calendar.dao.ScheduleDAO;
 import com.juhe.pockettools.calendar.vo.ScheduleVO;

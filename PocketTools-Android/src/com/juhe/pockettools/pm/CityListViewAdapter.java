@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import java.util.List;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class CityListViewAdapter extends BaseAdapter {
 	private LayoutInflater layoutinflater;

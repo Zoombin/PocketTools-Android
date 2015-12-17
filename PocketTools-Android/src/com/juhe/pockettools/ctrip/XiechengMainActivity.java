@@ -16,7 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.utils.Config;
 
 public class XiechengMainActivity extends Activity implements OnClickListener{

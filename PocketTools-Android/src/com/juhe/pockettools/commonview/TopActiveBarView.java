@@ -1,6 +1,6 @@
 package com.juhe.pockettools.commonview;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 import android.content.Context;
 import android.util.AttributeSet;

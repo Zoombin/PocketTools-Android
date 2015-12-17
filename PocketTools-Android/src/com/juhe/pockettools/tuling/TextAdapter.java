@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class TextAdapter extends BaseAdapter{
 	

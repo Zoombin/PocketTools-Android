@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class ConstelltionItemView extends ImageView {
 	private int widthSize = 0;

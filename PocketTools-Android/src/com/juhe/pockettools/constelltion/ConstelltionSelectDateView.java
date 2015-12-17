@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class ConstelltionSelectDateView extends LinearLayout {
 	private List<String> datelist;

@@ -20,7 +20,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 //import com.fotoable.helpr.wallpaper.w;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.utils.Config;

@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class ViolationDetailHeadView extends FrameLayout {
 	private LinearLayout root_container;

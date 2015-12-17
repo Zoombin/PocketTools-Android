@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 import android.content.Context;
 import android.view.LayoutInflater;

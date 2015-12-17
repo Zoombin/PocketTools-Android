@@ -2,7 +2,7 @@ package com.juhe.pockettools.parking;
 
 import java.util.List;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import android.content.Context;

@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.commonview.gallery.FilePagerAdapter;
 import com.juhe.pockettools.commonview.gallery.GalleryViewPager;
 import com.juhe.pockettools.home.FullscreenActivity;

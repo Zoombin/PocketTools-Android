@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.juhe.pockettools"
+    package="com.zoombin.koudai"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
@@ -103,7 +103,7 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize" >
         </activity>
         <activity
-            android:name=".home.SplashAcitivity"
+            android:name="com.juhe.pockettools.home.SplashAcitivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
             <intent-filter>
@@ -113,75 +113,75 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".home.HelprActivity"
+            android:name="com.juhe.pockettools.home.HelprActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle"
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
-            android:name=".flashlight.FlashLightActivity"
+            android:name="com.juhe.pockettools.flashlight.FlashLightActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" />
         <activity
-            android:name=".mirror.CameraMirrorActivity"
+            android:name="com.juhe.pockettools.mirror.CameraMirrorActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".calculator.CalculatorMainActivity"
+            android:name="com.juhe.pockettools.calculator.CalculatorMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".aboutus.AboutUsActivity"
+            android:name="com.juhe.pockettools.aboutus.AboutUsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".ruler.RulerMainActivity"
+            android:name="com.juhe.pockettools.ruler.RulerMainActivity"
             android:configChanges="keyboard|keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
         </activity>
         <activity
-            android:name=".tuling.ChatActivity"
+            android:name="com.juhe.pockettools.tuling.ChatActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".unit.UnitExchangeMainActivity"
+            android:name="com.juhe.pockettools.unit.UnitExchangeMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".exchange.ExChangeMainActivity"
+            android:name="com.juhe.pockettools.exchange.ExChangeMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
-            android:name=".sizetable.SizeTableActivity"
+            android:name="com.juhe.pockettools.sizetable.SizeTableActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".applesn.AppleSnActivity"
+            android:name="com.juhe.pockettools.applesn.AppleSnActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
-            android:name=".mobilelocale.MobileLocaleMainActivity"
+            android:name="com.juhe.pockettools.mobilelocale.MobileLocaleMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".violation.ViolationMainActivity"
+            android:name="com.juhe.pockettools.violation.ViolationMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".constelltion.ConstelltionMainActivity"
+            android:name="com.juhe.pockettools.constelltion.ConstelltionMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
             <meta-data
@@ -189,62 +189,62 @@
                 android:value=".home.HelprActivity" />
         </activity>
         <activity
-            android:name=".web.WebActivity"
+            android:name="com.juhe.pockettools.web.WebActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".courier.PackageMainActivity"
+            android:name="com.juhe.pockettools.courier.PackageMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".dream.DreamMainActivity"
+            android:name="com.juhe.pockettools.dream.DreamMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".poi.PoiSearchActivity"
+            android:name="com.juhe.pockettools.poi.PoiSearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".calendar.activity.CalendarActivity"
+            android:name="com.juhe.pockettools.calendar.activity.CalendarActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".calendar.activity.CalendarDetailActivity"
+            android:name="com.juhe.pockettools.calendar.activity.CalendarDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".moive.MovieMainActivity"
+            android:name="com.juhe.pockettools.moive.MovieMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".moive.MovieDetailActivity"
+            android:name="com.juhe.pockettools.moive.MovieDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".city.CityActivity"
+            android:name="com.juhe.pockettools.city.CityActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".weather.WeatherMainActivity"
+            android:name="com.juhe.pockettools.weather.WeatherMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".pm.PMMainActivity"
+            android:name="com.juhe.pockettools.pm.PMMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".oil.OilMainActivity"
+            android:name="com.juhe.pockettools.oil.OilMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
@@ -256,93 +256,93 @@
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
-            android:name=".qrcode.QRScannerActivity"
+            android:name="com.juhe.pockettools.qrcode.QRScannerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".train.TrainMainActivity"
+            android:name="com.juhe.pockettools.train.TrainMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".air.AirMainActivity"
+            android:name="com.juhe.pockettools.air.AirMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".secret.SetPasswordActivity"
+            android:name="com.juhe.pockettools.secret.SetPasswordActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".secret.LoginActivity"
+            android:name="com.juhe.pockettools.secret.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".setting.SettingActivity"
+            android:name="com.juhe.pockettools.setting.SettingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".secretalbum.SecretAlbumActivity"
+            android:name="com.juhe.pockettools.secretalbum.SecretAlbumActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".secretalbum.ImagePagerActivity"
+            android:name="com.juhe.pockettools.secretalbum.ImagePagerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <!-- 停车场 -->
         <activity
-            android:name=".parking.ParkingLotSearchActivity"
+            android:name="com.juhe.pockettools.parking.ParkingLotSearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" >
         </activity>
         <activity
-            android:name=".parking.ParkingLotListActivity"
+            android:name="com.juhe.pockettools.parking.ParkingLotListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" />
         <activity
-            android:name=".parking.ParkingLotActivity"
+            android:name="com.juhe.pockettools.parking.ParkingLotActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" />
         <activity
-            android:name=".parking.ParkingYCActivity"
+            android:name="com.juhe.pockettools.parking.ParkingYCActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" />
         <activity
-            android:name=".map.MarkerBDMapActivity"
+            android:name="com.juhe.pockettools.map.MarkerBDMapActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" />
         <activity
-            android:name=".ctrip.XiechengMainActivity"
+            android:name="com.juhe.pockettools.ctrip.XiechengMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" />
         <activity
-            android:name=".ctrip.XiechengViewlistActivity"
+            android:name="com.juhe.pockettools.ctrip.XiechengViewlistActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" />
         <activity
-            android:name=".ctrip.XiechengViewDetailsActivity"
+            android:name="com.juhe.pockettools.ctrip.XiechengViewDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" />
         <activity
-            android:name=".ctrip.XiechengTicketDialogActivity"
+            android:name="com.juhe.pockettools.ctrip.XiechengTicketDialogActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.CustomDialog" />
         <activity
-            android:name=".ctrip.XiechengViewIntroduceWebviewActivity"
+            android:name="com.juhe.pockettools.ctrip.XiechengViewIntroduceWebviewActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" />
         <activity
-            android:name=".ctrip.XiechengViewBaiduMapActivity"
+            android:name="com.juhe.pockettools.ctrip.XiechengViewBaiduMapActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" />
         <activity
-            android:name=".ctrip.XiechengCallbackNullActivity"
+            android:name="com.juhe.pockettools.ctrip.XiechengCallbackNullActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HelprMainStyle" />
     </application>

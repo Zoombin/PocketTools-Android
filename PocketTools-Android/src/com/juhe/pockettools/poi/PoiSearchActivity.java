@@ -26,7 +26,7 @@ import com.baidu.mapapi.search.sug.OnGetSuggestionResultListener;
 import com.baidu.mapapi.search.sug.SuggestionResult;
 import com.baidu.mapapi.search.sug.SuggestionSearch;
 import com.baidu.mapapi.search.sug.SuggestionSearchOption;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 /**
  * 演示poi搜索功能

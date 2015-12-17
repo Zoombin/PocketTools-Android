@@ -3,7 +3,7 @@ package com.juhe.pockettools.home;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

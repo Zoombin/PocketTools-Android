@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ToggleButton;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.home.FullscreenActivity;
 
 //import com.fotoable.helpr.wallpaper.w;

@@ -30,7 +30,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.commonview.gallery.InputStreamWrapper.InputStreamProgressListener;
 
 public class UrlTouchImageView extends RelativeLayout {

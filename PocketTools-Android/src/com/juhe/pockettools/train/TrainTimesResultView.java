@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 //import com.fotoable.helpr.wallpaper.w;

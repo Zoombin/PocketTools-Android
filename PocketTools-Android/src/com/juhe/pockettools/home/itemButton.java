@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.aboutus.AboutUsActivity;
 import com.juhe.pockettools.air.AirMainActivity;
 import com.juhe.pockettools.applesn.AppleSnActivity;

@@ -17,7 +17,7 @@ import android.view.Window;
 //import com.google.android.gms.analytics.HitBuilders;
 //import com.google.android.gms.analytics.Tracker;
 import com.juhe.pockettools.HelprApplication;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.utils.HelprCommUtil;
 import com.umeng.analytics.MobclickAgent;
 

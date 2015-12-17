@@ -23,7 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 //import com.juhe.pockettools.helpr.Utils.k;
 import com.juhe.pockettools.city.CityActivity;
 import com.juhe.pockettools.commonview.CircleProgressBar;

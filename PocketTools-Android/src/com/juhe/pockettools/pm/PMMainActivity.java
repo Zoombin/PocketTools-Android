@@ -28,7 +28,7 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.gson.Gson;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.city.CityActivity;
 import com.juhe.pockettools.commonview.CircleProgressBar;
 import com.juhe.pockettools.home.FullscreenActivity;

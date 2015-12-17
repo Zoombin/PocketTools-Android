@@ -23,7 +23,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.map.MarkerBDMapActivity;
 import com.juhe.pockettools.utils.Config;
 import com.nostra13.universalimageloader.core.ImageLoader;

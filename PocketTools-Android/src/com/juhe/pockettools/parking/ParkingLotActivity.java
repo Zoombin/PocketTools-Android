@@ -10,7 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.home.FullscreenActivity;
 import com.juhe.pockettools.map.MapCanstant;
 import com.juhe.pockettools.map.MarkerBDMapActivity;

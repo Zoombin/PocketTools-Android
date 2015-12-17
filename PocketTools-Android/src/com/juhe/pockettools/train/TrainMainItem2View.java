@@ -15,7 +15,7 @@ import android.widget.Toast;
 import java.util.HashMap;
 
 import com.google.gson.Gson;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.thinkland.sdk.android.DataCallBack;
 import com.thinkland.sdk.android.JuheData;
 import com.thinkland.sdk.android.Parameters;

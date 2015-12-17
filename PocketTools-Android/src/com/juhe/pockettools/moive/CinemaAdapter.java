@@ -13,7 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 class CinemaAdapter extends BaseAdapter {
 	Context context;

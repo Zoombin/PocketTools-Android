@@ -1,6 +1,6 @@
 package com.juhe.pockettools.constelltion;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class ConstalltionConstants {
 	public static String[] dates = { "3.21-4.19", "4.20-5.20", "5.21-6.21",

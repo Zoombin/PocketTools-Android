@@ -11,7 +11,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class WebActivity extends Activity {
 

@@ -24,7 +24,7 @@ import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.utils.CoordinateConverter;
 import com.baidu.mapapi.utils.CoordinateConverter.CoordType;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.home.FullscreenActivity;
 import com.juhe.pockettools.map.MapCanstant;
 import com.juhe.pockettools.parking.ParkingEntrance;

@@ -25,7 +25,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.applesn.AppleSnEntity;
 import com.juhe.pockettools.violation.ViolationMainActivity;
 import com.juhe.pockettools.violation.hpzlEntity;

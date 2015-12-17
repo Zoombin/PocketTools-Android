@@ -9,7 +9,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
 import com.juhe.pockettools.HelprApplication;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class Config {
 

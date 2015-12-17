@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.secret.LocusPassWordView.OnCompleteListener;
 import com.juhe.pockettools.secretalbum.SecretAlbumActivity;
 import com.juhe.pockettools.utils.Config;

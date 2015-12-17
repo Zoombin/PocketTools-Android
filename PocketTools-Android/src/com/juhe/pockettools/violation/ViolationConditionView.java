@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.violation.ViolationCitySelectDialog.OnCityListener;
 //import com.fotoable.helpr.Utils.k;
 //import com.fotoable.helpr.a.b;

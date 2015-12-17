@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.json.JSONObject;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.weather.Weather;
 
 public class OilListViewAdapter extends BaseAdapter {

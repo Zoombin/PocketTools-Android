@@ -2,7 +2,7 @@ package com.juhe.pockettools.setting;
 
 import java.util.List;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 import android.R.array;
 import android.content.Context;

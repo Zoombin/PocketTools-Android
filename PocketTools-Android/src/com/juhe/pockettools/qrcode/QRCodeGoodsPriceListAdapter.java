@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class QRCodeGoodsPriceListAdapter extends BaseAdapter {
 	private List<QRCodeEntity.Shop> list = new ArrayList<QRCodeEntity.Shop>();

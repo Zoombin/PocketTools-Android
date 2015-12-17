@@ -11,7 +11,7 @@ import com.baidu.location.BDLocationListener;
 import com.baidu.location.GeofenceClient;
 import com.google.gson.Gson;
 import com.juhe.pockettools.HelprApplication;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.commonview.TopActiveBarView;
 import com.juhe.pockettools.commonview.TopActiveBarView.InterfaceTopActiveBar;
 import com.juhe.pockettools.home.FullscreenActivity;

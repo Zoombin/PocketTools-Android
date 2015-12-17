@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class ConstelltionDateItemView extends FrameLayout {
 	TextView item_text;

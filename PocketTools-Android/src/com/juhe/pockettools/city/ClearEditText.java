@@ -12,7 +12,7 @@ import android.view.animation.CycleInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class ClearEditText extends EditText implements TextWatcher,
 		View.OnFocusChangeListener {

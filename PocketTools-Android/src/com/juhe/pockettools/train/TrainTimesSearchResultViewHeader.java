@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class TrainTimesSearchResultViewHeader extends FrameLayout {
 	private Context context;

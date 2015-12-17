@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 
 public class PackageRencentListAdapter extends BaseAdapter {
 	public static String PACKAGE_COMPANY = "package_company";

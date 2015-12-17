@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.city.SideBar.OnTouchingLetterChangedListener;
 import com.juhe.pockettools.home.FullscreenActivity;
 import com.juhe.pockettools.qrcode.QRCityEntity;

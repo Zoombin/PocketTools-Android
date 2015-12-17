@@ -37,7 +37,7 @@ import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.location.LocationClientOption.LocationMode;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.home.FullscreenActivity;
 import com.juhe.pockettools.utils.Config;
 import com.thinkland.sdk.android.DataCallBack;

@@ -11,7 +11,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.utils.Constants;
 import com.juhe.pockettools.utils.HelprCommUtil;
 import com.qq.e.ads.splash.SplashAD;

@@ -21,7 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.commonview.AutoResizeTextView;
 import com.juhe.pockettools.commonview.ClearableEditText;
 import com.juhe.pockettools.commonview.TopActiveBarView;

@@ -9,7 +9,7 @@ import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.home.FullscreenActivity;
 import com.juhe.pockettools.home.SplashAcitivity;
 import java.util.ArrayList;

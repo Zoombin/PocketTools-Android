@@ -11,7 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.calendar.borderText.BorderTextView;
 import com.juhe.pockettools.calendar.calendar.LunarCalendar;
 

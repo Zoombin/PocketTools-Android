@@ -21,7 +21,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.juhe.pockettools.R;
+import com.zoombin.koudai.R;
 import com.juhe.pockettools.qrcode.QRScannerActivity;
 import com.zbar.lib.camera.CameraManager;
 import com.zbar.lib.decode.CaptureActivityHandler;
