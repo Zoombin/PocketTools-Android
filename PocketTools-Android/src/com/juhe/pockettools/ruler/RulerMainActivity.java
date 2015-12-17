@@ -70,6 +70,7 @@ public class RulerMainActivity extends Activity {
 		paint.setColor(0xffffffff);
 
 		textPaint.setStyle(Paint.Style.STROKE);
+		textPaint.setTextSize(20);
 		textPaint.setStrokeWidth(0);
 		textPaint.setAntiAlias(true);
 		textPaint.setColor(0xffffffff);
