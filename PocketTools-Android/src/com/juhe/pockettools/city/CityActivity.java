@@ -94,7 +94,7 @@ public class CityActivity extends FullscreenActivity {
 
 		QRCityEntity entity = (QRCityEntity) getIntent()
 				.getSerializableExtra("citylist");
-		if (entity.getResult() == null) {
+		if (entity == null) {
 			SourceDateList = filledData(getResources().getStringArray(
 					R.array.weather_citys));
 		} else {
