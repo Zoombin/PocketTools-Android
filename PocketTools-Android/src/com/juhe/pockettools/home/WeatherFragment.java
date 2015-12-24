@@ -75,6 +75,9 @@ public class WeatherFragment extends Fragment {
 		@Override
 		public void onReceiveLocation(BDLocation location) {
 			if (location != null) {
+				if (location.getCity() == null) {
+					return;
+				}
 				cityname = location.getCity().replace("市", "");
 				getData();
 			}
